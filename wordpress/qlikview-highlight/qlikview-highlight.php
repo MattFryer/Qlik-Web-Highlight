@@ -55,13 +55,17 @@ function qlikview_highlight_code_shortcode( $atts , $content = null ) {
         'lang' => ''
     ), $atts );
 
-	return '<pre><code class="' . $a['lang'] . '">' . str_replace('’', '\'', $content) . '</code></pre>';
+	return '<pre><code class="' . $a['lang'] . '">' . $content . '</code></pre>';
 }
 add_shortcode( 'code', 'qlikview_highlight_code_shortcode' );
 
 //QlikView specific shortcode [qlikview]...[/qlikview]
 function qlikview_highlight_qlikview_shortcode( $atts , $content = null ) { //QlikView specific shortcode
-	return '<pre><code class="qlikview">' . str_replace('<br></br>', '', str_replace('’', '\'', $content)) . '</code></pre>';
+	//obtain the passed type (script or expression) if any. Defaults to script if not specified
+	$attributes = shortcode_atts( array(
+        'type' => 'script'
+    ), $atts );
+	return '<pre><code class="qlikview-' . $a['type'] . '">' . $content . '</code></pre>';
 }
 add_shortcode( 'qlikview', 'qlikview_highlight_qlikview_shortcode' );
 

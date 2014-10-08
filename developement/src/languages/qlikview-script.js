@@ -1,6 +1,6 @@
 /*
- Language: SQL
- Contributors: Nikolay Lisienko <info@neor.ru>, Heiko August <post@auge8472.de>, Travis Odom <travis.a.odom@gmail.com>
+ Language: QlikView Script
+ Contributors: Matthew Fryer <matthew_fryer@hotmail.com>
  */
 
 function(hljs) {
@@ -109,7 +109,7 @@ function(hljs) {
 			relevance: 10
   };
   return {
-    aliases: ['qvs'],
+    aliases: ['qvs','qlikview'],
 	case_insensitive: true,
     keywords: QV_KEYWORDS, //Highlights all keywords and function names
     contains: [
