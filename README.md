@@ -38,7 +38,7 @@ Here are the steps to get it installed and working yourself:
 
 ##How To Use
 
-Wrap any QlikView script blocks included within the web page in &lt;pre&gt; and &lt;code&gt; HTML tags as shown below:
+Wrap any QlikView script blocks included within the web page in pre and code HTML tags as shown below:
 
 &lt;pre&gt;&lt;code class="qlikview"&gt;MyTable: LOAD * RESIDENT MyTempTable;&lt;/code&gt;&lt;/pre&gt;
 
