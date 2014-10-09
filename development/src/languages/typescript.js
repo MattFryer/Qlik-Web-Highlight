@@ -1,16 +1,18 @@
 /*
-Language: JavaScript
-Category: common
+Language: TypeScript
+Author: Panu Horsmalahti <panu.horsmalahti@iki.fi>
+Description: TypeScript is a strict superset of JavaScript
 */
 
 function(hljs) {
   return {
-    aliases: ['js'],
+    aliases: ['ts'],
     keywords: {
       keyword:
-        'in if for while finally var new function do return void else break catch ' +
+        'in if for while finally var new function|0 do return void else break catch ' +
         'instanceof with throw case default try this switch continue typeof delete ' +
-        'let yield const class',
+        'let yield const class public private get set super interface extends' +
+        'static constructor implements enum export import declare',
       literal:
         'true false null undefined NaN Infinity',
       built_in:
@@ -20,13 +22,13 @@ function(hljs) {
         'TypeError URIError Number Math Date String RegExp Array Float32Array ' +
         'Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array ' +
         'Uint8Array Uint8ClampedArray ArrayBuffer DataView JSON Intl arguments require ' +
-        'module console window document'
+        'module console window document any number boolean string void',
     },
     contains: [
       {
         className: 'pi',
         begin: /^\s*('|")use strict('|")/,
-        relevance: 10
+        relevance: 0
       },
       hljs.APOS_STRING_MODE,
       hljs.QUOTE_STRING_MODE,
@@ -63,7 +65,21 @@ function(hljs) {
             illegal: /["'\(]/
           }
         ],
-        illegal: /\[|%/
+        illegal: /\[|%/,
+        relevance: 0 // () => {} is more typical in TypeScript
+      },
+      {
+        className: 'constructor',
+        beginKeywords: 'constructor', end: /\{/, excludeEnd: true,
+        relevance: 10
+      },
+      {
+        className: 'module',
+        beginKeywords: 'module', end: /\{/, excludeEnd: true,
+      },
+      {
+        className: 'interface',
+        beginKeywords: 'interface', end: /\{/, excludeEnd: true,
       },
       {
         begin: /\$[(.]/ // relevance booster for a pattern common to JS libs: `$(something)` and `$.something`

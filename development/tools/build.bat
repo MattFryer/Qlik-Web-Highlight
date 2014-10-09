@@ -1,1 +1,1 @@
-C:\python34\python.exe build.py -n qlikview-script qlikview-expression sql vbscript javascript
+C:\python34\python.exe build.py qlikview-script qlikview-expression sql vbscript javascript
