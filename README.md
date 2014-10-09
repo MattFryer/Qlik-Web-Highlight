@@ -18,6 +18,7 @@ Planned future functionality includes:
   * Improved accuracy of highlighting certain keywords only when they appear in valid combinations (eg. BUNDLE should only be highlighted if it immediately precedes LOAD)
   * Support for accurate syntax highlighting of QlikView expressions
   * Support for highlighting associate languages such as SQL so that code for these languages can be included on the same web page.
+  * A version packaged as a Wordpress plugin for ease of installation on Wordpress sites
 
 ##Installation
 
