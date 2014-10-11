@@ -74,7 +74,7 @@ function(hljs) {
 			relevance: 10
   };
   return {
-    aliases: ['exp','qlikview-exp','qv-exp'],
+    aliases: ['exp', 'qve','qlikview-exp','qv-exp'],
 	case_insensitive: true,
     keywords: QV_EXP_KEYWORDS, //Highlights all keywords and function names
     contains: [
