@@ -5,14 +5,17 @@
             title : 'QlikView',
             image : url+'/qlikview.png',
             onclick : function() {
+			   var selected = tinyMCE.activeEditor.selection.getContent( {format : "text"} );
+			   if (selected == null || selected == '') {
+			      var selected = 'Your code here...';
+			   }
+			   
                var type = prompt("Type (qvs, exp, sql, vbscript, javascript)", "qvs");
+			   if (type != null && type != ''){
+			      var type = 'qvs';
+			   }
 
-               if (text != null && text != ''){
-                  ed.execCommand('mceInsertContent', false, '[qlikview posts="'+type+'"]  [/recent-posts]');
-               }
-               else{
-                  ed.execCommand('mceInsertContent', false, '[qlikview posts="qvs"]  [/recent-posts]');
-               }
+               ed.execCommand('mceInsertContent', false, '[qlikview type="'+type+'"]' + selected + '[/recent-posts]');
             }
          });
       },
