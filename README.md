@@ -40,7 +40,7 @@ Here are the steps to get it installed and working yourself:
 
 Wrap any QlikView script blocks included within the web page in pre and code HTML tags as shown below:
 
-&lt;pre&gt;&lt;code class="qlikview"&gt;MyTable: LOAD * RESIDENT MyTempTable;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class="qvs"&gt;MyTable: LOAD * RESIDENT MyTempTable;&lt;/code&gt;&lt;/pre&gt;
 
 Syntax highlighting will then automatically be applied to the block when the page is loaded by the user. 
 

@@ -10,7 +10,7 @@ function(hljs) {
 		'Call Case Comment Concatenate Connect Crosstable ' +
 		'Default Directory Disconnect Distinct Do Drop ' +
 		'Each Else Elseif End Endif Endsub Endswitch Execute Exit ' +
-		'Field Fields First For Force From ' +
+		'Field Fields First For Force From From_Field ' +
 		'Generic Group ' +
 		'Hierarchy|10 HierarchyBelongsTo|10 ' +
 		'If Image_size Info Inline Inner Inputfield|10 Intervalmatch|10 Into ' +
@@ -111,7 +111,7 @@ function(hljs) {
   return {
     aliases: ['qvs','qlikview'],
 	case_insensitive: true,
-    keywords: QV_KEYWORDS, //Highlights all keywords and function names
+    keywords: QV_KEYWORDS,
     contains: [
       hljs.C_LINE_COMMENT_MODE, 
       hljs.C_BLOCK_COMMENT_MODE,
@@ -119,16 +119,29 @@ function(hljs) {
 	  QV_STRING_SINGLE,
 	  QV_STRING_DOUBLE,
 	  QV_REM_COMMENT,
+	  QV_VARIABLE_DEF,
+	  QV_VARIABLE_USE,
 	  {
 		className: 'field',
 		begin: '\\[', end: '\\]', //Gives a field when using []
 			relevance: 0
 	  },
-	  QV_VARIABLE_DEF,
-	  QV_VARIABLE_USE/*,
+	  {
+		className: 'sql-statement',
+		begin: '\\bsql\\b', end: ';', //Ensures SQL statements are identified to stop other keywords being highlighted in them
+		keywords: 'sql',
+		contains: [
+			hljs.C_LINE_COMMENT_MODE, 
+			hljs.C_BLOCK_COMMENT_MODE,
+			hljs.QUOTE_STRING_MODE,
+			QV_STRING_SINGLE,
+			QV_STRING_DOUBLE,
+			QV_VARIABLE_USE,
+		]
+	  },
 	  {
 		className: 'load-statement',
-        begin: '\\bload\\b', end: '\\bresident\\b',//'(\\bresident\\b|\\binline\\b|\\bfrom\\b|;\\bload\\b|;\\bsql\\b)',
+        begin: '\\bload\\b', end: '(;|resident|inline|autogenerate|from)',
         keywords: QV_KEYWORDS,
 		contains: [
 			hljs.C_LINE_COMMENT_MODE, //Gives a // comment
@@ -136,14 +149,21 @@ function(hljs) {
 			hljs.QUOTE_STRING_MODE,
 			QV_STRING_SINGLE,
 			QV_STRING_DOUBLE,
-			{
-				className: 'field',
-				begin: '\\b(\\w|\\[)', end: '(\\w|\\})\\b',
-				keywords: QV_KEYWORDS
-			}
+			// {
+				// className: 'field',
+				// begin: '\\b\\w+', end: '(,|;|resident|inline|autogenerate|from)',
+				// keywords: QV_KEYWORDS,
+				// contains: [
+					// hljs.C_LINE_COMMENT_MODE, //Gives a // comment
+					// hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
+					// hljs.QUOTE_STRING_MODE,
+					// QV_STRING_SINGLE,
+					// QV_STRING_DOUBLE
+				// ]
+			// }
 		],
 			relevance: 10
-	  }*/
+	  }
     ]
   };
 }
