@@ -34,7 +34,7 @@ function(hljs) {
 		'Capitalize Ceil Chi2test_chi2 Chi2test_df Chi2test_p Chidist Chiinv Chr Class Clientplatform Color ' +
 		'Colormaphue Colormapjet Colormix1 Colormix2 Combin Computername Concat Connectstring Converttolocaltime ' +
 		'Correl Cos Cosh Count Cyan ' +
-		'Darkgray Date# Date Day Dayend Daylightsaving Dayname Daynumberofquarter Daynumberofyear Daystart Div ' +
+		'Darkgray Day Dayend Daylightsaving Dayname Daynumberofquarter Daynumberofyear Daystart Div ' +
 		'DocumentName DocumentPath DocumentTitle Dual ' +
 		'E Evaluate Even Exists Exp ' +
 		'Fabs Fact False Fdist FieldIndex FieldName FieldNumber FieldValue FieldValueCount FileBaseName FileDir ' +
@@ -64,7 +64,7 @@ function(hljs) {
 		'ReportComment ReportId ReportName ReportNumber RGB Right Round RowNo RTrim ' +
 		'Second SetDateYear SetDateYearMonth Sign sin sinh Skew sqr sqrt Stdev Sterr STEYX SubField|10 SubStringCount ' +
 		'Sum SysColor ' +
-		'TableName TableNumber tan tanh TDIST Text TextBetween TextCount Time Time# Timestamp Timestamp# TimeZone ' +
+		'TableName TableNumber tan tanh TDIST Text TextBetween TextCount TimeZone ' +
 		'TINV Today Trim True TTest1_conf TTest1_df TTest1_dif TTest1_lower TTest1_sig TTest1_sterr TTest1_t ' +
 		'TTest1_upper TTest1w_conf TTest1w_df TTest1w_dif TTest1w_lower TTest1w_sig TTest1w_sterr TTest1w_t ' +
 		'TTest1w_upper TTest_conf TTest_df TTest_dif TTest_lower TTest_sig TTest_sterr TTest_t TTest_upper ' +
@@ -76,6 +76,11 @@ function(hljs) {
 		'ZTest_conf ZTest_dif ZTest_lower ZTest_sig ZTest_sterr ZTest_upper ZTest_z ZTestw_conf ZTestw_dif ' +
 		'ZTestw_lower ZTestw_sig ZTestw_sterr ZTestw_upper ZTestw_z',
   };
+  var QV_HASH_FUNCTIONS = { //Deals with the correct highlighting of the functions that have a hash version eg. date() and date#()
+		className: 'built_in',
+		begin: '\\b(date|interval|money|num|time|timestamp)\\b#?\\s?', //Tried to add look forward but seems to cause it to fail (?=\()
+		illegal: '\\n',
+  }
   var QV_STRING_SINGLE = {
         className: 'string',
         begin: '\'', end: '\'', //Gives a string when using single quotes
@@ -116,6 +121,7 @@ function(hljs) {
       hljs.C_LINE_COMMENT_MODE, 
       hljs.C_BLOCK_COMMENT_MODE,
 	  hljs.QUOTE_STRING_MODE,
+	  QV_HASH_FUNCTIONS,
 	  QV_STRING_SINGLE,
 	  QV_STRING_DOUBLE,
 	  QV_REM_COMMENT,
@@ -141,12 +147,13 @@ function(hljs) {
 	  },
 	  {
 		className: 'load-statement',
-        begin: '\\bload\\b', end: '(;|resident|inline|autogenerate|from)',
+        begin: '\\bload\\b', end: '(;|\\bresident\\b|\\binline\\b|\\bautogenerate\\b|\\bfrom\\b)',
         keywords: QV_KEYWORDS,
 		contains: [
 			hljs.C_LINE_COMMENT_MODE, //Gives a // comment
 			hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
 			hljs.QUOTE_STRING_MODE,
+			QV_HASH_FUNCTIONS,
 			QV_STRING_SINGLE,
 			QV_STRING_DOUBLE,
 			// {
