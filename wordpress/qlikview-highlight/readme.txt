@@ -1,4 +1,4 @@
-=== Test Plugin ===
+=== QlikView for Wordpress ===
 Contributors: Matt Fryer
 Tags: highlight, syntax, qlikview, post, page, shortcode, plugin
 Donate link: 
@@ -40,6 +40,7 @@ The plugin has not been tested with any other highlighting plugins (syntax or ot
 == Screenshots ==
 
 1. An example section of QlikView script showing the syntax highlighting provided by this plugin. 
+2. Includes a support for adding shortcode via the Wordpress visual post/page editor.
 
 == Changelog ==
 = 0.2 =

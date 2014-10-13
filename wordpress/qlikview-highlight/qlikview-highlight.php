@@ -5,7 +5,7 @@
  */
 /*/
  * Plugin Name: QlikView Syntax Highlighting
- * Plugin URI: http://www.qlikviewaddict.com/
+ * Plugin URI: http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html
  * Description: Automatically syntax highlights QlikView script and expressions on any Wordpress page or post.
  * Version: 0.2
  * Author: Matt Fryer
