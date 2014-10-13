@@ -17,6 +17,7 @@ This Wordpress plugin provides automatic syntax highlighting of QlikView script 
 * Block comment /*..*/
 * REM comment REM...;
 * All QlikView 11.20 keywords, statements and functions (that are permitted within the script)
+* Variable definitions (using SET and LET) and variable use (within $())
 
 Future improvements may include better more accurate syntax highlighting (such as field names) and the ability to change the highlighting style from the QlikView default.
 
@@ -31,20 +32,31 @@ Using the plugin is simple. Any QlikView script within a Wordpress page or post 
 The syntax highlighting is an approximation of the default highlighting within the QlikView Edit Script dialog. It is not a perfect replication.
 
 = Can it highlight other languages? =
-Not currently. Other languages related to or associated with QlikView such as SQL may be included in future releases.
+It can currently highlight a handful of languages that are associated with QlikView. These currently include SQL, VBScript and JavaScript.
 
 = Can I use it with another highlighting plugin? =
 The plugin has not been tested with any other highlighting plugins (syntax or otherwise) and so it cannot be guaranteed to work alongside them, especially those also based on highlight.js.
 
 == Screenshots ==
-1. The screenshot description corresponds to screenshot-1.(png|jpg|jpeg|gif).
-2. The screenshot description corresponds to screenshot-2.(png|jpg|jpeg|gif).
-3. The screenshot description corresponds to screenshot-3.(png|jpg|jpeg|gif).
+
+1. An example section of QlikView script showing the syntax highlighting provided by this plugin. 
 
 == Changelog ==
+= 0.2 =
+* Added support for highlighting QlikView expressions
+* Added the ability to hightlight a handful of other languages that are related to QlikView.
+* Added variable definition and use support (SET, LET and $()).
+* Fixed issue with interpretation functions (those ending with a #) not being highlighted correctly.
+* Corrected an issue where the if function is confused with the IF statements causing incorrect highlighting.
+* Fixed issue where keywords were highlighted within SQL statements.
+* Added button to TinyMCE to insert the shortcode within the visual editor
+
 = 0.1 =
-* Initial release.
+* Initial pre-release.
 
 == Upgrade Notice ==
+= 0.2 =
+All previous versions of this plugin should be uninstalled from Wordpress before this version is installed.
+
 = 0.1 =
-This version provides the initial release and so no upgrade is necessary.
+This version provides the initial pre-release and so no upgrade is necessary.

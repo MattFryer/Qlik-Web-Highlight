@@ -11,7 +11,7 @@
 			   }
 			   
                var type = prompt("Type (qvs, exp, sql, vbscript, javascript)", "qvs");
-			   if (type != null && type != ''){
+			   if (type == null || type == '' || (type != 'qvs' && type != 'exp' && type != 'sql' && type != 'vbscript' && type != 'javascript')){
 			      var type = 'qvs';
 			   }
 
