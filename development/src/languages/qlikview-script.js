@@ -4,7 +4,7 @@
  */
 
 function(hljs) {
-  var QV_KEYWORDS = {
+  var QVS_KEYWORDS = {
     keyword: 'Add Alias And As Autogenerate|10 ' +
 		'Binary Buffer Bundle By ' +
 		'Call Case Comment Concatenate Connect Crosstable ' +
@@ -13,7 +13,7 @@ function(hljs) {
 		'Field Fields First For Force From From_Field ' +
 		'Generic Group ' +
 		'Hierarchy|10 HierarchyBelongsTo|10 ' +
-		'If Image_size Info Inline Inner Inputfield|10 Intervalmatch|10 Into ' +
+		'if Image_size Info Inline Inner Inputfield|10 Intervalmatch|10 Into ' +
 		'Join ' +
 		'Keep ' +
 		'Left Let Load Loop Loosen ' +
@@ -42,7 +42,7 @@ function(hljs) {
 		'Floor Fmod Frac Fractile Fv ' +
 		'GetExtendedProperty GetFolderPath GetObjectField GetRegistryString GMT Green ' +
 		'Hash128 Hash160 Hash256 Hour HSL ' +
-		'if InDay InDayToTime Index InLunarWeek InLunarWeekToDate InMonth InMonths InMonthsToDate InMonthToDate ' +
+		'InDay InDayToTime Index InLunarWeek InLunarWeekToDate InMonth InMonths InMonthsToDate InMonthToDate ' +
 		'Input InputAvg InputSum InQuarter InQuarterToDate Interval Interval# InWeek InWeekToDate InYear ' +
 		'InYearToDate IRR IsNull IsNum IsPartialReload IsText IterNo ' +
 		'KeepChar Kurtosis ' +
@@ -61,7 +61,7 @@ function(hljs) {
 		'Rand RangeAvg RangeCorrel RangeCount RangeFractile RangeIRR RangeKurtosis RangeMax RangeMaxString RangeMin ' +
 		'RangeMinString RangeMissingCount RangeMode RangeNPV RangeNullCount RangeNumericCount RangeOnly RangeSkew ' +
 		'RangeStdev RangeSum RangeTextCount RangeXIRR RangeXNPV Rate RecNo Red ReloadTime Repeat Replace ' +
-		'ReportComment ReportId ReportName ReportNumber RGB Right Round RowNo RTrim ' +
+		'ReportComment ReportId ReportName ReportNumber RGB Round RowNo RTrim ' +
 		'Second SetDateYear SetDateYearMonth Sign sin sinh Skew sqr sqrt Stdev Sterr STEYX SubField|10 SubStringCount ' +
 		'Sum SysColor ' +
 		'TableName TableNumber tan tanh TDIST Text TextBetween TextCount TimeZone ' +
@@ -76,38 +76,43 @@ function(hljs) {
 		'ZTest_conf ZTest_dif ZTest_lower ZTest_sig ZTest_sterr ZTest_upper ZTest_z ZTestw_conf ZTestw_dif ' +
 		'ZTestw_lower ZTestw_sig ZTestw_sterr ZTestw_upper ZTestw_z',
   };
-  var QV_HASH_FUNCTIONS = { //Deals with the correct highlighting of the functions that have a hash version eg. date() and date#()
+  var QVS_HASH_FUNCTIONS = { //Deals with the correct highlighting of the functions that have an interpretation version eg. date() and date#()
 		className: 'built_in',
-		begin: '\\b(date|interval|money|num|time|timestamp)\\b#?\\s?', //Tried to add look forward but seems to cause it to fail (?=\()
+		begin: '\\b(date|interval|money|num|time|timestamp)\\b#?\\s?(?=(\\(|$))', 
 		illegal: '\\n',
-  }
-  var QV_STRING_SINGLE = {
+  };
+  var QVS_KEYWORD_FUNCTIONS = { //Deals with the correct highlighting of the functions that have a keyword with the same name eg. if, left, right, etc
+		className: 'built_in',
+		begin: '\\b(if|left|right)\\b#?\\s?(?=(\\(|$))', 
+		illegal: '\\n',
+  };
+  var QVS_STRING_SINGLE = {
         className: 'string',
         begin: '\'', end: '\'', //Gives a string when using single quotes
 		illegal: '\\n',
         contains: [hljs.BACKSLASH_ESCAPE, {begin: '\'\''}],
 			relevance: 0
-  }
-  var QV_STRING_DOUBLE = {
+  };
+  var QVS_STRING_DOUBLE = {
 		className: 'string',
         begin: '"', end: '"', //Gives a string when using double quotes
 		illegal: '\\n',
         contains: [hljs.BACKSLASH_ESCAPE, {begin: '""'}],
 			relevance: 0
   };
-  var QV_REM_COMMENT = {
+  var QVS_REM_COMMENT = {
 		className: 'comment',
 		begin: '\^rem\\b', end: ';', //Gives a REM comment. Correctly matches when it is at the start of a line only.
 			relevance: 10
   };
-  var QV_VARIABLE_DEF = {
+  var QVS_VARIABLE_DEF = {
 	    className: 'variable',
 		begin: '\\b(let|set)\\b', end: '\\w+', //Gives a variable definition when using SET or LET
 		keywords: 'set let',
 		illegal: '\\n',
 			relevance: 0
   };
-  var QV_VARIABLE_USE = {
+  var QVS_VARIABLE_USE = {
 	    className: 'variable',
 		begin: '\\$\\(', end: '\\)', //Gives a variable when used inside $()
 		illegal: '\\n',
@@ -116,17 +121,18 @@ function(hljs) {
   return {
     aliases: ['qvs','qlikview'],
 	case_insensitive: true,
-    keywords: QV_KEYWORDS,
+    keywords: QVS_KEYWORDS,
     contains: [
       hljs.C_LINE_COMMENT_MODE, 
       hljs.C_BLOCK_COMMENT_MODE,
 	  hljs.QUOTE_STRING_MODE,
-	  QV_HASH_FUNCTIONS,
-	  QV_STRING_SINGLE,
-	  QV_STRING_DOUBLE,
-	  QV_REM_COMMENT,
-	  QV_VARIABLE_DEF,
-	  QV_VARIABLE_USE,
+	  QVS_HASH_FUNCTIONS,
+	  QVS_KEYWORD_FUNCTIONS,
+	  QVS_STRING_SINGLE,
+	  QVS_STRING_DOUBLE,
+	  QVS_REM_COMMENT,
+	  QVS_VARIABLE_DEF,
+	  QVS_VARIABLE_USE,
 	  {
 		className: 'field',
 		begin: '\\[', end: '\\]', //Gives a field when using []
@@ -140,34 +146,23 @@ function(hljs) {
 			hljs.C_LINE_COMMENT_MODE, 
 			hljs.C_BLOCK_COMMENT_MODE,
 			hljs.QUOTE_STRING_MODE,
-			QV_STRING_SINGLE,
-			QV_STRING_DOUBLE,
-			QV_VARIABLE_USE,
+			QVS_STRING_SINGLE,
+			QVS_STRING_DOUBLE,
+			QVS_VARIABLE_USE
 		]
 	  },
 	  {
 		className: 'load-statement',
         begin: '\\bload\\b', end: '(;|\\bresident\\b|\\binline\\b|\\bautogenerate\\b|\\bfrom\\b)',
-        keywords: QV_KEYWORDS,
+        keywords: QVS_KEYWORDS,
 		contains: [
 			hljs.C_LINE_COMMENT_MODE, //Gives a // comment
 			hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
 			hljs.QUOTE_STRING_MODE,
-			QV_HASH_FUNCTIONS,
-			QV_STRING_SINGLE,
-			QV_STRING_DOUBLE,
-			// {
-				// className: 'field',
-				// begin: '\\b\\w+', end: '(,|;|resident|inline|autogenerate|from)',
-				// keywords: QV_KEYWORDS,
-				// contains: [
-					// hljs.C_LINE_COMMENT_MODE, //Gives a // comment
-					// hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
-					// hljs.QUOTE_STRING_MODE,
-					// QV_STRING_SINGLE,
-					// QV_STRING_DOUBLE
-				// ]
-			// }
+			QVS_HASH_FUNCTIONS,
+			QVS_KEYWORD_FUNCTIONS,
+			QVS_STRING_SINGLE,
+			QVS_STRING_DOUBLE
 		],
 			relevance: 10
 	  }

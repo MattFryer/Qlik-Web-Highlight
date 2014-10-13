@@ -11,7 +11,7 @@ function(hljs) {
 		'Before Below BitCount Black BlackAndSchole Blue Bottom Brown ' +
 		'Capitalize Ceil Chi2Test_chi2 Chi2Test_df Chi2Test_p CHIDIST CHIINV Chr Class ClientPlatform Color ColorMapHue ' +
 		'ColorMapJet ColorMix1 ColorMix2 Column ColumnNo Combin ComputerName Concat ConvertToLocalTime Correl cos cosh ' +		'Count Cyan ' +
-		'DarkGray Date Date# Day DayEnd DaylightSaving DayName DayNumberOfQuarter DayNumberOfYear DayStart Dimensionality ' +
+		'DarkGray Day DayEnd DaylightSaving DayName DayNumberOfQuarter DayNumberOfYear DayStart Dimensionality ' +
 		'Div DocumentName DocumentPath DocumentTitle Dual ' +
 		'e Even exp ' +
 		'fabs Fact False FDIST FieldIndex FieldValue FieldValueCount FindOneOf FINV First FirstSortedValue FirstWorkDate ' +
@@ -21,15 +21,15 @@ function(hljs) {
 		'Green ' +
 		'Hash128 Hash160 Hash256 Hour HRank HSL ' +
 		'If InDay InDayToTime Index Info InLunarWeek InLunarWeekToDate InMonth InMonths InMonthsToDate InMonthToDate ' +
-		'InputAvg InputSum InQuarter InQuarterToDate Interval Interval# InWeek InWeekToDate InYear InYearToDate IRR IsNull ' +
+		'InputAvg InputSum InQuarter InQuarterToDate InWeek InWeekToDate InYear InYearToDate IRR IsNull ' +
 		'IsNum IsText ' +
 		'KeepChar Kurtosis ' +
 		'Last LastWorkDate Left Len LightBlue LightCyan LightGray LightGreen LightMagenta LightRed LINEST_B LINEST_DF ' +
 		'LINEST_F LINEST_M LINEST_R2 LINEST_SEB LINEST_SEM LINEST_SEY LINEST_SSREG LINEST_SSRESID LocalTime log log10 ' +
 		'Lower LTrim LunarWeekEnd LunarWeekName LunarWeekStart ' +
 		'Magenta MakeDate MakeTime MakeWeekDate MapSubString Match Max MaxString Median Mid Min MinString Minute ' +
-		'MissingCount MixMatch Mod Mode Money Money# Month MonthEnd MonthName MonthsEnd MonthsName MonthsStart MonthStart ' +
-		'NATIVE NetWorkDays NoOfColumns NoOfReports NoOfRows NORMDIST NORMINV Now nPer NPV Null NullCount Num Num# NumAvg ' +
+		'MissingCount MixMatch Mod Mode Month MonthEnd MonthName MonthsEnd MonthsName MonthsStart MonthStart ' +
+		'NATIVE NetWorkDays NoOfColumns NoOfReports NoOfRows NORMDIST NORMINV Now nPer NPV Null NullCount NumAvg ' +
 		'NumCount NumericCount NumMax NumMin NumSum ' +
 		'Odd Only Ord OSUser ' +
 		'Permut Pi Pick Pmt pow PurgeChar PV ' +
@@ -40,7 +40,7 @@ function(hljs) {
 		'ReportId ReportName ReportNumber RGB Right Round RowNo RTrim ' +
 		'Second SecondaryDimensionality SetDateYear SetDateYearMonth Sign sin sinh Skew sqr sqrt StateName Stdev Sterr ' +
 		'STEYX SubField SubStringCount Sum SysColor ' +
-		'tan tanh TDIST Text TextBetween TextCount Time Time# Timestamp Timestamp# TimeZone TINV Today Top Trim True ' +
+		'tan tanh TDIST Text TextBetween TextCount TimeZone TINV Today Top Trim True ' +
 		'TTest1_conf TTest1_df TTest1_dif TTest1_lower TTest1_sig TTest1_sterr TTest1_t TTest1_upper TTest1w_conf ' +
 		'TTest1w_df TTest1w_dif TTest1w_lower TTest1w_sig TTest1w_sterr TTest1w_t TTest1w_upper TTest_conf TTest_df ' +
 		'TTest_dif TTest_lower TTest_sig TTest_sterr TTest_t TTest_upper TTestw_conf TTestw_df TTestw_dif TTestw_lower ' +
@@ -53,13 +53,18 @@ function(hljs) {
 		'ZTest_conf ZTest_dif ZTest_lower ZTest_sig ZTest_sterr ZTest_upper ZTest_z ZTestw_conf ZTestw_dif ZTestw_lower ' +
 		'ZTestw_sig ZTestw_sterr ZTestw_upper ZTestw_z'		
   };
+  var QV_EXP_HASH_FUNCTIONS = { //Deals with the correct highlighting of the functions that have an interpretation version eg. date() and date#()
+		className: 'built_in',
+		begin: '\\b(date|interval|money|num|time|timestamp)\\b#?\\s?', //Tried to add look forward but seems to cause it to fail (?=\()
+		illegal: '\\n',
+  };
   var QV_EXP_STRING_SINGLE = {
         className: 'string',
         begin: '\'', end: '\'', //Gives a string when using single quotes
 		illegal: '\\n',
         contains: [hljs.BACKSLASH_ESCAPE, {begin: '\'\''}],
 			relevance: 0
-  }
+  };
   var QV_EXP_STRING_DOUBLE = {
 		className: 'string',
         begin: '"', end: '"', //Gives a string when using double quotes
@@ -81,6 +86,7 @@ function(hljs) {
       hljs.C_LINE_COMMENT_MODE, 
       hljs.C_BLOCK_COMMENT_MODE,
 	  hljs.QUOTE_STRING_MODE,
+	  QV_EXP_HASH_FUNCTIONS,
 	  QV_EXP_STRING_SINGLE,
 	  QV_EXP_STRING_DOUBLE,
 	  {
