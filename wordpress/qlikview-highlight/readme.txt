@@ -1,17 +1,20 @@
-=== QlikView for Wordpress ===
+=== QlikView for WordPress ===
 Contributors: Matt Fryer
 Tags: highlight, syntax, qlikview, post, page, shortcode, plugin
-Donate link: 
+Donate link: http://www.qlikviewaddict.com/
 Requires at least: 4.0
 Tested up to: 4.0
 Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Automatic syntax highlighting of QlikView script on any Wordpress page or post.
+Automatic syntax highlighting of QlikView script on any WordPress page or post.
 
 == Description ==
-This Wordpress plugin provides automatic syntax highlighting of QlikView script on any Wordpress page or post. It currently supports highlighting of the following QlikView script elements:
+This WordPress plugin provides automatic syntax highlighting of QlikView script on any WordPress page or post. It was developed by Matt Fryer, an experienced QlikView consultant and author of the popular blog [QlikViewAddict.com](http://www.qlikviewaddict.com).
+
+= Features =
+It currently supports highlighting of the following QlikView script elements:
 
 * Line comments //
 * Block comment /*..*/
@@ -21,13 +24,51 @@ This Wordpress plugin provides automatic syntax highlighting of QlikView script 
 
 Future improvements may include better more accurate syntax highlighting (such as field names) and the ability to change the highlighting style from the QlikView default.
 
-Using the plugin is simple. Any QlikView script within a Wordpress page or post that is wrapped within the shortcode [qlikview] ... [/qlikview] will be automatically highlighted.
+= How to use =
+Simply wrap any QlikView code blocks within the [qlikview] ... [/qlikview] shortcode tags. By default, the plugin will assume that the code contained in the tags is QlikView script and will highlight it accordingly. You can specify an alternative code type using the type parameter within the opening tag. For example [qlikview type="exp"]=num(MyField)[/qlikview]. Currently supported code types are "qvs", "exp" (or "qve"), "sql", "vbscript" and "javascript". If no code type is specified then "qvs" will be assumed. 
+
+Alternatively, the shortcode can be entered using the button within the WordPress visual post/page editor. Select the block of code within the post or page, then click the QlikView button on the editor menu. You will be prompted for what code type the block should be highlighted as. Once complete, click OK and the shortcode will be added around the code block for you.
+
+= Feedback =
+If you spot any issues or have any suggestions to improve the plugin, please let me know either via the support tab here, or via a comment on [QlikViewAddict.com](http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html).
 
 == Installation ==
-1. Navigate to the "Pligins"->"Add New"->"Upload Plugin" page within the Wordpress administration panel and upload the entire .zip file provided. Alternatively, upload the directory "/qlikview-highlight/" and its contents from the .zip file to the "/wp-content/plugins/" directory of your Wordpess site.
-2. Activate the plugin "QlikView Syntax Highlighting" through the "Plugins" menu in WordPress administration panel.
+There are 2 possible methods to install this plugin. We would highly recommend using method 1.
+
+= Method 1 =
+1. Login to your WordPress Admin Portal.
+2. On the left hand navigation panel, select "Plugins". 
+3. Towards the top of the plugins list, click the "Add New" button. 
+4. In the search box towards the right hand side, type "QlikView" and hit enter to search.
+5. The QlikView for WordPress plugin is currently the only result returned. Click the "Install Now" button next to it.
+6. WordPress will then download and install the plugin for you. Once complete, click the "Activate Plugin" link to complete the installation.
+7. The plugin is now installed and the shortcode is ready to use.
+
+= Method 2 =
+Note: if you have a previous version of this plugin installed it must be removed before this version is installed.
+1. Download the plugin zip file by clicking the link above.
+2. Login to your WordPress Admin Portal.
+3. On the left hand navigation panel, select "Plugins". 
+4. Towards the top of the plugins list, click the "Add New" button.
+5. Again, towards the top, click the "Upload Plugin" button.
+6. Click the "Browse" button and navigate to the location where you saved the plugin zip file and select it.
+7. Click the "Install Now" button
+8. Once back on the plugins page, activate the "QlikView for Wordpress" plugin.
+
+= Method 3 =
+1. Download the plugin zip file by clicking the link above.
+2. Extract the contents of the zip file to a folder on your computer.
+3. Upload the entire directory "/qlikview-highlight/" and its contents from the .zip file to the "/wp-content/plugins/" directory of your Wordpess site. If a previous version of this plugin has been installed, overwrite the entire folder.
+4. Login to your WordPress Admin Portal.
+5. On the left hand navigation panel, select "Plugins".
+6. Activate the "QlikView for WordPress" plugin.
 
 == Frequently Asked Questions ==
+= Once installed, how do I use the plugin? =
+Simply wrap any QlikView code blocks within the [qlikview] ... [/qlikview] shortcode tags. By default, the plugin will assume that the code contained in the tags is QlikView script and will highlight it accordingly. You can specify an alternative code type using the type parameter within the opening tag. For example [qlikview type="exp"]=num(MyField)[/qlikview]. Currently supported code types are "qvs", "exp" (or "qve"), "sql", "vbscript" and "javascript". If no code type is specified then "qvs" will be assumed. 
+
+Alternatively, the shortcode can be entered using the button within the WordPress visual post/page editor. Select the block of code within the post or page, then click the QlikView button on the editor menu. You will be prompted to specify what code type the block should be highlighted as. Once complete, click OK and the shortcode will be added around the code block for you.
+
 = Is the syntax highlighting perfect? =
 The syntax highlighting is an approximation of the default highlighting within the QlikView Edit Script dialog. It is not a perfect replication.
 
@@ -43,7 +84,7 @@ It uses a custom build of highlight.js to provide the highlighting.
 == Screenshots ==
 
 1. An example section of QlikView script showing the syntax highlighting provided by this plugin. 
-2. Includes a support for adding shortcode via the Wordpress visual post/page editor.
+2. Includes a support for adding shortcode via the WordPress visual post/page editor.
 
 == Changelog ==
 = 1.0
@@ -64,7 +105,10 @@ It uses a custom build of highlight.js to provide the highlighting.
 
 == Upgrade Notice ==
 = 0.2 =
-All previous versions of this plugin should be uninstalled from Wordpress before this version is installed.
+This version provides significant improvements and bug fixes over the previous release and marks it's migration to WordPress.org. All previous versions of this plugin should be uninstalled from WordPress before this version is installed.
 
 = 0.1 =
-This version provides the initial pre-release and so no upgrade is necessary.
+This version provides the initial pre-release.
+
+== Credits ==
+Thanks to Steve Dark and Dan Barraett for great help with testing the plugin!
