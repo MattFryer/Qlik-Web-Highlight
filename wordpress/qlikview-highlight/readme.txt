@@ -4,14 +4,14 @@ Tags: highlight, syntax, qlikview, post, page, shortcode, plugin
 Donate link: 
 Requires at least: 4.0
 Tested up to: 4.0
-Stable tag: 4.0
+Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Automatically syntax highlights QlikView script on any Wordpress page or post.
+Automatic syntax highlighting of QlikView script on any Wordpress page or post.
 
 == Description ==
-This Wordpress plugin provides automatic syntax highlighting of QlikView script on any Wordpress page or post. It uses a custom build of highlight.js to provide the highlighting. It currently supports highlighting of the following QlikView script elements:
+This Wordpress plugin provides automatic syntax highlighting of QlikView script on any Wordpress page or post. It currently supports highlighting of the following QlikView script elements:
 
 * Line comments //
 * Block comment /*..*/
@@ -32,10 +32,13 @@ Using the plugin is simple. Any QlikView script within a Wordpress page or post 
 The syntax highlighting is an approximation of the default highlighting within the QlikView Edit Script dialog. It is not a perfect replication.
 
 = Can it highlight other languages? =
-It can currently highlight a handful of languages that are associated with QlikView. These currently include SQL, VBScript and JavaScript.
+As well as QlikView script and expressions, it can currently highlight a handful of other languages that are associated with QlikView. These currently include SQL, VBScript and JavaScript.
 
 = Can I use it with another highlighting plugin? =
 The plugin has not been tested with any other highlighting plugins (syntax or otherwise) and so it cannot be guaranteed to work alongside them, especially those also based on highlight.js.
+
+= How does it work? =
+It uses a custom build of highlight.js to provide the highlighting.
 
 == Screenshots ==
 
@@ -43,6 +46,10 @@ The plugin has not been tested with any other highlighting plugins (syntax or ot
 2. Includes a support for adding shortcode via the Wordpress visual post/page editor.
 
 == Changelog ==
+= 1.0
+* General code improvements.
+* Corrected issue with $() variable use within a load statement not being highlighted correctly.
+
 = 0.2 =
 * Added support for highlighting QlikView expressions
 * Added the ability to hightlight a handful of other languages that are related to QlikView.
