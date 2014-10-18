@@ -1,0 +1,27 @@
+<html>
+<head>
+
+<link rel="stylesheet" title="Visual Studio" href="styles/qlikview.css">
+<script src="highlight.pack.js"></script>
+<script>
+	hljs.configure({tabReplace: '    '});
+	hljs.initHighlightingOnLoad();
+</script>
+
+</head>
+<body>
+
+<pre>
+<code class="exp">=sum(TOTAL < Field1, Field2 > //This is a line comment
+	{$ 
+		<
+			Field3 = {">=1"},
+			Field4 = {A, "$(=only(Dim2))"}, //This is another line comment
+			Field5 =,
+			Field6 = {"*"}-{"Jan"} /* This is a block comment*/
+		>
+	}
+(Expression1 * 2) + $(vMyVar) + [Expression 2]) & ' a string of some text ' & [Field 99]
+</code></pre>
+
+</body>

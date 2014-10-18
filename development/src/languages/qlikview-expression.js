@@ -5,7 +5,7 @@
 
 function(hljs) {
   var QV_EXP_KEYWORDS = {
-    keyword: 'All Total Distinct Nodistinct',
+    function_keyword: 'All Total Distinct Nodistinct',
 	
     built_in: 'Above acos AddMonths AddYears After Age Aggr Alt ApplyCodepage ApplyMap ARGB asin atan atan2 Author Avg ' +
 		'Before Below BitCount Black BlackAndSchole Blue Bottom Brown ' +
@@ -78,6 +78,11 @@ function(hljs) {
 		illegal: '\\n',
 			relevance: 10
   };
+  var QV_EXP_BRACED_FIELD = {
+		className: 'field',
+		begin: '\\[', end: '\\]', //Gives a field when using []
+			relevance: 0
+  };
   return {
     aliases: ['exp', 'qve','qlikview-exp','qv-exp'],
 	case_insensitive: true,
@@ -89,23 +94,54 @@ function(hljs) {
 	  QV_EXP_HASH_FUNCTIONS,
 	  QV_EXP_STRING_SINGLE,
 	  QV_EXP_STRING_DOUBLE,
-	  {
-		className: 'field',
-		begin: '\\[', end: '\\]', //Gives a field when using []
-			relevance: 0
-	  },
-	  QV_EXP_VARIABLE_USE/*,
+	  QV_EXP_VARIABLE_USE,
+	  QV_EXP_VARIABLE_USE,
 	  {
 		className: 'total-modifier',
-        begin: '\\btotal\\b<', end: '>',
-        keywords: 'total',
+        begin: '<', end: '>',
 		contains: [
 			hljs.C_LINE_COMMENT_MODE, //Gives a // comment
 			hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
-			hljs.QUOTE_STRING_MODE,
+			QV_EXP_BRACED_FIELD,
+			{
+				className: 'field',
+				begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b', 
+				illegal: '\n\s',
+			}
 		],
 			relevance: 10
-	  }*/
+	  },
+	  {
+		className: 'set-analysis',
+        begin: '\\{', end: '\\}',
+		contains: [
+			hljs.C_LINE_COMMENT_MODE, //Gives a // comment
+			hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
+			{
+				begin: '\\{', end: '\\}',
+				contains: [
+					hljs.C_LINE_COMMENT_MODE, //Gives a // comment
+					hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
+					{
+						className: 'set-analysis-quotes',
+						begin: '"', end: '"',
+						illegal: '\n\s',
+					}
+				]
+			},
+			{
+				className: 'field',
+				begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
+			}
+		]
+	  },
+	  QV_EXP_BRACED_FIELD,
+	  {
+		className: 'field',
+		keywords: QV_EXP_KEYWORDS, //Highlights all keywords and function names
+		begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b', 
+		illegal: '\n\s',
+      }
     ]
   };
 }

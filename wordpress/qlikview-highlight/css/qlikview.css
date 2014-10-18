@@ -1,8 +1,3 @@
-/*
-
-Visual Studio-like style based on original C# coloring by Jason Diamond <jason@diamond.name>
-
-*/
 .hljs {
   display: block;
   overflow-x: auto;
@@ -24,6 +19,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 }
 
 .hljs-keyword,
+.hljs-function_keyword,
 .hljs-id,
 .hljs-built_in,.css
 .smalltalk .hljs-class,
@@ -64,7 +60,8 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
   font-style: normal;
 }
 
-.hljs-field {
+.hljs-field, 
+.hljs-set-analysis-quotes {
   color: #800000;
   font-style: normal;
 }

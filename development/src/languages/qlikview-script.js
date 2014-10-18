@@ -79,11 +79,11 @@ function(hljs) {
   var QVS_HASH_FUNCTIONS = { //Deals with the correct highlighting of the functions that have an interpretation version eg. date() and date#()
 		className: 'built_in',
 		begin: '\\b(date|interval|money|num|time|timestamp)\\b#?\\s?(?=(\\(|$))', 
-		illegal: '\\n',
+		illegal: '\\n'
   };
   var QVS_KEYWORD_FUNCTIONS = { //Deals with the correct highlighting of the functions that have a keyword with the same name eg. if, left, right, etc
 		className: 'built_in',
-		begin: '\\b(if|left|right)\\b#?\\s?(?=(\\(|$))', 
+		begin: '\\b(if|left|right)\\b#?\\s?(?=(\\(|$))', //Contains a forward look for a bracket
 		illegal: '\\n',
   };
   var QVS_STRING_SINGLE = {
@@ -118,6 +118,11 @@ function(hljs) {
 		illegal: '\\n',
 			relevance: 10
   };
+  var QVS_BRACED_FIELD = {
+		className: 'field',
+		begin: '\\[', end: '\\]', //Gives a field when using []
+			relevance: 0
+  };
   return {
     aliases: ['qvs','qlikview'],
 	case_insensitive: true,
@@ -133,13 +138,9 @@ function(hljs) {
 	  QVS_REM_COMMENT,
 	  QVS_VARIABLE_DEF,
 	  QVS_VARIABLE_USE,
+	  QVS_BRACED_FIELD,
 	  {
-		className: 'field',
-		begin: '\\[', end: '\\]', //Gives a field when using []
-			relevance: 0
-	  },
-	  {
-		className: 'sql-statement',
+		className: 'sql_statement',
 		begin: '\\bsql\\b', end: ';', //Ensures SQL statements are identified to stop other keywords being highlighted in them
 		keywords: 'sql',
 		contains: [
@@ -152,9 +153,9 @@ function(hljs) {
 		]
 	  },
 	  {
-		className: 'load-statement',
-        begin: '\\bload\\b', end: '(;|\\bresident\\b|\\binline\\b|\\bautogenerate\\b|\\bfrom\\b)',
-        keywords: QVS_KEYWORDS,
+		className: 'load_statement',
+        begin: '\\bload\\b', end: ';',
+		keywords: 'load distinct',
 		contains: [
 			hljs.C_LINE_COMMENT_MODE, //Gives a // comment
 			hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
@@ -163,7 +164,32 @@ function(hljs) {
 			QVS_KEYWORD_FUNCTIONS,
 			QVS_STRING_SINGLE,
 			QVS_STRING_DOUBLE,
-			QVS_VARIABLE_USE
+			QVS_VARIABLE_USE,
+			QVS_BRACED_FIELD,
+			{
+				className: 'load_source', //need to gave a way to deal with field names in where and group by clauses to be  highlighted
+				begin: '(\\bresident\\b|\\binline\\b|\\bautogenerate\\b|\\bfrom\\b)', end: '(?=(;|$))',
+				keywords: QVS_KEYWORDS,//'resident inline autogenerate from', 
+				contains: [
+					hljs.C_LINE_COMMENT_MODE, //Gives a // comment
+					hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
+					hljs.QUOTE_STRING_MODE,
+					QVS_STRING_SINGLE,
+					QVS_STRING_DOUBLE,
+					QVS_VARIABLE_USE,
+					QVS_BRACED_FIELD,
+					{
+						className: 'load_params',
+						begin: '\\(', end: '\\)',
+					}
+				]
+			},
+			{
+				className: 'field',
+				begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
+				keywords: QVS_KEYWORDS,
+				illegal: '\n\s',
+			}
 		],
 			relevance: 10
 	  }
