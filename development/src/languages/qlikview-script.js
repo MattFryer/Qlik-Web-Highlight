@@ -2,6 +2,18 @@
  Language: QlikView Script
  Contributors: Matthew Fryer <matthew_fryer@hotmail.com>
  */
+ 
+ /*
+ Notes:
+ Forward look for a bracket (?=(\\(|$))
+ Built in items are:
+	hljs.C_LINE_COMMENT_MODE, //Gives a // comment
+	hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
+	hljs.QUOTE_STRING_MODE, //Allows use of RegEx in single quotes
+ Variable definitions could be improved to include whole statement and its contained parts
+ Need to gave a way to deal with field names in WHERE, ORDER BY and GROUP BY clauses of load statements to be  highlighted. Can be on preceding loads and froms, residents, etc
+ Identification of field names is repeated. Break out into variable
+ */
 
 function(hljs) {
   var QVS_KEYWORDS = {
@@ -83,44 +95,44 @@ function(hljs) {
   };
   var QVS_KEYWORD_FUNCTIONS = { //Deals with the correct highlighting of the functions that have a keyword with the same name eg. if, left, right, etc
 		className: 'built_in',
-		begin: '\\b(if|left|right)\\b#?\\s?(?=(\\(|$))', //Contains a forward look for a bracket
+		begin: '\\b(if|left|right)\\b#?\\s?(?=(\\(|$))', 
 		illegal: '\\n',
   };
-  var QVS_STRING_SINGLE = {
+  var QVS_STRING_SINGLE = { //Gives a string when using single quotes
         className: 'string',
-        begin: '\'', end: '\'', //Gives a string when using single quotes
+        begin: '\'', end: '\'',
 		illegal: '\\n',
         contains: [hljs.BACKSLASH_ESCAPE, {begin: '\'\''}],
 			relevance: 0
   };
-  var QVS_STRING_DOUBLE = {
-		className: 'string',
-        begin: '"', end: '"', //Gives a string when using double quotes
+  var QVS_STRING_DOUBLE = { //Gives a string when using double quotes
+		className: 'string', 
+        begin: '"', end: '"',
 		illegal: '\\n',
         contains: [hljs.BACKSLASH_ESCAPE, {begin: '""'}],
 			relevance: 0
   };
-  var QVS_REM_COMMENT = {
-		className: 'comment',
-		begin: '\^rem\\b', end: ';', //Gives a REM comment. Correctly matches when it is at the start of a line only.
+  var QVS_REM_COMMENT = { //Gives a REM comment. Correctly matches when it is at the start of a line only.
+		className: 'comment', 
+		begin: '\^rem\\b', end: ';',
 			relevance: 10
   };
-  var QVS_VARIABLE_DEF = {
-	    className: 'variable',
-		begin: '\\b(let|set)\\b', end: '\\w+', //Gives a variable definition when using SET or LET
+  var QVS_VARIABLE_DEF = { //Gives a variable definition when using SET or LET
+	    className: 'variable', 
+		begin: '\\b(let|set)\\b\\s+', end: '\\w+',
 		keywords: 'set let',
 		illegal: '\\n',
 			relevance: 0
   };
-  var QVS_VARIABLE_USE = {
+  var QVS_VARIABLE_USE = { //Gives a variable when used inside $()
 	    className: 'variable',
-		begin: '\\$\\(', end: '\\)', //Gives a variable when used inside $()
+		begin: '\\$\\(', end: '\\)', 
 		illegal: '\\n',
 			relevance: 10
   };
-  var QVS_BRACED_FIELD = {
+  var QVS_BRACED_FIELD = { //Gives a field when using square braces []
 		className: 'field',
-		begin: '\\[', end: '\\]', //Gives a field when using []
+		begin: '\\[', end: '\\]', 
 			relevance: 0
   };
   return {
@@ -140,8 +152,8 @@ function(hljs) {
 	  QVS_VARIABLE_USE,
 	  QVS_BRACED_FIELD,
 	  {
-		className: 'sql_statement',
-		begin: '\\bsql\\b', end: ';', //Ensures SQL statements are identified to stop other keywords being highlighted in them
+		className: 'sql_statement', //Ensures SQL statements are identified to stop other keywords being highlighted within them
+		begin: '\\bsql\\b', end: ';',
 		keywords: 'sql',
 		contains: [
 			hljs.C_LINE_COMMENT_MODE, 
@@ -153,12 +165,12 @@ function(hljs) {
 		]
 	  },
 	  {
-		className: 'load_statement',
+		className: 'load_statement', //Identifies load statements 
         begin: '\\bload\\b', end: ';',
 		keywords: 'load distinct',
 		contains: [
-			hljs.C_LINE_COMMENT_MODE, //Gives a // comment
-			hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
+			hljs.C_LINE_COMMENT_MODE,
+			hljs.C_BLOCK_COMMENT_MODE,
 			hljs.QUOTE_STRING_MODE,
 			QVS_HASH_FUNCTIONS,
 			QVS_KEYWORD_FUNCTIONS,
@@ -167,25 +179,38 @@ function(hljs) {
 			QVS_VARIABLE_USE,
 			QVS_BRACED_FIELD,
 			{
-				className: 'load_source', //need to gave a way to deal with field names in where and group by clauses to be  highlighted
+				className: 'load_source', //Identifies if the load statement has a source rather than it being a preceding load.
 				begin: '(\\bresident\\b|\\binline\\b|\\bautogenerate\\b|\\bfrom\\b)', end: '(?=(;|$))',
-				keywords: QVS_KEYWORDS,//'resident inline autogenerate from', 
+				keywords: QVS_KEYWORDS, 
 				contains: [
-					hljs.C_LINE_COMMENT_MODE, //Gives a // comment
-					hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
+					hljs.C_LINE_COMMENT_MODE, 
+					hljs.C_BLOCK_COMMENT_MODE, 
 					hljs.QUOTE_STRING_MODE,
 					QVS_STRING_SINGLE,
 					QVS_STRING_DOUBLE,
 					QVS_VARIABLE_USE,
 					QVS_BRACED_FIELD,
 					{
-						className: 'load_params',
+						className: 'format_specification', //Identifies the format specification contained in braces ()
 						begin: '\\(', end: '\\)',
+						keywords: {
+							format_specification_items: 'ansi oem mac UTF-8 Unicode txt fix dif biff ooxml html xml qvd ' +
+								'delimiter is no eof embedded labels explicit no table header line lines comment record ' +
+								'quotes msq filters'
+						},
+						contains: [
+							hljs.C_LINE_COMMENT_MODE, 
+							hljs.C_BLOCK_COMMENT_MODE,
+							hljs.QUOTE_STRING_MODE,
+							QVS_STRING_SINGLE,
+							QVS_STRING_DOUBLE,
+							QVS_VARIABLE_USE,
+						]
 					}
 				]
 			},
 			{
-				className: 'field',
+				className: 'field', //Identifies field names within the load statement
 				begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
 				keywords: QVS_KEYWORDS,
 				illegal: '\n\s',

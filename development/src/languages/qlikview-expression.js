@@ -2,6 +2,17 @@
  Language: QlikView Expressions
  Contributors: Matthew Fryer <matthew_fryer@hotmail.com>
  */
+ 
+  /*
+ Notes:
+ Forward look for a bracket (?=(\\(|$))
+ Built in items are:
+	hljs.C_LINE_COMMENT_MODE, //Gives a // comment
+	hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
+	hljs.QUOTE_STRING_MODE, //Allows use of RegEx in single quotes
+Can total modifier statements be improved to only do if following the total keyword?
+Identification of field names is repeated. Break out into variable
+ */
 
 function(hljs) {
   var QV_EXP_KEYWORDS = {
@@ -58,35 +69,35 @@ function(hljs) {
 		begin: '\\b(date|interval|money|num|time|timestamp)\\b#?\\s?', //Tried to add look forward but seems to cause it to fail (?=\()
 		illegal: '\\n',
   };
-  var QV_EXP_STRING_SINGLE = {
+  var QV_EXP_STRING_SINGLE = { //Gives a string when using single quotes
         className: 'string',
-        begin: '\'', end: '\'', //Gives a string when using single quotes
+        begin: '\'', end: '\'', 
 		illegal: '\\n',
         contains: [hljs.BACKSLASH_ESCAPE, {begin: '\'\''}],
 			relevance: 0
   };
-  var QV_EXP_STRING_DOUBLE = {
+  var QV_EXP_STRING_DOUBLE = { //Gives a string when using double quotes
 		className: 'string',
-        begin: '"', end: '"', //Gives a string when using double quotes
+        begin: '"', end: '"',
 		illegal: '\\n',
         contains: [hljs.BACKSLASH_ESCAPE, {begin: '""'}],
 			relevance: 0
   };
-  var QV_EXP_VARIABLE_USE = {
+  var QV_EXP_VARIABLE_USE = { //Gives a variable when used inside $()
 	    className: 'variable',
-		begin: '\\$\\(', end: '\\)', //Gives a variable when used inside $()
+		begin: '\\$\\(', end: '\\)',
 		illegal: '\\n',
 			relevance: 10
   };
-  var QV_EXP_BRACED_FIELD = {
+  var QV_EXP_BRACED_FIELD = { //Gives a field when using []
 		className: 'field',
-		begin: '\\[', end: '\\]', //Gives a field when using []
+		begin: '\\[', end: '\\]',
 			relevance: 0
   };
   return {
     aliases: ['exp', 'qve','qlikview-exp','qv-exp'],
 	case_insensitive: true,
-    keywords: QV_EXP_KEYWORDS, //Highlights all keywords and function names
+    keywords: QV_EXP_KEYWORDS,
     contains: [
       hljs.C_LINE_COMMENT_MODE, 
       hljs.C_BLOCK_COMMENT_MODE,
@@ -97,11 +108,11 @@ function(hljs) {
 	  QV_EXP_VARIABLE_USE,
 	  QV_EXP_VARIABLE_USE,
 	  {
-		className: 'total-modifier',
+		className: 'total-modifier', //finds total modifiers
         begin: '<', end: '>',
 		contains: [
-			hljs.C_LINE_COMMENT_MODE, //Gives a // comment
-			hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
+			hljs.C_LINE_COMMENT_MODE,
+			hljs.C_BLOCK_COMMENT_MODE,
 			QV_EXP_BRACED_FIELD,
 			{
 				className: 'field',
@@ -112,33 +123,33 @@ function(hljs) {
 			relevance: 10
 	  },
 	  {
-		className: 'set-analysis',
+		className: 'set-analysis', //Identifies set analysis
         begin: '\\{', end: '\\}',
 		contains: [
-			hljs.C_LINE_COMMENT_MODE, //Gives a // comment
-			hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
+			hljs.C_LINE_COMMENT_MODE, 
+			hljs.C_BLOCK_COMMENT_MODE, 
 			{
-				begin: '\\{', end: '\\}',
+				begin: '\\{', end: '\\}', //Identifies a field value set
 				contains: [
-					hljs.C_LINE_COMMENT_MODE, //Gives a // comment
-					hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
+					hljs.C_LINE_COMMENT_MODE, 
+					hljs.C_BLOCK_COMMENT_MODE, 
 					{
-						className: 'set-analysis-quotes',
+						className: 'set-analysis-quotes', //Identifies when double quotes are used to define field value
 						begin: '"', end: '"',
 						illegal: '\n\s',
 					}
 				]
 			},
 			{
-				className: 'field',
+				className: 'field', //Identifies when a field name is used in set analysis
 				begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
 			}
 		]
 	  },
 	  QV_EXP_BRACED_FIELD,
 	  {
-		className: 'field',
-		keywords: QV_EXP_KEYWORDS, //Highlights all keywords and function names
+		className: 'field', //Highlights all field names used in an expression
+		keywords: QV_EXP_KEYWORDS,
 		begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b', 
 		illegal: '\n\s',
       }
