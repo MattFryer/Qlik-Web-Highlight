@@ -143,6 +143,7 @@ function(hljs) {
 			{
 				className: 'field', //Identifies when a field name is used in set analysis
 				begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
+				illegal: '\n\s',
 			}
 		]
 	  },

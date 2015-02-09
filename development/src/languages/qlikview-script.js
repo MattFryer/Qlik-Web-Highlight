@@ -11,7 +11,7 @@
 	hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
 	hljs.QUOTE_STRING_MODE, //Allows use of RegEx in single quotes
  Variable definitions could be improved to include whole statement and its contained parts
- Need to gave a way to deal with field names in WHERE, ORDER BY and GROUP BY clauses of load statements to be  highlighted. Can be on preceding loads and froms, residents, etc
+ Need to gave a way to deal with field names in WHERE, WHILE, ORDER BY and GROUP BY clauses of load statements to be  highlighted. Can be on preceding loads and froms, residents, etc
  Identification of field names is repeated. Break out into variable
  */
 
@@ -25,7 +25,7 @@ function(hljs) {
 		'Field Fields First For Force From From_Field ' +
 		'Generic Group ' +
 		'Hierarchy|10 HierarchyBelongsTo|10 ' +
-		'if Image_size Info Inline Inner Inputfield|10 Intervalmatch|10 Into ' +
+		'if Image_size In Info Inline Inner Inputfield|10 Intervalmatch|10 Into ' +
 		'Join ' +
 		'Keep ' +
 		'Left Let Load Loop Loosen ' +
@@ -50,7 +50,7 @@ function(hljs) {
 		'DocumentName DocumentPath DocumentTitle Dual ' +
 		'E Evaluate Even Exists Exp ' +
 		'Fabs Fact False Fdist FieldIndex FieldName FieldNumber FieldValue FieldValueCount FileBaseName FileDir ' +
-		'FileExtension FileName FilePath FileSize FileTime FindOneOf Finv FirstSortedValue FirstValue FirstWorkDate ' +
+		'FileExtension FileList FileName FilePath FileSize FileTime FindOneOf Finv FirstSortedValue FirstValue FirstWorkDate ' +
 		'Floor Fmod Frac Fractile Fv ' +
 		'GetExtendedProperty GetFolderPath GetObjectField GetRegistryString GMT Green ' +
 		'Hash128 Hash160 Hash256 Hour HSL ' +
@@ -122,7 +122,7 @@ function(hljs) {
 		begin: '\\b(let|set)\\b\\s+', end: '\\w+',
 		keywords: 'set let',
 		illegal: '\\n',
-			relevance: 0
+			relevance: 10
   };
   var QVS_VARIABLE_USE = { //Gives a variable when used inside $()
 	    className: 'variable',

@@ -15,7 +15,7 @@
 			      var type = 'qvs';
 			   }
 
-               ed.execCommand('mceInsertContent', false, '[qlikview type="'+type+'"]' + selected + '[/recent-posts]');
+               ed.execCommand('mceInsertContent', false, '[qlikview type="'+type+'"]' + selected + '[/qlikview]');
             }
          });
       },
@@ -24,11 +24,11 @@
       },
       getInfo : function() {
          return {
-            longname : "QlikView Code Block Syntax Highlighter",
+            longname : "QlikView for WordPress",
             author : 'Matthew Fryer',
             authorurl : 'http://www.qlikviewaddict.com/',
             infourl : 'http://www.qlikviewaddict.com/',
-            version : "0.2"
+            version : "1.1"
          };
       }
    });
