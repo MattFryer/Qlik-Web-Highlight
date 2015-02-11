@@ -1,9 +1,6 @@
 # Windows thumb files
 Thumbs.db
 
-# Build interim files
-development/node_modules
-
 # Release packaging files
 mediawiki/*.zip
 qvhighlight/*.zip
