@@ -107,8 +107,8 @@ Scala ("scala")
 * ``params``:           everything in parentheses inside a class header
 * ``inheritance``:      keywords "extends" and "with" inside class header
 
-Groovy ("groovy)
-----------------
+Groovy ("groovy")
+-----------------
 
 * ``keyword``:          keyword
 * ``number``:           number
@@ -236,7 +236,7 @@ Less ("less")
 * ``built_in``:         inline javascript (or whatever host language) string
 
 Stylus ("stylus", "styl")
--------------
+-------------------------
 
 * ``at_rule``:          @-rule till first "{" or ";"
 * ``attribute``:        property name inside a rule
@@ -265,8 +265,8 @@ Markdown ("markdown", "md", "mkdown", "mkd")
 * ``link_url``:          link url
 * ``link_reference``:    link reference
 
-AsciiDoc ("asciidoc")
----------------------
+AsciiDoc ("asciidoc", "adoc")
+-----------------------------
 
 * ``header``:            heading
 * ``bullet``:            list or labeled bullet
@@ -286,29 +286,27 @@ Django ("django", "jinja")
 
 * ``keyword``:          HTML tag in HTML, default tags and default filters in templates
 * ``tag``:              any tag from "<" till ">"
-* ``comment``:          comment
+* ``comment``:          template comment, both {# .. #} and {% comment %}
 * ``doctype``:          <!DOCTYPE ... > declaration
 * ``attribute``:        tag's attribute with or without value
 * ``value``:            attribute's value
 * ``template_tag``:     template tag {% .. %}
 * ``variable``:         template variable {{ .. }}
-* ``template_comment``: template comment, both {# .. #} and {% comment %}
 * ``filter``:           filter from "|" till the next filter or the end of tag
 * ``argument``:         filter argument
 
 
 Twig ("twig", "craftcms")
---------------------------
+-------------------------
 
 * ``keyword``:          HTML tag in HTML, default tags and default filters in templates
 * ``tag``:              any tag from "<" till ">"
-* ``comment``:          comment
+* ``comment``:          template comment {# .. #}
 * ``doctype``:          <!DOCTYPE ... > declaration
 * ``attribute``:        tag's attribute with or withou value
 * ``value``:            attribute's value
 * ``template_tag``:     template tag {% .. %}
 * ``variable``:         template variable {{ .. }}
-* ``template_comment``: template comment {# .. #}
 * ``filter``:           filter from "|" till the next filter or the end of tag
 * ``argument``:         filter argument
 
@@ -397,7 +395,7 @@ CoffeeScript ("coffeescript", "coffee", "cson", "iced")
 * ``property``:         @-property within class and functions
 
 Dart ("dart")
---------------------
+-------------
 
 * ``keyword``:          keyword
 * ``literal``:          keyword that can be uses as identifier but have special meaning in some cases
@@ -447,7 +445,7 @@ ActionScript ("actionscript", "as")
 * ``rest_arg``:         rest argument of function
 
 Haxe ("haxe", "hx")
---------------------
+-------------------
 
 * ``comment``:          comment
 * ``string``:           string
@@ -521,9 +519,8 @@ Thrift ("thrift")
 * ``comment``:          comment
 * ``class``:            struct, enum, service or exception definition header
 * ``title``:            struct, enum, service or exception identifier
-* ``stl_container``:    instantiation of STL-like containers ("list<...>")
 
-HTTP ("http")
+HTTP ("http", "https")
 -------------
 
 * ``request``:          first line of a request
@@ -593,15 +590,37 @@ Processing ("processing")
 * ``function``:         Processing setup and draw functions
 * ``built_in``:         Processing built in functions
 
-C++ ("cpp", "c", "h", "c++", "h++")
------------------------------------
+AspectJ ("aspectj")
+-------------------
+
+* ``comment``:          comment
+* ``string``:           string
+* ``number``:           number
+* ``keyword``:          keyword
+* ``annotation``:       annotation
+* ``javadoc``:          javadoc comment
+* ``function``:         method and intertype method header
+* ``aspect``:           aspect header from "aspect" till "{"
+* ``params``:           everything in parentheses inside an aspect header
+* ``inheritance``:      keywords "extends" and "implements" inside an aspect header
+* ``title``:            aspect, (intertype) method name or pointcut name inside an aspect header
+
+Fortran ("fortran", "f90", "f95")
+---------------------------------
+
+* ``comment``:          comment
+* ``string``:           string constant (single or double quote)
+* ``number``:           number
+* ``keyword``:          language keywords (function, if) 
+
+C++ ("cpp", "c", "cc", "h", "c++", "h++", "hpp")
+------------------------------------------------
 
 * ``keyword``:          keyword
 * ``number``:           number
 * ``string``:           string and character
 * ``comment``:          comment
 * ``preprocessor``:     preprocessor directive
-* ``stl_container``:    instantiation of STL containers ("vector<...>")
 
 Objective C ("objectivec", "m", "mm", "objc", "obj-c")
 ------------------------------------------------------
@@ -654,12 +673,15 @@ OCaml ("ocaml", "ml")
 ---------------------
 
 * ``keywords``:         keyword
+* ``literal``:          true false etc.
 * ``number``:           number
 * ``string``:           string
+* ``char``:             character
 * ``comment``:          comment
-* ``class``:            any custom OCaml type
-* ``title``:            the name of a custom OCaml type
-* ``annotation``:       any attribute
+* ``built_in``:         built-in type (int, list etc.)
+* ``type``:             variant constructor, module name
+* ``tag``:              polymorphic variant tag
+* ``symbol``:           type variable
 
 D ("d")
 -------
@@ -748,9 +770,10 @@ Clojure ("clojure", "clj")
 * ``list``:             non-quoted list
 * ``keyword``:          first symbol in a list
 * ``built_in``:         built-in function name as the first symbol in a list
+* ``prompt``:           REPL prompt
 
 Scheme ("scheme")
---------------------------
+-----------------
 
 * ``shebang``:          script interpreter header
 * ``comment``:          comment
@@ -813,7 +836,7 @@ DOS ("dos", "bat", "cmd")
 * ``envvar``:           environment variables
 
 PowerShell ("powershell", "ps")
---------------------------
+-------------------------------
 
 * ``keyword``:          keyword
 * ``string``:           string
@@ -1170,8 +1193,8 @@ Gherkin ("gherkin")
 * ``comment``:          comment
 * ``string``:           string
 
-Nimrod ("nimrod")
------------------
+Nimrod ("nimrod", "nim")
+------------------------
 
 * ``decorator``         pragma
 * ``string``            string literal
@@ -1180,7 +1203,7 @@ Nimrod ("nimrod")
 * ``comment``           comment
 
 Swift ("swift")
--------------------------------
+---------------
 
 * ``keyword``:          keyword
 * ``comment``:          comment
@@ -1197,7 +1220,7 @@ Swift ("swift")
 * ``preprocessor``:     @attributes
 
 G-Code ("gcode", "nc")
--------------------------------
+----------------------
 
 * ``keyword``:          G words, looping constructs and conditional operators
 * ``comment``:          comment
@@ -1208,7 +1231,7 @@ G-Code ("gcode", "nc")
 * ``label``:            block number
 
 Q ("k", "kdb")
--------------------
+--------------
 
 * ``comment``:          comment
 * ``string``:           string constant
@@ -1229,7 +1252,7 @@ Tcl ("tcl", "tk")
 * ``number``:           number
 
 Puppet ("puppet", "pp")
--------------
+-----------------------
 
 * ``comment``:          comment
 * ``string``:           string
@@ -1237,8 +1260,17 @@ Puppet ("puppet", "pp")
 * ``keyword``:          classes and types
 * ``constant``:         dependencies
 
+Stata ("stata")
+---------------
+
+* ``keyword``:          commands and control flow
+* ``label``:            macros (locals and globals)
+* ``string``:           string
+* ``comment``:          comment
+* ``literal``:          built-in functions
+
 XL ("xl", "tao")
------------
+----------------
 
 * ``keyword``:          keywords defined in the default syntax file
 * ``literal``:          names entered in the compiler (true, false, nil)
@@ -1253,3 +1285,75 @@ XL ("xl", "tao")
 * ``number``:           Number values
 * ``function``:         Function or variable definition
 * ``import``:           Import clause
+
+Roboconf ("graph", "instances")
+-------------------------------
+
+* ``keyword``:          keyword
+* ``string``:           names of imported variables
+* ``comment``:          comment
+* ``facet``:            a **facet** section
+* ``component``:        a **component** section
+* ``instance-of``:      an **instance** section
+
+STEP Part 21 ("p21", "step", "stp")
+-----------------------------------
+
+* ``preprocessor``:     delimiters
+* ``comment``:          single- or multi-line comment
+* ``keyword``:          keyword
+* ``number``:           number
+* ``string``:           string
+* ``label``:            variable reference starting with "#"
+
+Mercury ("mercury")
+-------------------
+
+* ``keyword``:          keyword
+* ``pragma``:           compiler directive
+* ``preprocessor``:     foreign language interface
+* ``built_in``:         control flow, logical, implication, head-body conjunction, purity
+* ``number``:           number, numcode of character
+* ``comment``:          comment
+* ``label``:            TODO label inside comment
+* ``string``:           string
+* ``constant``:         string format
+
+Smali ("smali")
+---------------
+
+* ``string``:           string
+* ``comment``:          comment
+* ``keyword``:          smali keywords
+* ``instruction``:      instruction
+* ``class``:            classtypes
+* ``function``:         function (call or signature)
+* ``variable``:         variable or parameter
+
+Verilog ("verilog", "v")
+------------------------
+
+* ``keyword``:          keyword, operator
+* ``comment``:          comment
+* ``typename``:         types of data, register, and net
+* ``number``:           number literals (including X and Z)
+* ``value``:            parameters passed to instances
+
+Dockerfile ("dockerfile", "docker")
+-----------------------------------
+
+* ``keyword``:          instruction keyword
+* ``comment``:          comment
+* ``number``:           number
+* ``string``:           string
+
+PF ("pf", "pf.conf")
+--------------------
+
+* ``built_in``:         top level action, e.g. block/match/pass
+* ``keyword``:          some parameter/modifier to an action (in, on, nat-to, most reserved words)
+* ``literal``:          words representing special values, e.g. all, egress
+* ``comment``:          comment
+* ``number``:           number
+* ``string``:           string
+* ``variable``:         used for both macros and tables
