@@ -1,0 +1,9 @@
+Build instructions
+
+The build routine uses node.js and thus it must be installed.
+Open a node.js command prompt
+Execute the following:
+	npm install
+Change the directory to the base development folder of the project eg. CD C:\Users\User\Documents\GitHub\qlikview-web-highlight\development
+Execute the following:
+	node tools/build.js qlikview-script qlikview-expression sql vbscript javascript
