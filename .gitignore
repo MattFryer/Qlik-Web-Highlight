@@ -1,2 +1,7 @@
 # Windows thumb files
 Thumbs.db
+
+# Release packaging files
+mediawiki/*.zip
+qvhighlight/*.zip
+wordpress/*.zip
