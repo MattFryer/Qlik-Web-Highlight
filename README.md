@@ -1,4 +1,4 @@
-#QlikView Web Syntax Highlighter
+# QlikView Web Syntax Highlighter
 
 The QlikView Web Highlighting gives basic syntax highlighting of QlikView script and expressions contained within web pages.
 
@@ -15,7 +15,7 @@ If you find any issues, including missing keywords or functions, then please let
 
 This syntax highlighter is also packaged as a plugin for  WordPress and an extension for MediaWiki.
 
-##Installation
+## Installation
 
 Here are the steps to get it installed and working yourself:
 
@@ -31,7 +31,7 @@ Here are the steps to get it installed and working yourself:
     hljs.initHighlightingOnLoad();
 </script>
 
-##How To Use
+## How To Use
 
 Wrap any QlikView script blocks included within the web page in pre and code HTML tags as shown below:
 
@@ -47,6 +47,6 @@ The class allocated within the code tag will define the type of code which synta
 
 Syntax highlighting will then automatically be applied to the block when the page is view by the user.
 
-##Disclaimer
+## Disclaimer
 
 This syntax highlighting is provided free of charge, as is, with no warranties or guarantees. Neither Datoniq Limited or QlikViewAddict.com (including any of it's contributors) accept any liability for problems or loss resulting from it's use. 
