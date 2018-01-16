@@ -11,16 +11,17 @@ function(hljs) {
     begin: '\\(', end: '\\)',
     contains: ['self', hljs.C_NUMBER_MODE, STRING]
   };
+  var COMMENT_MODE_1 = hljs.COMMENT('--', '$');
+  var COMMENT_MODE_2 = hljs.COMMENT(
+    '\\(\\*',
+    '\\*\\)',
+    {
+      contains: ['self', COMMENT_MODE_1] //allow nesting
+    }
+  );
   var COMMENTS = [
-    {
-      className: 'comment',
-      begin: '--', end: '$'
-    },
-    {
-      className: 'comment',
-      begin: '\\(\\*', end: '\\*\\)',
-      contains: ['self', {begin: '--', end: '$'}] //allow nesting
-    },
+    COMMENT_MODE_1,
+    COMMENT_MODE_2,
     hljs.HASH_COMMENT_MODE
   ];
 
@@ -38,15 +39,13 @@ function(hljs) {
         'sixth some tell tenth that the|0 then third through thru ' +
         'timeout times to transaction try until where while whose with ' +
         'without',
-      constant:
+      literal:
         'AppleScript false linefeed return pi quote result space tab true',
-      type:
+      built_in:
         'alias application boolean class constant date file integer list ' +
-        'number real record string text',
-      command:
+        'number real record string text ' +
         'activate beep count delay launch log offset read round ' +
-        'run say summarize write',
-      property:
+        'run say summarize write ' +
         'character characters contents day frontmost id item length ' +
         'month name paragraph paragraphs rest reverse running time version ' +
         'weekday word words year'
@@ -55,11 +54,7 @@ function(hljs) {
       STRING,
       hljs.C_NUMBER_MODE,
       {
-        className: 'type',
-        begin: '\\bPOSIX file\\b'
-      },
-      {
-        className: 'command',
+        className: 'built_in',
         begin:
           '\\b(clipboard info|the clipboard|info for|list (disks|folder)|' +
           'mount volume|path to|(close|open for) access|(get|set) eof|' +
@@ -72,7 +67,7 @@ function(hljs) {
           'display (alert|dialog))\\b|^\\s*return\\b'
       },
       {
-        className: 'constant',
+        className: 'literal',
         begin:
           '\\b(text item delimiters|current application|missing value)\\b'
       },
@@ -82,20 +77,15 @@ function(hljs) {
           '\\b(apart from|aside from|instead of|out of|greater than|' +
           "isn't|(doesn't|does not) (equal|come before|come after|contain)|" +
           '(greater|less) than( or equal)?|(starts?|ends|begins?) with|' +
-          'contained by|comes (before|after)|a (ref|reference))\\b'
+          'contained by|comes (before|after)|a (ref|reference)|POSIX file|' +
+          'POSIX path|(date|time) string|quoted form)\\b'
       },
       {
-        className: 'property',
-        begin:
-          '\\b(POSIX path|(date|time) string|quoted form)\\b'
-      },
-      {
-        className: 'function_start',
         beginKeywords: 'on',
         illegal: '[${=;\\n]',
         contains: [hljs.UNDERSCORE_TITLE_MODE, PARAMS]
       }
     ].concat(COMMENTS),
-    illegal: '//|->|=>'
+    illegal: '//|->|=>|\\[\\['
   };
 }

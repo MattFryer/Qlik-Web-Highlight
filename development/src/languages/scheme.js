@@ -12,7 +12,7 @@ function(hljs) {
   var SCHEME_SIMPLE_NUMBER_RE = '(\\-|\\+)?\\d+([./]\\d+)?';
   var SCHEME_COMPLEX_NUMBER_RE = SCHEME_SIMPLE_NUMBER_RE + '[+\\-]' + SCHEME_SIMPLE_NUMBER_RE + 'i';
   var BUILTINS = {
-    built_in:
+    'builtin-name':
       'case-lambda call/cc class define-class exit-handler field import ' +
       'inherit init-field interface let*-values let-values let/ec mixin ' +
       'opt-lambda override protect provide public rename require ' +
@@ -49,7 +49,7 @@ function(hljs) {
   };
 
   var SHEBANG = {
-    className: 'shebang',
+    className: 'meta',
     begin: '^#!',
     end: '$'
   };
@@ -78,13 +78,16 @@ function(hljs) {
     end: '[^\\\\]"'
   };
 
-  var COMMENT = {
-    className: 'comment',
-    variants: [
-      { begin: ';',  end: '$', relevance: 0 },
-      { begin: '#\\|', end: '\\|#' }
-    ]
-  };
+  var COMMENT_MODES = [
+    hljs.COMMENT(
+      ';',
+      '$',
+      {
+        relevance: 0
+      }
+    ),
+    hljs.COMMENT('#\\|', '\\|#')
+  ];
 
   var IDENT = {
     begin: SCHEME_IDENT_RE,
@@ -92,7 +95,7 @@ function(hljs) {
   };
 
   var QUOTED_IDENT = {
-    className: 'variable',
+    className: 'symbol',
     begin: '\'' + SCHEME_IDENT_RE
   };
 
@@ -101,27 +104,49 @@ function(hljs) {
     relevance: 0
   };
 
+  var QUOTED_LIST = {
+    variants: [
+      { begin: /'/ },
+      { begin: '`' }
+    ],
+    contains: [
+      {
+        begin: '\\(', end: '\\)',
+        contains: ['self', LITERAL, STRING, NUMBER, IDENT, QUOTED_IDENT]
+      }
+    ]
+  };
+
+  var NAME = {
+    className: 'name',
+    begin: SCHEME_IDENT_RE,
+    lexemes: SCHEME_IDENT_RE,
+    keywords: BUILTINS
+  };
+
+  var LAMBDA = {
+    begin: /lambda/, endsWithParent: true, returnBegin: true,
+    contains: [
+      NAME,
+      {
+        begin: /\(/, end: /\)/, endsParent: true,
+        contains: [IDENT],
+      }
+    ]
+  };
+
   var LIST = {
-    className: 'list',
     variants: [
       { begin: '\\(', end: '\\)' },
       { begin: '\\[', end: '\\]' }
     ],
-    contains: [
-      {
-        className: 'keyword',
-        begin: SCHEME_IDENT_RE,
-        lexemes: SCHEME_IDENT_RE,
-        keywords: BUILTINS
-      },
-      BODY
-    ]
+    contains: [LAMBDA, NAME, BODY]
   };
 
-  BODY.contains = [LITERAL, NUMBER, STRING, COMMENT, IDENT, QUOTED_IDENT, LIST];
+  BODY.contains = [LITERAL, NUMBER, STRING, IDENT, QUOTED_IDENT, QUOTED_LIST, LIST].concat(COMMENT_MODES);
 
   return {
     illegal: /\S/,
-    contains: [SHEBANG, NUMBER, STRING, COMMENT, QUOTED_IDENT, LIST]
+    contains: [SHEBANG, NUMBER, STRING, QUOTED_IDENT, QUOTED_LIST, LIST].concat(COMMENT_MODES)
   };
 }

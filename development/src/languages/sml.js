@@ -26,20 +26,23 @@ function(hljs) {
     contains: [
       {
         className: 'literal',
-        begin: '\\[(\\|\\|)?\\]|\\(\\)'
+        begin: /\[(\|\|)?\]|\(\)/,
+        relevance: 0
       },
-      {
-        className: 'comment',
-        begin: '\\(\\*', end: '\\*\\)',
-        contains: ['self', hljs.PHRASAL_WORDS_MODE],
-      },
+      hljs.COMMENT(
+        '\\(\\*',
+        '\\*\\)',
+        {
+          contains: ['self']
+        }
+      ),
       { /* type variable */
         className: 'symbol',
         begin: '\'[A-Za-z_](?!\')[\\w\']*'
         /* the grammar is ambiguous on how 'a'b should be interpreted but not the compiler */
       },
       { /* polymorphic variant */
-        className: 'tag',
+        className: 'type',
         begin: '`[A-Z][\\w\']*'
       },
       { /* module or constructor */
@@ -50,7 +53,7 @@ function(hljs) {
       { /* don't color identifiers, but safely catch all identifiers with '*/
         begin: '[a-z_]\\w*\'[\\w\']*'
       },
-      hljs.inherit(hljs.APOS_STRING_MODE, {className: 'char', relevance: 0}),
+      hljs.inherit(hljs.APOS_STRING_MODE, {className: 'string', relevance: 0}),
       hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null}),
       {
         className: 'number',

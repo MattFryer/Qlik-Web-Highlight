@@ -12,16 +12,18 @@ function(hljs) {
     case_insensitive: true,
     contains: [
       {
-        className: 'doctype',
+        className: 'meta',
         begin: '^!!!( (5|1\\.1|Strict|Frameset|Basic|Mobile|RDFa|XML\\b.*))?$',
         relevance: 10
       },
-      {
-        className: 'comment',
-        // FIXME these comments should be allowed to span indented lines
-        begin: '^\\s*(!=#|=#|-#|/).*$',
-        relevance: 0
-      },
+      // FIXME these comments should be allowed to span indented lines
+      hljs.COMMENT(
+        '^\\s*(!=#|=#|-#|/).*$',
+        false,
+        {
+          relevance: 0
+        }
+      ),
       {
         begin: '^\\s*(-|=|!=)(?!#)',
         starts: {
@@ -34,39 +36,33 @@ function(hljs) {
         begin: '^\\s*%',
         contains: [
           {
-            className: 'title',
+            className: 'selector-tag',
             begin: '\\w+'
           },
           {
-            className: 'value',
-            begin: '[#\\.]\\w+'
+            className: 'selector-id',
+            begin: '#[\\w-]+'
+          },
+          {
+            className: 'selector-class',
+            begin: '\\.[\\w-]+'
           },
           {
             begin: '{\\s*',
             end: '\\s*}',
-            excludeEnd: true,
             contains: [
               {
-                //className: 'attribute',
                 begin: ':\\w+\\s*=>',
                 end: ',\\s+',
                 returnBegin: true,
                 endsWithParent: true,
                 contains: [
                   {
-                    className: 'symbol',
+                    className: 'attr',
                     begin: ':\\w+'
                   },
-                  {
-                    className: 'string',
-                    begin: '"',
-                    end: '"'
-                  },
-                  {
-                    className: 'string',
-                    begin: '\'',
-                    end: '\''
-                  },
+                  hljs.APOS_STRING_MODE,
+                  hljs.QUOTE_STRING_MODE,
                   {
                     begin: '\\w+',
                     relevance: 0
@@ -81,27 +77,18 @@ function(hljs) {
             excludeEnd: true,
             contains: [
               {
-                //className: 'attribute',
                 begin: '\\w+\\s*=',
                 end: '\\s+',
                 returnBegin: true,
                 endsWithParent: true,
                 contains: [
                   {
-                    className: 'attribute',
+                    className: 'attr',
                     begin: '\\w+',
                     relevance: 0
                   },
-                  {
-                    className: 'string',
-                    begin: '"',
-                    end: '"'
-                  },
-                  {
-                    className: 'string',
-                    begin: '\'',
-                    end: '\''
-                  },
+                  hljs.APOS_STRING_MODE,
+                  hljs.QUOTE_STRING_MODE,
                   {
                     begin: '\\w+',
                     relevance: 0
@@ -113,9 +100,7 @@ function(hljs) {
         ]
       },
       {
-        className: 'bullet',
-        begin: '^\\s*[=~]\\s*',
-        relevance: 0
+        begin: '^\\s*[=~]\\s*'
       },
       {
         begin: '#{',

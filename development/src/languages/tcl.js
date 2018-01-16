@@ -19,20 +19,15 @@ function(hljs) {
       'tcl_wordBreakBefore tcltest tclvars tell time tm trace unknown unload unset update '+
       'uplevel upvar variable vwait while',
     contains: [
-      {
-        className: 'comment',
-        variants: [
-          {begin: ';[ \\t]*#', end: '$'},
-          {begin: '^[ \\t]*#', end: '$'}
-        ]
-      },
+      hljs.COMMENT(';[ \\t]*#', '$'),
+      hljs.COMMENT('^[ \\t]*#', '$'),
       {
         beginKeywords: 'proc',
         end: '[\\{]',
         excludeEnd: true,
         contains: [
           {
-            className: 'symbol',
+            className: 'title',
             begin: '[ \\t\\n\\r]+(::)?[a-zA-Z_]((::)?[a-zA-Z0-9_])*',
             end: '[ \\t\\n\\r]',
             endsWithParent: true,
@@ -41,7 +36,6 @@ function(hljs) {
         ]
       },
       {
-        className: 'variable',
         excludeEnd: true,
         variants: [
           {

@@ -8,29 +8,36 @@
 function(hljs) {
     return {
         keywords: {
-            typename: 'byte short char int long boolean float double void',
             literal : 'true false null',
             keyword:
-                // groovy specific keywords
+            'byte short char int long boolean float double void ' +
+            // groovy specific keywords
             'def as in assert trait ' +
-                // common keywords with Java
+            // common keywords with Java
             'super this abstract static volatile transient public private protected synchronized final ' +
             'class interface enum if else for while switch case break default continue ' +
             'throw throws try catch finally implements extends new import package return instanceof'
         },
 
         contains: [
+            hljs.COMMENT(
+                '/\\*\\*',
+                '\\*/',
+                {
+                    relevance : 0,
+                    contains : [
+                      {
+                          // eat up @'s in emails to prevent them to be recognized as doctags
+                          begin: /\w+@/, relevance: 0
+                      },
+                      {
+                          className : 'doctag',
+                          begin : '@[A-Za-z]+'
+                      }
+                    ]
+                }
+            ),
             hljs.C_LINE_COMMENT_MODE,
-            {
-                className: 'javadoc',
-                begin: '/\\*\\*', end: '\\*//*',
-                relevance: 0,
-                contains: [
-                    {
-                        className: 'javadoctag', begin: '(^|\\s)@[A-Za-z]+'
-                    }
-                ]
-            },
             hljs.C_BLOCK_COMMENT_MODE,
             {
                 className: 'string',
@@ -55,7 +62,7 @@ function(hljs) {
             },
             hljs.QUOTE_STRING_MODE,
             {
-                className: 'shebang',
+                className: 'meta',
                 begin: "^#!/usr/bin/env", end: '$',
                 illegal: '\n'
             },
@@ -66,12 +73,12 @@ function(hljs) {
                 illegal: ':',
                 contains: [
                     {beginKeywords: 'extends implements'},
-                    hljs.UNDERSCORE_TITLE_MODE,
+                    hljs.UNDERSCORE_TITLE_MODE
                 ]
             },
             hljs.C_NUMBER_MODE,
             {
-                className: 'annotation', begin: '@[A-Za-z]+'
+                className: 'meta', begin: '@[A-Za-z]+'
             },
             {
                 // highlight map keys and named parameters as strings
@@ -84,9 +91,10 @@ function(hljs) {
             },
             {
                 // highlight labeled statements
-                className: 'label', begin: '^\\s*[A-Za-z0-9_$]+:',
+                className: 'symbol', begin: '^\\s*[A-Za-z0-9_$]+:',
                 relevance: 0
-            },
-        ]
+            }
+        ],
+        illegal: /#|<\//
     }
 }

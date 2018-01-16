@@ -71,7 +71,7 @@ function(hljs) {
       ]
     },
     {
-      className: 'pi',
+      className: 'regexp',
       variants: [
         {
           begin: '//', end: '//[gim]*',
@@ -85,7 +85,6 @@ function(hljs) {
       ]
     },
     {
-      className: 'property',
       begin: '@' + JS_IDENT_RE
     },
     {
@@ -115,10 +114,7 @@ function(hljs) {
     keywords: KEYWORDS,
     illegal: /\/\*/,
     contains: EXPRESSIONS.concat([
-      {
-        className: 'comment',
-        begin: '\\/\\*', end: '\\*\\/'
-      },
+      hljs.COMMENT('\\/\\*', '\\*\\/'),
       hljs.HASH_COMMENT_MODE,
       {
         className: 'function',
@@ -152,7 +148,6 @@ function(hljs) {
         ]
       },
       {
-        className: 'attribute',
         begin: JS_IDENT_RE + ':', end: ':',
         returnBegin: true, returnEnd: true,
         relevance: 0

@@ -6,24 +6,26 @@ Category: functional
 */
 
 function(hljs) {
-
   var COMMENT = {
-    className: 'comment',
     variants: [
-      { begin: '--', end: '$' },
-      { begin: '{-', end: '-}'
-      , contains: ['self']
-      }
+      hljs.COMMENT('--', '$'),
+      hljs.COMMENT(
+        '{-',
+        '-}',
+        {
+          contains: ['self']
+        }
+      )
     ]
   };
 
   var PRAGMA = {
-    className: 'pragma',
+    className: 'meta',
     begin: '{-#', end: '#-}'
   };
 
   var PREPROCESSOR = {
-    className: 'preprocessor',
+    className: 'meta',
     begin: '^#', end: '$'
   };
 
@@ -34,20 +36,18 @@ function(hljs) {
   };
 
   var LIST = {
-    className: 'container',
     begin: '\\(', end: '\\)',
     illegal: '"',
     contains: [
       PRAGMA,
-      COMMENT,
       PREPROCESSOR,
       {className: 'type', begin: '\\b[A-Z][\\w]*(\\((\\.\\.|,|\\w+)\\))?'},
-      hljs.inherit(hljs.TITLE_MODE, {begin: '[_a-z][\\w\']*'})
+      hljs.inherit(hljs.TITLE_MODE, {begin: '[_a-z][\\w\']*'}),
+      COMMENT
     ]
   };
 
   var RECORD = {
-    className: 'container',
     begin: '{', end: '}',
     contains: LIST.contains
   };
@@ -64,16 +64,14 @@ function(hljs) {
       // Top-level constructions.
 
       {
-        className: 'module',
-        begin: '\\bmodule\\b', end: 'where',
+        beginKeywords: 'module', end: 'where',
         keywords: 'module where',
         contains: [LIST, COMMENT],
         illegal: '\\W\\.|;'
       },
       {
-        className: 'import',
         begin: '\\bimport\\b', end: '$',
-        keywords: 'import|0 qualified as hiding',
+        keywords: 'import qualified as hiding',
         contains: [LIST, COMMENT],
         illegal: '\\W\\.|;'
       },
@@ -85,37 +83,33 @@ function(hljs) {
         contains: [CONSTRUCTOR, LIST, COMMENT]
       },
       {
-        className: 'typedef',
+        className: 'class',
         begin: '\\b(data|(new)?type)\\b', end: '$',
         keywords: 'data family type newtype deriving',
-        contains: [PRAGMA, COMMENT, CONSTRUCTOR, LIST, RECORD]
+        contains: [PRAGMA, CONSTRUCTOR, LIST, RECORD, COMMENT]
       },
       {
-        className: 'default',
         beginKeywords: 'default', end: '$',
         contains: [CONSTRUCTOR, LIST, COMMENT]
       },
       {
-        className: 'infix',
         beginKeywords: 'infix infixl infixr', end: '$',
         contains: [hljs.C_NUMBER_MODE, COMMENT]
       },
       {
-        className: 'foreign',
         begin: '\\bforeign\\b', end: '$',
         keywords: 'foreign import export ccall stdcall cplusplus jvm ' +
                   'dotnet safe unsafe',
         contains: [CONSTRUCTOR, hljs.QUOTE_STRING_MODE, COMMENT]
       },
       {
-        className: 'shebang',
+        className: 'meta',
         begin: '#!\\/usr\\/bin\\/env\ runhaskell', end: '$'
       },
 
       // "Whitespaces".
 
       PRAGMA,
-      COMMENT,
       PREPROCESSOR,
 
       // Literals and names.
@@ -125,6 +119,8 @@ function(hljs) {
       hljs.C_NUMBER_MODE,
       CONSTRUCTOR,
       hljs.inherit(hljs.TITLE_MODE, {begin: '^[_a-z][\\w\']*'}),
+
+      COMMENT,
 
       {begin: '->|<-'} // No markup, relevance booster
     ]
