@@ -19,7 +19,7 @@ It currently supports highlighting of the following Qlik script elements:
 * Line comments //
 * Block comment /*..*/
 * REM comment REM...;
-* All QlikView 11.20 keywords, statements and functions (that are permitted within the script)
+* Most QlikView 11.20+ and Qlik Sense keywords, statements and functions (that are permitted within the script)
 * Variable definitions (using SET and LET) and variable use (within $())
 * Field names in most common situations
 
