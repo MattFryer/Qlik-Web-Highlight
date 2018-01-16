@@ -24,12 +24,14 @@ Here are the steps to get it installed and working yourself:
   3. Upload the folder and its contents to your website (eg. using FTP)
   4. Edit the web page(s) in which you wish to display QlikView script and add the following lines within the <head> section:
 
+```
 <link href="/qvhighlight/qlikview.css" rel="stylesheet" title="QlikView"></link>
 <script src="/qvhighlight/highlight.pack.js"></script>
 <script>
     hljs.configure({tabReplace: '    '});
     hljs.initHighlightingOnLoad();
 </script>
+```
 
 ## How To Use
 
@@ -39,11 +41,11 @@ Wrap any QlikView script blocks included within the web page in pre and code HTM
 
 The class allocated within the code tag will define the type of code which syntax highlighting should be applied for. If you code type is given, the highlighting engine will attempt to work out what code type is contained within the tags. It can't always guess correctly and so it is recommended to always define the code type. The following following code types are currently supported:
 
-    "qvs" - QlikView Script
-    "exp" or "qve" - QlikView Expression
-    "sql" - SQL
-    "vbscript" - Visual Basic Script
-    "javascript" - Java Script
+* "qvs" - QlikView Script
+*  "exp" or "qve" - QlikView Expression
+*  "sql" - SQL
+*  "vbscript" - Visual Basic Script
+*  "javascript" - Java Script
 
 Syntax highlighting will then automatically be applied to the block when the page is view by the user.
 
