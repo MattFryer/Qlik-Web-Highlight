@@ -1,6 +1,6 @@
-=== QlikView for WordPress ===
+=== Qlik for WordPress ===
 Contributors: Matt Fryer
-Tags: highlight, syntax, qlikview, qlik sense post, page, shortcode, plugin
+Tags: highlight, syntax, qlikview, qlik sense, post, page, shortcode, plugin
 Donate link: http://www.qlikviewaddict.com/
 Requires at least: 4.0
 Tested up to: 4.9.1
@@ -8,7 +8,7 @@ Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Automatic syntax highlighting of QlikView and Qlik Sense script on any WordPress page or post.
+Automatic syntax highlighting of QlikView and Qlik Sense script and expressions on any WordPress page or post.
 
 == Description ==
 This WordPress plugin provides automatic syntax highlighting of QlikView and Qlik Sense script on any WordPress page or post. It was developed by Matt Fryer, an experienced Qlik consultant and author of the popular blog [QlikViewAddict.com](http://www.qlikviewaddict.com).
