@@ -1,20 +1,20 @@
 === QlikView for WordPress ===
 Contributors: Matt Fryer
-Tags: highlight, syntax, qlikview, post, page, shortcode, plugin
+Tags: highlight, syntax, qlikview, qlik sense post, page, shortcode, plugin
 Donate link: http://www.qlikviewaddict.com/
 Requires at least: 4.0
-Tested up to: 4.0
-Stable tag: 1.1
+Tested up to: 4.9.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Automatic syntax highlighting of QlikView script on any WordPress page or post.
+Automatic syntax highlighting of QlikView and Qlik Sense script on any WordPress page or post.
 
 == Description ==
-This WordPress plugin provides automatic syntax highlighting of QlikView script on any WordPress page or post. It was developed by Matt Fryer, an experienced QlikView consultant and author of the popular blog [QlikViewAddict.com](http://www.qlikviewaddict.com).
+This WordPress plugin provides automatic syntax highlighting of QlikView and Qlik Sense script on any WordPress page or post. It was developed by Matt Fryer, an experienced Qlik consultant and author of the popular blog [QlikViewAddict.com](http://www.qlikviewaddict.com).
 
 = Features =
-It currently supports highlighting of the following QlikView script elements:
+It currently supports highlighting of the following Qlik script elements:
 
 * Line comments //
 * Block comment /*..*/
@@ -24,9 +24,9 @@ It currently supports highlighting of the following QlikView script elements:
 * Field names in most common situations
 
 = How to use =
-Simply wrap any QlikView code blocks within the [qlikview] ... [/qlikview] shortcode tags. By default, the plugin will assume that the code contained in the tags is QlikView script and will highlight it accordingly. You can specify an alternative code type using the type parameter within the opening tag. For example [qlikview type="exp"]=num(MyField)[/qlikview]. Currently supported code types are "qvs", "exp" (or "qve"), "sql", "vbscript" and "javascript". If no code type is specified then "qvs" will be assumed. 
+Simply wrap any Qlik code blocks within the [qlikview] ... [/qlikview] shortcode tags. By default, the plugin will assume that the code contained in the tags is Qlik script and will highlight it accordingly. You can specify an alternative code type using the type parameter within the opening tag. For example [qlikview type="exp"]=num(MyField)[/qlikview]. Currently supported code types are "qvs", "exp" (or "qve"), "sql", "vbscript" and "javascript". If no code type is specified then "qvs" will be assumed. 
 
-Alternatively, the shortcode can be entered using the button within the WordPress visual post/page editor. Select the block of code within the post or page, then click the QlikView button on the editor menu. You will be prompted for what code type the block should be highlighted as. Once complete, click OK and the shortcode will be added around the code block for you.
+Alternatively, the shortcode can be entered using the button within the WordPress visual post/page editor. Select the block of code within the post or page, then click the Qlik button on the editor menu. You will be prompted for what code type the block should be highlighted as. Once complete, click OK and the shortcode will be added around the code block for you.
 
 = Feedback =
 If you spot any issues or have any suggestions to improve the plugin, please let me know either via the support tab here, or via a comment on [QlikViewAddict.com](http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html).
@@ -87,6 +87,9 @@ It uses a custom build of highlight.js to provide the highlighting. The highligh
 2. Includes a support for adding shortcode via the WordPress visual post/page editor.
 
 == Changelog ==
+= 1.2 =
+* Updated the highlight.js core to resolve a known bug.
+
 = 1.1 =
 * Added correct identification of set analysis and its composite parts within expressions allowing highlighting of items within it.
 * Corrected list of functions within expressions as not all functions are possible in both script and expressions.
