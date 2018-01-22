@@ -20,7 +20,7 @@ function(hljs) {
     keyword: 'Add Alias And As Autogenerate|10 ' +
 		'Binary Buffer Bundle By ' +
 		'Call Case Comment Concatenate Connect Crosstable Custom ' +
-		'Default Derive Directory Disconnect Distinct Do Drop ' +
+		'Default Derive Detail Dimension Directory Disconnect Distinct Do Drop ' +
 		'Each Else Elseif End Endif Endsub Endswitch Execute Exit ' +
 		'Field Fields First FlushLog For Force From From_Field ' +
 		'Generic Group ' +
@@ -29,8 +29,8 @@ function(hljs) {
 		'Join ' +
 		'Keep ' +
 		'Left Let Lib Load Loop Loosen ' +
-		'Map Mapping ' +
-		'Next Noconcatenate|10 Not NullAsNull NullAsValue ' +
+		'Map Mapping Measure ' +
+		'Native Next Noconcatenate|10 Not NullAsNull NullAsValue ' +
 		'ODBC OLEDB Or Outer ' +
 		'Qualify ' +
 		'Rename Replace Resident Right ' +
@@ -164,6 +164,43 @@ function(hljs) {
 			QVS_VARIABLE_USE
 		]
 	  },
+		{
+		className: 'direct_query_statement', //Identifies direct query statements 
+        begin: '\\bdirect query\\b', end: ';',
+		keywords: 'direct query',
+		contains: [
+			hljs.C_LINE_COMMENT_MODE,
+			hljs.C_BLOCK_COMMENT_MODE,
+			hljs.QUOTE_STRING_MODE,
+			QVS_HASH_FUNCTIONS,
+			QVS_KEYWORD_FUNCTIONS,
+			QVS_STRING_SINGLE,
+			QVS_STRING_DOUBLE,
+			QVS_VARIABLE_USE,
+			QVS_BRACED_FIELD,
+			{
+				className: 'direct_query_from', //Identifies if the load statement has a source rather than it being a preceding load.
+				begin: '\\bfrom\\b', end: '(?=(;|$))',
+				keywords: QVS_KEYWORDS, 
+				contains: [
+					hljs.C_LINE_COMMENT_MODE, 
+					hljs.C_BLOCK_COMMENT_MODE, 
+					hljs.QUOTE_STRING_MODE,
+					QVS_STRING_SINGLE,
+					QVS_STRING_DOUBLE,
+					QVS_VARIABLE_USE,
+					QVS_BRACED_FIELD
+				]
+			},
+			{
+				className: 'field', //Identifies field names within the direct query statement
+				begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
+				keywords: QVS_KEYWORDS,
+				illegal: '\n\s',
+			}
+		],
+			relevance: 10
+	  },
 	  {
 		className: 'load_statement', //Identifies load statements 
         begin: '\\bload\\b', end: ';',
@@ -211,29 +248,6 @@ function(hljs) {
 			},
 			{
 				className: 'field', //Identifies field names within the load statement
-				begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
-				keywords: QVS_KEYWORDS,
-				illegal: '\n\s',
-			}
-		],
-			relevance: 10
-	  },
-		{
-		className: 'direct_query_statement', //Identifies direct query statements 
-        begin: '\\direcrt query\\b', end: ';',
-		keywords: 'direct query dimension detail measure native from',
-		contains: [
-			hljs.C_LINE_COMMENT_MODE,
-			hljs.C_BLOCK_COMMENT_MODE,
-			hljs.QUOTE_STRING_MODE,
-			QVS_HASH_FUNCTIONS,
-			QVS_KEYWORD_FUNCTIONS,
-			QVS_STRING_SINGLE,
-			QVS_STRING_DOUBLE,
-			QVS_VARIABLE_USE,
-			QVS_BRACED_FIELD,
-			{
-				className: 'field', //Identifies field names within the direct query statement
 				begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
 				keywords: QVS_KEYWORDS,
 				illegal: '\n\s',
