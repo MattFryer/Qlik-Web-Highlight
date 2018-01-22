@@ -2,7 +2,7 @@
    tinymce.create('tinymce.plugins.qlikview', {
       init : function(ed, url) {
          ed.addButton('qlikview', {
-            title : 'QlikView',
+            title : 'Qlik',
             image : url+'/qlikview.png',
             onclick : function() {
 			   var selected = tinyMCE.activeEditor.selection.getContent( {format : "text"} );
@@ -24,11 +24,11 @@
       },
       getInfo : function() {
          return {
-            longname : "QlikView for WordPress",
+            longname : "Qlik for WordPress",
             author : 'Matthew Fryer',
             authorurl : 'http://www.qlikviewaddict.com/',
             infourl : 'http://www.qlikviewaddict.com/',
-            version : "1.1"
+            version : "1.2"
          };
       }
    });
