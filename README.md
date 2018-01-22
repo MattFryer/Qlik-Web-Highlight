@@ -1,3 +1,9 @@
+[![GitHub version](https://img.shields.io/github/release/MattFryer/QlikView-Web-Highlight.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest)
+[![GitHub download](https://img.shields.io/github/downloads/MattFryer/QlikView-Web-Highlight/total.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest)
+[![GitHub stars](https://img.shields.io/github/stars/MattFryer/QlikView-Web-Highlight.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/MattFryer/QlikView-Web-Highlight.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/issues)
+[![GitHub license](https://img.shields.io/github/license/MattFryer/QlikView-Web-Highlight.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/blob/master/LICENSE)
+
 # QlikView Web Syntax Highlighter
 
 The QlikView Web Highlighting gives basic syntax highlighting of QlikView script and expressions contained within web pages.
