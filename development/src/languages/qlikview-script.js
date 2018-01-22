@@ -19,19 +19,19 @@ function(hljs) {
   var QVS_KEYWORDS = {
     keyword: 'Add Alias And As Autogenerate|10 ' +
 		'Binary Buffer Bundle By ' +
-		'Call Case Comment Concatenate Connect Crosstable ' +
-		'Default Directory Disconnect Distinct Do Drop ' +
+		'Call Case Comment Concatenate Connect Crosstable Custom ' +
+		'Default Derive Directory Disconnect Distinct Do Drop ' +
 		'Each Else Elseif End Endif Endsub Endswitch Execute Exit ' +
-		'Field Fields First For Force From From_Field ' +
+		'Field Fields First FlushLog For Force From From_Field ' +
 		'Generic Group ' +
 		'Hierarchy|10 HierarchyBelongsTo|10 ' +
 		'if Image_size In Info Inline Inner Inputfield|10 Intervalmatch|10 Into ' +
 		'Join ' +
 		'Keep ' +
-		'Left Let Load Loop Loosen ' +
+		'Left Let Lib Load Loop Loosen ' +
 		'Map Mapping ' +
 		'Next Noconcatenate|10 Not NullAsNull NullAsValue ' +
-		'Or Outer ' +
+		'ODBC OLEDB Or Outer ' +
 		'Qualify ' +
 		'Rename Replace Resident Right ' +
 		'Sample Script Section Select Semantic Set Sleep SQL SQLColumns SQLTables SQLTypes Star Step Store Sub ' +
@@ -211,6 +211,29 @@ function(hljs) {
 			},
 			{
 				className: 'field', //Identifies field names within the load statement
+				begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
+				keywords: QVS_KEYWORDS,
+				illegal: '\n\s',
+			}
+		],
+			relevance: 10
+	  },
+		{
+		className: 'direct_query_statement', //Identifies direct query statements 
+        begin: '\\direcrt query\\b', end: ';',
+		keywords: 'direct query dimension detail measure native from',
+		contains: [
+			hljs.C_LINE_COMMENT_MODE,
+			hljs.C_BLOCK_COMMENT_MODE,
+			hljs.QUOTE_STRING_MODE,
+			QVS_HASH_FUNCTIONS,
+			QVS_KEYWORD_FUNCTIONS,
+			QVS_STRING_SINGLE,
+			QVS_STRING_DOUBLE,
+			QVS_VARIABLE_USE,
+			QVS_BRACED_FIELD,
+			{
+				className: 'field', //Identifies field names within the direct query statement
 				begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
 				keywords: QVS_KEYWORDS,
 				illegal: '\n\s',

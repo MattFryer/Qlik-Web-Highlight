@@ -42,7 +42,7 @@ function qlik_highlight_head() {
 add_action('wp_head', 'qlik_highlight_head');
 
 // Add Qlik specific shortcode [qlik]...[/qlik]
-// Accepts type parameter [qlikview type="qvs"].
+// Accepts type parameter [qlik type="qvs"].
 // Options are: 
 //	 "qvs" or "qlikview-script" or "qv-script" - Qlik Script (default)
 //	 "exp" or "qlikview-exp" or "qv-exp" - Qlik Expression
