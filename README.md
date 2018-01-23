@@ -4,11 +4,11 @@
 [![GitHub issues](https://img.shields.io/github/issues/MattFryer/QlikView-Web-Highlight.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/issues)
 [![GitHub license](https://img.shields.io/github/license/MattFryer/QlikView-Web-Highlight.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/blob/master/LICENSE)
 
-# QlikView Web Syntax Highlighter
+# Qlik Web Syntax Highlighter
 
-The QlikView Web Highlighting gives basic syntax highlighting of QlikView script and expressions contained within web pages.
+The Qlik Web Highlighting gives basic syntax highlighting of QlikView and Qlik Sense script and expressions contained within web pages.
 
-The syntax highlighting that is provided is an approximation of what you would get in QlikView's Edit Script and Edit Expression dialogs. It currently supports the following features:
+The syntax highlighting that is provided is an approximation of what you would get in Qlik's Edit Script and Edit Expression dialogs. It currently supports the following features:
 
   * Highlighting of all current (v11.20) functions
   * Highlighting of all current (v11.20) keywords and statements
@@ -25,7 +25,7 @@ This syntax highlighter is also packaged as a plugin for  WordPress and an exten
 
 Here are the steps to get it installed and working yourself:
 
-  1. Download the QlikView Web Highlighting ZIP archive file from https://github.com/MattFryer/QlikView-Web-Highlight/releases/download/v1.0/qvhighlight_v1.0.zip
+  1. Go to the latest QlikView Web Highlighting release at https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest/. Click on the file named qvhighlight_vX.X.zip to download.
   2. Unpack the folder and its contained files from the archive to a folder on you hard drive. 
   3. Upload the folder and its contents to your website (eg. using FTP)
   4. Edit the web page(s) in which you wish to display QlikView script and add the following lines within the <head> section:
@@ -41,7 +41,7 @@ Here are the steps to get it installed and working yourself:
 
 ## How To Use
 
-Wrap any QlikView script blocks included within the web page in pre and code HTML tags as shown below:
+Wrap any Qlik script blocks included within the web page in pre and code HTML tags as shown below:
 
 &lt;pre&gt;&lt;code class="qvs"&gt;MyTable: LOAD * RESIDENT MyTempTable;&lt;/code&gt;&lt;/pre&gt;
 
@@ -54,6 +54,10 @@ The class allocated within the code tag will define the type of code which synta
 *  "javascript" - Java Script
 
 Syntax highlighting will then automatically be applied to the block when the page is view by the user.
+
+## Qlik for WordPress Plugin [![WordPress plugin](https://img.shields.io/wordpress/plugin/dt/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/)
+
+To make it simple to add the Qlik Web Syntax Highlighter to your WordPress powered blog or website, a WordPress plugin is provided. Full details of how to download and install can be found on the [plugin's page on the WordPress.org website](https://wordpress.org/plugins/qlikview-syntax-highlighter/).
 
 ## Disclaimer
 
