@@ -1,4 +1,5 @@
 [![GitHub version](https://img.shields.io/github/release/MattFryer/QlikView-Web-Highlight.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest)
+[![GitHub Release Date](https://img.shields.io/github/release-date/MattFryer/QlikView-Web-Highlight.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest)
 [![GitHub download](https://img.shields.io/github/downloads/MattFryer/QlikView-Web-Highlight/total.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest)
 [![GitHub stars](https://img.shields.io/github/stars/MattFryer/QlikView-Web-Highlight.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/MattFryer/QlikView-Web-Highlight.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/issues)
@@ -55,7 +56,7 @@ The class allocated within the code tag will define the type of code which synta
 
 Syntax highlighting will then automatically be applied to the block when the page is view by the user.
 
-## Qlik for WordPress Plugin [![WordPress plugin](https://img.shields.io/wordpress/plugin/dt/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/)
+## Qlik for WordPress Plugin [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/) [![WordPress plugin](https://img.shields.io/wordpress/plugin/dt/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/) [![WordPress plugin rating](https://img.shields.io/wordpress/plugin/r/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/)
 
 To make it simple to add the Qlik Web Syntax Highlighter to your WordPress powered blog or website, a WordPress plugin is provided. Full details of how to download and install can be found on the [plugin's page on the WordPress.org website](https://wordpress.org/plugins/qlikview-syntax-highlighter/).
 
