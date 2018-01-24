@@ -1,8 +1,8 @@
 (function() {
    tinymce.create('tinymce.plugins.qlik', {
       init : function(ed, url) {
-         ed.addButton('qlik', {
-            title : 'Qlik',
+         ed.addButton('qlikcode', {
+            title : 'Qlik Code',
             image : url+'/qlikview.png',
             onclick : function() {
 			   var selected = tinyMCE.activeEditor.selection.getContent( {format : "text"} );

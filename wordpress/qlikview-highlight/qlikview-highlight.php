@@ -94,7 +94,7 @@ function qlik_button_script() {
 
                 QTags.addButton( 
                     "qlik_shortcode", 
-                    "Qlik", 
+                    "Qlik Code", 
                     callback
                 );
 
