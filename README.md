@@ -62,6 +62,8 @@ Syntax highlighting will then automatically be applied to the block when the pag
 
 To make it simple to add the Qlik Web Syntax Highlighter to your WordPress powered blog or website, a WordPress plugin is provided. Full details of how to download and install can be found on the [plugin's page on the WordPress.org website](https://wordpress.org/plugins/qlikview-syntax-highlighter/).
 
+You may also be interesting in the [Qlik Sense WordPress plugin](https://wordpress.org/plugins/qlik-sense/) by Yianni.Ververis. 
+
 ## Disclaimer
 
 This syntax highlighting is provided free of charge, as is, with no warranties or guarantees. Neither Datoniq Limited or QlikViewAddict.com (including any of it's contributors) accept any liability for problems or loss resulting from it's use. 
