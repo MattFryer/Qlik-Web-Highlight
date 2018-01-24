@@ -1,7 +1,7 @@
 (function() {
-   tinymce.create('tinymce.plugins.qlik', {
+   tinymce.create('tinymce.plugins.qlikcode', {
       init : function(ed, url) {
-         ed.addButton('qlikcode', {
+         ed.addButton('qlik_code_button', {
             title : 'Qlik Code',
             image : url+'/qlikview.png',
             onclick : function() {
@@ -15,7 +15,7 @@
 			      var type = 'qvs';
 			   }
 
-               ed.execCommand('mceInsertContent', false, '[qlik type="'+type+'"]' + selected + '[/qlik]');
+               ed.execCommand('mceInsertContent', false, '[qlik-code type="'+type+'"]' + selected + '[/qlik]');
             }
          });
       },
@@ -32,5 +32,5 @@
          };
       }
    });
-   tinymce.PluginManager.add('qlik', tinymce.plugins.qlik);
+   tinymce.PluginManager.add('qlik_code_button', tinymce.plugins.qlikcode);
 })();
