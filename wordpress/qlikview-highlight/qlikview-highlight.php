@@ -41,8 +41,8 @@ function qlik_highlight_head() {
 }
 add_action('wp_head', 'qlik_highlight_head');
 
-// Add Qlik specific shortcode [qlik]...[/qlik]
-// Accepts type parameter [qlik type="qvs"].
+// Add Qlik specific shortcode [qlik-code]...[/qlik-code]
+// Accepts type parameter [qlik-code type="qvs"].
 // Options are: 
 //	 "qvs" or "qlikview-script" or "qv-script" - Qlik Script (default)
 //	 "exp" or "qlikview-exp" or "qv-exp" - Qlik Expression
@@ -65,7 +65,7 @@ function qlik_pre_process_shortcode($content) {
     $shortcode_tags = array();
  
     // Add the shortcode
-		add_shortcode("qlik","qlik_highlight_shortcode");
+		add_shortcode("qlik-code","qlik_highlight_shortcode");
 		add_shortcode("qlikview","qlik_highlight_shortcode"); // Also add the old code for backward compatibility
  
     // Do the shortcode (only the one above is registered)
@@ -93,7 +93,7 @@ function qlik_button_script() {
                 }
 
                 QTags.addButton( 
-                    "qlik_shortcode", 
+                    "qlik_code_shortcode", 
                     "Qlik Code", 
                     callback
                 );
@@ -101,11 +101,14 @@ function qlik_button_script() {
                 function callback()
                 {
                     var selected_text = getSel();
+										if (selected_text == null || selected_text == '') {
+											var selected_text = 'Your code here...';
+										}
 										var type = prompt("Type (qvs, exp, sql, vbscript, javascript)", "qvs");
 										if (type == null || type == '' || (type != 'qvs' && type != 'exp' && type != 'sql' && type != 'vbscript' && type != 'javascript')){
 											var type = 'qvs';
 										}
-                    QTags.insertContent("[qlik type=\"" + type + "\"]" +  selected_text + "[/qlik]");
+                    QTags.insertContent("[qlik-code type=\"" + type + "\"]" +  selected_text + "[/qlik]");
                 }
             </script>
         <?php
@@ -115,12 +118,12 @@ add_action("admin_print_footer_scripts", "qlik_button_script");
 
 // Add the button to the TinyMCE so that the shortcode can be added via the visual page/post editor
 function register_qlik_highlight_button( $buttons ) {
-   array_push( $buttons, "|", "qlik" );
+   array_push( $buttons, "|", "qlik_code_button" );
    return $buttons;
 }
 
 function add_qlik_highlight_plugin( $plugin_array ) {
-   $plugin_array['qlik'] = plugin_dir_url(__FILE__) . 'js/qlikview-shortcode-button.js';
+   $plugin_array['qlik_code_button'] = plugin_dir_url(__FILE__) . 'js/qlikview-shortcode-button.js';
    return $plugin_array;
 }
 
