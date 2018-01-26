@@ -2,7 +2,7 @@
   tinymce.create('tinymce.plugins.qlik_code_buttons', {
     init : function(ed, url) {
       ed.addButton('qlik_code_button', {
-        title : 'Insert Qlik Code Syntax Highlighting Block',
+        title : 'Insert Syntax Highlighted Qlik Code Block',
 				text: 'Code',
         icon: true,
 				image : url+'/qlik.png',
