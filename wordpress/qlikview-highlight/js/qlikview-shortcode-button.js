@@ -3,8 +3,9 @@
     init : function(ed, url) {
       ed.addButton('qlik_code_button', {
         title : 'Insert Qlik Code Syntax Highlighting Block',
-				//text: 'Code',
-        image : url+'/qlik-code-edit.png',
+				text: 'Code',
+        icon: true,
+				image : url+'/qlik.png',
         onclick : function() {
 					var selected = tinyMCE.activeEditor.selection.getContent( {format : "text"} );
 					if (selected == null || selected == '') {
