@@ -1,16 +1,16 @@
 <?php
 /**
- * @package QlikView_Highlight
- * @version 1.2
+ * @package Qlik_Highlight
+ * @version 2.0
  */
 /*/
  * Plugin Name: Qlik for WordPress
  * Plugin URI: http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html
  * Description: Automatic syntax highlighting of Qlik script and expressions on any WordPress page or post.
- * Version: 1.2
+ * Version: 2.0
  * Author: Matt Fryer
  * Author URI: http://www.qlikviewaddict.com/
- * License: GPLv2 or later
+ * License: GPLv3 or later
 /*/
 /*  Copyright 2014  Matthew Fryer  (email : matthew_fryer@hotmail.com)
 
@@ -30,7 +30,7 @@
 
 defined('ABSPATH') or die("No script kiddies please!"); //Block direct access to this php file
 
-define( 'QLIK_HIGHLIGHT_PLUGIN_VERSION', '1.2' );
+define( 'QLIK_HIGHLIGHT_PLUGIN_VERSION', '2.0' );
 
 // Register the necessary highlight code and styles 
 function qlik_highlight_register() {
@@ -62,7 +62,7 @@ function qlik_highlight_shortcode( $atts , $content = null ) {
 	return '<pre><code class="' . $a['type'] . '">' . $content . '</code></pre>';
 }
 
-function qlik_pre_process_shortcode($content) {
+function qlik_highlight_pre_process_shortcode($content) {
     global $shortcode_tags;
  
     // Backup current registered shortcodes and clear them all out
@@ -81,10 +81,10 @@ function qlik_pre_process_shortcode($content) {
  
     return $content;
 }
-add_filter('the_content', 'qlik_pre_process_shortcode', 7);
+add_filter('the_content', 'qlik_highlight_pre_process_shortcode', 7);
 
 // Add the button to the text editor
-function qlik_button_script() {
+function qlik_highlight_button_script() {
     if(wp_script_is("quicktags")) {
         ?>
             <script type="text/javascript">
@@ -119,7 +119,7 @@ function qlik_button_script() {
         <?php
     }
 }
-add_action("admin_print_footer_scripts", "qlik_button_script");
+add_action("admin_print_footer_scripts", "qlik_highlight_button_script");
 
 // Add the button(s) to the TinyMCE so that the shortcode(s) can be added via the visual page/post editor
 function register_qlik_highlight_buttons( $buttons ) {

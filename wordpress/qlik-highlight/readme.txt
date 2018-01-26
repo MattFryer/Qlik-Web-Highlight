@@ -1,14 +1,14 @@
 === Qlik for WordPress ===
 Contributors: Matt Fryer
-Tags: highlight, syntax, qlikview, qlik sense, post, page, shortcode, plugin
+Tags: highlight, syntax, qlik, qlikview, qlik sense, post, page, shortcode, plugin
 Donate link: http://www.qlikviewaddict.com/
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 1.2
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Stable tag: 2.0
+License: GPLv3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
-Automatic syntax highlighting of QlikView and Qlik Sense script and expressions on any WordPress page or post.
+Automatic syntax highlighting of QlikView and Qlik Sense script and expressions/measures on any WordPress page or post.
 
 == Description ==
 This WordPress plugin provides automatic syntax highlighting of QlikView and Qlik Sense script on any WordPress page or post. It was developed by Matt Fryer, an experienced Qlik consultant and author of the popular blog [QlikViewAddict.com](http://www.qlikviewaddict.com).
@@ -24,22 +24,22 @@ It currently supports highlighting of the following Qlik script elements:
 * Field names in most common situations
 
 = How to use =
-Simply wrap any Qlik code blocks within the [qlikview] ... [/qlikview] shortcode tags. By default, the plugin will assume that the code contained in the tags is Qlik script and will highlight it accordingly. You can specify an alternative code type using the type parameter within the opening tag. For example [qlikview type="exp"]=num(MyField)[/qlikview]. Currently supported code types are "qvs", "exp" (or "qve"), "sql", "vbscript" and "javascript". If no code type is specified then "qvs" will be assumed. 
+Simply wrap any Qlik code blocks within the [qlik-code] ... [/qlik-code] shortcode tags. By default, the plugin will assume that the code contained in the tags is Qlik script and will highlight it accordingly. You can specify an alternative code type using the type parameter within the opening tag. For example [qlikview type="exp"]=num(MyField)[/qlikview]. Currently supported code types are "qvs", "exp" (or "qve"), "sql", "vbscript" and "javascript". If no code type is specified then "qvs" will be assumed. 
 
-Alternatively, the shortcode can be entered using the button within the WordPress visual post/page editor. Select the block of code within the post or page, then click the Qlik button on the editor menu. You will be prompted for what code type the block should be highlighted as. Once complete, click OK and the shortcode will be added around the code block for you.
+Alternatively, the shortcode can be entered using the buttons within the WordPress text and visual post/page editors. Select the block of code within the post or page, then click the Qlik Code button on the editor menu. You will be prompted for what code type the block should be highlighted as. Once complete, click OK and the shortcode will be added around the code block for you.
 
 = Feedback =
 If you spot any issues or have any suggestions to improve the plugin, please let me know either via the support tab here, or via a comment on [QlikViewAddict.com](http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html).
 
 == Installation ==
-There are 3 possible methods to install this plugin. We would highly recommend using method 1.
+There are 3 possible methods to install this plugin. We would highly recommend using method 1 as this will give notification of future updates.
 = Method 1 =
 1. Login to your WordPress Admin Portal.
 2. On the left hand navigation panel, select "Plugins". 
 3. Towards the top of the plugins list, click the "Add New" button. 
-4. In the search box towards the right hand side, type "QlikView" and hit enter to search.
-5. The QlikView for WordPress plugin is currently the only result returned. Click the "Install Now" button next to it.
-6. WordPress will then download and install the plugin for you. Once complete, click the "Activate Plugin" link to complete the installation.
+4. In the search box towards the right hand side, type "Qlik" and hit enter to search.
+5. The Qlik for WordPress plugin is currently one of only two results returned. Click the "Install Now" button next to it.
+6. WordPress will then download and install the plugin for you. Once complete, click the "Activate" button to complete the installation.
 7. The plugin is now installed and the shortcode is ready to use.
 
 = Method 2 =
@@ -50,30 +50,30 @@ There are 3 possible methods to install this plugin. We would highly recommend u
 5. Again, towards the top, click the "Upload Plugin" button.
 6. Click the "Browse" button and navigate to the location where you saved the plugin zip file and select it.
 7. Click the "Install Now" button
-8. Once back on the plugins page, activate the "QlikView for Wordpress" plugin.
+8. Once back on the plugins page, activate the "Qlik for Wordpress" plugin.
 
 = Method 3 =
 1. Download the plugin zip file by clicking the link above.
 2. Extract the contents of the zip file to a folder on your computer.
-3. Upload the entire directory "/qlikview-highlight/" and its contents from the .zip file to the "/wp-content/plugins/" directory of your Wordpess site. If a previous version of this plugin has been installed, overwrite the entire folder.
+3. Upload the entire directory "/qlik-highlight/" and its contents from the .zip file to the "/wp-content/plugins/" directory of your Wordpess site. If a previous version of this plugin has been installed, overwrite the entire folder.
 4. Login to your WordPress Admin Portal.
 5. On the left hand navigation panel, select "Plugins".
-6. Activate the "QlikView for WordPress" plugin.
+6. Activate the "Qlik for WordPress" plugin.
 
 == Frequently Asked Questions ==
 = Once installed, how do I use the plugin? =
-Simply wrap any QlikView code blocks within the [qlikview] ... [/qlikview] shortcode tags. By default, the plugin will assume that the code contained in the tags is QlikView script and will highlight it accordingly. You can specify an alternative code type using the type parameter within the opening tag. For example [qlikview type="exp"]=num(MyField)[/qlikview]. Currently supported code types are "qvs", "exp" (or "qve"), "sql", "vbscript" and "javascript". If no code type is specified then "qvs" will be assumed. 
+Simply wrap any Qlikor Qlik Sense code blocks within the [qlik-code] ... [/qlik-code] shortcode tags. By default, the plugin will assume that the code contained in the tags is Qlik script and will highlight it accordingly. You can specify an alternative code type using the type parameter within the opening tag. For example [qlik-code type="exp"]=num(MyField)[/qlik-code]. Currently supported code types are "qvs", "exp" (or "qve"), "sql", "vbscript" and "javascript". If no code type is specified then "qvs" will be assumed. 
 
-Alternatively, the shortcode can be entered using the button within the WordPress visual post/page editor. Select the block of code within the post or page, then click the QlikView button on the editor menu. You will be prompted to specify what code type the block should be highlighted as. Once complete, click OK and the shortcode will be added around the code block for you.
+Alternatively, the shortcode can be entered using the buttons within the WordPress text and visual post/page editors. Select the block of code within the post or page, then click the Qlik Code button on the editor menu. You will be prompted to specify what code type the block should be highlighted as. Once complete, click OK and the shortcode will be added around the code block for you.
 
 = Is the syntax highlighting perfect? =
-The syntax highlighting is an approximation of the default highlighting within the QlikView Edit Script dialog. It is not a perfect replication.
+The syntax highlighting is an approximation of the default highlighting within the Qlik Edit Script dialogs. It is not a perfect replication.
 
 = Does it check if my code is valid = 
-This plugin is not designed to validate your QlikView code. Just because it is highlighted doesn't mean your code is valid. For example, the highlighting engine has no way of knowing if field names within an expression are actually contained within a QlikView data model. 
+This plugin is not designed to validate your Qlik code. Just because it is highlighted it doesn't mean your code is valid. For example, the highlighting engine has no way of knowing if field names within an expression/measure are actually contained within a QlikView or Qlik Sense data model. 
 
 = Can it highlight other languages? =
-As well as QlikView script and expressions, it can currently highlight a handful of other languages that are associated with QlikView. These currently include SQL, VBScript and JavaScript. If you think there is a need for it to support another language, please let me know.
+As well as Qlik script and expressions/measures, it can currently highlight a handful of other languages that are associated with QlikView. These currently include SQL, VBScript and JavaScript. If you think there is a need for it to support another language, please let me know.
 
 = Can I use it with another highlighting plugin? =
 The plugin has not been tested with any other highlighting plugins (syntax or otherwise) and so it cannot be guaranteed to work alongside them, especially those also based on highlight.js.

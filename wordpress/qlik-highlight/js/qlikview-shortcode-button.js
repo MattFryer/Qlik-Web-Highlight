@@ -30,7 +30,7 @@
         author : 'Matthew Fryer',
         authorurl : 'http://www.qlikviewaddict.com/',
         infourl : 'http://www.qlikviewaddict.com/',
-        version : "1.2"
+        version : "2.0"
       };
     }
   });
