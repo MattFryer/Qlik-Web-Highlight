@@ -1,9 +1,10 @@
 (function() {
-  tinymce.create('tinymce.plugins.qlik_code_button', {
+  tinymce.create('tinymce.plugins.qlik_code_buttons', {
     init : function(ed, url) {
       ed.addButton('qlik_code_button', {
-        title : 'Qlik Code',
-        image : url+'/qlikview.png',
+        title : 'Qlik Code Syntax Highlighting',
+				//text: 'Code',
+        image : url+'/qlik-code-edit.png',
         onclick : function() {
 					var selected = tinyMCE.activeEditor.selection.getContent( {format : "text"} );
 					if (selected == null || selected == '') {
@@ -32,5 +33,5 @@
       };
     }
   });
-  tinymce.PluginManager.add('qlik_code_button', tinymce.plugins.qlik_code_button);
+  tinymce.PluginManager.add('qlik_code_buttons', tinymce.plugins.qlik_code_buttons);
 })();
