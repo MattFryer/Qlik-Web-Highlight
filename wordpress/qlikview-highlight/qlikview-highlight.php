@@ -15,7 +15,7 @@
 /*  Copyright 2014  Matthew Fryer  (email : matthew_fryer@hotmail.com)
 
     This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as 
+    it under the terms of the GNU General Public License, version 3, as 
     published by the Free Software Foundation.
 
     This program is distributed in the hope that it will be useful,
@@ -30,16 +30,15 @@
 
 defined('ABSPATH') or die("No script kiddies please!"); //Block direct access to this php file
 
-// Add the necessary highlight code to the HTML header for the site
-function qlik_highlight_head() {
-    echo '<link rel="stylesheet" title="Qlik" href="' . plugin_dir_url(__FILE__) . 'css/qlikview.css">';
-		echo '<script src="' . plugin_dir_url(__FILE__) . 'js/highlight.pack.js"></script>';
-		echo '<script>';
-		echo '	hljs.configure({tabReplace: \'    \'});';
-		echo '	hljs.initHighlightingOnLoad();';
-		echo '</script>';
-}
-add_action('wp_head', 'qlik_highlight_head');
+define( 'QLIK_HIGHLIGHT_PLUGIN_VERSION', '1.2' );
+
+// Register the necessary highlight code and styles 
+function qlik_highlight_register() {
+	wp_register_style( 'qlik_highlight_style', plugin_dir_url(__FILE__) . 'css/qlikview.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the CSS
+	wp_register_script( 'qlik_highlight_js', plugin_dir_url(__FILE__) . 'js/highlight.pack.js', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the custom highlight.js package	
+	wp_register_script( 'qlik_highlight_config', plugin_dir_url(__FILE__) . 'js/highlight.config.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js config
+}	
+add_action('wp_enqueue_scripts', 'qlik_highlight_register');
 
 // Add Qlik specific shortcode [qlik-code]...[/qlik-code]
 // Accepts type parameter [qlik-code type="qvs"].
@@ -54,6 +53,12 @@ function qlik_highlight_shortcode( $atts , $content = null ) {
 	$attributes = shortcode_atts( array(
         'type' => 'qvs'
     ), $atts );
+	
+	// enqueue the css and js
+	wp_enqueue_style( 'qlik_highlight_style' );
+	wp_enqueue_script( 'qlik_highlight_js' );
+	wp_enqueue_script( 'qlik_highlight_config' );
+	
 	return '<pre><code class="' . $a['type'] . '">' . $content . '</code></pre>';
 }
 
