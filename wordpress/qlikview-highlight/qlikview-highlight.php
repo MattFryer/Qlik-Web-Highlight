@@ -121,27 +121,27 @@ function qlik_button_script() {
 }
 add_action("admin_print_footer_scripts", "qlik_button_script");
 
-// Add the button to the TinyMCE so that the shortcode can be added via the visual page/post editor
-function register_qlik_highlight_button( $buttons ) {
-   array_push( $buttons, "|", "qlik_code_button" );
+// Add the button(s) to the TinyMCE so that the shortcode(s) can be added via the visual page/post editor
+function register_qlik_highlight_buttons( $buttons ) {
+   array_push( $buttons, "qlik_code_button" );
    return $buttons;
 }
 
 function add_qlik_highlight_plugin( $plugin_array ) {
-   $plugin_array['qlik_code_button'] = plugin_dir_url(__FILE__) . 'js/qlikview-shortcode-button.js';
+   $plugin_array['qlik_code_buttons'] = plugin_dir_url(__FILE__) . 'js/qlikview-shortcode-button.js';
    return $plugin_array;
 }
 
-function qlik_hightlight_button() {
+function qlik_hightlight_buttons() {
    if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
       return;
    }
 
    if ( get_user_option('rich_editing') == 'true' ) {
       add_filter( 'mce_external_plugins', 'add_qlik_highlight_plugin' );
-      add_filter( 'mce_buttons', 'register_qlik_highlight_button' );
+      add_filter( 'mce_buttons', 'register_qlik_highlight_buttons' );
    }
 }
-add_action('init', 'qlik_hightlight_button');
+add_action('init', 'qlik_hightlight_buttons');
 
 ?>
