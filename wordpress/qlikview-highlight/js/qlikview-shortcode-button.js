@@ -3,7 +3,7 @@
     init : function(ed, url) {
       ed.addButton('qlik_code_button', {
         title : 'Insert Syntax Highlighted Qlik Code Block',
-				text: 'Code',
+				text: ' Code',
         icon: true,
 				image : url+'/qlik.png',
         onclick : function() {
