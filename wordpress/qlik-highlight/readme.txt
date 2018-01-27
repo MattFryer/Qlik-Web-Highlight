@@ -87,6 +87,17 @@ It uses a custom build of highlight.js to provide the highlighting. The highligh
 2. Includes a support for adding shortcode via the WordPress visual post/page editor.
 
 == Changelog ==
+= 2.0 =
+* Rewritten core code to prevent code being loaded on all pages of a site irrespective of whether or not the shortcode is present
+*	Changed [qlikview] shortcode to [qlik-code] to better represent Qlik Sense support. The old shortcode is still supported for backwards compatibility
+* Button added to text editor to insert shortcode 
+* Visual editor button updated to differentiate from other Qlik plugins
+* Corrected issue with plugin clashing with some other subcodes resulting in incorrect display. Some Google Maps plugin were amongst those affected.
+* Added Qlik Sense connection string support
+* Added the missing keywords DERIVE and FLUSHLOG
+* Added support for DIRECT QUERY statements
+* Other minor improvements
+
 = 1.2 =
 * Updated the highlight.js core to resolve a known bug.
 
