@@ -48,7 +48,7 @@ Wrap any Qlik script blocks included within the web page in pre and code HTML ta
 <pre><code class="qvs">MyTable: LOAD * RESIDENT MyTempTable;</code></pre>
 ```
 
-The class allocated within the code tag will define the type of code which syntax highlighting should be applied for. If you code type is given, the highlighting engine will attempt to work out what code type is contained within the tags. It can't always guess correctly and so it is recommended to always define the code type. The following following code types are currently supported:
+The class allocated within the code tag will define the type of code which syntax highlighting should be applied for. If no code type is given, the highlighting engine will attempt to work out what code type is contained within the tags. It can't always guess correctly and so it is recommended to always define the code type. The following following code types are currently supported:
 
 * "qvs" - QlikView Script
 *  "exp" or "qve" - QlikView Expression
@@ -56,7 +56,7 @@ The class allocated within the code tag will define the type of code which synta
 *  "vbscript" - Visual Basic Script
 *  "javascript" - Java Script
 
-Syntax highlighting will then automatically be applied to the block when the page is view by the user.
+Syntax highlighting will then automatically be applied to the block when the page is viewed by the user.
 
 ## Qlik for WordPress Plugin [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/) [![WordPress plugin](https://img.shields.io/wordpress/plugin/dt/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/) [![WordPress plugin rating](https://img.shields.io/wordpress/plugin/r/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/)
 
