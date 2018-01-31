@@ -1,9 +1,9 @@
-[![GitHub version](https://img.shields.io/github/release/MattFryer/QlikView-Web-Highlight.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest)
-[![GitHub Release Date](https://img.shields.io/github/release-date/MattFryer/QlikView-Web-Highlight.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest)
-[![GitHub download](https://img.shields.io/github/downloads/MattFryer/QlikView-Web-Highlight/total.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest)
-[![GitHub stars](https://img.shields.io/github/stars/MattFryer/QlikView-Web-Highlight.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/MattFryer/QlikView-Web-Highlight.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/issues)
-[![GitHub license](https://img.shields.io/github/license/MattFryer/QlikView-Web-Highlight.svg)](https://github.com/MattFryer/QlikView-Web-Highlight/blob/master/LICENSE)
+[![GitHub version](https://img.shields.io/github/release/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest)
+[![GitHub Release Date](https://img.shields.io/github/release-date/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest)
+[![GitHub download](https://img.shields.io/github/downloads/MattFryer/Qlik-Web-Highlight/total.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest)
+[![GitHub stars](https://img.shields.io/github/stars/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues-raw/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/issues)
+[![GitHub license](https://img.shields.io/github/license/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/blob/master/LICENSE)
 
 # Qlik Web Syntax Highlighter
 
