@@ -26,10 +26,10 @@ This syntax highlighter is also packaged as a plugin for  WordPress and an exten
 
 Here are the steps to get it installed and working yourself:
 
-  1. Go to the latest QlikView Web Highlighting release at https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest/. Click on the file named qvhighlight_vX.X.zip to download.
-  2. Unpack the folder and its contained files from the archive to a folder on you hard drive. 
-  3. Upload the folder and its contents to your website (eg. using FTP)
-  4. Edit the web page(s) in which you wish to display QlikView script and add the following lines within the <head> section:
+1. Go to the latest QlikView Web Highlighting release at https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest/. Click on the file named qvhighlight_vX.X.zip to download.
+1. Unpack the folder and its contained files from the archive to a folder on you hard drive. 
+1. Upload the folder and its contents to your website (eg. using FTP)
+1. Edit the web page(s) in which you wish to display QlikView script and add the following lines within the <head> section:
 
 ```html
 <link href="/qvhighlight/qlikview.css" rel="stylesheet" title="QlikView"></link>

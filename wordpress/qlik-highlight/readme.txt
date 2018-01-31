@@ -1,7 +1,6 @@
 === Qlik for WordPress ===
-Contributors: Matt Fryer
+Contributors: mattfryer
 Tags: highlight, syntax, qlik, qlikview, qlik sense, post, page, shortcode, plugin
-Donate link: http://www.qlikviewaddict.com/
 Requires at least: 4.0
 Tested up to: 4.9.1
 Stable tag: 2.0
@@ -31,34 +30,37 @@ Alternatively, the shortcode can be entered using the buttons within the WordPre
 = Feedback =
 If you spot any issues or have any suggestions to improve the plugin, please let me know either via the support tab here, or via a comment on [QlikViewAddict.com](http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html).
 
+== Credits ==
+Thanks go to Steve Dark and Dan Barraett for their help with initial testing the plugin! Additionally I'd like to thank Ivan Sagalaev and all the other contributors of Highlight.js which this plugin is based upon.
+
 == Installation ==
 There are 3 possible methods to install this plugin. We would highly recommend using method 1 as this will give notification of future updates.
 = Method 1 =
 1. Login to your WordPress Admin Portal.
-2. On the left hand navigation panel, select "Plugins". 
-3. Towards the top of the plugins list, click the "Add New" button. 
-4. In the search box towards the right hand side, type "Qlik" and hit enter to search.
-5. The Qlik for WordPress plugin is currently one of only two results returned. Click the "Install Now" button next to it.
-6. WordPress will then download and install the plugin for you. Once complete, click the "Activate" button to complete the installation.
-7. The plugin is now installed and the shortcode is ready to use.
+1. On the left hand navigation panel, select "Plugins". 
+1. Towards the top of the plugins list, click the "Add New" button. 
+1. In the search box towards the right hand side, type "Qlik" and hit enter to search.
+1. The Qlik for WordPress plugin is currently one of only two results returned. Click the "Install Now" button next to it.
+1. WordPress will then download and install the plugin for you. Once complete, click the "Activate" button to complete the installation.
+1. The plugin is now installed and the shortcode is ready to use.
 
 = Method 2 =
 1. Download the plugin zip file by clicking the link above.
-2. Login to your WordPress Admin Portal.
-3. On the left hand navigation panel, select "Plugins". 
-4. Towards the top of the plugins list, click the "Add New" button. Note, if you have a previous version of this plugin installed it must be removed before proceeding.
-5. Again, towards the top, click the "Upload Plugin" button.
-6. Click the "Browse" button and navigate to the location where you saved the plugin zip file and select it.
-7. Click the "Install Now" button
-8. Once back on the plugins page, activate the "Qlik for Wordpress" plugin.
+1. Login to your WordPress Admin Portal.
+1. On the left hand navigation panel, select "Plugins". 
+1. Towards the top of the plugins list, click the "Add New" button. Note, if you have a previous version of this plugin installed it must be removed before proceeding.
+1. Again, towards the top, click the "Upload Plugin" button.
+1. Click the "Browse" button and navigate to the location where you saved the plugin zip file and select it.
+1. Click the "Install Now" button
+1. Once back on the plugins page, activate the "Qlik for Wordpress" plugin.
 
 = Method 3 =
 1. Download the plugin zip file by clicking the link above.
-2. Extract the contents of the zip file to a folder on your computer.
-3. Upload the entire directory "/qlik-highlight/" and its contents from the .zip file to the "/wp-content/plugins/" directory of your Wordpess site. If a previous version of this plugin has been installed, overwrite the entire folder.
-4. Login to your WordPress Admin Portal.
-5. On the left hand navigation panel, select "Plugins".
-6. Activate the "Qlik for WordPress" plugin.
+1. Extract the contents of the zip file to a folder on your computer.
+1. Upload the entire directory "/qlik-highlight/" and its contents from the .zip file to the "/wp-content/plugins/" directory of your Wordpess site. If a previous version of this plugin has been installed, overwrite the entire folder.
+1. Login to your WordPress Admin Portal.
+1. On the left hand navigation panel, select "Plugins".
+1. Activate the "Qlik for WordPress" plugin.
 
 == Frequently Asked Questions ==
 = Once installed, how do I use the plugin? =
@@ -138,6 +140,3 @@ This version provides significant improvements and bug fixes over the previous r
 
 = 0.1 =
 This version provides the initial pre-release.
-
-== Credits ==
-Thanks go to Steve Dark and Dan Barraett for their help with initial testing the plugin! Additionally I'd like to thank Ivan Sagalaev and all the other contributors of Highlight.js which this plugin is based upon.
