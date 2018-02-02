@@ -30,8 +30,15 @@
 
 defined('ABSPATH') or die("No script kiddies please!"); //Block direct access to this php file
 
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// DEFINES
+////////////////////////////////////////////////////////////////////////////////////////////
 define( 'QLIK_HIGHLIGHT_PLUGIN_VERSION', '2.0' );
 
+////////////////////////////////////////////////////////////////////////////////////////////
+// SHORTCODE
+////////////////////////////////////////////////////////////////////////////////////////////
 // Register the necessary highlight code and styles 
 function qlik_highlight_register() {
 	wp_register_style( 'qlik_highlight_style', plugin_dir_url(__FILE__) . 'css/qlikview.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the CSS
@@ -89,6 +96,10 @@ function qlik_highlight_pre_process_shortcode($content) {
 }
 add_filter('the_content', 'qlik_highlight_pre_process_shortcode', 7);
 
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// WORDPRESS TEXT EDITOR BUTTONS
+////////////////////////////////////////////////////////////////////////////////////////////
 // Add the button to the text editor
 function qlik_highlight_button_script() {
     if(wp_script_is("quicktags")) {
@@ -127,6 +138,9 @@ function qlik_highlight_button_script() {
 }
 add_action("admin_print_footer_scripts", "qlik_highlight_button_script");
 
+////////////////////////////////////////////////////////////////////////////////////////////
+// WORDPRESS TINYMCE VISUAL EDITOR BUTTONS
+////////////////////////////////////////////////////////////////////////////////////////////
 // Add the button(s) to the TinyMCE so that the shortcode(s) can be added via the visual page/post editor
 function register_qlik_highlight_buttons( $buttons ) {
    array_push( $buttons, "qlik_code_button" );
