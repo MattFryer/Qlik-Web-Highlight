@@ -36,7 +36,9 @@ define( 'QLIK_HIGHLIGHT_PLUGIN_VERSION', '2.0' );
 function qlik_highlight_register() {
 	wp_register_style( 'qlik_highlight_style', plugin_dir_url(__FILE__) . 'css/qlikview.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the CSS
 	wp_register_script( 'qlik_highlight_js', plugin_dir_url(__FILE__) . 'js/highlight.pack.js', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the custom highlight.js package	
+	wp_register_script( 'qlik_highlight_lns_js', plugin_dir_url(__FILE__) . 'js/highlightjs-line-numbers.min.js', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js line numbers package	
 	wp_register_script( 'qlik_highlight_config', plugin_dir_url(__FILE__) . 'js/highlight.config.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js config
+	wp_register_script( 'qlik_highlight_lns_config', plugin_dir_url(__FILE__) . 'js/highlight.lns.config.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js config
 }	
 add_action('wp_enqueue_scripts', 'qlik_highlight_register');
 
@@ -58,6 +60,10 @@ function qlik_highlight_shortcode( $atts , $content = null ) {
 	wp_enqueue_style( 'qlik_highlight_style' );
 	wp_enqueue_script( 'qlik_highlight_js' );
 	wp_enqueue_script( 'qlik_highlight_config' );
+	
+	// if line numbers are enabled, enqueue those js files also
+	// wp_enqueue_script( 'qlik_highlight_lns_js' );
+	// wp_enqueue_script( 'qlik_highlight_lns_config' );
 	
 	return '<pre><code class="' . $a['type'] . '">' . $content . '</code></pre>';
 }
