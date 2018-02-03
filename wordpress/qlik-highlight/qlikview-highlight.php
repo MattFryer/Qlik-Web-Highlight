@@ -37,6 +37,51 @@ defined('ABSPATH') or die("No script kiddies please!"); //Block direct access to
 define( 'QLIK_HIGHLIGHT_PLUGIN_VERSION', '2.0' );
 
 ////////////////////////////////////////////////////////////////////////////////////////////
+// ADMIN CONFIGURATION PAGE
+////////////////////////////////////////////////////////////////////////////////////////////
+// Add a settings page
+function qlik_highlight_admin_add_page() {
+	add_menu_page('Qlik for WordPress Settings', 'Qlik', 'manage_options', 'qlik_highlight', 'qlik_highlight_settings_page', 'dashicons-admin-generic', null);
+}
+add_action('admin_menu', 'qlik_highlight_admin_add_page');
+
+// Register the settings
+function qlik_highlight_register_settings() {
+	register_setting( 'qlik_highlight_settings_group', 'qlik_highlight_options' );
+	add_settings_section('qlik_highlight_main', 'General Settings', 'qlik_highlight_general_section_text', 'qlik_highlight');
+	add_settings_field('qlik-highlight-ln', 'Enable line numbers', 'qlik_highlight_ln_check', 'qlik_highlight', 'qlik_highlight_main');
+}
+add_action( 'admin_init', 'qlik_highlight_register_settings' );	
+
+function qlik_highlight_general_section_text() {
+	echo '<p>General settings that effect all code blocks across all pages and posts.</p>';
+}
+
+function qlik_highlight_ln_check() {
+	$options = get_option('qlik_highlight_options');
+?>
+	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-ln]" value="1" <?php if (isset($options['qlik-highlight-ln'])){echo 'checked';} ?> /> <strong>Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ Block comments).</strong>
+<?php
+}
+
+// Define the contents of the settings page
+function qlik_highlight_settings_page() {
+	?>
+	<div>
+		<h2>Qlik for WordPress Settings</h2>
+		<p>The Qlik for WordPress plugin provides syntax highlighting of Qlikview and Qlik Sense script in pages and post.</p>
+		<form action="options.php" method="post">
+			<?php settings_fields('qlik_highlight_settings_group'); ?>
+			<?php do_settings_sections('qlik_highlight'); ?>
+
+			<input name="Submit" type="submit" value="<?php esc_attr_e('Save Settings'); ?>" />
+		</form>
+		<p>Produced by Matt Fryer. Further details available at <a href="http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html">QlikViewAddict.com</a></p>
+	</div>
+	<?php
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
 // SHORTCODE
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Register the necessary highlight code and styles 
@@ -63,14 +108,17 @@ function qlik_highlight_shortcode( $atts , $content = null ) {
         'type' => 'qvs'
     ), $atts );
 	
-	// enqueue the css and js
+	// enqueue the main css and js
 	wp_enqueue_style( 'qlik_highlight_style' );
 	wp_enqueue_script( 'qlik_highlight_js' );
 	wp_enqueue_script( 'qlik_highlight_config' );
 	
 	// if line numbers are enabled, enqueue those js files also
-	// wp_enqueue_script( 'qlik_highlight_lns_js' );
-	// wp_enqueue_script( 'qlik_highlight_lns_config' );
+	$options = get_option('qlik_highlight_options');
+	if ( isset($options['qlik-highlight-ln']) ) {
+		wp_enqueue_script( 'qlik_highlight_lns_js' );
+		wp_enqueue_script( 'qlik_highlight_lns_config' );
+	}
 	
 	return '<pre><code class="' . $a['type'] . '">' . $content . '</code></pre>';
 }
