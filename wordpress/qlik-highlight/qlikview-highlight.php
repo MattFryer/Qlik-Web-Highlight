@@ -41,7 +41,7 @@ define( 'QLIK_HIGHLIGHT_PLUGIN_VERSION', '2.0' );
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Add a settings page
 function qlik_highlight_admin_add_page() {
-	add_menu_page('Qlik for WordPress Settings', 'Qlik', 'manage_options', 'qlik_highlight', 'qlik_highlight_settings_page', 'dashicons-admin-generic', null);
+	add_menu_page('Qlik for WordPress Settings', 'Qlik', 'manage_options', 'qlik_highlight', 'qlik_highlight_settings_page', plugin_dir_url( __FILE__ ) . 'js/qlik.png', null);
 }
 add_action('admin_menu', 'qlik_highlight_admin_add_page');
 
@@ -60,7 +60,7 @@ function qlik_highlight_general_section_text() {
 function qlik_highlight_ln_check() {
 	$options = get_option('qlik_highlight_options');
 ?>
-	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-ln]" value="1" <?php if (isset($options['qlik-highlight-ln'])){echo 'checked';} ?> /> <strong>Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ Block comments).</strong>
+	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-ln]" value="1" <?php if (isset($options['qlik-highlight-ln'])){echo 'checked';} ?> /> <strong>Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ block comments, REM comments and keyword combinations that aren't on the same line).</strong>
 <?php
 }
 
@@ -68,7 +68,7 @@ function qlik_highlight_ln_check() {
 function qlik_highlight_settings_page() {
 	?>
 	<div>
-		<h2>Qlik for WordPress Settings</h2>
+		<h1>Qlik for WordPress Settings</h1>
 		<p>The Qlik for WordPress plugin provides syntax highlighting of Qlikview and Qlik Sense script in pages and post.</p>
 		<form action="options.php" method="post">
 			<?php settings_fields('qlik_highlight_settings_group'); ?>
@@ -76,13 +76,20 @@ function qlik_highlight_settings_page() {
 
 			<input name="Submit" type="submit" value="<?php esc_attr_e('Save Settings'); ?>" />
 		</form>
+		<h2>Icons</h2>
+		<p>The table below provides the necessary codes to insert Qlik icons into pages and posts:</p>
+		<table>
+			<tr><th>Icon</th><th>Code</th></tr>
+			<tr><td>Coming soon!</td><td></td></tr>
+		</table>
+		<hr />
 		<p>Produced by Matt Fryer. Further details available at <a href="http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html">QlikViewAddict.com</a></p>
 	</div>
 	<?php
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-// SHORTCODE
+// REGISTER ASSETS
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Register the necessary highlight code and styles 
 function qlik_highlight_register() {
@@ -94,14 +101,19 @@ function qlik_highlight_register() {
 }	
 add_action('wp_enqueue_scripts', 'qlik_highlight_register');
 
-// Add Qlik specific shortcode [qlik-code]...[/qlik-code]
-// Accepts type parameter [qlik-code type="qvs"].
-// Options are: 
-//	 "qvs" or "qlikview-script" or "qv-script" - Qlik Script (default)
-//	 "exp" or "qlikview-exp" or "qv-exp" - Qlik Expression
-//	 "sql" - SQL
-//   "vbscript" - Visual Basic Script
-//	 "javascript" - Java Script
+////////////////////////////////////////////////////////////////////////////////////////////
+// SHORTCODE
+////////////////////////////////////////////////////////////////////////////////////////////
+/*
+Add Qlik specific shortcode [qlik-code]...[/qlik-code]
+Accepts type parameter [qlik-code type="qvs"].
+Options are: 
+	 "qvs" or "qlikview-script" or "qv-script" - Qlik Script (default)
+	 "exp" or "qlikview-exp" or "qv-exp" - Qlik Expression
+	 "sql" - SQL
+  "vbscript" - Visual Basic Script
+	 "javascript" - Java Script
+*/
 function qlik_highlight_shortcode( $atts , $content = null ) { 
 	// obtain the passed type (script or expression) if any. Defaults to script if not specified
 	$attributes = shortcode_atts( array(
