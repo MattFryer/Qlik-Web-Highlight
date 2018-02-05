@@ -1,6 +1,6 @@
 (function() {
   tinymce.create("tinymce.plugins.qlik_code_buttons", {
-    init : function(ed, url) {
+    init(ed, url) {
       ed.addButton("qlik_code_button", {
         title : "Insert Syntax Highlighted Qlik Code Block",
 				text: " Code",
@@ -21,10 +21,10 @@
          }
       });
     },
-    createControl : function(n, cm) {
+    createControl(n, cm) {
       return null;
     },
-    getInfo : function() {
+    getInfo() {
       return {
         longname : "Qlik for WordPress",
         author : "Matthew Fryer",
