@@ -50,7 +50,7 @@ Here are the steps to get it installed and working yourself.
       hljs.initLineNumbersOnLoad();
     </script>	
     ```
-    Warning: Adding line number can cause incorrect highlighting of code patterns which span multiple lines (eg. /* */ block comments).
+    **Warning: Adding line number can cause incorrect highlighting of code patterns which span multiple lines (eg. /* */ block comments).**
 		
 ### Qlik Icons
 
