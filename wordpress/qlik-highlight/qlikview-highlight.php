@@ -431,7 +431,7 @@ function qlik_icon_shortcode( $atts , $content = null ) {
 	// enqueue the icons css
 	wp_enqueue_style( 'qlik_icon_style' );
 	
-	return '<span class="qlik-icon ' . $shortCodeAtts['icon'] . '"></span>' . $content;
+	return '<span class="' . $shortCodeAtts['icon'] . '"></span>' . $content;
 }
 add_shortcode( 'qlik-icon', 'qlik_icon_shortcode' );
 

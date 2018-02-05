@@ -16,7 +16,8 @@
 }
 
 /* General */
-.qicon {
+[class^="qicon-"]:before,
+[class*=" qicon-"]:before {
 	-moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -24,6 +25,7 @@
   font-variant: normal;
   text-rendering: auto;
   line-height: 1;
+	speak: none;
 }
 
 /* Sizes */
