@@ -43,14 +43,6 @@ Here are the steps to get it installed and working yourself.
       hljs.initHighlightingOnLoad();
     </script>
     ```
-1. (Optional) If you wish to enable the line numbers, add the following lines immediately after the above lines:
-    ```html
-    <script src="/qvhighlight/highlightjs-line-numbers.min.js"></script>
-    <script>
-      hljs.initLineNumbersOnLoad();
-    </script>	
-    ```
-    **Warning: Adding line number can cause incorrect highlighting of code patterns which span multiple lines (eg. /* */ block comments).**
 		
 ### Qlik Icons
 
@@ -98,6 +90,29 @@ A full list of available icon codes will be made available soon.
 To make it simple to add the Qlik Web Syntax Highlighter to your WordPress powered blog or website, a WordPress plugin is provided. Full details of how to download and install can be found on the [plugin's page on the WordPress.org website](https://wordpress.org/plugins/qlikview-syntax-highlighter/).
 
 You may also be interesting in the [Qlik Sense WordPress plugin](https://wordpress.org/plugins/qlik-sense/) by Yianni.Ververis. 
+
+## Advanced Tips
+Below are a number of advanced tips and tricks for those with a good understanding of HTML and CSS. These are provided for information only and support for them is strictly limited.
+
+### Add line numbers to code blocks
+If you wish to enable line numbers within code blocks on a page, add the following lines immediately after the Syntax Highlighting CSS and script as shown above:
+```html
+<script src="/qvhighlight/highlightjs-line-numbers.min.js"></script>
+<script>
+	hljs.initLineNumbersOnLoad();
+</script>	
+```
+**Warning: Adding line number can cause incorrect highlighting of code patterns which span multiple lines (eg. /* */ block comments).**
+
+### WordPress gray box around code block
+By default, many WordPress themes display the &lt;pre&gt; tags with a gray box and a large amount of padding. You can add your own CSS targeting the "qlik-highlight" class as follows:
+```css
+pre.qlik-highlight { } 
+```
+To apply styling to the &lt;code&gt; tag, use:
+```css
+pre.qlik-highlight > code { } 
+```
 
 ## Disclaimer
 
