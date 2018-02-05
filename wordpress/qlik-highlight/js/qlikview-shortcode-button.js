@@ -1,23 +1,23 @@
 (function() {
-  tinymce.create('tinymce.plugins.qlik_code_buttons', {
+  tinymce.create("tinymce.plugins.qlik_code_buttons", {
     init : function(ed, url) {
-      ed.addButton('qlik_code_button', {
-        title : 'Insert Syntax Highlighted Qlik Code Block',
-				text: ' Code',
+      ed.addButton("qlik_code_button", {
+        title : "Insert Syntax Highlighted Qlik Code Block",
+				text: " Code",
         icon: true,
-				image : url+'/qlik.png',
+				image : url+"/qlik.png",
         onclick : function() {
 					var selected = tinyMCE.activeEditor.selection.getContent( {format : "text"} );
-					if (selected == null || selected == '') {
-						var selected = 'Your code here...';
+					if (selected == null || selected == "") {
+						var selected = "Your code here...";
 					}
 		  
 					var type = prompt("Type (qvs, exp, sql, vbscript, javascript)", "qvs");
-					if (type == null || type == '' || (type != 'qvs' && type != 'exp' && type != 'sql' && type != 'vbscript' && type != 'javascript')){
-						var type = 'qvs';
+					if (type == null || type == "" || (type != "qvs" && type != "exp" && type != "sql" && type != "vbscript" && type != "javascript")){
+						var type = "qvs";
 					}
                
-					ed.execCommand('mceInsertContent', false, '[qlik-code type="'+type+'"]' + selected + '[/qlik]');
+					ed.execCommand("mceInsertContent", false, "[qlik-code type=\""+type+"\"]" + selected + "[/qlik]");
          }
       });
     },
@@ -27,12 +27,12 @@
     getInfo : function() {
       return {
         longname : "Qlik for WordPress",
-        author : 'Matthew Fryer',
-        authorurl : 'http://www.qlikviewaddict.com/',
-        infourl : 'http://www.qlikviewaddict.com/',
+        author : "Matthew Fryer",
+        authorurl : "http://www.qlikviewaddict.com/",
+        infourl : "http://www.qlikviewaddict.com/",
         version : "2.0"
       };
     }
   });
-  tinymce.PluginManager.add('qlik_code_buttons', tinymce.plugins.qlik_code_buttons);
-})();
+  tinymce.PluginManager.add("qlik_code_buttons", tinymce.plugins.qlik_code_buttons);
+}());
