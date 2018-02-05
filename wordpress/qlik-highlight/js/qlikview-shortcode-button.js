@@ -11,7 +11,7 @@
 					if (selectedContent === null || selectedContent === "") {
 						selectedContent = "Your code here...";
 					}
-		  
+					
 					var codeType = prompt("codeType (qvs, exp, sql, vbscript, javascript)", "qvs");
 					if (codeType === null || codeType === "" || (codeType !== "qvs" && codeType !== "exp" && codeType !== "sql" && codeType !== "vbscript" && codeType !== "javascript")){
 						codeType = "qvs";
