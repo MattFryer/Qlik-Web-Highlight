@@ -80,7 +80,7 @@ Syntax highlighting will then automatically be applied to the block when the pag
 ### Qlik Icons
 
 Simply add the appropriate icon code to the class of any suitable HTML tag. For example:
-```
+```html
 <span class="qicon-XXXX" ></span>
 ```
 A full list of available icon codes will be made available soon.
@@ -102,16 +102,16 @@ If you wish to enable line numbers within code blocks on a page, add the followi
 	hljs.initLineNumbersOnLoad();
 </script>	
 ```
-**Warning: Adding line number can cause incorrect highlighting of code patterns which span multiple lines (eg. /* */ block comments).**
+*** Warning: Adding line number can cause incorrect highlighting of code patterns which span multiple lines (eg. /* */ block comments).***
 
 ### WordPress gray box around code block
 By default, many WordPress themes display the &lt;pre&gt; tags with a gray box and a large amount of padding. You can add your own CSS targeting the "qlik-highlight" class as follows:
 ```css
-pre.qlik-highlight { } 
+pre.qlik-highlight-pre { } 
 ```
 To apply styling to the &lt;code&gt; tag, use:
 ```css
-pre.qlik-highlight > code { } 
+code.qlik-highlight-code { } 
 ```
 
 ## Disclaimer
