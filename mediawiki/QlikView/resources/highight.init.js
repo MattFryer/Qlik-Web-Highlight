@@ -1,4 +1,4 @@
 $( function () {
-    hljs.configure({tabReplace: '    '});
+    hljs.configure({tabReplace: "    "});
     hljs.initHighlightingOnLoad();
 });
