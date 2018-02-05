@@ -12,7 +12,7 @@
        url('LUIicons.svg#LUIicons') format('svg'),
        url('LUIicons.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
-  font-style: normal !important;
+  font-style: normal;
 }
 
 /* General */

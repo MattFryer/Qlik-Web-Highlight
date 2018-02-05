@@ -126,10 +126,10 @@ td.hljs-ln-numbers {
 	color: #ccc;
 	border-right: 1px solid #CCC;
 	vertical-align: top;
-	padding-right: 5px !important;
+	padding-right: 5px;
 	padding-left: 5px;
 }
 
 td.hljs-ln-code {
-	padding-left: 10px !important;
+	padding-left: 10px;
 }
