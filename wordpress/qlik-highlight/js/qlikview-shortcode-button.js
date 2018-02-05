@@ -9,12 +9,12 @@
         onclick : function() {
 					var selectedContent = tinyMCE.activeEditor.selection.getContent( {format : "text"} );
 					if (selectedContent === null || selectedContent === "") {
-						var selectedContent = "Your code here...";
+						selectedContent = "Your code here...";
 					}
 		  
 					var codeType = prompt("codeType (qvs, exp, sql, vbscript, javascript)", "qvs");
 					if (codeType === null || codeType === "" || (codeType !== "qvs" && codeType !== "exp" && codeType !== "sql" && codeType !== "vbscript" && codeType !== "javascript")){
-						var codeType = "qvs";
+						codeType = "qvs";
 					}
                
 					ed.execCommand("mceInsertContent", false, "[qlik-code type=\""+codeType+"\"]" + selectedContent + "[/qlik]");
