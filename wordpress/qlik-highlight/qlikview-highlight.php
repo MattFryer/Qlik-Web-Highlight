@@ -246,7 +246,7 @@ function qlik_highlight_button_script() {
 										if (type == null || type == '' || (type != 'qvs' && type != 'exp' && type != 'sql' && type != 'vbscript' && type != 'javascript')){
 											var type = 'qvs';
 										}
-                    QTags.insertContent("[qlik-code type=\"" + type + "\"]" +  selected_text + "[/qlik]");
+                    QTags.insertContent("[qlik-code type=\"" + type + "\"]" +  selected_text + "[/qlik-code]");
                 }
             </script>
         <?php
