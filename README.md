@@ -87,7 +87,7 @@ A full list of available icon codes will be made available soon.
 
 ## Qlik for WordPress Plugin [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/) [![WordPress plugin](https://img.shields.io/wordpress/plugin/dt/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/) [![WordPress plugin rating](https://img.shields.io/wordpress/plugin/r/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/)
 
-To make it simple to add the Qlik Web Syntax Highlighter to your WordPress powered blog or website, a WordPress plugin is provided. Full details of how to download and install can be found on the [plugin's page on the WordPress.org website](https://wordpress.org/plugins/qlikview-syntax-highlighter/).
+To make it simple to add the Qlik Web Syntax Highlighter to your WordPress powered blog or website, a WordPress plugin is provided. Full details of how to download, install and use can be found on the [plugin's page on the WordPress.org website](https://wordpress.org/plugins/qlikview-syntax-highlighter/) and on [QlikViewAddict.com](http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html).
 
 You may also be interesting in the [Qlik Sense WordPress plugin](https://wordpress.org/plugins/qlik-sense/) by Yianni.Ververis. 
 
@@ -102,7 +102,7 @@ If you wish to enable line numbers within code blocks on a page, add the followi
 	hljs.initLineNumbersOnLoad();
 </script>	
 ```
-*** Warning: Adding line number can cause incorrect highlighting of code patterns which span multiple lines (eg. /* */ block comments).***
+__Warning: Adding line number can cause incorrect highlighting of code patterns which span multiple lines (eg. /* */ block comments).__
 
 ### WordPress gray box around code block
 By default, many WordPress themes display the &lt;pre&gt; tags with a gray box and a large amount of padding. You can add your own CSS targeting the "qlik-highlight" class as follows:
