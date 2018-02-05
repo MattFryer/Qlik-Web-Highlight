@@ -72,6 +72,15 @@
 	font-family: 'Qlik-Icons';
 	content: "\e000"; 
 }
+
+.qicon-sense:before {
+  font-family: 'Qlik-Icons';
+	content: "\e014";
+}
+.qicon-qlikview:before {
+  font-family: 'Qlik-Icons';
+	content: "\e015";
+}
 	
 /* Qlik Sense Icons */	
 .qicon-bars-vert:before { 
@@ -335,7 +344,7 @@
 
 .qicon-task-success:before { 
 	font-family: 'LUIicons';
-	content: "\0067"; 
+	content: "\006D"; 
 }
 
 .qicon-list-view:before { 
@@ -363,11 +372,7 @@
 	content: "\0075"; 
 }
 
-.qicon-select-excluded:before { 
-	font-family: 'LUIicons';
-	content: "\0075"; 
-}
-
+.qicon-select-excluded:before,
 .qicon-tasks:before { 
 	font-family: 'LUIicons';
 	content: "\0078"; 
@@ -686,7 +691,8 @@
 	content: "\2193"; 
 }
 
-.qicon-associations:before { 
+.qicon-associations:before, 
+.qicon-bubbles:before { 
 	font-family: 'LUIicons';
 	content: "\25B6"; 
 }
