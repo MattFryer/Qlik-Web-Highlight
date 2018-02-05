@@ -5,12 +5,12 @@
 /* Fonts */
 @font-face {
   font-family: 'LUIicons';
-  src: url('LUIicons.eot');
-  src: url('LUIicons.woff2') format('woff2'),
-       url('LUIicons.woff') format('woff'),
-       url('LUIicons.ttf') format('truetype'),
-       url('LUIicons.svg#LUIicons') format('svg'),
-       url('LUIicons.eot?#iefix') format('embedded-opentype');
+  src: url('fonts/LUIicons.eot');
+  src: url('fonts/LUIicons.woff2') format('woff2'),
+       url('fonts/LUIicons.woff') format('woff'),
+       url('fonts/LUIicons.ttf') format('truetype'),
+       url('fonts/LUIicons.svg#LUIicons') format('svg'),
+       url('fonts/LUIicons.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
