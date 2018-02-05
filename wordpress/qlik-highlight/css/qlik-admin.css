@@ -1,0 +1,21 @@
+div.qlik-highlight-admin h2 {
+	margin-top: 35px;
+}
+
+div.qlik-highlight-admin h3 {
+	margin-top: 25px;
+}
+
+div.qlik-highlight-admin table {
+	border-collapse: collapse;
+}
+
+div.qlik-highlight-admin table.border th,
+div.qlik-highlight-admin table.border td {
+	border: 1px solid #999999;
+	padding: 5px 10px;
+}
+
+div.qlik-highlight-admin hr {
+	margin-top: 35px;
+}
