@@ -60,9 +60,9 @@ Note: If you have already installed the Syntax Highlighting, you can skip to ste
 1. Unpack the folder and its contained files from the archive to a folder on you hard drive. 
 1. Upload the folder and its contents to your website (eg. using FTP)
 1. Edit the web page(s) in which you wish to display QlikView script and add the following lines within the <head> section:
+    ```html
+    <link href="/qvhighlight/qlik-icons.css" rel="stylesheet" title="Qlik Icons"></link>
     ```
-		<link href="/qvhighlight/qlik-icons.css" rel="stylesheet" title="Qlik Icons"></link>
-		```
 
 ## How To Use
 
@@ -70,7 +70,7 @@ It couldn't be any simpler to use, just follow these simple steps
 
 ### Syntax Highlighting
 
-Wrap any Qlik script blocks included within the web page in <pre> and <code> HTML tags as shown below:
+Wrap any Qlik script blocks included within the web page in &lt;pre&gt; and &lt;code&gt; HTML tags as shown below:
 ```html
 <pre><code class="qvs">MyTable: LOAD * RESIDENT MyTempTable;</code></pre>
 ```
