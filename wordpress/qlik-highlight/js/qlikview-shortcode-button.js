@@ -6,7 +6,7 @@
 				text: " Code",
         icon: true,
 				image : url+"/qlik.png",
-        onclick : function() {
+        onclick() {
 					var selectedContent = tinyMCE.activeEditor.selection.getContent( {format : "text"} );
 					if (selectedContent === null || selectedContent === "") {
 						selectedContent = "Your code here...";
