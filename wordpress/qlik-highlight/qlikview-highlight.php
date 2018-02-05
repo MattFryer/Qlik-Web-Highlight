@@ -31,14 +31,14 @@
 defined('ABSPATH') or die("No script kiddies please!"); //Block direct access to this php file
 
 
-////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 // DEFINES
-////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 define( 'QLIK_HIGHLIGHT_PLUGIN_VERSION', '2.0' );
 
-////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 // ADMIN CONFIGURATION PAGE
-////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 // Add a settings page
 function qlik_highlight_admin_add_page() {
 	add_menu_page('Qlik for WordPress Settings', 'Qlik', 'manage_options', 'qlik_highlight', 'qlik_highlight_settings_page', plugin_dir_url( __FILE__ ) . 'js/qlik.png', null);
@@ -49,7 +49,8 @@ add_action('admin_menu', 'qlik_highlight_admin_add_page');
 function qlik_highlight_register_settings() {
 	register_setting( 'qlik_highlight_settings_group', 'qlik_highlight_options' ); // Add a setting. It will be used as an array to hold multiple settings.
 	add_settings_section('qlik_highlight_main', 'General Settings', 'qlik_highlight_general_section_text', 'qlik_highlight'); // Add a section to the settings
-	add_settings_field('qlik-highlight-ln', 'Enable line numbers', 'qlik_highlight_ln_check', 'qlik_highlight', 'qlik_highlight_main'); // Add a specific setting field to the array
+	add_settings_field('qlik-highlight-ln', 'Enable line numbers', 'qlik_highlight_ln_check', 'qlik_highlight', 'qlik_highlight_main'); // Add a specific setting field to the array for enabling line numbers
+	add_settings_field('qlik-highlight-cdn', 'Enable JS and CSS from CDN', 'qlik_highlight_cdn_check', 'qlik_highlight', 'qlik_highlight_main'); // Add a specific setting field to the array for enabling line numbers
 }
 add_action( 'admin_init', 'qlik_highlight_register_settings' );	
 
@@ -63,6 +64,14 @@ function qlik_highlight_ln_check() {
 	$options = get_option('qlik_highlight_options');
 ?>
 	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-ln]" value="1" <?php if (isset($options['qlik-highlight-ln'])){echo 'checked';} ?> /> <strong>Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ block comments, REM comments and keyword combinations that aren't on the same line).</strong>
+<?php
+}
+
+// Define the form output for the qlik-highlight-cdn setting
+function qlik_highlight_cdn_check() {
+	$options = get_option('qlik_highlight_options');
+?>
+	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-cdn]" value="1" <?php if (isset($options['qlik-highlight-cdn'])){echo 'checked';} ?> /> Load the JavaScript and CSS files from the RawGit Content Delivery Network instead of locally. Helps with page load times and ensures latest highlighting is always available.
 <?php
 }
 
@@ -321,23 +330,39 @@ function qlik_highlight_admin_style() {
 }
 add_action( 'admin_enqueue_scripts', 'qlik_highlight_admin_style' );
 
-////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+// UNINSTALL
+//////////////////////////////////////////////////////////////////////////////////////////
+// Called on plugin uninstall. Tidies up settings stored in DB
+function qlik_highlight_uninstall() {
+	register_setting( 'qlik_highlight_settings_group', 'qlik_highlight_options' ); 
+}
+register_uninstall_hook( __FILE__, 'qlik_highlight_uninstall' );
+
+//////////////////////////////////////////////////////////////////////////////////////////
 // REGISTER ASSETS
-////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 // Register the necessary highlight code and styles 
 function qlik_highlight_register() {
-	wp_register_style( 'qlik_highlight_style', plugin_dir_url(__FILE__) . 'css/qlikview.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the main css
-	wp_register_style( 'qlik_icon_style', plugin_dir_url(__FILE__) . 'css/qlik-icons.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the main css
-	wp_register_script( 'qlik_highlight_js', plugin_dir_url(__FILE__) . 'js/highlight.pack.js', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the custom highlight.js package	
-	wp_register_script( 'qlik_highlight_lns_js', plugin_dir_url(__FILE__) . 'js/highlightjs-line-numbers.min.js', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js line numbers package	
-	wp_register_script( 'qlik_highlight_config', plugin_dir_url(__FILE__) . 'js/highlight.config.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js config
-	wp_register_script( 'qlik_highlight_lns_config', plugin_dir_url(__FILE__) . 'js/highlight.lns.config.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js config
+	$loadFrom = plugin_dir_url(__FILE__);
+	
+	$options = get_option('qlik_highlight_options');
+	if ( isset($options['qlik-highlight-cdn']) ) {
+		$loadFrom = 'https://cdn.rawgit.com/MattFryer/Qlik-Web-Highlight/v' . QLIK_HIGHLIGHT_PLUGIN_VERSION . '/wordpress/qlikview-highlight/';
+	}
+	
+	wp_register_style( 'qlik_highlight_style', $loadFrom . 'css/qlikview.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the main css
+	wp_register_style( 'qlik_icon_style', $loadFrom . 'css/qlik-icons.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the main css
+	wp_register_script( 'qlik_highlight_js', $loadFrom . 'js/highlight.pack.js', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the custom highlight.js package	
+	wp_register_script( 'qlik_highlight_lns_js', $loadFrom . 'js/highlightjs-line-numbers.min.js', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js line numbers package	
+	wp_register_script( 'qlik_highlight_config', $loadFrom . 'js/highlight.config.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js config
+	wp_register_script( 'qlik_highlight_lns_config', $loadFrom . 'js/highlight.lns.config.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js config
 }	
 add_action('wp_enqueue_scripts', 'qlik_highlight_register');
 
-////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 // SHORTCODE - HIGHLIGHTING
-////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 /*
 Add Qlik specific shortcode [qlik-code]...[/qlik-code]
 Accepts type parameter [qlik-code type="qvs"].
@@ -390,9 +415,9 @@ function qlik_highlight_pre_process_shortcode($content) {
 }
 add_filter('the_content', 'qlik_highlight_pre_process_shortcode', 7);
 
-////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 // SHORTCODE - ICONS
-////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 /*
 Add Qlik icons shortcode [qlik-icon]
 Accepts icon parameter [qlik-icon icon="qicon-XXX"] which defines the icon to be displayed.
