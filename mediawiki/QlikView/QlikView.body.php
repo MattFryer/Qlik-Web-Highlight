@@ -21,10 +21,9 @@ class QlikView {
 	public static function render( $input, $args, $parser, $frame ) {
 	
 		//Ensure a valid language is passed and if not set to default qvs
+		$type = 'qvs';
 		if($args['type'] == 'qvs' || $args['type'] == 'exp' || $args['type'] == 'qve' || $args['type'] == 'sql' || $args['type'] == 'vbscript' || $args['type'] == 'javascript') { 
-			$type = $args['type']; 
-		} else { 
-			$type = 'qvs'; 
+			$type = $args['type'];
 		}
 		
 		// Replace all '&', '<,' and '>' with their HTML entitites. Order is important. You have to do '&' first.
