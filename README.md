@@ -3,6 +3,7 @@
 [![GitHub download](https://img.shields.io/github/downloads/MattFryer/Qlik-Web-Highlight/total.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest)
 [![GitHub stars](https://img.shields.io/github/stars/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues-raw/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/issues)
+[![Codacy grade](https://img.shields.io/codacy/grade/6109233a81c2417a9f1a213b312e0244.svg)](https://www.codacy.com/app/MattFryer/Qlik-Web-Highlight)
 [![GitHub license](https://img.shields.io/github/license/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/blob/master/LICENSE)
 
 # Qlik Web Syntax Highlighter
