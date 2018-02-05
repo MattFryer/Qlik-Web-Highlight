@@ -169,7 +169,7 @@ function qlik_highlight_shortcode( $atts , $content = null ) {
 		wp_enqueue_script( 'qlik_highlight_lns_config' );
 	}
 	
-	return '<pre><code class="' . $shortCodeAtts['type'] . '">' . $content . '</code></pre>';
+	return '<pre class="qlik-highlight-pre"><code class="qlik-highlight-code' . $shortCodeAtts['type'] . '">' . $content . '</code></pre>';
 }
 
 function qlik_highlight_pre_process_shortcode($content) {
