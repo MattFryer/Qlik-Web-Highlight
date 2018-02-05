@@ -15,6 +15,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Qlik-Icons';
+  src: url('fonts/qlik-icons.eot');
+  src: url('fonts/qlik-icons.woff') format('woff'),
+       url('fonts/qlik-icons.ttf') format('truetype'),
+       url('fonts/qlik-icons.svg#qlik-icons') format('svg'),
+       url('fonts/qlik-icons.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* General */
 [class^="qicon-"]:before,
 [class*=" qicon-"]:before {
@@ -55,6 +66,12 @@
 
 .qicon-5x {
   font-size: 5em; }
+	
+/* General Icons */
+.qicon-qlik:before {
+	font-family: 'Qlik-Icons';
+	content: "\e000"; 
+}
 	
 /* Qlik Sense Icons */	
 .qicon-bars-vert:before { 
@@ -703,3 +720,65 @@
 	font-family: 'LUIicons';
 	content: "\2699"; 
 }
+
+/* QlikView Icons */
+/*
+.qlik-icon-edit-script:before {
+  content: "\e001";
+}
+.qlik-icon-clear:before {
+  content: "\e002";
+}
+.qlik-icon-forward:before {
+  content: "\e003";
+}
+.qlik-icon-back:before {
+  content: "\e004";
+}
+.qlik-icon-unlock:before {
+  content: "\e005";
+}
+.qlik-icon-lock:before {
+  content: "\e006";
+}
+.qlik-icon-table-viewer:before {
+  content: "\e007";
+}
+.qlik-icon-webview:before {
+  content: "\e008";
+}
+.qlik-icon-edit-module:before {
+  content: "\e009";
+}
+.qlik-icon-reload:before {
+  content: "\e00a";
+}
+.qlik-icon-add-sheet:before {
+  content: "\e00b";
+}
+.qlik-icon-demote-sheet:before {
+  content: "\e00c";
+}
+.qlik-icon-promote-sheet:before {
+  content: "\e00d";
+}
+.qlik-icon-new:before {
+  content: "\e00e";
+}
+.qlik-icon-open:before {
+  content: "\e00f";
+}
+.qlik-icon-refresh:before {
+  content: "\e010";
+}
+.qlik-icon-save:before {
+  content: "\e011";
+}
+.qlik-icon-format-painter:before {
+  content: "\e012";
+}
+.qlik-icon-debug:before {
+  content: "\e013";
+}
+
+*/
