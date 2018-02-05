@@ -7,17 +7,17 @@
         icon: true,
 				image : url+"/qlik.png",
         onclick : function() {
-					var selected = tinyMCE.activeEditor.selection.getContent( {format : "text"} );
-					if (selected == null || selected == "") {
-						var selected = "Your code here...";
+					var selectedContent = tinyMCE.activeEditor.selection.getContent( {format : "text"} );
+					if (selectedContent === null || selectedContent === "") {
+						var selectedContent = "Your code here...";
 					}
 		  
-					var type = prompt("Type (qvs, exp, sql, vbscript, javascript)", "qvs");
-					if (type == null || type == "" || (type != "qvs" && type != "exp" && type != "sql" && type != "vbscript" && type != "javascript")){
-						var type = "qvs";
+					var codeType = prompt("codeType (qvs, exp, sql, vbscript, javascript)", "qvs");
+					if (codeType === null || codeType === "" || (codeType !== "qvs" && codeType !== "exp" && codeType !== "sql" && codeType !== "vbscript" && codeType !== "javascript")){
+						var codeType = "qvs";
 					}
                
-					ed.execCommand("mceInsertContent", false, "[qlik-code type=\""+type+"\"]" + selected + "[/qlik]");
+					ed.execCommand("mceInsertContent", false, "[qlik-code type=\""+codeType+"\"]" + selectedContent + "[/qlik]");
          }
       });
     },
