@@ -6,7 +6,7 @@ var snippets=document.querySelectorAll(".qlik-highlight-pre");
 
 var clipboardSnippets=new Clipboard("[data-clipboard-snippet]",
 {
-	target:function(trigger){
+	target(trigger){
 		return trigger.nextElementSibling;
 	}
 });
