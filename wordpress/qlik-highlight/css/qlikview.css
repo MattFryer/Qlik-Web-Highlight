@@ -1,5 +1,6 @@
 /* Qlik script editor styling for Highlight.js */
 
+/* Highlight.js syntax highlighting styles */
 .hljs {
   display: block;
   overflow-x: auto;
@@ -111,7 +112,7 @@
 .xml .hljs-attribute { color: #f00; }
 
 
-/* Line Numbers for Highlight.js */
+/* Line Numbers for Highlight.js styles */
 
 /* for block of numbers */
 td.hljs-ln-numbers {
@@ -132,4 +133,29 @@ td.hljs-ln-numbers {
 
 td.hljs-ln-code {
 	padding-left: 10px;
+}
+
+/* Code copy style */
+pre.qlik-highlight-pre {
+	position:relative;
+	overflow:visible;
+}
+
+pre.qlik-highlight-pre .btn{
+	border: 1px solid #ccc;
+	background-color: #fff;
+	visibility: hidden;
+	padding:2px 6px;
+	position:absolute;
+	top:28px;
+	right:28px;
+}
+
+pre.qlik-highlight-pre:hover .btn,
+pre.qlik-highlight-pre .btn:focus {
+	visibility: visible;
+}
+
+pre.qlik-highlight-pre .btn .clippy {
+margin-top:-3px;position:relative;top:3px;
 }

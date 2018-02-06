@@ -51,6 +51,7 @@ function qlik_highlight_register_settings() {
 	add_settings_section('qlik_highlight_main', 'General Settings', 'qlik_highlight_general_section_text', 'qlik_highlight'); // Add a section to the settings
 	add_settings_field('qlik-highlight-ln', 'Enable line numbers', 'qlik_highlight_ln_check', 'qlik_highlight', 'qlik_highlight_main'); // Add a specific setting field to the array for enabling line numbers
 	add_settings_field('qlik-highlight-cdn', 'Enable JS and CSS from CDN', 'qlik_highlight_cdn_check', 'qlik_highlight', 'qlik_highlight_main'); // Add a specific setting field to the array for enabling line numbers
+	add_settings_field('qlik-highlight-copy', 'Enable copy to Clipboard', 'qlik_highlight_copy_check', 'qlik_highlight', 'qlik_highlight_main'); // Add a specific setting field to the array for enabling copy to clipboard
 }
 add_action( 'admin_init', 'qlik_highlight_register_settings' );	
 
@@ -72,6 +73,14 @@ function qlik_highlight_cdn_check() {
 	$options = get_option('qlik_highlight_options');
 ?>
 	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-cdn]" value="1" <?php if (isset($options['qlik-highlight-cdn'])){echo 'checked';} ?> /> Load the JavaScript and CSS files from the RawGit Content Delivery Network instead of locally. Helps with page load times and ensures latest highlighting is always available.
+<?php
+}
+
+// Define the form output for the qlik-highlight-copy setting
+function qlik_highlight_copy_check() {
+	$options = get_option('qlik_highlight_options');
+?>
+	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-copy]" value="1" <?php if (isset($options['qlik-highlight-copy'])){echo 'checked';} ?> /> Enables copy to clipboard button on all code blocks.
 <?php
 }
 
@@ -131,10 +140,16 @@ function qlik_highlight_register() {
 	
 	wp_register_style( 'qlik_highlight_style', $loadFrom . 'css/qlikview.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the main css
 	wp_register_style( 'qlik_icon_style', $loadFrom . 'css/qlik-icons.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the main css
+	
 	wp_register_script( 'qlik_highlight_js', $loadFrom . 'js/highlight.pack.js', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the custom highlight.js package	
-	wp_register_script( 'qlik_highlight_lns_js', $loadFrom . 'js/highlightjs-line-numbers.min.js', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js line numbers package	
 	wp_register_script( 'qlik_highlight_config', $loadFrom . 'js/highlight.config.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js config
+	
+	wp_register_script( 'qlik_highlight_lns_js', $loadFrom . 'js/highlightjs-line-numbers.min.js', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js line numbers package	
 	wp_register_script( 'qlik_highlight_lns_config', $loadFrom . 'js/highlight.lns.config.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js config
+	
+	wp_register_script( 'qlik_highlight_clipboard', $loadFrom . 'js/clipboard.min.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the clipboard.js package
+	wp_register_script( 'qlik_highlight_tooltips', $loadFrom . 'js/tooltips.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the tooltips.js package
+	wp_register_script( 'qlik_highlight_clipboard_config', $loadFrom . 'js/clipboard.config.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the clipboard.js config
 }	
 add_action('wp_enqueue_scripts', 'qlik_highlight_register');
 
@@ -167,6 +182,13 @@ function qlik_highlight_shortcode( $atts , $content = null ) {
 	if ( isset($options['qlik-highlight-ln']) ) {
 		wp_enqueue_script( 'qlik_highlight_lns_js' );
 		wp_enqueue_script( 'qlik_highlight_lns_config' );
+	}
+	if ( isset($options['qlik-highlight-copy']) ) {
+		wp_enqueue_script( 'qlik_highlight_clipboard' );
+		wp_enqueue_script( 'qlik_highlight_clipboard_config' );
+		wp_localize_script('qlik_highlight_clipboard_config', 'qlikHighlightClipboardConfig', array(
+			'pluginsUrl' => plugin_dir_url(__FILE__),
+		));
 	}
 	
 	return '<pre class="qlik-highlight-pre"><code class="qlik-highlight-code' . $shortCodeAtts['type'] . '">' . $content . '</code></pre>';

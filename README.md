@@ -82,7 +82,7 @@ Syntax highlighting will then automatically be applied to the block when the pag
 
 Simply add the appropriate icon code to the class of any suitable HTML tag. For example:
 ```html
-<span class="qicon-XXXX" ></span>
+<span class="qicon-XXXX"></span>
 ```
 A full list of available icon codes will be made available soon.
 
@@ -90,7 +90,7 @@ A full list of available icon codes will be made available soon.
 
 To make it simple to add the Qlik Web Syntax Highlighter to your WordPress powered blog or website, a WordPress plugin is provided. Full details of how to download, install and use can be found on the [plugin's page on the WordPress.org website](https://wordpress.org/plugins/qlikview-syntax-highlighter/) and on [QlikViewAddict.com](http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html).
 
-You may also be interesting in the [Qlik Sense WordPress plugin](https://wordpress.org/plugins/qlik-sense/) by Yianni.Ververis. 
+You may also be interesting in the [Qlik Sense WordPress plugin](https://wordpress.org/plugins/qlik-sense/) by Yianni Ververis. 
 
 ## Advanced Tips
 Below are a number of advanced tips and tricks for those with a good understanding of HTML and CSS. These are provided for information only and support for them is strictly limited.
