@@ -1,10 +1,10 @@
-var snippets=document.querySelectorAll('.qlik-highlight-pre');
+var snippets=document.querySelectorAll(".qlik-highlight-pre");
 
 [].forEach.call(snippets,function(snippet){
-	snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn" data-clipboard-snippet><img class="clippy" width="13" src="' + qlikHighlightClipboardConfig.pluginsUrl + 'js/clippy.svg" alt="Copy to clipboard"></button>');
+	snippet.firstChild.insertAdjacentHTML("beforebegin","<button class=\"btn\" data-clipboard-snippet><img class=\"clippy\" width=\"13\" src=\"" + qlikHighlightClipboardConfig.pluginsUrl + "js/clippy.svg\" alt=\"Copy to clipboard\"></button>");
 });
 
-var clipboardSnippets=new Clipboard('[data-clipboard-snippet]',
+var clipboardSnippets=new Clipboard("[data-clipboard-snippet]",
 {
 	target:function(trigger){
 		return trigger.nextElementSibling;
