@@ -147,6 +147,7 @@ function qlik_highlight_register() {
 	wp_register_script( 'qlik_highlight_lns_js', $loadFrom . 'js/highlightjs-line-numbers.min.js', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js line numbers package	
 	wp_register_script( 'qlik_highlight_lns_config', $loadFrom . 'js/highlight.lns.config.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the highlight.js config
 	
+	wp_register_script( 'qlik_highlight_sanitizer', $loadFrom . 'js/sanitizer.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION );
 	wp_register_script( 'qlik_highlight_clipboard', $loadFrom . 'js/clipboard.min.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the clipboard.js package
 	wp_register_script( 'qlik_highlight_tooltips', $loadFrom . 'js/tooltips.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the tooltips.js package
 	wp_register_script( 'qlik_highlight_clipboard_config', $loadFrom . 'js/clipboard.config.js', array( 'jquery' ), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the clipboard.js config
@@ -184,6 +185,7 @@ function qlik_highlight_shortcode( $atts , $content = null ) {
 		wp_enqueue_script( 'qlik_highlight_lns_config' );
 	}
 	if ( isset($options['qlik-highlight-copy']) ) {
+		wp_enqueue_script( 'qlik_highlight_sanitizer' );
 		wp_enqueue_script( 'qlik_highlight_clipboard' );
 		wp_enqueue_script( 'qlik_highlight_clipboard_config' );
 		wp_localize_script('qlik_highlight_clipboard_config', 'qlikHighlightClipboardConfig', array(
