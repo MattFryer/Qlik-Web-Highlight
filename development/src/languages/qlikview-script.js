@@ -114,7 +114,7 @@ function(hljs) {
   };
   var QVS_REM_COMMENT = { //Gives a REM comment. Correctly matches when it is at the start of a line only.
 		className: 'comment', 
-		begin: '\^rem\\b', end: ';',
+		begin: '\^\\srem\\b', end: ';',
 			relevance: 10
   };
   var QVS_VARIABLE_DEF = { //Gives a variable definition when using SET or LET

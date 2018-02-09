@@ -20,6 +20,23 @@
 					ed.execCommand("mceInsertContent", false, "[qlik-code type=\""+codeType+"\"]" + selectedContent + "[/qlik]");
          }
       });
+
+      ed.addButton("qlik_icon_button", {
+        title : "Insert Qlik Icon",
+				text: " Icon",
+        icon: true,
+				image : url+"/qlik.png",
+        onclick() {
+					var selectedContent = tinyMCE.activeEditor.selection.getContent( {format : "text"} );
+					
+					var iconType = prompt("Iocn code", "qicon-qlik");
+					if (!iconType){
+						iconType = "qicon-qlik";
+					}
+               
+					ed.execCommand("mceInsertContent", false, "[qlik-icon icon=\""+iconType+"\"]" + selectedContent);
+         }
+      });
     },
     createControl(n, cm) {
       return null;

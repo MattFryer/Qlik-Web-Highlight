@@ -240,7 +240,7 @@ add_shortcode( 'qlik-icon', 'qlik_icon_shortcode' );
 ////////////////////////////////////////////////////////////////////////////////////////////
 // WORDPRESS TEXT EDITOR BUTTONS
 ////////////////////////////////////////////////////////////////////////////////////////////
-// Add the button to the text editor
+// Add the buttons to the text editor
 function qlik_highlight_button_script() {
     if(wp_script_is("quicktags")) {
         ?>
@@ -253,25 +253,45 @@ function qlik_highlight_button_script() {
                     var finish = txtarea.selectionEnd;
                     return txtarea.value.substring(start, finish);
                 }
-
+				
+				// add the buttons
                 QTags.addButton( 
                     "qlik_code_shortcode", 
                     "Qlik Code", 
-                    callback
+                    callback_qlik_highlight
                 );
 
-                function callback()
+				// action for highlighting button
+                function callback_qlik_highlight()
                 {
                     var selected_text = getSel();
-										if (selected_text == null || selected_text == '') {
-											var selected_text = 'Your code here...';
-										}
-										var type = prompt("Type (qvs, exp, sql, vbscript, javascript)", "qvs");
-										if (type == null || type == '' || (type != 'qvs' && type != 'exp' && type != 'sql' && type != 'vbscript' && type != 'javascript')){
-											var type = 'qvs';
-										}
+					if (selected_text == null || selected_text == '') {
+						var selected_text = 'Your code here...';
+					}
+					var type = prompt("Type (qvs, exp, sql, vbscript, javascript)", "qvs");
+					if (type == null || type == '' || (type != 'qvs' && type != 'exp' && type != 'sql' && type != 'vbscript' && type != 'javascript')){
+						var type = 'qvs';
+					}
                     QTags.insertContent("[qlik-code type=\"" + type + "\"]" +  selected_text + "[/qlik-code]");
-                }
+				}
+				
+				// add the buttons
+                QTags.addButton( 
+                    "qlik_icon_shortcode", 
+                    "Qlik Icon", 
+                    callback_qlik_icon
+				);
+
+				function callback_qlik_icon()
+                {
+                    var selected_text = getSel();
+					var type = prompt("Iocn code", "qicon-qlik");
+					if (type == null || type == ''){
+						var type = 'qicon-qlik';
+					}
+                    QTags.insertContent("[qlik-icon icon=\"" + type + "\"]" +  selected_text);
+				}
+				
             </script>
         <?php
     }
@@ -283,7 +303,7 @@ add_action("admin_print_footer_scripts", "qlik_highlight_button_script");
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Add the button(s) to the TinyMCE so that the shortcode(s) can be added via the visual page/post editor
 function register_qlik_highlight_buttons( $buttons ) {
-   array_push( $buttons, "qlik_code_button" );
+   array_push( $buttons, "qlik_code_button", "qlik_icon_button" );
    return $buttons;
 }
 
