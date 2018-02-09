@@ -269,10 +269,12 @@ function qlik_highlight_button_script() {
 						var selected_text = 'Your code here...';
 					}
 					var type = prompt("Type (qvs, exp, sql, vbscript, javascript)", "qvs");
-					if (type == null || type == '' || (type != 'qvs' && type != 'exp' && type != 'sql' && type != 'vbscript' && type != 'javascript')){
-						var type = 'qvs';
+					if (type) {
+						if (type != 'qvs' && type != 'exp' && type != 'sql' && type != 'vbscript' && type != 'javascript') {
+							var type = 'qvs';
+						}
+						QTags.insertContent("[qlik-code type=\"" + type + "\"]" +  selected_text + "[/qlik-code]");
 					}
-                    QTags.insertContent("[qlik-code type=\"" + type + "\"]" +  selected_text + "[/qlik-code]");
 				}
 				
 				// add the buttons
@@ -286,10 +288,9 @@ function qlik_highlight_button_script() {
                 {
                     var selected_text = getSel();
 					var type = prompt("Iocn code", "qicon-qlik");
-					if (type == null || type == ''){
-						var type = 'qicon-qlik';
+					if (type) {
+						QTags.insertContent("[qlik-icon icon=\"" + type + "\"]" +  selected_text);
 					}
-                    QTags.insertContent("[qlik-icon icon=\"" + type + "\"]" +  selected_text);
 				}
 				
             </script>

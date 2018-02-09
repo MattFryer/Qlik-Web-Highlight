@@ -12,16 +12,18 @@
 						selectedContent = "Your code here...";
 					}
 					
-					var codeType = prompt("codeType (qvs, exp, sql, vbscript, javascript)", "qvs");
-					if (!codeType || (codeType !== "qvs" && codeType !== "exp" && codeType !== "sql" && codeType !== "vbscript" && codeType !== "javascript")){
-						codeType = "qvs";
-					}
-               
-					ed.execCommand("mceInsertContent", false, "[qlik-code type=\""+codeType+"\"]" + selectedContent + "[/qlik]");
-         }
+          var codeType = prompt("codeType (qvs, exp, sql, vbscript, javascript)", "qvs");
+          if (codeType) {
+            if (codeType !== "qvs" && codeType !== "exp" && codeType !== "sql" && codeType !== "vbscript" && codeType !== "javascript"){
+              codeType = "qvs";
+            }
+                
+            ed.execCommand("mceInsertContent", false, "[qlik-code type=\""+codeType+"\"]" + selectedContent + "[/qlik]");
+          }
+        }
       });
 
-      ed.addButton("qlik_icon_button", {
+      ed.addButton("", {
         title : "Insert Qlik Icon",
 				text: " Icon",
         icon: true,
@@ -29,13 +31,11 @@
         onclick() {
 					var selectedContent = tinyMCE.activeEditor.selection.getContent( {format : "text"} );
 					
-					var iconType = prompt("Iocn code", "qicon-qlik");
-					if (!iconType){
-						iconType = "qicon-qlik";
-					}
-               
-					ed.execCommand("mceInsertContent", false, "[qlik-icon icon=\""+iconType+"\"]" + selectedContent);
-         }
+          var iconType = prompt("Iocn code", "qicon-qlik");
+          if (iconType) {   
+            ed.execCommand("mceInsertContent", false, "[qlik-icon icon=\""+iconType+"\"]" + selectedContent);
+          }
+        }
       });
     },
     createControl(n, cm) {
