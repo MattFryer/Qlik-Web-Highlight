@@ -21,11 +21,12 @@ function(hljs) {
 			'Binary Buffer ' +
 			'Call Case Comment Concatenate Connect Crosstable Custom ' +
 			'Default Derive Detail Dimension Directory Disconnect Distinct Do ' +
-			'Each Else Elseif End Endif Endsub Endswitch Execute Exit ' +
+			'Each Else Elseif Endif Endsub Endswitch Execute ' +
 			'First FlushLog For Force From From_Field ' +
 			'Generic ' +
 			'Hierarchy|10 HierarchyBelongsTo|10 ' +
 			'if In Inline Inputfield|10 Intervalmatch|10 Into ' +
+			'join ' + 
 			'Let Lib Load Loop Loosen ' +
 			'Map Measure ' +
 			'Native Next Noconcatenate|10 Not NullAsNull NullAsValue ' +
@@ -35,8 +36,8 @@ function(hljs) {
 			'Sample Script Section Select Semantic Set Sleep SQL SQLColumns SQLTables SQLTypes Star Step Store Sub ' +
 			'Switch ' +
 			'Then To Trace ' +
-			'Unless Unmap Unqualify Untag Until Using ' +
-			'When Where While With',
+			'Unless Unmap Unqualify Untag Using ' +
+			'When Where With',
 		
 		built_in: 'Acos Addmonths Addyears Age Alt Applycodepage Applymap Argb Asin Atan Atan2 Attribute Author Autonumber ' +
 			'Autonumberhash128 Autonumberhash256 Avg ' +
@@ -88,8 +89,8 @@ function(hljs) {
   	};
   	var QVS_KEYWORD_COMBINATIONS = { //Deals with the correct highlighting of keywords that are only valid in combinations
 		className: 'kewyword',
-		begin: '\\b(left\\s+join|right\\s+join|inner\\s+join|outer\\s+join|left\\s+keep|right\\s+keep|\\inner\\s+keep|drop\\s+table|drop\\s+tables|drop\\s+field|drop\\s+fields|exit\\s+script|exit\\s+sub|exit\\s+for|exit\\s+do|exit\\s+switch|rename\\s+table|rename\\s+field|mapping\\s+load|bundle\\s+info\\s+load|bundle\\s+image_size|info\\s+load|tag\\s+field|tag\\s+fields|group\\s+by)\\b',
-		//keywords: 'left right inner outer join keep drop tag table tables field fields exit script sub for do switch mapping bundle info load image_size group by'
+		begin: '\\b(left\\s+join|right\\s+join|inner\\s+join|outer\\s+join|left\\s+keep|right\\s+keep|\\inner\\s+keep|drop\\s+table|drop\\s+tables|drop\\s+field|drop\\s+fields|exit\\s+script|exit\\s+sub|exit\\s+for|exit\\s+do|exit\\s+switch|rename\\s+table|rename\\s+field|mapping\\s+load|bundle\\s+info\\s+load|bundle\\s+image_size|info\\s+load|tag\\s+field|tag\\s+fields|end\\s+if|end\\s+sub|end\\s+switch|do\\s+while|do\\s+until|loop\\s+while|loop\\s+until)\\b',
+		keywords: 'left right inner outer join keep drop tag rename table tables field fields exit script sub for do switch mapping bundle info load image_size group by end if  loop while until'
   	}
   	var QVS_HASH_FUNCTIONS = { //Deals with the correct highlighting of the functions that have an interpretation version eg. date() and date#()
 		className: 'built_in',
@@ -122,7 +123,7 @@ function(hljs) {
   	};
   	var QVS_VARIABLE_DEF = { //Gives a variable definition when using SET or LET
 	    className: 'variable', 
-		begin: '\\b(let|set)\\s+', end: '\\w+',
+		begin: '\\b(let|set)\\s+', end: '\\w+[\\w.]*',
 		keywords: 'set let',
 		illegal: '\\n',
 		relevance: 10
@@ -249,6 +250,11 @@ function(hljs) {
 								]
 							}
 						]
+					},
+					{
+						className: 'keyword', //Identifies group by within the load statement
+						begin: '\\bgroup\\s+by\\b',
+						keywords: 'group by'
 					},
 					{
 						className: 'field', //Identifies field names within the load statement
