@@ -16,12 +16,13 @@ Identification of field names is repeated. Break out into variable
 
 function(hljs) {
   var QV_EXP_KEYWORDS = {
-    function_keyword: 'All Total Distinct Nodistinct',
+    function_keyword: 'All Total Distinct Nodistinct and or not',
 	
     built_in: 'Above acos AddMonths AddYears After Age Aggr Alt ApplyCodepage ApplyMap ARGB asin atan atan2 Author Avg ' +
 		'Before Below BitCount Black BlackAndSchole Blue Bottom Brown ' +
 		'Capitalize Ceil Chi2Test_chi2 Chi2Test_df Chi2Test_p CHIDIST CHIINV Chr Class ClientPlatform Color ColorMapHue ' +
-		'ColorMapJet ColorMix1 ColorMix2 Column ColumnNo Combin ComputerName Concat ConvertToLocalTime Correl cos cosh ' +		'Count Cyan ' +
+		'ColorMapJet ColorMix1 ColorMix2 Column ColumnNo Combin ComputerName Concat ConvertToLocalTime Correl cos cosh ' +
+		'Count Cyan ' +
 		'DarkGray Day DayEnd DaylightSaving DayName DayNumberOfQuarter DayNumberOfYear DayStart Dimensionality ' +
 		'Div DocumentName DocumentPath DocumentTitle Dual ' +
 		'e Even exp ' +
@@ -66,7 +67,7 @@ function(hljs) {
   };
   var QV_EXP_HASH_FUNCTIONS = { //Deals with the correct highlighting of the functions that have an interpretation version eg. date() and date#()
 		className: 'built_in',
-		begin: '\\b(date|interval|money|num|time|timestamp)\\b#?\\s?', //Tried to add look forward but seems to cause it to fail (?=\()
+		begin: '\\b(date|interval|money|num|time|timestamp)\#?\\s?', //Tried to add look forward but seems to cause it to fail (?=\()
 		illegal: '\\n',
   };
   var QV_EXP_STRING_SINGLE = { //Gives a string when using single quotes
