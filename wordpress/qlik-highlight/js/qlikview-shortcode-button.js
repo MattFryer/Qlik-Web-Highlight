@@ -1,5 +1,5 @@
 (function() {
-  tinymce.create("tinymce.plugins.qlik_code_buttons", {
+  tinymce.create( "tinymce.plugins.qlik_code_buttons", {
     init(ed, url) {
       ed.addButton("qlik_code_button", {
         title : "Insert Syntax Highlighted Qlik Code Block",
@@ -12,13 +12,13 @@
 						selectedContent = "Your code here...";
 					}
 					
-          var codeType = prompt("codeType (qvs, exp, sql, vbscript, javascript)", "qvs");
+          var codeType = prompt( "codeType (qvs, exp, sql, vbscript, javascript)", "qvs" );
           if (codeType) {
             if (codeType !== "qvs" && codeType !== "exp" && codeType !== "sql" && codeType !== "vbscript" && codeType !== "javascript"){
               codeType = "qvs";
             }
                 
-            ed.execCommand("mceInsertContent", false, "[qlik-code type=\""+codeType+"\"]" + selectedContent + "[/qlik]");
+            ed.execCommand( "mceInsertContent", false, "[qlik-code type=\""+codeType+"\"]" + selectedContent + "[/qlik]" );
           }
         }
       });
@@ -33,14 +33,16 @@
 					
           var iconType = prompt("Iocn code", "qicon-qlik");
           if (iconType) {   
-            ed.execCommand("mceInsertContent", false, "[qlik-icon icon=\""+iconType+"\"]" + selectedContent);
+            ed.execCommand( "mceInsertContent", false, "[qlik-icon icon=\""+iconType+"\"]" + selectedContent );
           }
         }
       });
     },
+
     createControl(n, cm) {
       return null;
     },
+
     getInfo() {
       return {
         longname : "Qlik for WordPress",
@@ -51,5 +53,5 @@
       };
     }
   });
-  tinymce.PluginManager.add("qlik_code_buttons", tinymce.plugins.qlik_code_buttons);
+  tinymce.PluginManager.add( "qlik_code_buttons", tinymce.plugins.qlik_code_buttons );
 }());
