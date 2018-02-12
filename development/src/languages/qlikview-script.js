@@ -1,19 +1,18 @@
 /*
- Language: QlikView Script
- Contributors: Matthew Fryer <matthew_fryer@hotmail.com>
- */
+	Language: QlikView Script
+	Contributors: Matthew Fryer <matthew_fryer@hotmail.com>
+*/
  
- /*
- Notes:
- Forward look for a bracket (?=(\\(|$))
- Built in items are:
-	hljs.C_LINE_COMMENT_MODE, //Gives a // comment
-	hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
-	hljs.QUOTE_STRING_MODE, //Allows use of RegEx in single quotes
- Variable definitions could be improved to include whole statement and its contained parts
- Need to gave a way to deal with field names in WHERE, WHILE, ORDER BY and GROUP BY clauses of load statements to be  highlighted. Can be on preceding loads and froms, residents, etc
- Identification of field names is repeated. Break out into variable
- */
+/*
+	Notes:
+	Forward look for a bracket (?=(\\(|$))
+	Built in items are:
+		hljs.C_LINE_COMMENT_MODE, //Gives a // comment
+		hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
+	Variable definitions could be improved to include whole statement and its contained parts
+	Need to gave a way to deal with field names in WHERE, WHILE, ORDER BY and GROUP BY clauses of load statements to be  highlighted. Can be on preceding loads and froms, residents, etc
+	Identification of field names is repeated. Break out into variable
+*/
 
 function(hljs) {
   	var QVS_KEYWORDS = {
@@ -160,7 +159,6 @@ function(hljs) {
 				contains: [
 					hljs.C_LINE_COMMENT_MODE, 
 					hljs.C_BLOCK_COMMENT_MODE,
-					hljs.QUOTE_STRING_MODE,
 					QVS_STRING_SINGLE,
 					QVS_STRING_DOUBLE,
 					QVS_VARIABLE_USE
@@ -173,7 +171,6 @@ function(hljs) {
 				contains: [
 					hljs.C_LINE_COMMENT_MODE,
 					hljs.C_BLOCK_COMMENT_MODE,
-					hljs.QUOTE_STRING_MODE,
 					QVS_HASH_FUNCTIONS,
 					QVS_KEYWORD_FUNCTIONS,
 					QVS_STRING_SINGLE,
@@ -187,7 +184,6 @@ function(hljs) {
 						contains: [
 							hljs.C_LINE_COMMENT_MODE, 
 							hljs.C_BLOCK_COMMENT_MODE, 
-							hljs.QUOTE_STRING_MODE,
 							QVS_STRING_SINGLE,
 							QVS_STRING_DOUBLE,
 							QVS_VARIABLE_USE,
@@ -210,7 +206,6 @@ function(hljs) {
 				contains: [
 					hljs.C_LINE_COMMENT_MODE,
 					hljs.C_BLOCK_COMMENT_MODE,
-					hljs.QUOTE_STRING_MODE,
 					QVS_HASH_FUNCTIONS,
 					QVS_KEYWORD_FUNCTIONS,
 					QVS_STRING_SINGLE,
@@ -224,7 +219,6 @@ function(hljs) {
 						contains: [
 							hljs.C_LINE_COMMENT_MODE, 
 							hljs.C_BLOCK_COMMENT_MODE, 
-							hljs.QUOTE_STRING_MODE,
 							QVS_STRING_SINGLE,
 							QVS_STRING_DOUBLE,
 							QVS_VARIABLE_USE,
@@ -240,7 +234,6 @@ function(hljs) {
 								contains: [
 									hljs.C_LINE_COMMENT_MODE, 
 									hljs.C_BLOCK_COMMENT_MODE,
-									hljs.QUOTE_STRING_MODE,
 									QVS_STRING_SINGLE,
 									QVS_STRING_DOUBLE,
 									QVS_VARIABLE_USE,

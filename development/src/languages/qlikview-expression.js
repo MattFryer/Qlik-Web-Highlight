@@ -1,5 +1,5 @@
 /*
-	Language: QlikView Expressions
+	Language: Qlik Expressions/Measures
 	Contributors: Matthew Fryer <matthew_fryer@hotmail.com>
 */
  
@@ -9,7 +9,6 @@
 	Built in items are:
 		hljs.C_LINE_COMMENT_MODE, //Gives a // comment
 		hljs.C_BLOCK_COMMENT_MODE, //Gives a block comment
-		hljs.QUOTE_STRING_MODE, //Allows use of RegEx in single quotes
 	Can total modifier statements be improved to only do if following the total keyword?
 	Identification of field names is repeated. Break out into variable
 */
