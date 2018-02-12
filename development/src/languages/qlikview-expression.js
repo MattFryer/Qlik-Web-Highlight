@@ -95,11 +95,10 @@
 	var QV_EXP_FIELD = {
 		className: 'field', //Identifies field names
 		begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
-		keywords: QVS_KEYWORDS,
+		keywords: QV_EXP_KEYWORDS,
 		illegal: '\\n\\s',
 		contains: [
-			QVS_HASH_FUNCTIONS,
-		  	QVS_KEYWORD_FUNCTIONS,
+			QV_EXP_HASH_FUNCTIONS
 		]
 	};
   	return {
@@ -113,11 +112,9 @@
 			QV_EXP_STRING_SINGLE,
 			QV_EXP_STRING_DOUBLE,
 			QV_EXP_VARIABLE_USE,
-			QV_EXP_BRACED_FIELD,
-			QV_EXP_FIELD,
 			{
 				className: 'total-modifier', //finds total modifiers
-				begin: '<', end: '>',
+				begin: '(?<=total\\s*)<', end: '>',
 				contains: [
 					hljs.C_LINE_COMMENT_MODE,
 					hljs.C_BLOCK_COMMENT_MODE,
@@ -147,7 +144,9 @@
 						]
 					}
 				]
-			}
+			},
+			QV_EXP_BRACED_FIELD,
+			QV_EXP_FIELD
 		]
   	};
 })
