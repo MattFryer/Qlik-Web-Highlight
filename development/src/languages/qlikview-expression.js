@@ -104,7 +104,6 @@ function(hljs) {
 	  QV_EXP_STRING_SINGLE,
 	  QV_EXP_STRING_DOUBLE,
 	  QV_EXP_VARIABLE_USE,
-	  QV_EXP_VARIABLE_USE,
 	  {
 		className: 'total-modifier', //finds total modifiers
         begin: '<', end: '>',
