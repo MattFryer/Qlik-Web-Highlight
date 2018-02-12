@@ -67,21 +67,19 @@ function(hljs) {
   };
   var QV_EXP_HASH_FUNCTIONS = { //Deals with the correct highlighting of the functions that have an interpretation version eg. date() and date#()
 		className: 'built_in',
-		begin: '\\b(date|interval|money|num|time|timestamp)\#?\\s?', //Tried to add look forward but seems to cause it to fail (?=\()
+		begin: '\\b(date|interval|money|num|time|timestamp)#?\\s*(?=(\\(|$))', //Tried to add look forward but seems to cause it to fail (?=\()
 		illegal: '\\n',
   };
   var QV_EXP_STRING_SINGLE = { //Gives a string when using single quotes
         className: 'string',
         begin: '\'', end: '\'', 
 		illegal: '\\n',
-        contains: [hljs.BACKSLASH_ESCAPE, {begin: '\'\''}],
 			relevance: 0
   };
   var QV_EXP_STRING_DOUBLE = { //Gives a string when using double quotes
 		className: 'string',
         begin: '"', end: '"',
 		illegal: '\\n',
-        contains: [hljs.BACKSLASH_ESCAPE, {begin: '""'}],
 			relevance: 0
   };
   var QV_EXP_VARIABLE_USE = { //Gives a variable when used inside $()
@@ -102,7 +100,6 @@ function(hljs) {
     contains: [
       hljs.C_LINE_COMMENT_MODE, 
       hljs.C_BLOCK_COMMENT_MODE,
-	  hljs.QUOTE_STRING_MODE,
 	  QV_EXP_HASH_FUNCTIONS,
 	  QV_EXP_STRING_SINGLE,
 	  QV_EXP_STRING_DOUBLE,

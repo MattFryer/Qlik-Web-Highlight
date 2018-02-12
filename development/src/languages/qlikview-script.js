@@ -106,14 +106,12 @@ function(hljs) {
         className: 'string',
         begin: '\'', end: '\'',
 		illegal: '\\n',
-        contains: [hljs.BACKSLASH_ESCAPE, {begin: '\'\''}],
 		relevance: 0
   	};
   	var QVS_STRING_DOUBLE = { //Gives a string when using double quotes
 		className: 'string', 
         begin: '"', end: '"',
 		illegal: '\\n',
-        contains: [hljs.BACKSLASH_ESCAPE, {begin: '""'}],
 		relevance: 0
   	};
   	var QVS_REM_COMMENT = { //Gives a REM comment. Correctly matches when it is at the start of a line only.
@@ -146,7 +144,6 @@ function(hljs) {
 		contains: [
 			hljs.C_LINE_COMMENT_MODE, 
 			hljs.C_BLOCK_COMMENT_MODE,
-			hljs.QUOTE_STRING_MODE,
 			QVS_KEYWORD_COMBINATIONS,
 			QVS_HASH_FUNCTIONS,
 			QVS_KEYWORD_FUNCTIONS,
