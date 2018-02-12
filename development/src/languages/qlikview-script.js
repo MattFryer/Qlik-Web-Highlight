@@ -14,8 +14,8 @@
 	Identification of field names is repeated. Break out into variable
 */
 
-function(hljs) {
-  	var QVS_KEYWORDS = {
+(function(hljs) {
+	var QVS_KEYWORDS = {
 		keyword: 'Add Alias And As Autogenerate|10 ' +
 			'Binary Buffer ' +
 			'Call Case Comment Concatenate Connect Crosstable Custom ' +
@@ -26,7 +26,7 @@ function(hljs) {
 			'Hierarchy|10 HierarchyBelongsTo|10 ' +
 			'if In Inline Inputfield|10 Intervalmatch|10 Into ' +
 			'join ' + 
-			'Let Lib Load Loop Loosen ' +
+			'Let Lib Loop Loosen ' +
 			'Map Measure ' +
 			'Native Next Noconcatenate|10 Not NullAsNull NullAsValue ' +
 			'ODBC OLEDB Or ' +
@@ -37,7 +37,7 @@ function(hljs) {
 			'Then To Trace ' +
 			'Unless Unmap Unqualify Untag Using ' +
 			'When Where With',
-		
+	  
 		built_in: 'Acos Addmonths Addyears Age Alt Applycodepage Applymap Argb Asin Atan Atan2 Attribute Author Autonumber ' +
 			'Autonumberhash128 Autonumberhash256 Avg ' +
 			'Bitcount Black Blackandschole Blue Brown ' +
@@ -85,58 +85,68 @@ function(hljs) {
 			'Year Year2Date YearEnd YearName YearStart YearToDate Yellow ' +
 			'ZTest_conf ZTest_dif ZTest_lower ZTest_sig ZTest_sterr ZTest_upper ZTest_z ZTestw_conf ZTestw_dif ' +
 			'ZTestw_lower ZTestw_sig ZTestw_sterr ZTestw_upper ZTestw_z',
-  	};
-  	var QVS_KEYWORD_COMBINATIONS = { //Deals with the correct highlighting of keywords that are only valid in combinations
-		className: 'kewyword',
-		begin: '\\b(left\\s+join|right\\s+join|inner\\s+join|outer\\s+join|left\\s+keep|right\\s+keep|\\inner\\s+keep|drop\\s+table|drop\\s+tables|drop\\s+field|drop\\s+fields|exit\\s+script|exit\\s+sub|exit\\s+for|exit\\s+do|exit\\s+switch|rename\\s+table|rename\\s+field|mapping\\s+load|bundle\\s+info\\s+load|bundle\\s+image_size|info\\s+load|tag\\s+field|tag\\s+fields|end\\s+if|end\\s+sub|end\\s+switch|do\\s+while|do\\s+until|loop\\s+while|loop\\s+until)\\b',
-		keywords: 'left right inner outer join keep drop tag rename table tables field fields exit script sub for do switch mapping bundle info load image_size group by end if  loop while until'
-  	}
-  	var QVS_HASH_FUNCTIONS = { //Deals with the correct highlighting of the functions that have an interpretation version eg. date() and date#()
+	};
+	var QVS_KEYWORD_COMBINATIONS = { //Deals with the correct highlighting of keywords that are only valid in combinations
+		className: 'keyword',
+		begin: '\\b(left\\s+join|right\\s+join|inner\\s+join|outer\\s+join|left\\s+keep|right\\s+keep|\\inner\\s+keep|drop\\s+table|drop\\s+tables|drop\\s+field|drop\\s+fields|exit\\s+script|exit\\s+sub|exit\\s+for|exit\\s+do|exit\\s+switch|rename\\s+table|rename\\s+field|bundle\\s+image_size|tag\\s+field|tag\\s+fields|end\\s+if|end\\s+sub|end\\s+switch|do\\s+while|do\\s+until|loop\\s+while|loop\\s+until|group\\s+by)\\b',
+		keywords: 'left right inner outer join keep drop tag rename table tables field fields exit script sub for do switch image_size group by end if loop while until'
+	};
+	var QVS_HASH_FUNCTIONS = { //Deals with the correct highlighting of the functions that have an interpretation version eg. date() and date#()
 		className: 'built_in',
 		begin: '\\b(date|interval|money|num|time|timestamp)#?\\s*(?=(\\(|$))', 
 		illegal: '\\n'
-  	};
-  	var QVS_KEYWORD_FUNCTIONS = { //Deals with the correct highlighting of the functions that have a keyword with the same name eg. if, left, right, etc
+	};
+	var QVS_KEYWORD_FUNCTIONS = { //Deals with the correct highlighting of the functions that have a keyword with the same name eg. if, left, right, etc
 		className: 'built_in',
 		begin: '\\b(if|left|right)\\s*(?=(\\(|$))', 
 		illegal: '\\n',
-  	};
-  	var QVS_STRING_SINGLE = { //Gives a string when using single quotes
-        className: 'string',
-        begin: '\'', end: '\'',
+	};
+	var QVS_STRING_SINGLE = { //Gives a string when using single quotes
+		className: 'string',
+		begin: '\'', end: '\'',
 		illegal: '\\n',
 		relevance: 0
-  	};
-  	var QVS_STRING_DOUBLE = { //Gives a string when using double quotes
+	};
+	var QVS_STRING_DOUBLE = { //Gives a string when using double quotes
 		className: 'string', 
-        begin: '"', end: '"',
+		begin: '"', end: '"',
 		illegal: '\\n',
 		relevance: 0
-  	};
-  	var QVS_REM_COMMENT = { //Gives a REM comment. Correctly matches when it is at the start of a line only.
+	};
+	var QVS_REM_COMMENT = { //Gives a REM comment. Correctly matches when it is at the start of a line only.
 		className: 'comment', 
 		begin: '\^\\s*rem\\b', end: ';',
 		relevance: 10
-  	};
-  	var QVS_VARIABLE_DEF = { //Gives a variable definition when using SET or LET
-	    className: 'variable', 
+	};
+	var QVS_VARIABLE_DEF = { //Gives a variable definition when using SET or LET
+		className: 'variable', 
 		begin: '\\b(let|set)\\s+', end: '\\w+[\\w.]*',
 		keywords: 'set let',
 		illegal: '\\n',
 		relevance: 10
-  	};
-  	var QVS_VARIABLE_USE = { //Gives a variable when used inside $()
-	    className: 'variable',
+	};
+	var QVS_VARIABLE_USE = { //Gives a variable when used inside $()
+		className: 'variable',
 		begin: '\\$\\(', end: '\\)', 
 		illegal: '\\n',
 		relevance: 10
-  	};
-  	var QVS_BRACED_FIELD = { //Gives a field when using square braces []
+	};
+	var QVS_BRACED_FIELD = { //Gives a field when using square braces []
 		className: 'field',
 		begin: '\\[', end: '\\]', 
 		relevance: 0
-  	};
-  	return {
+	};
+	var QVS_FIELD = {
+		className: 'field', //Identifies field names within the direct query statement
+		begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
+		keywords: QVS_KEYWORDS,
+		illegal: '\n\s',
+		contains: [
+			QVS_HASH_FUNCTIONS,
+		  	QVS_KEYWORD_FUNCTIONS,
+		]
+	};
+	return {
 		aliases: ['qvs','qlikview'],
 		case_insensitive: true,
 		keywords: QVS_KEYWORDS,
@@ -151,7 +161,6 @@ function(hljs) {
 			QVS_REM_COMMENT,
 			QVS_VARIABLE_DEF,
 			QVS_VARIABLE_USE,
-			QVS_BRACED_FIELD,
 			{
 				className: 'sql_statement', //Ensures SQL statements are identified to stop other keywords being highlighted within them
 				begin: '\\bsql\\b', end: ';',
@@ -162,7 +171,8 @@ function(hljs) {
 					QVS_STRING_SINGLE,
 					QVS_STRING_DOUBLE,
 					QVS_VARIABLE_USE
-				]
+				],
+				relevance: 0
 			},
 			{
 				className: 'direct_query_statement', //Identifies direct query statements 
@@ -176,7 +186,6 @@ function(hljs) {
 					QVS_STRING_SINGLE,
 					QVS_STRING_DOUBLE,
 					QVS_VARIABLE_USE,
-					QVS_BRACED_FIELD,
 					{
 						className: 'direct_query_from', //Identifies if the load statement has a source rather than it being a preceding load.
 						begin: '\\bfrom\\b', end: '(?=(;|$))',
@@ -186,43 +195,40 @@ function(hljs) {
 							hljs.C_BLOCK_COMMENT_MODE, 
 							QVS_STRING_SINGLE,
 							QVS_STRING_DOUBLE,
-							QVS_VARIABLE_USE,
-							QVS_BRACED_FIELD
+							QVS_VARIABLE_USE
 						]
 					},
-					{
-						className: 'field', //Identifies field names within the direct query statement
-						begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
-						keywords: QVS_KEYWORDS,
-						illegal: '\n\s',
-					}
+					QVS_BRACED_FIELD,
+					QVS_FIELD
 				],
 				relevance: 10
 			},
 			{
 				className: 'load_statement', //Identifies load statements 
-				begin: '\\bload\\b', end: ';',
-				keywords: 'load distinct',
+				begin: '\\b(mapping\\s+load|bundle\\s+info\\s+load|info\\s+load|load)\\b', end: ';',
+				keywords: 'load mapping bundle info as distinct',
 				contains: [
 					hljs.C_LINE_COMMENT_MODE,
 					hljs.C_BLOCK_COMMENT_MODE,
 					QVS_HASH_FUNCTIONS,
 					QVS_KEYWORD_FUNCTIONS,
+					QVS_KEYWORD_COMBINATIONS,
 					QVS_STRING_SINGLE,
 					QVS_STRING_DOUBLE,
 					QVS_VARIABLE_USE,
-					QVS_BRACED_FIELD,
 					{
 						className: 'load_source', //Identifies if the load statement has a source rather than it being a preceding load.
-						begin: '(\\bresident\\b|\\binline\\b|\\bautogenerate\\b|\\bfrom\\b)', end: '(?=(;|$))',
+						begin: '\\b(resident|inline|autogenerate|from)\\b', end: '(?=(;|$))',
 						keywords: QVS_KEYWORDS, 
 						contains: [
 							hljs.C_LINE_COMMENT_MODE, 
 							hljs.C_BLOCK_COMMENT_MODE, 
+							QVS_HASH_FUNCTIONS,
+							QVS_KEYWORD_FUNCTIONS,
+							QVS_KEYWORD_COMBINATIONS,
 							QVS_STRING_SINGLE,
 							QVS_STRING_DOUBLE,
 							QVS_VARIABLE_USE,
-							QVS_BRACED_FIELD,
 							{
 								className: 'format_specification', //Identifies the format specification contained in braces ()
 								begin: '\\(', end: '\\)',
@@ -239,22 +245,14 @@ function(hljs) {
 									QVS_VARIABLE_USE,
 								]
 							}
-						]
+						],
+						relevance: 10
 					},
-					{
-						className: 'keyword', //Identifies group by within the load statement
-						begin: '\\bgroup\\s+by\\b',
-						keywords: 'group by'
-					},
-					{
-						className: 'field', //Identifies field names within the load statement
-						begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
-						keywords: QVS_KEYWORDS,
-						illegal: '\n\s',
-					}
+					QVS_BRACED_FIELD,
+					QVS_FIELD
 				],
 				relevance: 10
-	  		}
-    	]
-  	};
-}
+			}
+		]
+	};
+})

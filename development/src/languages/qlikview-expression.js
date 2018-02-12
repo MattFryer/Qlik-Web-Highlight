@@ -13,7 +13,7 @@
 	Identification of field names is repeated. Break out into variable
 */
 
-function(hljs) {
+(function(hljs) {
   	var QV_EXP_KEYWORDS = {
 		function_keyword: 'All Total Distinct Nodistinct and or not',
 		
@@ -66,7 +66,7 @@ function(hljs) {
   	};
   	var QV_EXP_HASH_FUNCTIONS = { //Deals with the correct highlighting of the functions that have an interpretation version eg. date() and date#()
 		className: 'built_in',
-		begin: '\\b(date|interval|money|num|time|timestamp)#?\\s*(?=(\\(|$))', //Tried to add look forward but seems to cause it to fail (?=\()
+		begin: '\\b(date|interval|money|num|time|timestamp)#?\\s*(?=(\\(|$))', 
 		illegal: '\\n',
   	};
   	var QV_EXP_STRING_SINGLE = { //Gives a string when using single quotes
@@ -87,11 +87,21 @@ function(hljs) {
 		illegal: '\\n',
 			relevance: 10
   	};
-  	var QV_EXP_BRACED_FIELD = { //Gives a field when using []
+  	var QV_EXP_BRACED_FIELD = { //Gives a field when using square braces []
 		className: 'field',
-		begin: '\\[', end: '\\]',
-			relevance: 0
-  	};
+		begin: '\\[', end: '\\]', 
+		relevance: 0
+	};
+	var QV_EXP_FIELD = {
+		className: 'field', //Identifies field names
+		begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
+		keywords: QVS_KEYWORDS,
+		illegal: '\\n\\s',
+		contains: [
+			QVS_HASH_FUNCTIONS,
+		  	QVS_KEYWORD_FUNCTIONS,
+		]
+	};
   	return {
 		aliases: ['exp', 'qve','qlikview-exp','qv-exp'],
 		case_insensitive: true,
@@ -103,18 +113,17 @@ function(hljs) {
 			QV_EXP_STRING_SINGLE,
 			QV_EXP_STRING_DOUBLE,
 			QV_EXP_VARIABLE_USE,
+			QV_EXP_BRACED_FIELD,
+			QV_EXP_FIELD,
 			{
 				className: 'total-modifier', //finds total modifiers
 				begin: '<', end: '>',
 				contains: [
 					hljs.C_LINE_COMMENT_MODE,
 					hljs.C_BLOCK_COMMENT_MODE,
-					QV_EXP_BRACED_FIELD,
-					{
-						className: 'field',
-						begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b', 
-						illegal: '\n\s',
-					}
+					QV_EXP_VARIABLE_USE,
+					QV_EXP_BRACED_FIELD
+
 				],
 				relevance: 10
 			},
@@ -124,6 +133,7 @@ function(hljs) {
 				contains: [
 					hljs.C_LINE_COMMENT_MODE, 
 					hljs.C_BLOCK_COMMENT_MODE, 
+					QV_EXP_BRACED_FIELD,
 					{
 						begin: '\\{', end: '\\}', //Identifies a field value set
 						contains: [
@@ -132,24 +142,12 @@ function(hljs) {
 							{
 								className: 'set-analysis-quotes', //Identifies when double quotes are used to define field value
 								begin: '"', end: '"',
-								illegal: '\n\s',
+								illegal: '\\n\\s',
 							}
 						]
-					},
-					{
-						className: 'field', //Identifies when a field name is used in set analysis
-						begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
-						illegal: '\n\s',
 					}
 				]
-			},
-			QV_EXP_BRACED_FIELD,
-			{
-				className: 'field', //Highlights all field names used in an expression
-				keywords: QV_EXP_KEYWORDS,
-				begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b', 
-				illegal: '\n\s',
 			}
 		]
   	};
-}
+})
