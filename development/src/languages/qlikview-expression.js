@@ -14,7 +14,7 @@
 */
 
 (function(hljs) {
-  	var QV_EXP_KEYWORDS = {
+	var QV_EXP_KEYWORDS = {
 		function_keyword: "All Total Distinct Nodistinct and or not",
 		
 		built_in: "Above acos AddMonths AddYears After Age Aggr Alt ApplyCodepage ApplyMap ARGB asin atan atan2 Author Avg " +
@@ -63,25 +63,25 @@
 			"Year Year2Date YearEnd YearName YearStart YearToDate Yellow " +
 			"ZTest_conf ZTest_dif ZTest_lower ZTest_sig ZTest_sterr ZTest_upper ZTest_z ZTestw_conf ZTestw_dif ZTestw_lower " +
 			"ZTestw_sig ZTestw_sterr ZTestw_upper ZTestw_z"		
-  	};
-  	var QV_EXP_HASH_FUNCTIONS = { //Deals with the correct highlighting of the functions that have an interpretation version eg. date() and date#()
+	};
+	var QV_EXP_HASH_FUNCTIONS = { //Deals with the correct highlighting of the functions that have an interpretation version eg. date() and date#()
 		className: "built_in",
 		begin: "\\b(date|interval|money|num|time|timestamp)#?\\s*(?=(\\(|$))", 
 		illegal: "\\n",
-  	};
-  	var QV_EXP_STRING_SINGLE = { //Gives a string when using single quotes
+	};
+	var QV_EXP_STRING_SINGLE = { //Gives a string when using single quotes
         className: "string",
         begin: "'", end: "'", 
 		illegal: "\\n",
 			relevance: 0
-  	};
-  	var QV_EXP_VARIABLE_USE = { //Gives a variable when used inside $()
-	    className: "variable",
+    };
+    var QV_EXP_VARIABLE_USE = { //Gives a variable when used inside $()
+		className: "variable",
 		begin: "\\$\\(", end: "\\)",
 		illegal: "\\n",
 			relevance: 10
-  	};
-  	var QV_EXP_BRACED_FIELD = { //Gives a field when using square braces []
+    };
+    var QV_EXP_BRACED_FIELD = { //Gives a field when using square braces []
 		className: "field",
 		begin: "\\[", end: "\\]", 
 		relevance: 0
@@ -91,7 +91,7 @@
         begin: "\"", end: "\"",
 		illegal: "\\n",
 			relevance: 0
-  	};
+    };
 	var QV_EXP_FIELD = {
 		className: "field", //Identifies field names
 		begin: "\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b",
@@ -101,7 +101,7 @@
 			QV_EXP_HASH_FUNCTIONS
 		]
 	};
-  	return {
+	return {
 		aliases: ["exp", "qve","qlikview-exp","qv-exp"],
 		case_insensitive: true,
 		keywords: QV_EXP_KEYWORDS,
@@ -167,5 +167,5 @@
 			QV_EXP_FIELD_DOUBLE,
 			QV_EXP_FIELD
 		]
-  	};
-})
+    };
+});
