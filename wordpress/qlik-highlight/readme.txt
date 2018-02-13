@@ -35,7 +35,7 @@ Alternatively, the shortcode can be entered using the buttons within the WordPre
 == Icons ==
 Simply place the shortcode tag [qlik-icon icon=""] in your post or page where you wish the icon to appear. You can specify the icon you wish to use within the icon parameter of the tag. For example [qlik-icon icon="qicon-qlik"] will insert the Qlik logo. Possible icons and their related codes can be found within the Qlik for WordPress settings page in the WordPress Admin Portal.
 
-Alternatively, the shortcode can be entered using the buttons within the WordPress text and visual post/page editors. Place the curser within the post or page where you wish the icon to be placed, then click the Qlik Icon button on the editor menu. You will be prompted for the icon code for the icon you wish to insert. Once complete, click OK and the shortcode will be added for you.
+Alternatively, the shortcode can be entered using the buttons within the WordPress text and visual post/page editors. Place the cursor within the post or page where you wish the icon to be placed, then click the Qlik Icon button on the editor menu. You will be prompted for the icon code for the icon you wish to insert. Once complete, click OK and the shortcode will be added for you.
 
 = Feedback =
 If you spot any issues or have any suggestions to improve the plugin, please let me know either via the support tab here, or via a comment on [QlikViewAddict.com](http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html).
