@@ -12,9 +12,9 @@
 						selectedContent = "Your code here...";
 					}
 					
-          var codeType = prompt( "codeType (qvs, exp, sql, vbscript, javascript)", "qvs" );
+          var codeType = prompt( "codeType (qvs, exp, sql, vbscript, javascript, html, xml, css)", "qvs" );
           if (codeType) {
-            if (codeType !== "qvs" && codeType !== "exp" && codeType !== "sql" && codeType !== "vbscript" && codeType !== "javascript"){
+            if (codeType !== "qvs" && codeType !== "exp" && codeType !== "sql" && codeType !== "vbscript" && codeType !== "javascript" && codeType !== "html" && codeType !== "xml" && codeType !== "css"){
               codeType = "qvs";
             }
                 

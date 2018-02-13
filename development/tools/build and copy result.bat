@@ -1,5 +1,5 @@
 cd ..
-node tools/build.js qlikview-script qlikview-expression sql vbscript javascript
+node tools/build.js qlikview-script qlikview-expression sql vbscript javascript css xml
 copy build\highlight.pack.js ..\mediawiki\QlikView\resources
 copy build\highlight.pack.js ..\qvhighlight\qvhighlight
 copy build\highlight.pack.js ..\wordpress\qlik-highlight\js

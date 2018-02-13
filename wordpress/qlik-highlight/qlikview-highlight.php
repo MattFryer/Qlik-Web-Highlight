@@ -122,7 +122,7 @@ add_action( 'admin_enqueue_scripts', 'qlik_highlight_admin_style' );
 //////////////////////////////////////////////////////////////////////////////////////////
 // Called on plugin uninstall. Tidies up settings stored in DB.
 function qlik_highlight_uninstall() {
-	register_setting( 'qlik_highlight_settings_group', 'qlik_highlight_options' ); 
+	unregister_setting( 'qlik_highlight_settings_group', 'qlik_highlight_options' ); 
 }
 register_uninstall_hook(  __FILE__, 'qlik_highlight_uninstall' );
 
@@ -272,9 +272,9 @@ function qlik_highlight_button_script() {
 					if (selected_text == null || selected_text == '') {
 						var selected_text = 'Your code here...';
 					}
-					var type = prompt( "Type (qvs, exp, sql, vbscript, javascript)", "qvs" );
+					var type = prompt( "Type (qvs, exp, sql, vbscript, javascript, html, xml, css)", "qvs" );
 					if (type) {
-						if (type != 'qvs' && type != 'exp' && type != 'sql' && type != 'vbscript' && type != 'javascript') {
+						if (type != 'qvs' && type != 'exp' && type != 'sql' && type != 'vbscript' && type != 'javascript' && type != 'html' && type != 'xml' && type != 'css') {
 							var type = 'qvs';
 						}
 						QTags.insertContent( "[qlik-code type=\"" + type + "\"]" +  selected_text + "[/qlik-code]" );
