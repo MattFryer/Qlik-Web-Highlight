@@ -37,7 +37,7 @@
 			"Then To Trace " +
 			"Unless Unmap Unqualify Untag Using " +
 			"When Where With",
-	  
+			
 		built_in: "Acos Addmonths Addyears Age Alt Applycodepage Applymap Argb Asin Atan Atan2 Attribute Author Autonumber " +
 			"Autonumberhash128 Autonumberhash256 Avg " +
 			"Bitcount Black Blackandschole Blue Brown " +
