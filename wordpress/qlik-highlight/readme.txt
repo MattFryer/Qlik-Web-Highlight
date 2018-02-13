@@ -12,7 +12,7 @@ Tools for Qlik bloggers including inserting Qlik UI icons and automatic syntax h
 == Description ==
 This WordPress plugin provides automatic syntax highlighting of QlikView and Qlik Sense script on any WordPress page or post. Additionally, it allows for easy addition of QlikView and Qlik Sense user interface icons within pages and posts. It was developed by Matt Fryer, a highly experienced Qlik consultant and author of the popular blog [QlikViewAddict.com](http://www.qlikviewaddict.com).
 
-= Features =
+== Features ==
 It currently supports highlighting of the following Qlik script and expression elements:
 
 * Line comments //
@@ -24,20 +24,20 @@ It currently supports highlighting of the following Qlik script and expression e
 
 Currently, all Qlik Sense Hub and Management Console icons are supported as well as a small number of additional generic icons (eg. Qlik logo).
 
-= How to use =
+== How to use ==
 The plugin utilises WordPress shortcodes to apply the highlighting and insert icons.
 
-== Syntax highlighting ==
+= Syntax highlighting =
 Simply wrap any Qlik code blocks within the [qlik-code] ... [/qlik-code] shortcode tags. By default, the plugin will assume that the code contained in the tags is Qlik script and will highlight it accordingly. You can specify an alternative code type using the type parameter within the opening tag. For example [qlikview type="exp"]=num(MyField)[/qlikview]. Currently supported code types are "qvs", "exp" (or "qve"), "sql", "vbscript" and "javascript". If no code type is specified then "qvs" will be assumed. 
 
 Alternatively, the shortcode can be entered using the buttons within the WordPress text and visual post/page editors. Select the block of code within the post or page, then click the Qlik Code button on the editor menu. You will be prompted for what code type the block should be highlighted as. Once complete, click OK and the shortcode will be added around the code block for you.
 
-== Icons ==
+= Icons =
 Simply place the shortcode tag [qlik-icon icon=""] in your post or page where you wish the icon to appear. You can specify the icon you wish to use within the icon parameter of the tag. For example [qlik-icon icon="qicon-qlik"] will insert the Qlik logo. Possible icons and their related codes can be found within the Qlik for WordPress settings page in the WordPress Admin Portal.
 
 Alternatively, the shortcode can be entered using the buttons within the WordPress text and visual post/page editors. Place the cursor within the post or page where you wish the icon to be placed, then click the Qlik Icon button on the editor menu. You will be prompted for the icon code for the icon you wish to insert. Once complete, click OK and the shortcode will be added for you.
 
-= Feedback =
+== Feedback ==
 If you spot any issues or have any suggestions to improve the plugin, please let me know either via the support tab here, or via a comment on [QlikViewAddict.com](http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html).
 
 = Credits =
