@@ -75,12 +75,6 @@
 		illegal: '\\n',
 			relevance: 0
   	};
-  	var QV_EXP_STRING_DOUBLE = { //Gives a string when using double quotes
-		className: 'string',
-        begin: '"', end: '"',
-		illegal: '\\n',
-			relevance: 0
-  	};
   	var QV_EXP_VARIABLE_USE = { //Gives a variable when used inside $()
 	    className: 'variable',
 		begin: '\\$\\(', end: '\\)',
@@ -92,6 +86,12 @@
 		begin: '\\[', end: '\\]', 
 		relevance: 0
 	};
+	var QV_EXP_FIELD_DOUBLE = { //Gives a field name when using double quotes
+		className: 'field',
+        begin: '"', end: '"',
+		illegal: '\\n',
+			relevance: 0
+  	};
 	var QV_EXP_FIELD = {
 		className: 'field', //Identifies field names
 		begin: '\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b',
@@ -110,7 +110,6 @@
 			hljs.C_BLOCK_COMMENT_MODE,
 			QV_EXP_HASH_FUNCTIONS,
 			QV_EXP_STRING_SINGLE,
-			QV_EXP_STRING_DOUBLE,
 			QV_EXP_VARIABLE_USE,
 			{
 				className: 'total-modifier', //finds total modifiers
@@ -119,7 +118,9 @@
 					hljs.C_LINE_COMMENT_MODE,
 					hljs.C_BLOCK_COMMENT_MODE,
 					QV_EXP_VARIABLE_USE,
-					QV_EXP_BRACED_FIELD
+					QV_EXP_BRACED_FIELD,
+					QV_EXP_FIELD_DOUBLE,
+					QV_EXP_FIELD
 
 				],
 				relevance: 10
@@ -130,22 +131,40 @@
 				contains: [
 					hljs.C_LINE_COMMENT_MODE, 
 					hljs.C_BLOCK_COMMENT_MODE, 
-					QV_EXP_BRACED_FIELD,
+					QV_EXP_VARIABLE_USE,
 					{
-						begin: '\\{', end: '\\}', //Identifies a field value set
+						className: 'set-modifier', // Identify Set Modifier
+						begin: '<', end: '>',
 						contains: [
-							hljs.C_LINE_COMMENT_MODE, 
-							hljs.C_BLOCK_COMMENT_MODE, 
+							hljs.C_LINE_COMMENT_MODE,
+							hljs.C_BLOCK_COMMENT_MODE,
+							QV_EXP_VARIABLE_USE,
 							{
-								className: 'set-analysis-quotes', //Identifies when double quotes are used to define field value
-								begin: '"', end: '"',
-								illegal: '\\n\\s',
-							}
+								className: 'field-value-set',
+								begin: '\\{', end: '\\}', //Identifies a field value set
+								contains: [
+									hljs.C_LINE_COMMENT_MODE, 
+									hljs.C_BLOCK_COMMENT_MODE, 
+									QV_EXP_VARIABLE_USE,
+									{
+										className: 'set-analysis-quotes', //Identifies when double quotes are used to define field value
+										begin: '"', end: '"',
+										illegal: '\\n\\s',
+									},
+									QV_EXP_BRACED_FIELD,
+									QV_EXP_FIELD_DOUBLE,
+									QV_EXP_FIELD,
+								]
+							},
+							QV_EXP_BRACED_FIELD,
+							QV_EXP_FIELD_DOUBLE,
+							QV_EXP_FIELD
 						]
 					}
 				]
 			},
 			QV_EXP_BRACED_FIELD,
+			QV_EXP_FIELD_DOUBLE,
 			QV_EXP_FIELD
 		]
   	};
