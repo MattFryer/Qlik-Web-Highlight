@@ -40,7 +40,7 @@ Alternatively, the shortcode can be entered using the buttons within the WordPre
 == Feedback ==
 If you spot any issues or have any suggestions to improve the plugin, please let me know either via the support tab here, or via a comment on [QlikViewAddict.com](http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html).
 
-= Credits =
+== Credits ==
 I'd like to thank Ivan Sagalaev and all the other contributors of Highlight.js which this plugin is based upon.
 
 == Installation ==
