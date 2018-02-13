@@ -23,7 +23,7 @@
         }
       });
 
-      ed.addButton("", {
+      ed.addButton("qlik_icon_button", {
         title : "Insert Qlik Icon",
 				text: " Icon",
         icon: true,
