@@ -9,7 +9,7 @@
 
 # Qlik Web Syntax Highlighter
 
-The Qlik Web Highlighting gives basic syntax highlighting of QlikView and Qlik Sense script and expressions contained within web pages. Additionally, it also provides a vector font to enable to display of QlikView and Qlik Sense user interface icons on web pages.
+The Qlik Web Highlighting gives basic syntax highlighting of QlikView and Qlik Sense script and expressions contained within web pages. Additionally, it also provides a vector font to enable you to display of QlikView and Qlik Sense user interface icons on web pages.
 
 The syntax highlighting that is provided is an approximation of what you would get in Qlik's Edit Script and Edit Expression dialogs. It currently supports the following features:
 
