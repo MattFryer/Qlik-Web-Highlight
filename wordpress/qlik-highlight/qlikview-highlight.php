@@ -42,7 +42,7 @@ define( 'QLIK_HIGHLIGHT_PLUGIN_VERSION', '2.0' );
 // PLUGIN TEXT DOMAIN
 //////////////////////////////////////////////////////////////////////////////////////////
 function qlik_highlight_load_textdomain() {
-  load_plugin_textdomain( 'qlikview-syntax-highlighter', false, basename( dirname( __FILE__ ) ) . '/languages' ); 
+	load_plugin_textdomain( 'qlikview-syntax-highlighter', false, basename( dirname( __FILE__ ) ) . '/languages' ); 
 }
 add_action( 'plugins_loaded', 'qlik_highlight_load_textdomain' );
 
@@ -75,9 +75,9 @@ function qlik_highlight_general_section_text() {
 // Define the form output for the qlik-highlight-ln setting
 function qlik_highlight_ln_check() {
 	$options = get_option( 'qlik_highlight_options' );
-?>
+	?>
 	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-ln]" value="1" <?php if (isset($options['qlik-highlight-ln'])){echo 'checked';} ?> /> 
-<?php
+	<?php
 	echo '<strong>';
 	esc_html_e('Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ block comments, REM comments and keyword combinations that aren\'t on the same line).', 'qlikview-syntax-highlighter');
 	echo '</strong>';
@@ -86,18 +86,18 @@ function qlik_highlight_ln_check() {
 // Define the form output for the qlik-highlight-cdn setting
 function qlik_highlight_cdn_check() {
 	$options = get_option( 'qlik_highlight_options' );
-?>
+	?>
 	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-cdn]" value="1" <?php if (isset($options['qlik-highlight-cdn'])){echo 'checked';} ?> /> 
-<?php
+	<?php
 	esc_html_e('Load the JavaScript and CSS files from the RawGit Content Delivery Network instead of locally. Helps with page load times and ensures latest highlighting is always available.', 'qlikview-syntax-highlighter');
 }
 
 // Define the form output for the qlik-highlight-copy setting
 function qlik_highlight_copy_check() {
 	$options = get_option( 'qlik_highlight_options' );
-?>
+	?>
 	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-copy]" value="1" <?php if (isset($options['qlik-highlight-copy'])){echo 'checked';} ?> /> 
-<?php
+	<?php
 	esc_html_e('Enables copy to clipboard button on all code blocks.', 'qlikview-syntax-highlighter');
 }
 
@@ -117,9 +117,9 @@ function qlik_highlight_settings_page() {
 		<h2><?php esc_html_e('Icons', 'qlikview-syntax-highlighter'); ?></h2>
 		<p><?php esc_html_e('The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:', 'qlikview-syntax-highlighter'); ?></p>
 		
-	<?php
+		<?php
 		readfile(plugin_dir_url( __FILE__ ) . 'qlik-highlight-admin-icons.php');
-	?>
+		?>
 		
 		<hr />
 		<p><?php esc_html_e('Produced by', 'qlikview-syntax-highlighter'); ?> Matt Fryer. <?php esc_html_e('Further details available at', 'qlikview-syntax-highlighter'); ?> <a href="http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html">QlikViewAddict.com</a>. <?php esc_html_e('Qlik is a registered trademark of QlikTech International AB', 'qlikview-syntax-highlighter'); ?></p>
@@ -356,12 +356,14 @@ function qlik_highlight_tinymce_lang() {
     if (is_admin() && $type == 'post' || $type == 'page') {
         ?>
         <script type="text/javascript">
-			var Qlik_Highlight_lang_insert_highlight_block = "<?php esc_html_e('Insert Syntax Highlighted Qlik Code Block', 'qlikview-syntax-highlighter'); ?>";
-			var Qlik_Highlight_lang_code = "<?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?>";
-			var Qlik_Highlight_lang_code_type = "<?php esc_html_e('Code type', 'qlikview-syntax-highlighter'); ?>";
-			var Qlik_Highlight_lang_insert_icon = "<?php esc_html_e('Insert Qlik Icon', 'qlikview-syntax-highlighter'); ?>";
-			var Qlik_Highlight_lang_icon = "<?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?>";
-			var Qlik_Highlight_lnag_icon_code = "<?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?>";
+			var qlikHighlightTinyMceLang = {
+				insertHighlightBlock: "<?php esc_html_e('Insert Syntax Highlighted Qlik Code Block', 'qlikview-syntax-highlighter'); ?>", 
+				code: "<?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?>", 
+				codeType: "<?php esc_html_e('Code type', 'qlikview-syntax-highlighter'); ?>", 
+				insertIcon: "<?php esc_html_e('Insert Qlik Icon', 'qlikview-syntax-highlighter'); ?>", 
+				icon: "<?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?>", 
+				iconCode: "<?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?>", 
+			};
         </script>
         <?php
     }
