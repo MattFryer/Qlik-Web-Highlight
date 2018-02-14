@@ -1,3 +1,7 @@
+var qlikHighlightTinyMceLang; // Define external global object
+var tinymce;  // Define external tinyMCE object
+var ed; // Define external editor object
+
 (function() {
   tinymce.create( "tinymce.plugins.qlik_code_buttons", {
     init(ed, url) {
