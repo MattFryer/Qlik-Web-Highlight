@@ -2,8 +2,8 @@
   tinymce.create( "tinymce.plugins.qlik_code_buttons", {
     init(ed, url) {
       ed.addButton("qlik_code_button", {
-        title : "Insert Syntax Highlighted Qlik Code Block",
-				text: " Code",
+        title : Qlik_Highlight_lang_insert_highlight_block,
+				text: " "+Qlik_Highlight_lang_code,
         icon: true,
 				image : url+"/qlik.png",
         onclick() {
@@ -12,7 +12,7 @@
 						selectedContent = "Your code here...";
 					}
 					
-          var codeType = prompt( "codeType (qvs, exp, sql, vbscript, javascript, html, xml, css)", "qvs" );
+          var codeType = prompt( Qlik_Highlight_lang_code_type+" (qvs, exp, sql, vbscript, javascript, html, xml, css)", "qvs" );
           if (codeType) {
             if (codeType !== "qvs" && codeType !== "exp" && codeType !== "sql" && codeType !== "vbscript" && codeType !== "javascript" && codeType !== "html" && codeType !== "xml" && codeType !== "css"){
               codeType = "qvs";
@@ -24,14 +24,14 @@
       });
 
       ed.addButton("qlik_icon_button", {
-        title : "Insert Qlik Icon",
-				text: " Icon",
+        title : Qlik_Highlight_lang_insert_icon,
+				text: " "+Qlik_Highlight_lang_icon,
         icon: true,
 				image : url+"/qlik.png",
         onclick() {
 					var selectedContent = tinyMCE.activeEditor.selection.getContent( {format : "text"} );
 					
-          var iconType = prompt("Iocn code", "qicon-qlik");
+          var iconType = prompt(Qlik_Highlight_lnag_icon_code, "qicon-qlik");
           if (iconType) {   
             ed.execCommand( "mceInsertContent", false, "[qlik-icon icon=\""+iconType+"\"]" + selectedContent );
           }

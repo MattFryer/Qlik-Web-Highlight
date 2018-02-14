@@ -11,6 +11,7 @@
  * Author: Matt Fryer
  * Author URI: http://www.qlikviewaddict.com/
  * License: GPLv3 or later
+ * Text Domain: Qlik_Highlight
 /*/
 /*  Copyright 2014  Matthew Fryer  (email : matthew_fryer@hotmail.com)
 
@@ -41,55 +42,62 @@ define( 'QLIK_HIGHLIGHT_PLUGIN_VERSION', '2.0' );
 //////////////////////////////////////////////////////////////////////////////////////////
 // Add a settings page
 function qlik_highlight_admin_add_page() {
-	add_menu_page( 'Qlik for WordPress Settings', 'Qlik', 'manage_options', 'qlik_highlight', 'qlik_highlight_settings_page', plugin_dir_url( __FILE__ ) . 'js/qlik.png', null );
+	add_menu_page( esc_attr__('Qlik for WordPress Settings', 'Qlik_Highlight'), 'Qlik', 'manage_options', 'qlik_highlight', 'qlik_highlight_settings_page', plugin_dir_url( __FILE__ ) . 'js/qlik.png', null );
 }
 add_action( 'admin_menu', 'qlik_highlight_admin_add_page' );
 
 // Register the settings
 function qlik_highlight_register_settings() {
 	register_setting( 'qlik_highlight_settings_group', 'qlik_highlight_options' ); // Add a setting. It will be used as an array to hold multiple settings.
-	add_settings_section( 'qlik_highlight_main', 'General Settings', 'qlik_highlight_general_section_text', 'qlik_highlight' ); // Add a section to the settings
-	add_settings_field( 'qlik-highlight-ln', 'Enable line numbers', 'qlik_highlight_ln_check', 'qlik_highlight', 'qlik_highlight_main' ); // Add a specific setting field to the array for enabling line numbers
-	add_settings_field ('qlik-highlight-cdn', 'Enable JS and CSS from CDN', 'qlik_highlight_cdn_check', 'qlik_highlight', 'qlik_highlight_main' ); // Add a specific setting field to the array for enabling line numbers
-	add_settings_field( 'qlik-highlight-copy', 'Enable copy to Clipboard', 'qlik_highlight_copy_check', 'qlik_highlight', 'qlik_highlight_main' ); // Add a specific setting field to the array for enabling copy to clipboard
+	add_settings_section( 'qlik_highlight_main', esc_attr__('General Settings', 'Qlik_Highlight'), 'qlik_highlight_general_section_text', 'qlik_highlight' ); // Add a section to the settings
+	add_settings_field( 'qlik-highlight-ln', esc_attr__('Enable line numbers', 'Qlik_Highlight'), 'qlik_highlight_ln_check', 'qlik_highlight', 'qlik_highlight_main' ); // Add a specific setting field to the array for enabling line numbers
+	add_settings_field ('qlik-highlight-cdn', esc_attr__('Enable JS and CSS from CDN', 'Qlik_Highlight'), 'qlik_highlight_cdn_check', 'qlik_highlight', 'qlik_highlight_main' ); // Add a specific setting field to the array for enabling line numbers
+	add_settings_field( 'qlik-highlight-copy', esc_attr__('Enable copy to Clipboard', 'Qlik_Highlight'), 'qlik_highlight_copy_check', 'qlik_highlight', 'qlik_highlight_main' ); // Add a specific setting field to the array for enabling copy to clipboard
 }
 add_action( 'admin_init', 'qlik_highlight_register_settings' );	
 
 // Define the text description for the general section
 function qlik_highlight_general_section_text() {
-	echo '<p>General settings that effect all code blocks across all pages and posts.</p>';
+	echo '<p>';
+	esc_html_e('General settings that effect all code blocks across all pages and posts.', 'Qlik_Highlight');
+	echo '</p>';
 }
 
 // Define the form output for the qlik-highlight-ln setting
 function qlik_highlight_ln_check() {
 	$options = get_option( 'qlik_highlight_options' );
 ?>
-	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-ln]" value="1" <?php if (isset($options['qlik-highlight-ln'])){echo 'checked';} ?> /> <strong>Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ block comments, REM comments and keyword combinations that aren't on the same line).</strong>
+	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-ln]" value="1" <?php if (isset($options['qlik-highlight-ln'])){echo 'checked';} ?> /> 
 <?php
+	echo '<strong>';
+	esc_html_e('Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ block comments, REM comments and keyword combinations that aren\'t on the same line).', 'Qlik_Highlight');
+	echo '</strong>';
 }
 
 // Define the form output for the qlik-highlight-cdn setting
 function qlik_highlight_cdn_check() {
 	$options = get_option( 'qlik_highlight_options' );
 ?>
-	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-cdn]" value="1" <?php if (isset($options['qlik-highlight-cdn'])){echo 'checked';} ?> /> Load the JavaScript and CSS files from the RawGit Content Delivery Network instead of locally. Helps with page load times and ensures latest highlighting is always available.
+	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-cdn]" value="1" <?php if (isset($options['qlik-highlight-cdn'])){echo 'checked';} ?> /> 
 <?php
+	esc_html_e('Load the JavaScript and CSS files from the RawGit Content Delivery Network instead of locally. Helps with page load times and ensures latest highlighting is always available.', 'Qlik_Highlight');
 }
 
 // Define the form output for the qlik-highlight-copy setting
 function qlik_highlight_copy_check() {
 	$options = get_option( 'qlik_highlight_options' );
 ?>
-	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-copy]" value="1" <?php if (isset($options['qlik-highlight-copy'])){echo 'checked';} ?> /> Enables copy to clipboard button on all code blocks.
+	<input type="checkbox" name="qlik_highlight_options[qlik-highlight-copy]" value="1" <?php if (isset($options['qlik-highlight-copy'])){echo 'checked';} ?> /> 
 <?php
+	esc_html_e('Enables copy to clipboard button on all code blocks.', 'Qlik_Highlight');
 }
 
 // Define the structure of the settings page
 function qlik_highlight_settings_page() {
 	?>
 	<div class="qlik-highlight-admin">
-		<h1>Qlik for WordPress Settings</h1>
-		<p>The Qlik for WordPress plugin provides syntax highlighting of Qlikview and Qlik Sense script in pages and post.</p>
+		<h1><?php esc_html_e('Qlik for WordPress Settings', 'Qlik_Highlight'); ?></h1>
+		<p><?php esc_html_e('The Qlik for WordPress plugin provides syntax highlighting of Qlikview and Qlik Sense script in pages and post.', 'Qlik_Highlight'); ?></p>
 		<form action="options.php" method="post">
 			<?php settings_fields('qlik_highlight_settings_group'); ?>
 			<?php do_settings_sections('qlik_highlight'); ?>
@@ -97,15 +105,15 @@ function qlik_highlight_settings_page() {
 			<input name="Submit" type="submit" value="<?php esc_attr_e('Save Settings'); ?>" />
 		</form>
 		
-		<h2>Icons</h2>
-		<p>The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:</p>
+		<h2><?php esc_html_e('Icons', 'Qlik_Highlight'); ?></h2>
+		<p><?php esc_html_e('The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:', 'Qlik_Highlight'); ?></p>
 		
 	<?php
-		readfile(plugin_dir_url( __FILE__ ) . 'qlik-highlight-admin-icons.html');
+		readfile(plugin_dir_url( __FILE__ ) . 'qlik-highlight-admin-icons.php');
 	?>
 		
 		<hr />
-		<p>Produced by Matt Fryer. Further details available at <a href="http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html">QlikViewAddict.com</a>. Qlik is a registered trademark of QlikTech International AB</p>
+		<p><?php esc_html_e('Produced by', 'Qlik_Highlight'); ?> Matt Fryer. <?php esc_html_e('Further details available at', 'Qlik_Highlight'); ?> <a href="http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html">QlikViewAddict.com</a>. <?php esc_html_e('Qlik is a registered trademark of QlikTech International AB', 'Qlik_Highlight'); ?></p>
 	</div>
 	<?php
 }
@@ -190,6 +198,7 @@ function qlik_highlight_shortcode( $atts , $content = null ) {
 		wp_enqueue_script( 'qlik_highlight_clipboard_config' );
 		wp_localize_script('qlik_highlight_clipboard_config', 'qlikHighlightClipboardConfig', array( // Allows for passing of variables to the JS
 			'pluginsUrl' => plugin_dir_url(__FILE__),
+			'copyToClipboard' => esc_html__('Copy to Clipboard', 'Qlik_Highlight'),
 		));
 	}
 	
@@ -261,7 +270,7 @@ function qlik_highlight_button_script() {
 				// Add the buttons
                 QTags.addButton( 
                     "qlik_code_shortcode", 
-                    "Qlik Code", 
+                    "<?php esc_html_e('Qlik Code', 'Qlik_Highlight'); ?>", 
                     callback_qlik_highlight
                 );
 
@@ -270,9 +279,9 @@ function qlik_highlight_button_script() {
                 {
                     var selected_text = getSel();
 					if (selected_text == null || selected_text == '') {
-						var selected_text = 'Your code here...';
+						var selected_text = '<?php esc_html_e('Your code here...', 'Qlik_Highlight'); ?>';
 					}
-					var type = prompt( "Type (qvs, exp, sql, vbscript, javascript, html, xml, css)", "qvs" );
+					var type = prompt( "<?php esc_html_e('Code type', 'Qlik_Highlight'); ?> (qvs, exp, sql, vbscript, javascript, html, xml, css)", "qvs" );
 					if (type) {
 						if (type != 'qvs' && type != 'exp' && type != 'sql' && type != 'vbscript' && type != 'javascript' && type != 'html' && type != 'xml' && type != 'css') {
 							var type = 'qvs';
@@ -284,14 +293,14 @@ function qlik_highlight_button_script() {
 				// Add the buttons
                 QTags.addButton( 
                     "qlik_icon_shortcode", 
-                    "Qlik Icon", 
+                    "<?php esc_html_e('Qlik Icon', 'Qlik_Highlight'); ?>", 
                     callback_qlik_icon
 				);
 
 				function callback_qlik_icon()
                 {
                     var selected_text = getSel();
-					var type = prompt( "Iocn code", "qicon-qlik" );
+					var type = prompt( "<?php esc_html_e('Iocn code', 'Qlik_Highlight'); ?>", "qicon-qlik" );
 					if (type) {
 						QTags.insertContent( "[qlik-icon icon=\"" + type + "\"]" +  selected_text );
 					}
@@ -308,25 +317,45 @@ add_action("admin_print_footer_scripts", "qlik_highlight_button_script");
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Add the button(s) to the TinyMCE so that the shortcode(s) can be added via the visual page/post editor
 function register_qlik_highlight_buttons( $buttons ) {
-   array_push( $buttons, "qlik_code_button", "qlik_icon_button" );
-   return $buttons;
+	array_push( $buttons, "qlik_code_button", "qlik_icon_button" );
+	return $buttons;
 }
 
 function add_qlik_highlight_plugin( $plugin_array ) {
-   $plugin_array['qlik_code_buttons'] = plugin_dir_url(__FILE__) . 'js/qlikview-shortcode-button.js';
-   return $plugin_array;
+	$plugin_array['qlik_code_buttons'] = plugin_dir_url(__FILE__) . 'js/qlikview-shortcode-button.js';
+	return $plugin_array;
 }
 
 function qlik_hightlight_buttons() {
-   if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
-      return;
-   }
+   	if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
+      	return;
+   	}
 
-   if ( get_user_option('rich_editing') == 'true' ) {
-      add_filter( 'mce_external_plugins', 'add_qlik_highlight_plugin' );
-      add_filter( 'mce_buttons', 'register_qlik_highlight_buttons' );
-   }
+	if ( get_user_option('rich_editing') == 'true' ) {
+		add_filter( 'mce_external_plugins', 'add_qlik_highlight_plugin' );
+		add_filter( 'mce_buttons', 'register_qlik_highlight_buttons' );
+	}
 }
 add_action( 'init', 'qlik_hightlight_buttons' );
 
+// Handly tinyMCE language translations
+function qlik_highlight_tinymce_lang() {
+
+	global $current_screen;
+    $type = $current_screen->post_type;
+
+    if (is_admin() && $type == 'post' || $type == 'page') {
+        ?>
+        <script type="text/javascript">
+			var Qlik_Highlight_lang_insert_highlight_block = "<?php esc_html_e('Insert Syntax Highlighted Qlik Code Block', 'Qlik_Highlight'); ?>";
+			var Qlik_Highlight_lang_code = "<?php esc_html_e('Code', 'Qlik_Highlight'); ?>";
+			var Qlik_Highlight_lang_code_type = "<?php esc_html_e('Code type', 'Qlik_Highlight'); ?>";
+			var Qlik_Highlight_lang_insert_icon = "<?php esc_html_e('Insert Qlik Icon', 'Qlik_Highlight'); ?>";
+			var Qlik_Highlight_lang_icon = "<?php esc_html_e('Icon', 'Qlik_Highlight'); ?>";
+			var Qlik_Highlight_lnag_icon_code = "<?php esc_html_e('Icon code', 'Qlik_Highlight'); ?>";
+        </script>
+        <?php
+    }
+}
+add_action('admin_head','qlik_highlight_tinymce_lang');
 ?>

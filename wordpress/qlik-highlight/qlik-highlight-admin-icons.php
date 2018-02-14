@@ -1,6 +1,10 @@
-		<h3>General Qlik Icons</h3>
+<?php
+	require_once('../../../wp-load.php');
+?>
+
+		<h3><?php esc_html_e('General Qlik Icons', 'Qlik_Highlight'); ?></h3>
 		<table class="border">
-			<tr><th>Icon</th><th>Code</th><th>Icon</th><th>Code</th><th>Icon</th><th>Code</th></tr>
+			<tr><th><?php esc_html_e('Icon', 'Qlik_Highlight'); ?></th><th><?php esc_html_e('Code', 'Qlik_Highlight'); ?></th><th><?php esc_html_e('Icon', 'Qlik_Highlight'); ?></th><th><?php esc_html_e('Code', 'Qlik_Highlight'); ?></th><th><?php esc_html_e('Icon', 'Qlik_Highlight'); ?></th><th><?php esc_html_e('Code', 'Qlik_Highlight'); ?></th></tr>
 			<tr>
 				<td><i class="qicon-2x qicon-qlik"></i></td><td>qicon-qlik</td>
 				<td><i class="qicon-2x qicon-sense"></i></td><td>qicon-sense</td>
@@ -8,9 +12,9 @@
 			</tr>
 		</table>
 		
-		<h3>QlikSense User Interface Icons</h3>
+		<h3><?php esc_html_e('QlikSense User Interface Icons', 'Qlik_Highlight'); ?></h3>
 		<table class="border">
-			<tr><th>Icon</th><th>Code</th><th>Icon</th><th>Code</th><th>Icon</th><th>Code</th></tr>
+			<tr><th><?php esc_html_e('Icon', 'Qlik_Highlight'); ?></th><th><?php esc_html_e('Code', 'Qlik_Highlight'); ?></th><th><?php esc_html_e('Icon', 'Qlik_Highlight'); ?></th><th><?php esc_html_e('Code', 'Qlik_Highlight'); ?></th><th><?php esc_html_e('Icon', 'Qlik_Highlight'); ?></th><th><?php esc_html_e('Code', 'Qlik_Highlight'); ?></th></tr>
 			<tr>
 				<td><i class="qicon-2x qicon-bars-vert"></i></td><td>qicon-bars-vert</td>
 				<td><i class="qicon-2x qicon-bars-horiz"></i></td><td>qicon-bars-horiz</td>
@@ -222,8 +226,8 @@
 			</tr>		
 		</table>
 		
-		<h3>QlikView User Interface Icons</h3>
+		<h3><?php esc_html_e('QlikView User Interface Icons', 'Qlik_Highlight'); ?></h3>
 		<table class="border">
-			<tr><th>Icon</th><th>Code</th><th>Icon</th><th>Code</th><th>Icon</th><th>Code</th></tr>
+			<tr><th><?php esc_html_e('Icon', 'Qlik_Highlight'); ?></th><th><?php esc_html_e('Code', 'Qlik_Highlight'); ?></th><th><?php esc_html_e('Icon', 'Qlik_Highlight'); ?></th><th><?php esc_html_e('Code', 'Qlik_Highlight'); ?></th><th><?php esc_html_e('Icon', 'Qlik_Highlight'); ?></th><th><?php esc_html_e('Code', 'Qlik_Highlight'); ?></th></tr>
 			<tr><td>Coming soon!</td><td></td><td></td><td></td><td></td><td></td></tr>
 		</table>
