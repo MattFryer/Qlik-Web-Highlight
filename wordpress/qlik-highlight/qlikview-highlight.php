@@ -309,7 +309,7 @@ function qlik_highlight_button_script() {
 				function callback_qlik_icon()
                 {
                     var selected_text = getSel();
-					var type = prompt( "<?php esc_html_e('Iocn code', 'qlikview-syntax-highlighter'); ?>", "qicon-qlik" );
+					var type = prompt( "<?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?>", "qicon-qlik" );
 					if (type) {
 						QTags.insertContent( "[qlik-icon icon=\"" + type + "\"]" +  selected_text );
 					}
