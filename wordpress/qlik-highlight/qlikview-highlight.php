@@ -6,7 +6,7 @@
 /*/
  * Plugin Name: Qlik for WordPress
  * Plugin URI: http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html
- * Description: Automatic syntax highlighting of Qlik script and expressions on any WordPress page or post.
+ * Description: Tools for Qlik bloggers including inserting Qlik UI icons and automatic syntax highlighting of QlikView and Qlik Sense script/expressions on any WordPress page or post.
  * Version: 2.0
  * Author: Matt Fryer
  * Author URI: http://www.qlikviewaddict.com/
