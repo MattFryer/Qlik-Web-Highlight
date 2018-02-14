@@ -12,6 +12,7 @@
  * Author URI: http://www.qlikviewaddict.com/
  * License: GPLv3 or later
  * Text Domain: qlikview-syntax-highlighter
+ * Domain Path: /languages
 /*/
 /*  Copyright 2014  Matthew Fryer  (email : matthew_fryer@hotmail.com)
 
