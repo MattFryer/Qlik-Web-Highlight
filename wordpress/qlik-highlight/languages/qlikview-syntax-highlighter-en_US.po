@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Qlik for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-19 18:14+0000\n"
-"PO-Revision-Date: 2018-02-19 19:10+0000\n"
+"POT-Creation-Date: 2018-02-19 19:19+0000\n"
+"PO-Revision-Date: 2018-02-19 19:19+0000\n"
 "Last-Translator: WPTestAdmin <matt.fryer@datoniq.com>\n"
 "Language-Team: English (United States)\n"
 "Language: en_US\n"
@@ -12,6 +12,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
+
+#: qlikview-highlight.php:58
+msgid "Settings"
+msgstr "Settings"
 
 #: qlikview-highlight.php:69 qlikview-highlight.php:123
 msgid "Qlik for WordPress Settings"

@@ -55,7 +55,7 @@ add_action( 'plugins_loaded', 'qlik_highlight_load_textdomain' );
 //////////////////////////////////////////////////////////////////////////////////////////
 function qlik_highlight_add_action_links ( $links ) {
 	$additionalLinks = array(
-		'<a href="' . admin_url( 'admin.php?page='. QLIK_HIGHLIGHT_PACKAGE_NAME) . '">Settings</a>',
+		'<a href="' . admin_url( 'admin.php?page='. QLIK_HIGHLIGHT_PACKAGE_NAME) . '">' . esc_html__('Settings', 'qlikview-syntax-highlighter') . '</a>',
 	);
    return array_merge( $links, $additionalLinks );
 }
