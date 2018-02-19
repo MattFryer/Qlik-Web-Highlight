@@ -1,0 +1,149 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-14 13:30+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: qlikview-highlight.php:361
+msgid "Code"
+msgstr ""
+
+#: qlikview-highlight.php:293 qlikview-highlight.php:362
+msgid "Code type"
+msgstr ""
+
+#: qlikview-highlight.php:210
+msgid "Copy to Clipboard"
+msgstr ""
+
+#: qlikview-highlight.php:64
+msgid "Enable copy to Clipboard"
+msgstr ""
+
+#: qlikview-highlight.php:63
+msgid "Enable JS and CSS from CDN"
+msgstr ""
+
+#: qlikview-highlight.php:62
+msgid "Enable line numbers"
+msgstr ""
+
+#: qlikview-highlight.php:101
+msgid "Enables copy to clipboard button on all code blocks."
+msgstr ""
+
+#: qlikview-highlight.php:125
+msgid "Further details available at"
+msgstr ""
+
+#: qlikview-highlight.php:61
+msgid "General Settings"
+msgstr ""
+
+#: qlikview-highlight.php:71
+msgid ""
+"General settings that effect all code blocks across all pages and posts."
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://www.qlikviewaddict.com/"
+msgstr ""
+
+#. URI of the plugin
+msgid "http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html"
+msgstr ""
+
+#: qlikview-highlight.php:364
+msgid "Icon"
+msgstr ""
+
+#: qlikview-highlight.php:312 qlikview-highlight.php:365
+msgid "Icon code"
+msgstr ""
+
+#: qlikview-highlight.php:117
+msgid "Icons"
+msgstr ""
+
+#: qlikview-highlight.php:363
+msgid "Insert Qlik Icon"
+msgstr ""
+
+#: qlikview-highlight.php:360
+msgid "Insert Syntax Highlighted Qlik Code Block"
+msgstr ""
+
+#: qlikview-highlight.php:92
+msgid ""
+"Load the JavaScript and CSS files from the RawGit Content Delivery Network "
+"instead of locally. Helps with page load times and ensures latest "
+"highlighting is always available."
+msgstr ""
+
+#. Author of the plugin
+msgid "Matt Fryer"
+msgstr ""
+
+#: qlikview-highlight.php:125
+msgid "Produced by"
+msgstr ""
+
+#: qlikview-highlight.php:282
+msgid "Qlik Code"
+msgstr ""
+
+#. Name of the plugin
+msgid "Qlik for WordPress"
+msgstr ""
+
+#: qlikview-highlight.php:54 qlikview-highlight.php:108
+msgid "Qlik for WordPress Settings"
+msgstr ""
+
+#: qlikview-highlight.php:305
+msgid "Qlik Icon"
+msgstr ""
+
+#: qlikview-highlight.php:125
+msgid "Qlik is a registered trademark of QlikTech International AB"
+msgstr ""
+
+#: qlikview-highlight.php:109
+msgid ""
+"The Qlik for WordPress plugin provides syntax highlighting of Qlikview and "
+"Qlik Sense script in pages and post."
+msgstr ""
+
+#: qlikview-highlight.php:118
+msgid ""
+"The tables below provide the necessary codes to insert QlikView and Qlik "
+"Sense icons into pages and posts:"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Tools for Qlik bloggers including inserting Qlik UI icons and automatic "
+"syntax highlighting of QlikView and Qlik Sense script/expressions on any "
+"WordPress page or post."
+msgstr ""
+
+#: qlikview-highlight.php:82
+msgid ""
+"Warning: Enabling line numbers may prevent the correct highlighting of "
+"blocks which span more than one line (eg. /* */ block comments, REM comments "
+"and keyword combinations that aren't on the same line)."
+msgstr ""
+
+#: qlikview-highlight.php:291
+msgid "Your code here..."
+msgstr ""
