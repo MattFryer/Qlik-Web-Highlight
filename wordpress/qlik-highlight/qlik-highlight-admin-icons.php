@@ -1,9 +1,8 @@
 <?php
 /**
  * @package Qlik_Highlight
- * @version 2.0
  */
-	require_once('../../../wp-load.php');
+	require_once('../../../wp-load.php'); // Needed to be able to call the translation functions
 ?>
 
 		<h3><?php esc_html_e('General Qlik Icons', 'qlikview-syntax-highlighter'); ?></h3>

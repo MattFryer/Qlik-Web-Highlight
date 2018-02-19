@@ -30,20 +30,22 @@
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-defined('ABSPATH') or die("No script kiddies please!"); //Block direct access to this php file
-
+defined('ABSPATH') or die("No humans here please!"); //Block direct access to this php file
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // DEFINES
 //////////////////////////////////////////////////////////////////////////////////////////
 define( 'QLIK_HIGHLIGHT_PLUGIN_VERSION', '2.0' );
 define( 'QLIK_HIGHLIGHT_PACKAGE_NAME', 'qlik_highlight');
+define( 'QLIK_HIGHLIGHT_PLUGIN_FOLDER',  plugin_basename( __FILE__ ) );
+define( 'QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL', plugin_dir_url( __FILE__ ) );
+define( 'QLIK_HIGHLIGHT_CDN_FOLDER_URL', 'https://cdn.rawgit.com/MattFryer/Qlik-Web-Highlight/v' . QLIK_HIGHLIGHT_PLUGIN_VERSION . '/wordpress/qlikview-highlight/' );
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // PLUGIN TEXT DOMAIN
 //////////////////////////////////////////////////////////////////////////////////////////
 function qlik_highlight_load_textdomain() {
-	load_plugin_textdomain( 'qlikview-syntax-highlighter', false, basename( dirname( __FILE__ ) ) . '/languages' ); 
+	load_plugin_textdomain( 'qlikview-syntax-highlighter', false, QLIK_HIGHLIGHT_PLUGIN_FOLDER . '/languages' ); 
 }
 add_action( 'plugins_loaded', 'qlik_highlight_load_textdomain' );
 
@@ -56,7 +58,7 @@ function qlik_highlight_add_action_links ( $links ) {
 	);
    return array_merge( $links, $additionalLinks );
 }
-add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'qlik_highlight_add_action_links' );
+add_filter( 'plugin_action_links_' . QLIK_HIGHLIGHT_PLUGIN_FOLDER, 'qlik_highlight_add_action_links' );
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // ADMIN CONFIGURATION PAGE
@@ -130,7 +132,7 @@ function qlik_highlight_settings_page() {
 		<p><?php esc_html_e('The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:', 'qlikview-syntax-highlighter'); ?></p>
 		
 		<?php
-		readfile(plugin_dir_url( __FILE__ ) . 'qlik-highlight-admin-icons.php');
+		readfile( QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL . 'qlik-highlight-admin-icons.php' );
 		?>
 		
 		<hr />
@@ -141,8 +143,8 @@ function qlik_highlight_settings_page() {
 
 // Add the css for the admin page
 function qlik_highlight_admin_style() {
-	wp_enqueue_style( 'qlik_admin_style', plugin_dir_url(__FILE__) . 'css/qlik-admin.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the icons css
-	wp_enqueue_style( 'qlik_icon_style', plugin_dir_url(__FILE__) . 'css/qlik-icons.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the icons css
+	wp_enqueue_style( 'qlik_admin_style', QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL . 'css/qlik-admin.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the icons css
+	wp_enqueue_style( 'qlik_icon_style', QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL . 'css/qlik-icons.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the icons css
 }
 add_action( 'admin_enqueue_scripts', 'qlik_highlight_admin_style' );
 
@@ -153,18 +155,18 @@ add_action( 'admin_enqueue_scripts', 'qlik_highlight_admin_style' );
 function qlik_highlight_uninstall() {
 	unregister_setting( 'qlik_highlight_settings_group', 'qlik_highlight_options' ); 
 }
-register_uninstall_hook(  __FILE__, 'qlik_highlight_uninstall' );
+register_uninstall_hook( __FILE__, 'qlik_highlight_uninstall' );
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // REGISTER ASSETS
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the necessary highlight code and styles 
 function qlik_highlight_register() {
-	$loadFrom = plugin_dir_url(__FILE__);
+	$loadFrom = QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL;
 	
 	$options = get_option('qlik_highlight_options');
 	if ( isset($options['qlik-highlight-cdn']) ) {
-		$loadFrom = 'https://cdn.rawgit.com/MattFryer/Qlik-Web-Highlight/v' . QLIK_HIGHLIGHT_PLUGIN_VERSION . '/wordpress/qlikview-highlight/';
+		$loadFrom = QLIK_HIGHLIGHT_CDN_FOLDER_URL;
 	}
 	
 	wp_register_style( 'qlik_highlight_style', $loadFrom . 'css/qlikview.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the main css
@@ -218,7 +220,7 @@ function qlik_highlight_shortcode( $atts , $content = null ) {
 		wp_enqueue_script( 'qlik_highlight_clipboard' );
 		wp_enqueue_script( 'qlik_highlight_clipboard_config' );
 		wp_localize_script('qlik_highlight_clipboard_config', 'qlikHighlightClipboardConfig', array( // Allows for passing of variables to the JS
-			'pluginsUrl' => plugin_dir_url(__FILE__),
+			'pluginsUrl' => QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL,
 			'copyToClipboard' => esc_html__('Copy to Clipboard', 'qlikview-syntax-highlighter'),
 		));
 	}
@@ -343,7 +345,7 @@ function register_qlik_highlight_buttons( $buttons ) {
 }
 
 function add_qlik_highlight_plugin( $plugin_array ) {
-	$plugin_array['qlik_code_buttons'] = plugin_dir_url(__FILE__) . 'js/qlikview-shortcode-button.js';
+	$plugin_array['qlik_code_buttons'] = QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL . 'js/qlikview-shortcode-button.js';
 	return $plugin_array;
 }
 
