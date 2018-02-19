@@ -37,6 +37,7 @@ defined('ABSPATH') or die("No script kiddies please!"); //Block direct access to
 // DEFINES
 //////////////////////////////////////////////////////////////////////////////////////////
 define( 'QLIK_HIGHLIGHT_PLUGIN_VERSION', '2.0' );
+define( 'QLIK_HIGHLIGHT_PACKAGE_NAME', 'qlik_highlight');
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // PLUGIN TEXT DOMAIN
@@ -45,6 +46,17 @@ function qlik_highlight_load_textdomain() {
 	load_plugin_textdomain( 'qlikview-syntax-highlighter', false, basename( dirname( __FILE__ ) ) . '/languages' ); 
 }
 add_action( 'plugins_loaded', 'qlik_highlight_load_textdomain' );
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// PLUGIN PAGE LINKS
+//////////////////////////////////////////////////////////////////////////////////////////
+function qlik_highlight_add_action_links ( $links ) {
+	$additionalLinks = array(
+		'<a href="' . admin_url( 'admin.php?page='. QLIK_HIGHLIGHT_PACKAGE_NAME) . '">Settings</a>',
+	);
+   return array_merge( $links, $additionalLinks );
+}
+add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'qlik_highlight_add_action_links' );
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // ADMIN CONFIGURATION PAGE

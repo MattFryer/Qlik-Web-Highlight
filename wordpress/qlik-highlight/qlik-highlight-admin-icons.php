@@ -1,4 +1,8 @@
 <?php
+/**
+ * @package Qlik_Highlight
+ * @version 2.0
+ */
 	require_once('../../../wp-load.php');
 ?>
 
