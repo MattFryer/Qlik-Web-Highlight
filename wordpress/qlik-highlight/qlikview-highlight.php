@@ -37,15 +37,16 @@ defined('ABSPATH') or die("No humans here please!"); //Block direct access to th
 //////////////////////////////////////////////////////////////////////////////////////////
 define( 'QLIK_HIGHLIGHT_PLUGIN_VERSION', '2.0' );
 define( 'QLIK_HIGHLIGHT_PACKAGE_NAME', 'qlik_highlight');
+define( 'QLIK_HIGHLIGHT_WP_REPO_NAME', 'qlikview-syntax-highlighter');
 define( 'QLIK_HIGHLIGHT_PLUGIN_FOLDER',  plugin_basename( __FILE__ ) );
 define( 'QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL', plugin_dir_url( __FILE__ ) );
-define( 'QLIK_HIGHLIGHT_CDN_FOLDER_URL', 'https://cdn.rawgit.com/MattFryer/Qlik-Web-Highlight/v' . QLIK_HIGHLIGHT_PLUGIN_VERSION . '/wordpress/qlikview-highlight/' );
+define( 'QLIK_HIGHLIGHT_CDN_FOLDER_URL', 'https://cdn.rawgit.com/MattFryer/Qlik-Web-Highlight/v' . QLIK_HIGHLIGHT_PLUGIN_VERSION . '/wordpress/qlikview-highlight/' ); // URL to obtain the files from a CDN if using
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // PLUGIN TEXT DOMAIN
 //////////////////////////////////////////////////////////////////////////////////////////
 function qlik_highlight_load_textdomain() {
-	load_plugin_textdomain( 'qlikview-syntax-highlighter', false, QLIK_HIGHLIGHT_PLUGIN_FOLDER . '/languages' ); 
+	load_plugin_textdomain( 'qlikview-syntax-highlighter', false, QLIK_HIGHLIGHT_PLUGIN_FOLDER  . '/languages' ); 
 }
 add_action( 'plugins_loaded', 'qlik_highlight_load_textdomain' );
 
@@ -65,7 +66,7 @@ add_filter( 'plugin_action_links_' . QLIK_HIGHLIGHT_PLUGIN_FOLDER, 'qlik_highlig
 //////////////////////////////////////////////////////////////////////////////////////////
 // Add a settings page
 function qlik_highlight_admin_add_page() {
-	add_menu_page( esc_attr__('Qlik for WordPress Settings', 'qlikview-syntax-highlighter'), 'Qlik', 'manage_options', 'qlik_highlight', 'qlik_highlight_settings_page', plugin_dir_url( __FILE__ ) . 'js/qlik.png', null );
+	add_menu_page( esc_attr__('Qlik for WordPress Settings', 'qlikview-syntax-highlighter'), 'Qlik', 'manage_options', 'qlik_highlight', 'qlik_highlight_settings_page', QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL . 'js/qlik.png', null );
 }
 add_action( 'admin_menu', 'qlik_highlight_admin_add_page' );
 
@@ -125,7 +126,7 @@ function qlik_highlight_settings_page() {
 			<?php settings_fields('qlik_highlight_settings_group'); ?>
 			<?php do_settings_sections('qlik_highlight'); ?>
 
-			<input name="Submit" type="submit" value="<?php esc_attr_e('Save Settings'); ?>" />
+			<input name="Submit" type="submit" value="<?php esc_html_e('Save Settings', 'qlikview-syntax-highlighter'); ?>" />
 		</form>
 		
 		<h2><?php esc_html_e('Icons', 'qlikview-syntax-highlighter'); ?></h2>

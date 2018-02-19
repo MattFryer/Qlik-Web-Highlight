@@ -15,7 +15,7 @@
 			</tr>
 		</table>
 		
-		<h3><?php esc_html_e('QlikSense User Interface Icons', 'qlikview-syntax-highlighter'); ?></h3>
+		<h3><?php esc_html_e('Qlik Sense User Interface Icons', 'qlikview-syntax-highlighter'); ?></h3>
 		<table class="border">
 			<tr><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th></tr>
 			<tr>
