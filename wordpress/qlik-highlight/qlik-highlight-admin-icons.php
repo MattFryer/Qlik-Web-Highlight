@@ -2,12 +2,14 @@
 /**
  * @package Qlik_Highlight
  */
+	define( 'QLIK_HIGHLIGHT_TEXT_DOMAIN', 'qlikview-syntax-highlighter' ); // Used for translations. Should be the same as WP repo name above and same as text domain in comment above
+
 	require_once('../../../wp-load.php'); // Needed to be able to call the translation functions
 ?>
 
-		<h3><?php esc_html_e('General Qlik Icons', 'qlikview-syntax-highlighter'); ?></h3>
+		<h3><?php esc_html_e('General Qlik Icons', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></h3>
 		<table class="border">
-			<tr><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th></tr>
+			<tr><th><?php esc_html_e('Icon', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th><th><?php esc_html_e('Code', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th><th><?php esc_html_e('Icon', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th><th><?php esc_html_e('Code', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th><th><?php esc_html_e('Icon', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th><th><?php esc_html_e('Code', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th></tr>
 			<tr>
 				<td><i class="qicon-2x qicon-qlik"></i></td><td>qicon-qlik</td>
 				<td><i class="qicon-2x qicon-sense"></i></td><td>qicon-sense</td>
@@ -15,9 +17,9 @@
 			</tr>
 		</table>
 		
-		<h3><?php esc_html_e('QlikSense User Interface Icons', 'qlikview-syntax-highlighter'); ?></h3>
+		<h3><?php esc_html_e('QlikSense User Interface Icons', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></h3>
 		<table class="border">
-			<tr><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th></tr>
+			<tr><th><?php esc_html_e('Icon', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th><th><?php esc_html_e('Code', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th><th><?php esc_html_e('Icon', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th><th><?php esc_html_e('Code', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th><th><?php esc_html_e('Icon', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th><th><?php esc_html_e('Code', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th></tr>
 			<tr>
 				<td><i class="qicon-2x qicon-bars-vert"></i></td><td>qicon-bars-vert</td>
 				<td><i class="qicon-2x qicon-bars-horiz"></i></td><td>qicon-bars-horiz</td>
@@ -229,8 +231,8 @@
 			</tr>		
 		</table>
 		
-		<h3><?php esc_html_e('QlikView User Interface Icons', 'qlikview-syntax-highlighter'); ?></h3>
+		<h3><?php esc_html_e('QlikView User Interface Icons', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></h3>
 		<table class="border">
-			<tr><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th></tr>
+			<tr><th><?php esc_html_e('Icon', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th><th><?php esc_html_e('Code', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th><th><?php esc_html_e('Icon', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th><th><?php esc_html_e('Code', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th><th><?php esc_html_e('Icon', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th><th><?php esc_html_e('Code', QLIK_HIGHLIGHT_TEXT_DOMAIN); ?></th></tr>
 			<tr><td>Coming soon!</td><td></td><td></td><td></td><td></td><td></td></tr>
 		</table>
