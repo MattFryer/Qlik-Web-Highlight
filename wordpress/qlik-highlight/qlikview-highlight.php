@@ -39,6 +39,7 @@ define( 'QLIK_HIGHLIGHT_PLUGIN_VERSION', '2.0' );
 define( 'QLIK_HIGHLIGHT_PACKAGE_NAME', 'qlik_highlight');
 define( 'QLIK_HIGHLIGHT_WP_REPO_NAME', 'qlikview-syntax-highlighter');
 define( 'QLIK_HIGHLIGHT_PLUGIN_FOLDER',  plugin_basename( __FILE__ ) );
+define( 'QLIK_HIGHLIGHT_PLUGIN_FOLDER_PATH', plugin_dir_path( __FILE__ ) );
 define( 'QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL', plugin_dir_url( __FILE__ ) );
 define( 'QLIK_HIGHLIGHT_CDN_FOLDER_URL', 'https://cdn.rawgit.com/MattFryer/Qlik-Web-Highlight/v' . QLIK_HIGHLIGHT_PLUGIN_VERSION . '/wordpress/qlikview-highlight/' ); // URL to obtain the files from a CDN if using
 
@@ -363,25 +364,10 @@ function qlik_hightlight_buttons() {
 add_action( 'init', 'qlik_hightlight_buttons' );
 
 // Handly tinyMCE language translations
-function qlik_highlight_tinymce_lang() {
-
-	global $current_screen;
-    $type = $current_screen->post_type;
-
-    if (is_admin() && $type == 'post' || $type == 'page') {
-        ?>
-        <script type="text/javascript">
-			var qlikHighlightTinyMceLang = {
-				insertHighlightBlock: "<?php esc_html_e('Insert Syntax Highlighted Qlik Code Block', 'qlikview-syntax-highlighter'); ?>", 
-				code: "<?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?>", 
-				codeType: "<?php esc_html_e('Code type', 'qlikview-syntax-highlighter'); ?>", 
-				insertIcon: "<?php esc_html_e('Insert Qlik Icon', 'qlikview-syntax-highlighter'); ?>", 
-				icon: "<?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?>", 
-				iconCode: "<?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?>", 
-			};
-        </script>
-        <?php
-    }
+function qlik_highlight_tinymce_lang($locales) {
+    $locales['qlik_code_buttons'] = QLIK_HIGHLIGHT_PLUGIN_FOLDER_PATH . 'tinymce-translations.php';
+    return $locales;
 }
-add_action('admin_head','qlik_highlight_tinymce_lang');
+ 
+add_filter( 'mce_external_languages', 'qlik_highlight_tinymce_lang');
 ?>

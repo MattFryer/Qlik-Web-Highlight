@@ -1,12 +1,12 @@
 /*global
-tinymce, qlikHighlightTinyMceLang, tinyMCE
+tinymce, tinyMCE
 */
 (function() {
   tinymce.create( "tinymce.plugins.qlik_code_buttons", {
     init(ed, url) {
       ed.addButton("qlik_code_button", {
-        title : qlikHighlightTinyMceLang.insertHighlightBlock,
-				text: " "+qlikHighlightTinyMceLang.code,
+        title : ed.getLang("qlik_code_buttons.insertHighlightBlock"),
+				text: " "+ed.getLang("qlik_code_buttons.code"),
         icon: true,
 				image : url+"/qlik.png",
         onclick() {
@@ -15,7 +15,7 @@ tinymce, qlikHighlightTinyMceLang, tinyMCE
 						selectedContent = "Your code here...";
 					}
 					
-          var codeType = prompt( qlikHighlightTinyMceLang.codeType+" (qvs, exp, sql, vbscript, javascript, html, xml, css)", "qvs" );
+          var codeType = prompt( ed.getLang("qlik_code_buttons.codeType")+" (qvs, exp, sql, vbscript, javascript, html, xml, css)", "qvs" );
           if (codeType) {
             if (codeType !== "qvs" && codeType !== "exp" && codeType !== "sql" && codeType !== "vbscript" && codeType !== "javascript" && codeType !== "html" && codeType !== "xml" && codeType !== "css"){
               codeType = "qvs";
@@ -27,14 +27,14 @@ tinymce, qlikHighlightTinyMceLang, tinyMCE
       });
 
       ed.addButton("qlik_icon_button", {
-        title : qlikHighlightTinyMceLang.insertIcon,
-				text: " "+qlikHighlightTinyMceLang.icon,
+        title : ed.getLang("qlik_code_buttons.insertIcon"),
+				text: " "+ed.getLang("qlik_code_buttons.icon"),
         icon: true,
 				image : url+"/qlik.png",
         onclick() {
 					var selectedContent = tinyMCE.activeEditor.selection.getContent( {format : "text"} );
 					
-          var iconType = prompt(qlikHighlightTinyMceLang.iconCode, "qicon-qlik");
+          var iconType = prompt(ed.getLang("qlik_code_buttons.iconCode"), "qicon-qlik");
           if (iconType) {   
             ed.execCommand( "mceInsertContent", false, "[qlik-icon icon=\""+iconType+"\"]" + selectedContent );
           }
