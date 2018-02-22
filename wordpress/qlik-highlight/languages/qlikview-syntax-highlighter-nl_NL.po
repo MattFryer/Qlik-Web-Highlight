@@ -179,19 +179,16 @@ msgstr "Hulpmiddelen voor Qlik-bloggers, zoals het invoegen van Qlik-gebruikersi
 
 #. URI of the plugin
 #: 
-#, fuzzy
 msgid "http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html"
 msgstr "http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html"
 
 #. Author of the plugin
 #: 
-#, fuzzy
 msgid "Matt Fryer"
 msgstr "Matt Fryer"
 
 #. Author URI of the plugin
 #: 
-#, fuzzy
 msgid "http://www.qlikviewaddict.com/"
 msgstr "http://www.qlikviewaddict.com/"
 
