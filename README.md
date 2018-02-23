@@ -90,6 +90,8 @@ A full list of available icon codes will be made available soon.
 
 To make it simple to add the Qlik Web Syntax Highlighter to your WordPress powered blog or website, a WordPress plugin is provided. Full details of how to download, install and use can be found on the [plugin's page on the WordPress.org website](https://wordpress.org/plugins/qlikview-syntax-highlighter/) and on [QlikViewAddict.com](http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html).
 
+The Qlik for WordPress plugin is localisation ready and has already been translated into a number of languages. If you are fluent in another language and wouldn't mind spending 10 minutes helping to translate the plugin into another language, you can join the [POEditor translation project](https://poeditor.com/join/project/Rv6E0gff81).
+
 You may also be interesting in the [Qlik Sense WordPress plugin](https://wordpress.org/plugins/qlik-sense/) by Yianni Ververis. 
 
 ## Advanced Tips
