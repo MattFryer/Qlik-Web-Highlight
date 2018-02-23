@@ -8,174 +8,142 @@ msgstr ""
 "Language: nl\n"
 
 #: qlikview-highlight.php:58
-#, fuzzy
 msgid "Settings"
-msgstr "Instellingen"
+msgstr ""
 
 #: qlikview-highlight.php:69 qlikview-highlight.php:123
-#, fuzzy
 msgid "Qlik for WordPress Settings"
-msgstr "Qlik voor WordPress-instellingen"
+msgstr ""
 
 #: qlikview-highlight.php:76
-#, fuzzy
 msgid "General Settings"
-msgstr "Algemene instellingen"
+msgstr ""
 
 #: qlikview-highlight.php:77
-#, fuzzy
 msgid "Enable line numbers"
-msgstr "Schakel regelnummers in"
+msgstr ""
 
 #: qlikview-highlight.php:78
-#, fuzzy
 msgid "Enable JS and CSS from CDN"
-msgstr "Schakel JS en CSS van CDN in"
+msgstr ""
 
 #: qlikview-highlight.php:79
-#, fuzzy
 msgid "Enable copy to Clipboard"
-msgstr "Schakel kopiëren naar klembord in"
+msgstr ""
 
 #: qlikview-highlight.php:86
-#, fuzzy
 msgid "General settings that effect all code blocks across all pages and posts."
-msgstr "Algemene instellingen die alle codeblokken op alle pagina's en berichten beïnvloeden."
+msgstr ""
 
 #: qlikview-highlight.php:97
-#, fuzzy
 msgid "Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ block comments, REM comments and keyword combinations that aren't on the same line)."
-msgstr "Waarschuwing: het inschakelen van regelnummers kan een correcte markering van blokken voorkomen die meer dan één regel overspannen (bijv. / * * / Opmerkingen blokkeren, REM-opmerkingen en trefwoord combinaties die niet op dezelfde regel staan)."
+msgstr ""
 
 #: qlikview-highlight.php:107
-#, fuzzy
 msgid "Load the JavaScript and CSS files from the RawGit Content Delivery Network instead of locally. Helps with page load times and ensures latest highlighting is always available."
-msgstr "Laad de JavaScript- en CSS-bestanden van het RawGit Content Delivery Network in plaats van lokaal. Helpt bij het laden van pagina's en zorgt ervoor dat de nieuwste markering altijd beschikbaar is."
+msgstr ""
 
 #: qlikview-highlight.php:116
-#, fuzzy
 msgid "Enables copy to clipboard button on all code blocks."
-msgstr "Schakelt de knop kopiëren naar klembord in alle codeblokken in."
+msgstr ""
 
 #: qlikview-highlight.php:124
-#, fuzzy
 msgid "The Qlik for WordPress plugin provides syntax highlighting of Qlikview and Qlik Sense script in pages and post."
-msgstr "De plug-in Qlik voor WordPress biedt syntax-highlighting van Qlikview en Qlik Sense-script in pagina's en plaatsen."
+msgstr ""
 
 #: qlikview-highlight.php:129
-#, fuzzy
 msgid "Save Settings"
-msgstr "Instellingen opslaan"
+msgstr ""
 
 #: qlikview-highlight.php:132
-#, fuzzy
 msgid "Icons"
-msgstr "Pictogrammen"
+msgstr ""
 
 #: qlikview-highlight.php:133
-#, fuzzy
 msgid "The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:"
-msgstr "De onderstaande tabellen bevatten de nodige codes om QlikView- en Qlik Sense-pictogrammen in pagina's en berichten in te voegen:"
+msgstr ""
 
 #: qlikview-highlight.php:140
-#, fuzzy
 msgid "Produced by"
-msgstr "Gemaakt door"
+msgstr ""
 
 #: qlikview-highlight.php:140
-#, fuzzy
 msgid "Further details available at"
-msgstr "Verdere details beschikbaar op"
+msgstr ""
 
 #: qlikview-highlight.php:140
-#, fuzzy
 msgid "Qlik is a registered trademark of QlikTech International AB"
-msgstr "Qlik is een gedeponeerd handelsmerk van QlikTech International AB"
+msgstr ""
 
 #: qlikview-highlight.php:225
-#, fuzzy
 msgid "Copy to Clipboard"
-msgstr "Kopieer naar klembord"
+msgstr ""
 
 #: qlikview-highlight.php:297
-#, fuzzy
 msgid "Qlik Code"
-msgstr "Qlik-code"
+msgstr ""
 
 #: qlikview-highlight.php:306
-#, fuzzy
 msgid "Your code here..."
-msgstr "Uw code hier ..."
+msgstr ""
 
 #: qlikview-highlight.php:308 qlikview-highlight.php:377
-#, fuzzy
 msgid "Code type"
-msgstr "Codetype"
+msgstr ""
 
 #: qlikview-highlight.php:320
-#, fuzzy
 msgid "Qlik Icon"
-msgstr "Qlik-pictogram"
+msgstr ""
 
 #: qlikview-highlight.php:327 qlikview-highlight.php:380
-#, fuzzy
 msgid "Icon code"
-msgstr "Pictogram code"
+msgstr ""
 
 #: qlikview-highlight.php:375
-#, fuzzy
 msgid "Insert Syntax Highlighted Qlik Code Block"
-msgstr "Voeg syntaxis in gemarkeerd Qlik-codeblok"
+msgstr ""
 
 #: qlikview-highlight.php:376 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:10 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:20
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:234
 #: qlik-highlight-admin-icons.php:234 qlik-highlight-admin-icons.php:234
-#, fuzzy
 msgid "Code"
-msgstr "Code"
+msgstr ""
 
 #: qlikview-highlight.php:378
-#, fuzzy
 msgid "Insert Qlik Icon"
-msgstr "Voeg een Qlik-pictogram in"
+msgstr ""
 
 #: qlikview-highlight.php:379 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:10 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:20
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:234
 #: qlik-highlight-admin-icons.php:234 qlik-highlight-admin-icons.php:234
-#, fuzzy
 msgid "Icon"
-msgstr "Pictogram"
+msgstr ""
 
 #: qlik-highlight-admin-icons.php:8
-#, fuzzy
 msgid "General Qlik Icons"
-msgstr "Algemene Qlik-pictogrammen"
+msgstr ""
 
 #: qlik-highlight-admin-icons.php:18
-#, fuzzy
 msgid "Qlik Sense User Interface Icons"
-msgstr "Qlik Sense Gebruikersinterface Pictogrammen"
+msgstr ""
 
 #: qlik-highlight-admin-icons.php:232
-#, fuzzy
 msgid "QlikView User Interface Icons"
-msgstr "QlikView Gebruikersinterface Pictogrammen"
+msgstr ""
 
 #. Name of the plugin
 #: 
-#, fuzzy
 msgid "Qlik for WordPress"
-msgstr "Qlik voor WordPress"
+msgstr ""
 
 #. Description of the plugin
 #: 
-#, fuzzy
 msgid "Tools for Qlik bloggers including inserting Qlik UI icons and automatic syntax highlighting of QlikView and Qlik Sense script/expressions on any WordPress page or post."
-msgstr "Hulpmiddelen voor Qlik-bloggers, zoals het invoegen van Qlik-gebruikersinterface pictogrammen en automatische syntax-highlighting van QlikView en Qlik Sense-scripts / -uitdrukkingen op elke WordPress-pagina of post."
+msgstr ""
 
 #. URI of the plugin
 #: 

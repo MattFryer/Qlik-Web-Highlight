@@ -8,174 +8,142 @@ msgstr ""
 "Language: sv\n"
 
 #: qlikview-highlight.php:58
-#, fuzzy
 msgid "Settings"
 msgstr "Inställningar"
 
 #: qlikview-highlight.php:69 qlikview-highlight.php:123
-#, fuzzy
 msgid "Qlik for WordPress Settings"
-msgstr "Qlik för WordPress-inställningar"
+msgstr "Qlik för WordPress Inställningar"
 
 #: qlikview-highlight.php:76
-#, fuzzy
 msgid "General Settings"
 msgstr "Allmänna Inställningar"
 
 #: qlikview-highlight.php:77
-#, fuzzy
 msgid "Enable line numbers"
 msgstr "Aktivera radnummer"
 
 #: qlikview-highlight.php:78
-#, fuzzy
 msgid "Enable JS and CSS from CDN"
 msgstr "Aktivera JS och CSS från CDN"
 
 #: qlikview-highlight.php:79
-#, fuzzy
 msgid "Enable copy to Clipboard"
-msgstr "Aktivera kopia till Urklipp"
+msgstr "Aktivera kopiera till Clipboard"
 
 #: qlikview-highlight.php:86
-#, fuzzy
 msgid "General settings that effect all code blocks across all pages and posts."
-msgstr "Allmänna inställningar som påverkar alla kodblock över alla sidor och inlägg."
+msgstr "Allmänna inställningar som påverkar alla kodblock på alla sidor och inlägg."
 
 #: qlikview-highlight.php:97
-#, fuzzy
 msgid "Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ block comments, REM comments and keyword combinations that aren't on the same line)."
-msgstr "Varning: Aktivera radnummer kan förhindra korrekt markering av block som spänner över mer än en rad (t.ex. / * * / blockera kommentarer, REM kommentarer och sökordskombinationer som inte är i samma rad)."
+msgstr "OBS: När du aktiverar radnummer kan du förhindra korrekt markering av block som täcker mer än en rad. (t.ex. /* */  blockkommentarer, REM kommentarer och nyckelordskombinationer som inte är på samma rad)."
 
 #: qlikview-highlight.php:107
-#, fuzzy
 msgid "Load the JavaScript and CSS files from the RawGit Content Delivery Network instead of locally. Helps with page load times and ensures latest highlighting is always available."
-msgstr "Ladda JavaScript och CSS-filer från RawGit Content Delivery Network istället för lokalt. Hjälper med sidlastningstider och säkerställer att senaste markeringen alltid är tillgänglig."
+msgstr "Ladda JavaScriptet och CSS filerna från RawGit Content Delivery Network istället för lokalt. Förbättrar sidladdningstid och säkerställer att senaste belysningen alltid är tillgänglig."
 
 #: qlikview-highlight.php:116
-#, fuzzy
 msgid "Enables copy to clipboard button on all code blocks."
-msgstr "Aktiverar kopiering till urklippsknappen på alla kodblock."
+msgstr "Aktivera kopiera till Clipboard knapp på alla kodblock."
 
 #: qlikview-highlight.php:124
-#, fuzzy
 msgid "The Qlik for WordPress plugin provides syntax highlighting of Qlikview and Qlik Sense script in pages and post."
-msgstr "Qlik for WordPress-plugin ger syntaxmarkering av Qlikview och Qlik Sense-skript i sidor och inlägg."
+msgstr "Qlik för WordPress pluginet erbjuder syntaxbelysning av Qlikview och Qlik Sense-skript på både sidor och inlägg."
 
 #: qlikview-highlight.php:129
-#, fuzzy
 msgid "Save Settings"
-msgstr "Spara inställningar"
+msgstr "Spara Inställningar"
 
 #: qlikview-highlight.php:132
-#, fuzzy
 msgid "Icons"
 msgstr "Ikoner"
 
 #: qlikview-highlight.php:133
-#, fuzzy
 msgid "The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:"
-msgstr "Tabellerna nedan innehåller de nödvändiga koderna för att infoga QlikView och Qlik Sense-ikoner på sidor och inlägg:"
+msgstr "Tabellerna nedanför erbjuder den kod du behöver för att infoga QlikView och Qlik Sense ikoner på sidor och inlägg."
 
 #: qlikview-highlight.php:140
-#, fuzzy
 msgid "Produced by"
 msgstr "Producerad av"
 
 #: qlikview-highlight.php:140
-#, fuzzy
 msgid "Further details available at"
 msgstr "Ytterligare detaljer finns på"
 
 #: qlikview-highlight.php:140
-#, fuzzy
 msgid "Qlik is a registered trademark of QlikTech International AB"
-msgstr "Qlik är ett registrerat varumärke som tillhör QlikTech International AB"
+msgstr "Qlik är ett registrerat varumärke tillhörande QlikTech International AB"
 
 #: qlikview-highlight.php:225
-#, fuzzy
 msgid "Copy to Clipboard"
-msgstr "Kopiera till Urklipp"
+msgstr "Kopiera till Clipbaord"
 
 #: qlikview-highlight.php:297
-#, fuzzy
 msgid "Qlik Code"
-msgstr "Qlik-kod"
+msgstr "Qlik kod"
 
 #: qlikview-highlight.php:306
-#, fuzzy
 msgid "Your code here..."
-msgstr "Din kod här ..."
+msgstr "Din kod här..."
 
 #: qlikview-highlight.php:308 qlikview-highlight.php:377
-#, fuzzy
 msgid "Code type"
 msgstr "Kodtyp"
 
 #: qlikview-highlight.php:320
-#, fuzzy
 msgid "Qlik Icon"
-msgstr "Qlik-ikonen"
+msgstr "Qlik Ikon"
 
 #: qlikview-highlight.php:327 qlikview-highlight.php:380
-#, fuzzy
 msgid "Icon code"
-msgstr "Ikon kod"
+msgstr "Ikonkod"
 
 #: qlikview-highlight.php:375
-#, fuzzy
 msgid "Insert Syntax Highlighted Qlik Code Block"
-msgstr "Infoga Syntax Markerat Qlik Code Block"
+msgstr "Infoga Syntax Highlighted Qlik Code Block"
 
 #: qlikview-highlight.php:376 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:10 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:20
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:234
 #: qlik-highlight-admin-icons.php:234 qlik-highlight-admin-icons.php:234
-#, fuzzy
 msgid "Code"
-msgstr "Koda"
+msgstr "Kod"
 
 #: qlikview-highlight.php:378
-#, fuzzy
 msgid "Insert Qlik Icon"
-msgstr "Sätt in Qlik-ikonen"
+msgstr "Infoga Qlik Ikon"
 
 #: qlikview-highlight.php:379 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:10 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:20
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:234
 #: qlik-highlight-admin-icons.php:234 qlik-highlight-admin-icons.php:234
-#, fuzzy
 msgid "Icon"
 msgstr "Ikon"
 
 #: qlik-highlight-admin-icons.php:8
-#, fuzzy
 msgid "General Qlik Icons"
-msgstr "Allmänna Qlik-ikoner"
+msgstr "Allmänna Qlik Ikoner"
 
 #: qlik-highlight-admin-icons.php:18
-#, fuzzy
 msgid "Qlik Sense User Interface Icons"
-msgstr "Qlik Sense Användargränssnitt Ikoner"
+msgstr "Qlik Sense User Interface Ikoner"
 
 #: qlik-highlight-admin-icons.php:232
-#, fuzzy
 msgid "QlikView User Interface Icons"
-msgstr "QlikView användargränssnitt ikoner"
+msgstr "QlikView User Interface Ikoner"
 
 #. Name of the plugin
 #: 
-#, fuzzy
 msgid "Qlik for WordPress"
 msgstr "Qlik för WordPress"
 
 #. Description of the plugin
 #: 
-#, fuzzy
 msgid "Tools for Qlik bloggers including inserting Qlik UI icons and automatic syntax highlighting of QlikView and Qlik Sense script/expressions on any WordPress page or post."
-msgstr "Verktyg för Qlik bloggare inklusive att infoga Qlik UI ikoner och automatisk syntax uppmärksamhet av QlikView och Qlik Sense manus / uttryck på vilken WordPress-sida eller -post som helst."
+msgstr "Verktyg för Qlikbloggare, bl.a. infogning av Qlik UI-ikoner och automatisk syntaxuppmärkning av QlikView och Qlik Sense-skript/uttryck på vilken WordPress-sida eller -inlägg som helst."
 
 #. URI of the plugin
 #: 
