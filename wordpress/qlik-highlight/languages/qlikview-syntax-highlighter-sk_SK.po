@@ -32,7 +32,7 @@ msgid "Enable copy to Clipboard"
 msgstr "Zapnúť kopírovanie do schránky"
 
 #: qlikview-highlight.php:86
-msgid "General settings that effect all code blocks across all pages and posts."
+msgid "General settings that affect all code blocks across all pages and posts."
 msgstr "Všeobecné nastavenia pre všetky bloky kódu na všetkých stránkach a vo všetkých príspevkoch."
 
 #: qlikview-highlight.php:97

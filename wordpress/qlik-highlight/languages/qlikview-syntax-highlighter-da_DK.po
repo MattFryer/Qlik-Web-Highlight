@@ -32,7 +32,7 @@ msgid "Enable copy to Clipboard"
 msgstr "Aktivér kopiér til Udklipsholder"
 
 #: qlikview-highlight.php:86
-msgid "General settings that effect all code blocks across all pages and posts."
+msgid "General settings that affect all code blocks across all pages and posts."
 msgstr "Generelle indstillinger der påvirker alle kodeblokke på tværs af alle sider og indlæg."
 
 #: qlikview-highlight.php:97

@@ -40,7 +40,7 @@ msgstr ""
 
 #: qlikview-highlight.php:86
 msgid ""
-"General settings that effect all code blocks across all pages and posts."
+"General settings that affect all code blocks across all pages and posts."
 msgstr ""
 
 #: qlikview-highlight.php:97
