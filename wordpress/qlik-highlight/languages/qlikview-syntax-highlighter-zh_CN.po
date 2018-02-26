@@ -9,99 +9,99 @@ msgstr ""
 
 #: qlikview-highlight.php:58
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #: qlikview-highlight.php:69 qlikview-highlight.php:123
 msgid "Qlik for WordPress Settings"
-msgstr ""
+msgstr "Qlik for WordPress设置"
 
 #: qlikview-highlight.php:76
 msgid "General Settings"
-msgstr ""
+msgstr "通用设置"
 
 #: qlikview-highlight.php:77
 msgid "Enable line numbers"
-msgstr ""
+msgstr "启用行号显示"
 
 #: qlikview-highlight.php:78
 msgid "Enable JS and CSS from CDN"
-msgstr ""
+msgstr "启用CDN的JS和CSS"
 
 #: qlikview-highlight.php:79
 msgid "Enable copy to Clipboard"
-msgstr ""
+msgstr "启用复制到剪贴板"
 
 #: qlikview-highlight.php:86
 msgid "General settings that effect all code blocks across all pages and posts."
-msgstr ""
+msgstr "影响所有页面和帖子的通用设置"
 
 #: qlikview-highlight.php:97
 msgid "Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ block comments, REM comments and keyword combinations that aren't on the same line)."
-msgstr ""
+msgstr "注意：启用字行显示有可能会导致多行代码块语法高亮显示不正确（例如/* */的快注释，REM注释和不在同一行上的关键词组合）。"
 
 #: qlikview-highlight.php:107
 msgid "Load the JavaScript and CSS files from the RawGit Content Delivery Network instead of locally. Helps with page load times and ensures latest highlighting is always available."
-msgstr ""
+msgstr "从RawGit Content Delivery Network而不是本地加载JavaScript和CSS。有助于缩短页面加载时间和保证拥有最新的语法高亮。"
 
 #: qlikview-highlight.php:116
 msgid "Enables copy to clipboard button on all code blocks."
-msgstr ""
+msgstr "启用所有代码块的复制到剪贴板按钮。"
 
 #: qlikview-highlight.php:124
-msgid "The Qlik for WordPress plugin provides syntax highlighting of Qlikview and Qlik Sense script in pages and post."
-msgstr ""
+msgid "The Qlik for WordPress plugin provides syntax highlighting of QlikView and Qlik Sense script in pages and post."
+msgstr "Qlik for WordPress插件为页面和帖子中的QlikView以及Qlik Sense脚本提供语法高亮显示。"
 
 #: qlikview-highlight.php:129
 msgid "Save Settings"
-msgstr ""
+msgstr "保存设置"
 
 #: qlikview-highlight.php:132
 msgid "Icons"
-msgstr ""
+msgstr "图标"
 
 #: qlikview-highlight.php:133
 msgid "The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:"
-msgstr ""
+msgstr "以下表格提供插入QlikView以及Qlik Sense图标的必要代码："
 
 #: qlikview-highlight.php:140
 msgid "Produced by"
-msgstr ""
+msgstr "制作者"
 
 #: qlikview-highlight.php:140
 msgid "Further details available at"
-msgstr ""
+msgstr "更多细节在"
 
 #: qlikview-highlight.php:140
 msgid "Qlik is a registered trademark of QlikTech International AB"
-msgstr ""
+msgstr "Qlik是QlikTech International AB的注册商标"
 
 #: qlikview-highlight.php:225
 msgid "Copy to Clipboard"
-msgstr ""
+msgstr "复制到剪贴板"
 
 #: qlikview-highlight.php:297
 msgid "Qlik Code"
-msgstr ""
+msgstr "Qlik代码"
 
 #: qlikview-highlight.php:306
 msgid "Your code here..."
-msgstr ""
+msgstr "你的代码..."
 
 #: qlikview-highlight.php:308 qlikview-highlight.php:377
 msgid "Code type"
-msgstr ""
+msgstr "代码类别"
 
 #: qlikview-highlight.php:320
 msgid "Qlik Icon"
-msgstr ""
+msgstr "Qlik图标"
 
 #: qlikview-highlight.php:327 qlikview-highlight.php:380
 msgid "Icon code"
-msgstr ""
+msgstr "图标代码"
 
 #: qlikview-highlight.php:375
 msgid "Insert Syntax Highlighted Qlik Code Block"
-msgstr ""
+msgstr "插入语法高亮显示的Qlik代码块"
 
 #: qlikview-highlight.php:376 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:10 qlik-highlight-admin-icons.php:10
@@ -109,11 +109,11 @@ msgstr ""
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:234
 #: qlik-highlight-admin-icons.php:234 qlik-highlight-admin-icons.php:234
 msgid "Code"
-msgstr ""
+msgstr "代码"
 
 #: qlikview-highlight.php:378
 msgid "Insert Qlik Icon"
-msgstr ""
+msgstr "插入Qlik图标"
 
 #: qlikview-highlight.php:379 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:10 qlik-highlight-admin-icons.php:10
@@ -121,29 +121,29 @@ msgstr ""
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:234
 #: qlik-highlight-admin-icons.php:234 qlik-highlight-admin-icons.php:234
 msgid "Icon"
-msgstr ""
+msgstr "图标"
 
 #: qlik-highlight-admin-icons.php:8
 msgid "General Qlik Icons"
-msgstr ""
+msgstr "通用Qlik图标"
 
 #: qlik-highlight-admin-icons.php:18
 msgid "Qlik Sense User Interface Icons"
-msgstr ""
+msgstr "Qlik Sense用户界面图标"
 
 #: qlik-highlight-admin-icons.php:232
 msgid "QlikView User Interface Icons"
-msgstr ""
+msgstr "QlikView用户界面图标"
 
 #. Name of the plugin
 #: 
 msgid "Qlik for WordPress"
-msgstr ""
+msgstr "Qlik for WordPress"
 
 #. Description of the plugin
 #: 
 msgid "Tools for Qlik bloggers including inserting Qlik UI icons and automatic syntax highlighting of QlikView and Qlik Sense script/expressions on any WordPress page or post."
-msgstr ""
+msgstr "提供给Qlik博客的工具，包括在任何WordPress页面与帖子中插入Qlik界面图标和自动语法高亮显示QlikView以及Qlik Sense脚本/表达式。"
 
 #. URI of the plugin
 #: 

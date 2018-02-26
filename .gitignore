@@ -10,5 +10,5 @@ qvhighlight/*.zip
 wordpress/*.zip
 
 # Translashion temp and backup files
-wordpress/languages/*.pot~
-wordpress/languages/*.po~
+wordpress/qlik-highlight/languages/*.pot~
+wordpress/qlik-highlight/languages/*.po~

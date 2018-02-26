@@ -48,8 +48,8 @@ msgid "Enables copy to clipboard button on all code blocks."
 msgstr "Показвай бутон за копиране на всички блокове с код"
 
 #: qlikview-highlight.php:124
-msgid "The Qlik for WordPress plugin provides syntax highlighting of Qlikview and Qlik Sense script in pages and post."
-msgstr "Приставката Qlik за WordPress добавя възможност за оцветяване на синтаксиса на Qlikview и Qlik Sense скрипт в страници и постове"
+msgid "The Qlik for WordPress plugin provides syntax highlighting of QlikView and Qlik Sense script in pages and post."
+msgstr "Приставката Qlik за WordPress добавя възможност за оцветяване на синтаксиса на QlikView и Qlik Sense скрипт в страници и постове"
 
 #: qlikview-highlight.php:129
 msgid "Save Settings"

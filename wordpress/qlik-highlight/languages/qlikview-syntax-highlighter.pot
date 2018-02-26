@@ -63,7 +63,7 @@ msgstr ""
 
 #: qlikview-highlight.php:124
 msgid ""
-"The Qlik for WordPress plugin provides syntax highlighting of Qlikview and "
+"The Qlik for WordPress plugin provides syntax highlighting of QlikView and "
 "Qlik Sense script in pages and post."
 msgstr ""
 

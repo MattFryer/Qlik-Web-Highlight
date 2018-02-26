@@ -122,7 +122,7 @@ function qlik_highlight_settings_page() {
 	?>
 	<div class="qlik-highlight-admin">
 		<h1><?php esc_html_e('Qlik for WordPress Settings', 'qlikview-syntax-highlighter'); ?></h1>
-		<p><?php esc_html_e('The Qlik for WordPress plugin provides syntax highlighting of Qlikview and Qlik Sense script in pages and post.', 'qlikview-syntax-highlighter'); ?></p>
+		<p><?php esc_html_e('The Qlik for WordPress plugin provides syntax highlighting of QlikView and Qlik Sense script in pages and post.', 'qlikview-syntax-highlighter'); ?></p>
 		<form action="options.php" method="post">
 			<?php settings_fields('qlik_highlight_settings_group'); ?>
 			<?php do_settings_sections('qlik_highlight'); ?>
@@ -145,7 +145,7 @@ function qlik_highlight_settings_page() {
 
 // Add the css for the admin page
 function qlik_highlight_admin_style() {
-	wp_enqueue_style( 'qlik_admin_style', QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL . 'css/qlik-admin.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the icons css
+	wp_enqueue_style( 'qlik_admin_style', QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL . 'css/qlik-admin.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the admin css
 	wp_enqueue_style( 'qlik_icon_style', QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL . 'css/qlik-icons.css', array(), QLIK_HIGHLIGHT_PLUGIN_VERSION ); // Register the icons css
 }
 add_action( 'admin_enqueue_scripts', 'qlik_highlight_admin_style' );
