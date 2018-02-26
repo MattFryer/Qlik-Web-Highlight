@@ -8,3 +8,7 @@ development/node_modules
 mediawiki/*.zip
 qvhighlight/*.zip
 wordpress/*.zip
+
+# Translashion temp and backup files
+wordpress/languages/*.pot~
+wordpress/languages/*.po~
