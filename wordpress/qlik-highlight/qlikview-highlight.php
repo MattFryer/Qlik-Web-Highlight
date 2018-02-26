@@ -255,6 +255,63 @@ function qlik_highlight_pre_process_shortcode($content) {
 }
 add_filter( 'the_content', 'qlik_highlight_pre_process_shortcode', 7 );
 
+// Add support to WPBakery Page Builder (formerly Visual Composer) if installed
+function qlik_highlight_shortcode_vc() {
+	vc_map(array(
+		'name' => esc_attr__( 'Code', 'qlikview-syntax-highlighter' ),
+		'description' => esc_attr__('Insert Syntax Highlighted Qlik Code Block', 'qlikview-syntax-highlighter'),
+		'base' => 'qlik-code',
+		'category' => 'Content',
+		'icon' => QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL . '/js/qlik.png',
+		'show_settings_on_create' => true,
+		'params' => array(
+			array(
+				'type' => 'dropdown',
+				'heading' => esc_attr__('Code type', 'qlikview-syntax-highlighter'),
+				'param_name' => 'type',
+				'value' => array(
+					'qvs' => 'qvs',
+					'exp' => 'exp',
+					'sql' => 'sql',
+					'vbscript' => 'vbscript',
+					'javascript' => 'javascript',
+					'html' => 'html',
+					'xml' => 'xml',
+					'css' => 'css',
+				),
+				//'description' => ''
+			),
+			array(
+				'type' => 'textarea_html',
+				'heading' => esc_attr__( 'Qlik Code', 'qlikview-syntax-highlighter' ),
+				'param_name' => 'content',
+				'value' => esc_attr__('Your code here...', 'qlikview-syntax-highlighter'),
+				//'description' => ''
+			  )
+		)
+	));
+	
+	// // Qlik icon
+	// vc_map(array(
+	// 	'name' => esc_attr__( 'Qlik Icon', 'qlikview-syntax-highlighter' ),
+	// 	'description' => esc_attr__('Insert Syntax Highlighted Qlik Code Block', 'qlikview-syntax-highlighter'),
+	// 	'base' => 'qlik-code',
+	// 	'category' => 'Content',
+	// 	'icon' => QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL . '/js/qlik.png',
+	// 	'show_settings_on_create' => true,
+	// 	'params' => array(
+	// 		array(
+	// 			'type' => 'textfield',
+	// 			'heading' => esc_attr__('Icon code', 'qlikview-syntax-highlighter'),
+	// 			'param_name' => 'type',
+	// 			'value' => 'qicon-qlik',
+	// 			'description' => ''
+	// 		),
+	// 	)
+	// ));
+}
+add_action( 'vc_before_init', 'qlik_highlight_shortcode_vc');
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // SHORTCODE - ICONS
 //////////////////////////////////////////////////////////////////////////////////////////
