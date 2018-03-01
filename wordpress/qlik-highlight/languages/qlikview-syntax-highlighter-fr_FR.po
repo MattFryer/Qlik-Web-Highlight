@@ -9,99 +9,91 @@ msgstr ""
 
 #: qlikview-highlight.php:58
 msgid "Settings"
-msgstr ""
+msgstr "Paramètres"
 
 #: qlikview-highlight.php:69 qlikview-highlight.php:123
 msgid "Qlik for WordPress Settings"
-msgstr ""
+msgstr "Qlik pour les paramètres WordPress"
 
 #: qlikview-highlight.php:76
 msgid "General Settings"
-msgstr ""
+msgstr "Réglages généraux"
 
 #: qlikview-highlight.php:77
 msgid "Enable line numbers"
-msgstr ""
+msgstr "Activer les numéros de ligne"
 
 #: qlikview-highlight.php:78
 msgid "Enable JS and CSS from CDN"
-msgstr ""
+msgstr "Activer JS et CSS à partir de CDN"
 
 #: qlikview-highlight.php:79
 msgid "Enable copy to Clipboard"
-msgstr ""
-
-#: qlikview-highlight.php:86
-msgid "General settings that affect all code blocks across all pages and posts."
-msgstr ""
+msgstr "Activer la copie dans le Presse-papiers"
 
 #: qlikview-highlight.php:97
 msgid "Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ block comments, REM comments and keyword combinations that aren't on the same line)."
-msgstr ""
+msgstr "Avertissement: L'activation des numéros de ligne peut empêcher la mise en surbrillance correcte des blocs couvrant plus d'une ligne (par exemple / * * / commentaires de bloc, commentaires REM et combinaisons de mots clés qui ne sont pas sur la même ligne)."
 
 #: qlikview-highlight.php:107
 msgid "Load the JavaScript and CSS files from the RawGit Content Delivery Network instead of locally. Helps with page load times and ensures latest highlighting is always available."
-msgstr ""
+msgstr "Chargez les fichiers JavaScript et CSS  de RawGit au lieu de localement. Favorise les temps de chargement de la page et assure que la dernière mise en évidence est toujours disponible."
 
 #: qlikview-highlight.php:116
 msgid "Enables copy to clipboard button on all code blocks."
-msgstr ""
-
-#: qlikview-highlight.php:124
-msgid "The Qlik for WordPress plugin provides syntax highlighting of QlikView and Qlik Sense script in pages and post."
-msgstr ""
+msgstr "Active le bouton Copier dans le Presse-papiers sur tous les blocs de code"
 
 #: qlikview-highlight.php:129
 msgid "Save Settings"
-msgstr ""
+msgstr "Enregistrer les paramètres"
 
 #: qlikview-highlight.php:132
 msgid "Icons"
-msgstr ""
+msgstr "Icônes"
 
 #: qlikview-highlight.php:133
 msgid "The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:"
-msgstr ""
+msgstr "Les tableaux ci-dessous fournissent les codes nécessaires pour insérer les icônes QlikView et Qlik Sense dans les pages et les messages:"
 
 #: qlikview-highlight.php:140
 msgid "Produced by"
-msgstr ""
+msgstr "Produit par"
 
 #: qlikview-highlight.php:140
 msgid "Further details available at"
-msgstr ""
+msgstr "Plus de détails disponibles à"
 
 #: qlikview-highlight.php:140
 msgid "Qlik is a registered trademark of QlikTech International AB"
-msgstr ""
+msgstr "Qlik est une marque déposée de QlikTech International AB"
 
 #: qlikview-highlight.php:225
 msgid "Copy to Clipboard"
-msgstr ""
+msgstr "Copier dans le presse-papier"
 
 #: qlikview-highlight.php:297
 msgid "Qlik Code"
-msgstr ""
+msgstr "Code Qlik"
 
 #: qlikview-highlight.php:306
 msgid "Your code here..."
-msgstr ""
+msgstr "Votre code ici ..."
 
 #: qlikview-highlight.php:308 qlikview-highlight.php:377
 msgid "Code type"
-msgstr ""
+msgstr "Type de code"
 
 #: qlikview-highlight.php:320
 msgid "Qlik Icon"
-msgstr ""
+msgstr "Icône Qlik"
 
 #: qlikview-highlight.php:327 qlikview-highlight.php:380
 msgid "Icon code"
-msgstr ""
+msgstr "Code de l'icône"
 
 #: qlikview-highlight.php:375
 msgid "Insert Syntax Highlighted Qlik Code Block"
-msgstr ""
+msgstr "Insérer une syntaxe Qlik en surbrillance "
 
 #: qlikview-highlight.php:376 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:10 qlik-highlight-admin-icons.php:10
@@ -109,11 +101,11 @@ msgstr ""
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:234
 #: qlik-highlight-admin-icons.php:234 qlik-highlight-admin-icons.php:234
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: qlikview-highlight.php:378
 msgid "Insert Qlik Icon"
-msgstr ""
+msgstr "Insérer l'icône Qlik"
 
 #: qlikview-highlight.php:379 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:10 qlik-highlight-admin-icons.php:10
@@ -121,29 +113,29 @@ msgstr ""
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:234
 #: qlik-highlight-admin-icons.php:234 qlik-highlight-admin-icons.php:234
 msgid "Icon"
-msgstr ""
+msgstr "Icône"
 
 #: qlik-highlight-admin-icons.php:8
 msgid "General Qlik Icons"
-msgstr ""
+msgstr "Icônes générales Qlik"
 
 #: qlik-highlight-admin-icons.php:18
 msgid "Qlik Sense User Interface Icons"
-msgstr ""
+msgstr "Icônes de l'interface utilisateur Qlik Sense"
 
 #: qlik-highlight-admin-icons.php:232
 msgid "QlikView User Interface Icons"
-msgstr ""
+msgstr "Icônes de l'interface utilisateur QlikView"
 
 #. Name of the plugin
 #: 
 msgid "Qlik for WordPress"
-msgstr ""
+msgstr "Qlik pour WordPress"
 
 #. Description of the plugin
 #: 
 msgid "Tools for Qlik bloggers including inserting Qlik UI icons and automatic syntax highlighting of QlikView and Qlik Sense script/expressions on any WordPress page or post."
-msgstr ""
+msgstr "Des outils pour les blogueurs Qlik, y compris l'insertion d'icônes Qlik et la mise en évidence automatique de la syntaxe des scripts / expressions QlikView et Qlik Sense sur n'importe quelle page ou post WordPress."
 
 #. URI of the plugin
 #: 
@@ -159,4 +151,12 @@ msgstr "Matt Fryer"
 #: 
 msgid "http://www.qlikviewaddict.com/"
 msgstr "http://www.qlikviewaddict.com/"
+
+#: qlikview-highlight.php:124
+msgid "The Qlik for WordPress plugin provides syntax highlighting of QlikView and Qlik Sense script in pages and post."
+msgstr "Le plugin Qlik pour WordPress propose la mise en évidence automatique de la syntaxe QlikView et Qlik Sense sur n'importe quelle page ou post WordPress."
+
+#: qlikview-highlight.php:86
+msgid "General settings that affect all code blocks across all pages and posts."
+msgstr "Paramètres généraux afférents à tous les blocs de code dans n'importe quelle page ou post WordPress"
 
