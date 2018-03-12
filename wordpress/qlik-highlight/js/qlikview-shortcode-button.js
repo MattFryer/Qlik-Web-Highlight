@@ -10,19 +10,14 @@ tinymce, tinyMCE
         icon: true,
 				image : url+"/qlik.png",
         onclick() {
-					var selectedContent = tinyMCE.activeEditor.selection.getContent( {format : "text"} );
-					if (!selectedContent) {
-						selectedContent = "Your code here...";
-					}
-					
-          var codeType = prompt( ed.getLang("qlik_code_buttons.codeType")+" (qvs, exp, sql, vbscript, javascript, html, xml, css)", "qvs" );
-          if (codeType) {
-            if (codeType !== "qvs" && codeType !== "exp" && codeType !== "sql" && codeType !== "vbscript" && codeType !== "javascript" && codeType !== "html" && codeType !== "xml" && codeType !== "css"){
-              codeType = "qvs";
-            }
-                
-            ed.execCommand( "mceInsertContent", false, "[qlik-code type=\""+codeType+"\"]" + selectedContent + "[/qlik]" );
-          }
+          // Show the ThinkBox popup
+          tb_show(ed.getLang("qlik_code_buttons.insertHighlightBlock"),"#TB_inline?inlineId=qlik_highlight_shortcode_popup",null);
+
+          // Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
+          var tb = document.getElementById("TB_window"); // Get the TB element by its ID
+          tb.setAttribute("style", "width: 480px; margin-left: -240px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
+          tb = document.getElementById("TB_ajaxContent"); // Get the TB content element by its ID
+          tb.setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
         }
       });
 
@@ -32,12 +27,14 @@ tinymce, tinyMCE
         icon: true,
 				image : url+"/qlik.png",
         onclick() {
-					var selectedContent = tinyMCE.activeEditor.selection.getContent( {format : "text"} );
-					
-          var iconType = prompt(ed.getLang("qlik_code_buttons.iconCode"), "qicon-qlik");
-          if (iconType) {   
-            ed.execCommand( "mceInsertContent", false, "[qlik-icon icon=\""+iconType+"\"]" + selectedContent );
-          }
+          // Show the ThinkBox popup
+          tb_show(ed.getLang("qlik_code_buttons.insertIcon"),"#TB_inline?inlineId=qlik_icon_shortcode_popup",null);
+
+          // Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
+          var tb = document.getElementById("TB_window"); // Get the TB element by its ID
+          tb.setAttribute("style", "width: 750px; margin-left: -375px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
+          tb = document.getElementById("TB_ajaxContent"); // Get the TB content element by its ID
+          tb.setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
         }
       });
     },

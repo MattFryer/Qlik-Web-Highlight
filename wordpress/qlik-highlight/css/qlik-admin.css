@@ -1,3 +1,6 @@
+/*************************************************************************** 
+* SETTINGS PAGE
+***************************************************************************/
 div.qlik-highlight-admin h2 {
 	margin-top: 35px;
 }
@@ -18,4 +21,57 @@ div.qlik-highlight-admin table.border td {
 
 div.qlik-highlight-admin hr {
 	margin-top: 35px;
+}
+
+/*************************************************************************** 
+* SHORTCODE BUTTON POPUPS
+***************************************************************************/
+.qlik_highlight_shortcode_popup {
+	margin-top: 10px;
+}
+
+.qlik_highlight_shortcode_popup .label-desc {
+	width: 27%;
+	margin-top: 10px;
+	margin-right: 3%;
+	float: left;
+	font-weight: bold;
+	text-align: left;
+	padding-top: 2px;
+}
+
+.qlik_highlight_shortcode_popup .content {
+	float: left;
+	width: 70%;
+	margin-top: 10px;
+}
+
+.qlik_highlight_shortcode_popup .content h4:first-child {
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+.qlik_highlight_shortcode_popup .content .justify {
+	text-align: justify;
+	text-align-last: justify;
+}
+
+.qlik_highlight_shortcode_popup .button {
+	margin-top: 5px;
+}
+ 
+.qlik_highlight_shortcode_popup .field-container {
+	margin: 5px 0;
+	display: inline-block;
+	width: 100%;
+}
+
+.qlik_highlight_shortcode_popup .buttons {
+	margin-top: 15px;
+	text-align: right;
+}
+
+.qlik_highlight_shortcode_popup .buttons input, 
+.qlik_highlight_shortcode_popup .buttons a {
+	margin: 0px 5px;
 }

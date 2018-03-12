@@ -197,7 +197,7 @@ add_action( 'wp_enqueue_scripts', 'qlik_highlight_register' );
 		"qvs" or "qlikview-script" or "qv-script" - Qlik Script (default)
 		"exp" or "qlikview-exp" or "qv-exp" - Qlik Expression
 		"sql" - SQL
-	"vbscript" - Visual Basic Script
+		"vbscript" - Visual Basic Script
 		"javascript" - Java Script
 */
 function qlik_highlight_shortcode( $atts , $content = null ) { 
@@ -279,14 +279,14 @@ function qlik_highlight_shortcode_vc() {
 					'xml' => 'xml',
 					'css' => 'css',
 				),
-				//'description' => ''
+				//'description' => '',
 			),
 			array(
 				'type' => 'textarea_html',
 				'heading' => esc_attr__( 'Qlik Code', 'qlikview-syntax-highlighter' ),
 				'param_name' => 'content',
 				'value' => esc_attr__('Your code here...', 'qlikview-syntax-highlighter'),
-				//'description' => ''
+				//'description' => '',
 			  )
 		)
 	));
@@ -330,47 +330,69 @@ function qlik_highlight_button_script() {
                     return txtarea.value.substring(start, finish);
                 }
 				
-				// Add the buttons
+
+				// Add the buttons for code blocks
                 QTags.addButton( 
                     "qlik_code_shortcode", 
                     "<?php esc_html_e('Qlik Code', 'qlikview-syntax-highlighter'); ?>", 
                     callback_qlik_highlight
                 );
 
-				// Action for highlighting button
-                function callback_qlik_highlight()
-                {
-                    var selected_text = getSel();
-					if (selected_text == null || selected_text == '') {
-						var selected_text = '<?php esc_html_e('Your code here...', 'qlikview-syntax-highlighter'); ?>';
+					// Action for highlighting button
+					function callback_qlik_highlight()
+					{
+						// Show the ThinkBox popup
+						tb_show("<?php esc_html_e('Insert Syntax Highlighted Qlik Code Block', 'qlikview-syntax-highlighter'); ?>","#TB_inline?inlineId=qlik_highlight_shortcode_popup",null);
+						
+						// Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
+						var tb = document.getElementById("TB_window"); // Get the TB element by its ID
+						tb.setAttribute("style", "width: 480px; margin-left: -240px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
+						tb = document.getElementById("TB_ajaxContent"); // Get the TB content element by its ID
+						tb.setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
 					}
-					var type = prompt( "<?php esc_html_e('Code type', 'qlikview-syntax-highlighter'); ?> (qvs, exp, sql, vbscript, javascript, html, xml, css)", "qvs" );
-					if (type) {
-						if (type != 'qvs' && type != 'exp' && type != 'sql' && type != 'vbscript' && type != 'javascript' && type != 'html' && type != 'xml' && type != 'css') {
-							var type = 'qvs';
+					
+					// Action for inserting the shortcode when completing the popup
+					function Insert_Container_Qlik_Highlight() {
+						// Let's obtain the values of the fields from the form and insert the shortcode to the editor
+						var selected_text = getSel();
+						if (!selected_text) {
+							selected_text = '<?php esc_html_e('Your code here...', 'qlikview-syntax-highlighter'); ?>';
 						}
-						QTags.insertContent( "[qlik-code type=\"" + type + "\"]" +  selected_text + "[/qlik-code]" );
+						var type = jQuery('#qlik_highlight_codetype').val();
+						window.send_to_editor("[qlik-code type=\""+ type +"\"]" + selected_text + "[/qlik-code]");
 					}
-				}
-				
-				// Add the buttons
+
+				// Add the buttons for icons
                 QTags.addButton( 
                     "qlik_icon_shortcode", 
                     "<?php esc_html_e('Qlik Icon', 'qlikview-syntax-highlighter'); ?>", 
                     callback_qlik_icon
 				);
 
-				function callback_qlik_icon()
-                {
-                    var selected_text = getSel();
-					var type = prompt( "<?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?>", "qicon-qlik" );
-					if (type) {
-						QTags.insertContent( "[qlik-icon icon=\"" + type + "\"]" +  selected_text );
+					function callback_qlik_icon()
+					{
+						// Show the ThinkBox popup
+						tb_show("<?php esc_html_e('Insert Qlik Icon', 'qlikview-syntax-highlighter'); ?>","#TB_inline?inlineId=qlik_icon_shortcode_popup",null);
+						
+						// Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
+						var tb = document.getElementById("TB_window"); // Get the TB element by its ID
+						tb.setAttribute("style", "width: 750px; margin-left: -375px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
+						tb = document.getElementById("TB_ajaxContent"); // Get the TB content element by its ID
+						tb.setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
 					}
-				}
+
+					// Action for inserting the shortcode when completing the popup
+					function Insert_Container_Qlik_Icon( icon_type ) {
+						var selected_text = getSel();
+						var icon_size = jQuery('#qlik_icon_size').val();
+						window.send_to_editor("[qlik-icon type=\""+ icon_type + icon_size +"\"]" + selected_text);
+					}
 				
-            </script>
-        <?php
+			</script>
+			
+		<?php
+			readfile( QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL . 'qlik-highlight-admin-popup.php' );
+			readfile( QLIK_HIGHLIGHT_PLUGIN_FOLDER_URL . 'qlik-highlight-admin-icons-popup.php' );		
     }
 }
 add_action("admin_print_footer_scripts", "qlik_highlight_button_script");
@@ -406,6 +428,5 @@ function qlik_highlight_tinymce_lang($locales) {
     $locales['qlik_code_buttons'] = QLIK_HIGHLIGHT_PLUGIN_FOLDER_PATH . 'tinymce-translations.php';
     return $locales;
 }
- 
 add_filter( 'mce_external_languages', 'qlik_highlight_tinymce_lang');
 ?>
