@@ -25,7 +25,7 @@
 
         <div class="buttons">
             <input type="button" class="button-primary" value="<?php esc_html_e('Insert Code Block', 'qlikview-syntax-highlighter'); ?>" onclick="Insert_Container_Qlik_Highlight();"/>
-            <a class="button" href="#" onclick="tb_remove(); return false;"><?php esc_html_e('Cancel', 'qlikview-syntax-highlighter'); ?></a>
+            <a class="button" href="#" onclick="tb_remove(); return false;" id="closeButton"><?php esc_html_e('Cancel', 'qlikview-syntax-highlighter'); ?></a>
         </div>
     </div>
 </div>

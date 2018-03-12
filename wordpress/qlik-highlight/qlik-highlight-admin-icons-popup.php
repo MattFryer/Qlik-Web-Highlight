@@ -160,12 +160,28 @@
                 </div>
 
                 <h4><?php esc_html_e('QlikView User Interface Icons', 'qlikview-syntax-highlighter'); ?></h4>
-                <p>Coming soon!</p>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-clear');"><i class="qvicon-clear"></i></a>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-back');"><i class="qvicon-back"></i></a>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-forward');"><i class="qvicon-forward"></i></a>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-undo');"><i class="qvicon-undo"></i></a>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-redo');"><i class="qvicon-redo"></i></a>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-lock');"><i class="qvicon-lock"></i></a>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-unlock');"><i class="qvicon-unlock"></i></a>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-notes');"><i class="qvicon-notes"></i></a>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-bookmark-add');"><i class="qvicon-bookmark-add"></i></a>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-bookmark-remove');"><i class="qvicon-bookmark-remove"></i></a>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-help');"><i class="qvicon-help"></i></a>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-small-device');"><i class="qvicon-small-device"></i></a>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-repository');"><i class="qvicon-repository"></i></a>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-select-fields');"><i class="qvicon-select-fields"></i></a>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-selections');"><i class="qvicon-selections"></i></a>
+                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-new-sheet-object');"><i class="qvicon-new-sheet-object"></i></a>
+                <p>More coming soon!</p>
             </div>
         </div>
 
         <div class="buttons">
-            <a class="button" href="#" onclick="tb_remove(); return true;"><?php esc_html_e('Cancel', 'qlikview-syntax-highlighter'); ?></a>
+            <a class="button" href="#" onclick="tb_remove(); return true;" id="closeButton"><?php esc_html_e('Cancel', 'qlikview-syntax-highlighter'); ?></a>
         </div>
     </div>
 </div>

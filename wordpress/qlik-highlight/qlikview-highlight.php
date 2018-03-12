@@ -301,7 +301,7 @@ add_action( 'vc_before_init', 'qlik_highlight_shortcode_vc');
 	Accepts icon parameter [qlik-icon icon="qicon-XXX"] which defines the icon to be displayed.
 */
 function qlik_icon_shortcode( $atts , $content = null ) { 
-	// Obtain the passed icon (script or expression) if any. Defaults to script if not specified
+	// Obtain the passed icon if any
 	$shortCodeAtts = shortcode_atts( array(
         'icon' => ''
     ), $atts );
@@ -345,10 +345,8 @@ function qlik_highlight_button_script() {
 						tb_show("<?php esc_html_e('Insert Syntax Highlighted Qlik Code Block', 'qlikview-syntax-highlighter'); ?>","#TB_inline?inlineId=qlik_highlight_shortcode_popup",null);
 						
 						// Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
-						var tb = document.getElementById("TB_window"); // Get the TB element by its ID
-						tb.setAttribute("style", "width: 480px; margin-left: -240px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
-						tb = document.getElementById("TB_ajaxContent"); // Get the TB content element by its ID
-						tb.setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
+						document.getElementById("TB_window").setAttribute("style", "width: 480px; margin-left: -240px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
+						document.getElementById("TB_ajaxContent").setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
 					}
 					
 					// Action for inserting the shortcode when completing the popup
@@ -375,17 +373,15 @@ function qlik_highlight_button_script() {
 						tb_show("<?php esc_html_e('Insert Qlik Icon', 'qlikview-syntax-highlighter'); ?>","#TB_inline?inlineId=qlik_icon_shortcode_popup",null);
 						
 						// Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
-						var tb = document.getElementById("TB_window"); // Get the TB element by its ID
-						tb.setAttribute("style", "width: 750px; margin-left: -375px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
-						tb = document.getElementById("TB_ajaxContent"); // Get the TB content element by its ID
-						tb.setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
+						document.getElementById("TB_window").setAttribute("style", "width: 750px; margin-left: -375px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
+						document.getElementById("TB_ajaxContent").setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
 					}
 
 					// Action for inserting the shortcode when completing the popup
 					function Insert_Container_Qlik_Icon( icon_type ) {
 						var selected_text = getSel();
 						var icon_size = jQuery('#qlik_icon_size').val();
-						window.send_to_editor("[qlik-icon type=\""+ icon_type + icon_size +"\"]" + selected_text);
+						window.send_to_editor("[qlik-icon icon=\""+ icon_type + icon_size +"\"]" + selected_text);
 					}
 				
 			</script>
