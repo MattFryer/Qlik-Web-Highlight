@@ -1,5 +1,5 @@
 /*global
-tinymce, tinyMCE
+tinymce, tinyMCE, tb_show
 */
 (function() {
   tinymce.create( "tinymce.plugins.qlik_code_buttons", {
