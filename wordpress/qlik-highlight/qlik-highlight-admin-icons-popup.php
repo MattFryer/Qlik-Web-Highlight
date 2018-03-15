@@ -160,22 +160,52 @@
                 </div>
 
                 <h4><?php esc_html_e('QlikView User Interface Icons', 'qlikview-syntax-highlighter'); ?></h4>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-clear');"><i class="qvicon-clear"></i></a>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-back');"><i class="qvicon-back"></i></a>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-forward');"><i class="qvicon-forward"></i></a>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-undo');"><i class="qvicon-undo"></i></a>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-redo');"><i class="qvicon-redo"></i></a>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-lock');"><i class="qvicon-lock"></i></a>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-unlock');"><i class="qvicon-unlock"></i></a>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-notes');"><i class="qvicon-notes"></i></a>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-bookmark-add');"><i class="qvicon-bookmark-add"></i></a>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-bookmark-remove');"><i class="qvicon-bookmark-remove"></i></a>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-help');"><i class="qvicon-help"></i></a>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-small-device');"><i class="qvicon-small-device"></i></a>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-repository');"><i class="qvicon-repository"></i></a>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-select-fields');"><i class="qvicon-select-fields"></i></a>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-selections');"><i class="qvicon-selections"></i></a>
-                <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-new-sheet-object');"><i class="qvicon-new-sheet-object"></i></a>
+                <div class="justify">
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-clear');"><i class="qvicon-clear"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-back');"><i class="qvicon-back"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-forward');"><i class="qvicon-forward"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-undo');"><i class="qvicon-undo"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-redo');"><i class="qvicon-redo"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-lock');"><i class="qvicon-lock"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-unlock');"><i class="qvicon-unlock"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-notes');"><i class="qvicon-notes"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-bookmark-add');"><i class="qvicon-bookmark-add"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-bookmark-remove');"><i class="qvicon-bookmark-remove"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-help');"><i class="qvicon-help"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-small-device');"><i class="qvicon-small-device"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-repository');"><i class="qvicon-repository"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-select-fields');"><i class="qvicon-select-fields"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-selections');"><i class="qvicon-selections"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-new-sheet-object');"><i class="qvicon-new-sheet-object"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-new-sheet-object');"><i class="qvicon-new-sheet-object"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-text-object');"><i class="qvicon-text-object"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-current-selections');"><i class="qvicon-current-selections"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-container');"><i class="qvicon-container"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-bookmark-object');"><i class="qvicon-bookmark-object"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-button-object');"><i class="qvicon-button-object"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-list-box');"><i class="qvicon-list-box"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-line-arrow');"><i class="qvicon-line-arrow"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-statistics-box');"><i class="qvicon-statistics-box"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-search-object');"><i class="qvicon-search-object"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-input-box');"><i class="qvicon-input-box"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-multi-box');"><i class="qvicon-multi-box"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-table-box');"><i class="qvicon-table-box"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-calendar');"><i class="qvicon-calendar"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-funel-chart');"><i class="qvicon-funel-chart"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-block-chart');"><i class="qvicon-block-chart"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-mekko-chart');"><i class="qvicon-mekko-chart"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-scatter-chart');"><i class="qvicon-scatter-chart"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-grid-chart');"><i class="qvicon-grid-chart"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-pivot-table');"><i class="qvicon-pivot-table"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-bar-chart');"><i class="qvicon-bar-chart"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-line-chart');"><i class="qvicon-line-chart"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-combo-chart');"><i class="qvicon-combo-chart"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-radar-chart');"><i class="qvicon-radar-chart"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-gauge-chart');"><i class="qvicon-gauge-chart"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-straight-table');"><i class="qvicon-straight-table"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-pie-chart');"><i class="qvicon-pie-chart"></i></a>
+                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-slider');"><i class="qvicon-slider"></i></a>
+                </div>
                 <p>More coming soon!</p>
             </div>
         </div>

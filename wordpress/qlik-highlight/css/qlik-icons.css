@@ -262,3 +262,33 @@
 
 .qvicon-selections { background-position: -410px 0 }
 .qvicon-new-sheet-object { background-position: -430px 0 }
+
+.qvicon-text-object { background-position: -52px -502px }
+.qvicon-current-selections { background-position: -102px -502px }
+.qvicon-container { background-position: -152px -502px }
+.qvicon-bookmark-object { background-position: -202px -502px }
+.qvicon-button-object { background-position: -252px -502px }
+.qvicon-list-box { background-position: -302px -502px }
+.qvicon-line-arrow { background-position: -352px -502px }
+.qvicon-statistics-box { background-position: -402px -502px }
+.qvicon-search-object { background-position: -452px -502px }
+
+.qvicon-input-box { background-position: -552px -502px }
+.qvicon-multi-box { background-position: -602px -502px }
+.qvicon-table-box { background-position: -652px -502px }
+.qvicon-calendar { background-position: -702px -502px }
+.qvicon-funel-chart { background-position: -752px -502px }
+
+.qvicon-block-chart { background-position: -52px -551px }
+.qvicon-mekko-chart { background-position: -102px -551px }
+.qvicon-scatter-chart { background-position: -152px -551px }
+.qvicon-grid-chart { background-position: -202px -551px }
+.qvicon-pivot-table { background-position: -252px -551px }
+.qvicon-bar-chart { background-position: -302px -551px }
+.qvicon-line-chart { background-position: -352px -551px }
+.qvicon-combo-chart { background-position: -402px -551px }
+.qvicon-radar-chart { background-position: -452px -551px }
+.qvicon-gauge-chart { background-position: -502px -551px }
+.qvicon-straight-table { background-position: -552px -551px }
+.qvicon-pie-chart { background-position: -602px -551px }
+.qvicon-slider { background-position: -652px -551px }
