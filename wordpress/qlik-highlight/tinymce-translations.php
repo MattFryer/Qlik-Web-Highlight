@@ -16,7 +16,6 @@ function qlik_highlight_tinymce_translation() {
         'codeType' => esc_attr__('Code type', 'qlikview-syntax-highlighter'), 
         'insertIcon' => esc_attr__('Insert Qlik Icon', 'qlikview-syntax-highlighter'), 
         'icon' => esc_attr__('Icon', 'qlikview-syntax-highlighter'), 
-        //'iconCode' => esc_attr__('Icon code', 'qlikview-syntax-highlighter'), 
     );
  
     // Pass the json encoded array to the TinyMCE locales
