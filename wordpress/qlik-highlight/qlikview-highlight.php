@@ -29,6 +29,10 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+/*
+ToDo: Add default setting to enable "copy to clipboard" buttons.
+ToDo: Add ability to have inline code blocks instead
+*/
 
 defined('ABSPATH') or die("No humans here please!"); //Block direct access to this php file
 
@@ -344,7 +348,7 @@ function qlik_highlight_button_script() {
 						// Show the ThinkBox popup
 						tb_show("<?php esc_html_e('Insert Syntax Highlighted Qlik Code Block', 'qlikview-syntax-highlighter'); ?>","#TB_inline?inlineId=qlik_highlight_shortcode_popup",null);
 						
-						// Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
+						//Hack: Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
 						document.getElementById("TB_window").setAttribute("style", "width: 480px; margin-left: -240px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
 						document.getElementById("TB_ajaxContent").setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
 					}
@@ -372,8 +376,8 @@ function qlik_highlight_button_script() {
 						// Show the ThinkBox popup
 						tb_show("<?php esc_html_e('Insert Qlik Icon', 'qlikview-syntax-highlighter'); ?>","#TB_inline?inlineId=qlik_icon_shortcode_popup",null);
 						
-						// Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
-						document.getElementById("TB_window").setAttribute("style", "width: 750px; margin-left: -375px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
+						//Hack: Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
+						document.getElementById("TB_window").setAttribute("style", "width: 800px; margin-left: -375px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
 						document.getElementById("TB_ajaxContent").setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
 					}
 
