@@ -13,11 +13,9 @@ tinymce, tinyMCE, tb_show
           // Show the ThinkBox popup
           tb_show(ed.getLang("qlik_code_buttons.insertHighlightBlock"),"#TB_inline?inlineId=qlik_highlight_shortcode_popup",null);
 
-          // Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
-          var tb = document.getElementById("TB_window"); // Get the TB element by its ID
-          tb.setAttribute("style", "width: 480px; margin-left: -240px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
-          tb = document.getElementById("TB_ajaxContent"); // Get the TB content element by its ID
-          tb.setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
+          //Hack:  Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
+          document.getElementById("TB_window").setAttribute("style", "width: 480px; margin-left: -240px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
+          document.getElementById("TB_ajaxContent").setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
         }
       });
 
@@ -30,11 +28,9 @@ tinymce, tinyMCE, tb_show
           // Show the ThinkBox popup
           tb_show(ed.getLang("qlik_code_buttons.insertIcon"),"#TB_inline?inlineId=qlik_icon_shortcode_popup",null);
 
-          // Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
-          var tb = document.getElementById("TB_window"); // Get the TB element by its ID
-          tb.setAttribute("style", "width: 750px; margin-left: -375px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
-          tb = document.getElementById("TB_ajaxContent"); // Get the TB content element by its ID
-          tb.setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
+          //Hack:  Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
+          document.getElementById("TB_window").setAttribute("style", "width: 800px; margin-left: -375px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
+          document.getElementById("TB_ajaxContent").setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
         }
       });
     },
