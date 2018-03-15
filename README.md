@@ -20,6 +20,8 @@ The syntax highlighting that is provided is an approximation of what you would g
   * Highlighting the usage of variable within dollar-sign expansion $( )
   * Highlighting of field names in most situations
 	
+![Syntax Highlighting](http://2.bp.blogspot.com/-h37l_MFTXsg/VEF85AJUa-I/AAAAAAAAAfE/EqTn5TPHBuU/s1600/screenshot-1.png)
+
 The icons provided are either lifted directly from the Qlik products or are close approximations.
 
 If you find any issues, including missing keywords or functions, then please let me know by raising an issue and they'll be added to the next release.
