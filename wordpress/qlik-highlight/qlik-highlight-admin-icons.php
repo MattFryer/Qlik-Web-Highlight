@@ -7,7 +7,7 @@
 
 		<h3><?php esc_html_e('General Qlik Icons', 'qlikview-syntax-highlighter'); ?></h3>
 		<table class="border">
-			<tr><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th></tr>
+			<tr><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?></th></tr>
 			<tr>
 				<td><i class="qicon-2x qicon-qlik"></i></td><td>qicon-qlik</td>
 				<td><i class="qicon-2x qicon-sense"></i></td><td>qicon-sense</td>
@@ -17,7 +17,7 @@
 		
 		<h3><?php esc_html_e('Qlik Sense User Interface Icons', 'qlikview-syntax-highlighter'); ?></h3>
 		<table class="border">
-			<tr><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th></tr>
+			<tr><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?></th></tr>
 			<tr>
 				<td><i class="qicon-2x qicon-bars-vert"></i></td><td>qicon-bars-vert</td>
 				<td><i class="qicon-2x qicon-bars-horiz"></i></td><td>qicon-bars-horiz</td>
@@ -231,6 +231,6 @@
 		
 		<h3><?php esc_html_e('QlikView User Interface Icons', 'qlikview-syntax-highlighter'); ?></h3>
 		<table class="border">
-			<tr><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Code', 'qlikview-syntax-highlighter'); ?></th></tr>
+			<tr><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?></th></tr>
 			<tr><td>Coming soon!</td><td></td><td></td><td></td><td></td><td></td></tr>
 		</table>
