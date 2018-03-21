@@ -7,34 +7,6 @@ msgstr ""
 "Project-Id-Version: Qlik for WordPress\n"
 "Language: da\n"
 
-#: qlikview-highlight.php:58
-msgid "Settings"
-msgstr "Indstillinger"
-
-#: qlikview-highlight.php:69 qlikview-highlight.php:123
-msgid "Qlik for WordPress Settings"
-msgstr "Qlik til WordPress Indstillinger"
-
-#: qlikview-highlight.php:76
-msgid "General Settings"
-msgstr "Generelle Indstillinger"
-
-#: qlikview-highlight.php:77
-msgid "Enable line numbers"
-msgstr "Aktivér linjetal"
-
-#: qlikview-highlight.php:78
-msgid "Enable JS and CSS from CDN"
-msgstr "Aktivér JS og CSS fra CDN"
-
-#: qlikview-highlight.php:79
-msgid "Enable copy to Clipboard"
-msgstr "Aktivér kopiér til Udklipsholder"
-
-#: qlikview-highlight.php:86
-msgid "General settings that affect all code blocks across all pages and posts."
-msgstr "Generelle indstillinger der påvirker alle kodeblokke på tværs af alle sider og indlæg."
-
 #: qlikview-highlight.php:97
 msgid "Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ block comments, REM comments and keyword combinations that aren't on the same line)."
 msgstr "Advarsel: Aktivering af linjetal vil muligvis forhindre korrekt markering af blokke der består af mere end én linje (f.eks. /* */ blok-kommentarer, REM-kommentarer og nøgleords-kombinationer der ikke er på samme linje)"
@@ -48,57 +20,95 @@ msgstr "Indlæs JavaScript og CSS filer fra RawGit Content Delivery Network i st
 msgid "Enables copy to clipboard button on all code blocks."
 msgstr "Aktiverer kopiér til Udklipsholder på alle kodeblokke."
 
-#: qlikview-highlight.php:129
-msgid "Save Settings"
-msgstr "Gem Indstillinger"
-
-#: qlikview-highlight.php:132
-msgid "Icons"
-msgstr "Ikoner"
-
 #: qlikview-highlight.php:133
+#, fuzzy
 msgid "The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:"
 msgstr "Tabellerne forneden indeholder de nødvendige koder for at tilføje QlikView- og Qlik Sense-ikoner til sider og indlæg."
-
-#: qlikview-highlight.php:140
-msgid "Produced by"
-msgstr "Produceret af"
-
-#: qlikview-highlight.php:140
-msgid "Further details available at"
-msgstr "Yderligere informationer er tilgængelig ved"
 
 #: qlikview-highlight.php:140
 msgid "Qlik is a registered trademark of QlikTech International AB"
 msgstr "Qlik er et registreret varemærke af QlikTech International AB"
 
+#: qlikview-highlight.php:375
+#, fuzzy
+msgid "Insert Syntax Highlighted Qlik Code Block"
+msgstr "Indsæt syntaksmarkeret Qlik-kodeblok"
+
+#: qlik-highlight-admin-icons.php:8
+msgid "General Qlik Icons"
+msgstr "Generelle Qlik-ikoner"
+
+#: qlikview-highlight.php:124
+msgid "The Qlik for WordPress plugin provides syntax highlighting of QlikView and Qlik Sense script in pages and post."
+msgstr "Qlik til WordPress er et plugin der tilføjer syntaksmarkering til QlikView- og Qlik Sense-kode på sider og indlæg."
+
+#: qlikview-highlight.php:58
+msgid "Settings"
+msgstr ""
+
+#: qlikview-highlight.php:69 qlikview-highlight.php:123
+msgid "Qlik for WordPress Settings"
+msgstr ""
+
+#: qlikview-highlight.php:76
+msgid "General Settings"
+msgstr ""
+
+#: qlikview-highlight.php:77
+msgid "Enable line numbers"
+msgstr ""
+
+#: qlikview-highlight.php:78
+msgid "Enable JS and CSS from CDN"
+msgstr ""
+
+#: qlikview-highlight.php:79
+msgid "Enable copy to Clipboard"
+msgstr ""
+
+#: qlikview-highlight.php:86
+msgid "General settings that affect all code blocks across all pages and posts."
+msgstr ""
+
+#: qlikview-highlight.php:129
+msgid "Save Settings"
+msgstr ""
+
+#: qlikview-highlight.php:132
+msgid "Icons"
+msgstr ""
+
+#: qlikview-highlight.php:140
+msgid "Produced by"
+msgstr ""
+
+#: qlikview-highlight.php:140
+msgid "Further details available at"
+msgstr ""
+
 #: qlikview-highlight.php:225
 msgid "Copy to Clipboard"
-msgstr "Kopiér til Udklipsholder"
+msgstr ""
 
 #: qlikview-highlight.php:297
 msgid "Qlik Code"
-msgstr "Qlik-kode"
+msgstr ""
 
 #: qlikview-highlight.php:306
 msgid "Your code here..."
-msgstr "Din kode her..."
+msgstr ""
 
 #: qlikview-highlight.php:308 qlikview-highlight.php:377
 msgid "Code type"
-msgstr "Kodetype"
+msgstr ""
 
 #: qlikview-highlight.php:320
 msgid "Qlik Icon"
-msgstr "Qlik-Ikon"
+msgstr ""
 
 #: qlikview-highlight.php:327 qlikview-highlight.php:380
 msgid "Icon code"
-msgstr "Ikon-kode"
-
-#: qlikview-highlight.php:375
-msgid "Insert Syntax Highlighted Qlik Code Block"
-msgstr "Indsæt syntaksmarkeret Qlik-kodeblok"
+msgstr ""
 
 #: qlikview-highlight.php:376 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:10 qlik-highlight-admin-icons.php:10
@@ -106,11 +116,11 @@ msgstr "Indsæt syntaksmarkeret Qlik-kodeblok"
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:234
 #: qlik-highlight-admin-icons.php:234 qlik-highlight-admin-icons.php:234
 msgid "Code"
-msgstr "Kode"
+msgstr ""
 
 #: qlikview-highlight.php:378
 msgid "Insert Qlik Icon"
-msgstr "Indsæt Qlik-ikon"
+msgstr ""
 
 #: qlikview-highlight.php:379 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:10 qlik-highlight-admin-icons.php:10
@@ -118,46 +128,38 @@ msgstr "Indsæt Qlik-ikon"
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:234
 #: qlik-highlight-admin-icons.php:234 qlik-highlight-admin-icons.php:234
 msgid "Icon"
-msgstr "Ikon"
-
-#: qlik-highlight-admin-icons.php:8
-msgid "General Qlik Icons"
-msgstr "Generelle Qlik-ikoner"
+msgstr ""
 
 #: qlik-highlight-admin-icons.php:18
 msgid "Qlik Sense User Interface Icons"
-msgstr "Qlik Sense UI-ikoner"
+msgstr ""
 
 #: qlik-highlight-admin-icons.php:232
 msgid "QlikView User Interface Icons"
-msgstr "QlikView UI-ikoner"
+msgstr ""
 
 #. Name of the plugin
 #: 
 msgid "Qlik for WordPress"
-msgstr "Qlik til WordPress"
+msgstr ""
 
 #. Description of the plugin
 #: 
 msgid "Tools for Qlik bloggers including inserting Qlik UI icons and automatic syntax highlighting of QlikView and Qlik Sense script/expressions on any WordPress page or post."
-msgstr "Hjælpeværktøjer til Qlik-bloggere der inkluderer tilføjelse af Qlik UI-ikoner og automatisk syntaksmarkering af QlikView- og Qlik Sense kode/udtryk, på enhver WordPress side eller indlæg"
+msgstr ""
 
 #. URI of the plugin
 #: 
 msgid "http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html"
-msgstr "http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html"
+msgstr ""
 
 #. Author of the plugin
 #: 
 msgid "Matt Fryer"
-msgstr "Matt Fryer"
+msgstr ""
 
 #. Author URI of the plugin
 #: 
 msgid "http://www.qlikviewaddict.com/"
-msgstr "http://www.qlikviewaddict.com/"
-
-#: qlikview-highlight.php:124
-msgid "The Qlik for WordPress plugin provides syntax highlighting of QlikView and Qlik Sense script in pages and post."
-msgstr "Qlik til WordPress er et plugin der tilføjer syntaksmarkering til QlikView- og Qlik Sense-kode på sider og indlæg."
+msgstr ""
 
