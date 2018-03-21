@@ -7,6 +7,40 @@ msgstr ""
 "Project-Id-Version: Qlik for WordPress\n"
 "Language: sk\n"
 
+#: qlikview-highlight.php:97
+msgid "Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ block comments, REM comments and keyword combinations that aren't on the same line)."
+msgstr "Pozor: Zapnutie číslovania riadkov môže spôsobiť nesprávne zvýraznenie blokov kódu presahujúcich riadok (napr. /* */ komentáre, REM komentáre a kombinácie kľúčových slov, ktoré nie sú na tom istom riadku)."
+
+#: qlikview-highlight.php:107
+msgid "Load the JavaScript and CSS files from the RawGit Content Delivery Network instead of locally. Helps with page load times and ensures latest highlighting is always available."
+msgstr "Použiť JavaScript a CSS súbory z RawGit Content Delivery Network namiesto lokálnych. Toto nastavenie zlepšuje čas nahratia stránok a zaisťuje použitie aktuálnej verzie zvýrazňovania."
+
+#: qlikview-highlight.php:116
+msgid "Enables copy to clipboard button on all code blocks."
+msgstr "Zapne tlačidlo na kopírovanie do schránky pri všetkých blokoch kódu."
+
+#: qlikview-highlight.php:133
+#, fuzzy
+msgid "The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:"
+msgstr "Tabuľka nižšie obsahuje kódy potrebné pre vloženie QlikView a Qlik Sense ikon do stránok a príspevkov."
+
+#: qlikview-highlight.php:140
+msgid "Qlik is a registered trademark of QlikTech International AB"
+msgstr "Qlik je registrovaná ochranná známka spoločnosti QlikTech International AB"
+
+#: qlikview-highlight.php:375
+#, fuzzy
+msgid "Insert Syntax Highlighted Qlik Code Block"
+msgstr "Vložiť blok kódu so zvýraznením syntaxe Qlik."
+
+#: qlik-highlight-admin-icons.php:8
+msgid "General Qlik Icons"
+msgstr "Všeobecné Qlik ikony"
+
+#: qlikview-highlight.php:124
+msgid "The Qlik for WordPress plugin provides syntax highlighting of QlikView and Qlik Sense script in pages and post."
+msgstr "Rozšírenie Qlik pre WordPress poskytuje zvýrazňovnanie syntaxe QlikView a Qlik Sense skriptu na stránkach a príspevkoch."
+
 #: qlikview-highlight.php:58
 msgid "Settings"
 msgstr "Nastavenia"
@@ -35,22 +69,6 @@ msgstr "Zapnúť kopírovanie do schránky"
 msgid "General settings that affect all code blocks across all pages and posts."
 msgstr "Všeobecné nastavenia pre všetky bloky kódu na všetkých stránkach a vo všetkých príspevkoch."
 
-#: qlikview-highlight.php:97
-msgid "Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ block comments, REM comments and keyword combinations that aren't on the same line)."
-msgstr "Pozor: Zapnutie číslovania riadkov môže spôsobiť nesprávne zvýraznenie blokov kódu presahujúcich riadok (napr. /* */ komentáre, REM komentáre a kombinácie kľúčových slov, ktoré nie sú na tom istom riadku)."
-
-#: qlikview-highlight.php:107
-msgid "Load the JavaScript and CSS files from the RawGit Content Delivery Network instead of locally. Helps with page load times and ensures latest highlighting is always available."
-msgstr "Použiť JavaScript a CSS súbory z RawGit Content Delivery Network namiesto lokálnych. Toto nastavenie zlepšuje čas nahratia stránok a zaisťuje použitie aktuálnej verzie zvýrazňovania."
-
-#: qlikview-highlight.php:116
-msgid "Enables copy to clipboard button on all code blocks."
-msgstr "Zapne tlačidlo na kopírovanie do schránky pri všetkých blokoch kódu."
-
-#: qlikview-highlight.php:124
-msgid "The Qlik for WordPress plugin provides syntax highlighting of QlikView and Qlik Sense script in pages and post."
-msgstr "Rozšírenie Qlik pre WordPress poskytuje zvýrazňovnanie syntaxe QlikView a Qlik Sense skriptu na stránkach a príspevkoch."
-
 #: qlikview-highlight.php:129
 msgid "Save Settings"
 msgstr "Uložiť nastavenia"
@@ -59,10 +77,6 @@ msgstr "Uložiť nastavenia"
 msgid "Icons"
 msgstr "Ikony"
 
-#: qlikview-highlight.php:133
-msgid "The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:"
-msgstr "Tabuľka nižšie obsahuje kódy potrebné pre vloženie QlikView a Qlik Sense ikon do stránok a príspevkov."
-
 #: qlikview-highlight.php:140
 msgid "Produced by"
 msgstr "Vytvoril"
@@ -70,10 +84,6 @@ msgstr "Vytvoril"
 #: qlikview-highlight.php:140
 msgid "Further details available at"
 msgstr "Ďalšie podrobnosti sú dostupné na"
-
-#: qlikview-highlight.php:140
-msgid "Qlik is a registered trademark of QlikTech International AB"
-msgstr "Qlik je registrovaná ochranná známka spoločnosti QlikTech International AB"
 
 #: qlikview-highlight.php:225
 msgid "Copy to Clipboard"
@@ -99,10 +109,6 @@ msgstr "Qlik ikona"
 msgid "Icon code"
 msgstr "Kód ikony"
 
-#: qlikview-highlight.php:375
-msgid "Insert Syntax Highlighted Qlik Code Block"
-msgstr "Vložiť blok kódu so zvýraznením syntaxe Qlik."
-
 #: qlikview-highlight.php:376 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:10 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:20
@@ -122,10 +128,6 @@ msgstr "Vložiť Qlik ikonu."
 #: qlik-highlight-admin-icons.php:234 qlik-highlight-admin-icons.php:234
 msgid "Icon"
 msgstr "Ikona"
-
-#: qlik-highlight-admin-icons.php:8
-msgid "General Qlik Icons"
-msgstr "Všeobecné Qlik ikony"
 
 #: qlik-highlight-admin-icons.php:18
 msgid "Qlik Sense User Interface Icons"
