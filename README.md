@@ -19,7 +19,7 @@ The syntax highlighting that is provided is an approximation of what you would g
   * Highlighting of variable definitions (SET and LET)
   * Highlighting the usage of variable within dollar-sign expansion $( )
   * Highlighting of field names in most situations
-	
+
 ![Syntax Highlighting](http://2.bp.blogspot.com/-h37l_MFTXsg/VEF85AJUa-I/AAAAAAAAAfE/EqTn5TPHBuU/s1600/screenshot-1.png)
 
 The icons provided are either lifted directly from the Qlik products or are close approximations.
@@ -46,7 +46,7 @@ Here are the steps to get it installed and working yourself.
       hljs.initHighlightingOnLoad();
     </script>
     ```
-		
+
 ### Qlik Icons
 
 Note: If you have already installed the Syntax Highlighting, you can skip to step 4 below.
@@ -63,9 +63,10 @@ Note: If you have already installed the Syntax Highlighting, you can skip to ste
 
 It couldn't be any simpler to use, just follow these simple steps
 
-### Syntax Highlighting
+### How To Use Syntax Highlighting
 
 Wrap any Qlik script blocks included within the web page in &lt;pre&gt; and &lt;code&gt; HTML tags as shown below:
+
 ```html
 <pre><code class="qvs">MyTable: LOAD * RESIDENT MyTempTable;</code></pre>
 ```
@@ -80,12 +81,14 @@ The class allocated within the code tag will define the type of code which synta
 
 Syntax highlighting will then automatically be applied to the block when the page is viewed by the user.
 
-### Qlik Icons
+### How To Use Qlik Icons
 
 Simply add the appropriate icon code to the class of any suitable HTML tag. For example:
+
 ```html
 <span class="qicon-XXXX"></span>
 ```
+
 A full list of available icon codes will be made available soon.
 
 ## Qlik for WordPress Plugin [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/) [![WordPress plugin](https://img.shields.io/wordpress/plugin/dt/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/) [![WordPress plugin rating](https://img.shields.io/wordpress/plugin/r/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/)
@@ -97,24 +100,32 @@ The Qlik for WordPress plugin is localisation ready and has already been transla
 You may also be interesting in the [Qlik Sense WordPress plugin](https://wordpress.org/plugins/qlik-sense/) by Yianni Ververis. 
 
 ## Advanced Tips
+
 Below are a number of advanced tips and tricks for those with a good understanding of HTML and CSS. These are provided for information only and support for them is strictly limited.
 
 ### Add line numbers to code blocks
+
 If you wish to enable line numbers within code blocks on a page, add the following lines immediately after the Syntax Highlighting CSS and script as shown above:
+
 ```html
 <script src="/qvhighlight/highlightjs-line-numbers.min.js"></script>
 <script>
-	hljs.initLineNumbersOnLoad();
-</script>	
+    hljs.initLineNumbersOnLoad();
+</script>
 ```
+
 __Warning: Adding line number can cause incorrect highlighting of code patterns which span multiple lines (eg. /* */ block comments).__
 
 ### WordPress gray box around code block
+
 By default, many WordPress themes display the &lt;pre&gt; tags with a gray box and a large amount of padding. You can add your own CSS targeting the "qlik-highlight" class as follows:
+
 ```css
 pre.qlik-highlight-pre { } 
 ```
+
 To apply styling to the &lt;code&gt; tag, use:
+
 ```css
 code.qlik-highlight-code { } 
 ```
