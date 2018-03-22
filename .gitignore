@@ -12,3 +12,6 @@ wordpress/*.zip
 # Translashion temp and backup files
 wordpress/qlik-highlight/languages/*.pot~
 wordpress/qlik-highlight/languages/*.po~
+
+# VSCode Config
+.vscode/*
