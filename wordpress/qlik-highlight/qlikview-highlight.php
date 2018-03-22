@@ -29,10 +29,10 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-/*
-ToDo: Add default setting to enable "copy to clipboard" buttons.
-ToDo: Add ability to have inline code blocks instead
-*/
+
+// TODO: Add default setting to enable "copy to clipboard" buttons.
+// TODO: Add ability to have inline code blocks instead
+
 
 defined('ABSPATH') or die("No humans here please!"); //Block direct access to this php file
 
