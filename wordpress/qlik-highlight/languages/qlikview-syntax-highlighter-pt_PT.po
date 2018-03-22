@@ -28,7 +28,6 @@ msgid "Qlik is a registered trademark of QlikTech International AB"
 msgstr "Qlik é uma marca registrada de QlikTech International AB"
 
 #: qlikview-highlight.php:375
-#, fuzzy
 msgid "Insert Syntax Highlighted Qlik Code Block"
 msgstr "Inserir Bloco de Código Qlik com Destaque de Sintaxe"
 

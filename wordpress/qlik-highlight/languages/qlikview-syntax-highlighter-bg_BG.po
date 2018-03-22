@@ -7,38 +7,6 @@ msgstr ""
 "Project-Id-Version: Qlik for WordPress\n"
 "Language: bg\n"
 
-#: qlikview-highlight.php:58
-msgctxt "Configuration settings for the plugin"
-msgid "Settings"
-msgstr "Настройки"
-
-#: qlikview-highlight.php:69 qlikview-highlight.php:123
-msgctxt "Settings relating to the \"Qlik for WordPress\" plugin"
-msgid "Qlik for WordPress Settings"
-msgstr "Qlik за WordPress настройки"
-
-#: qlikview-highlight.php:76
-msgctxt "Settings which apply across the entire plugin rather than to a specific aspect of it."
-msgid "General Settings"
-msgstr "Общи настройки"
-
-#: qlikview-highlight.php:77
-msgctxt "Refers to sequential line numbers displayed alongside blocks of software code"
-msgid "Enable line numbers"
-msgstr "Показвай номерата на редовете"
-
-#: qlikview-highlight.php:78
-msgctxt "JS is an abbreviation for the JavaScript programming language.
-CSS is an abbreviation for Cascading Style Sheet web markup language.
-CDN is an abbreviation for Content Delivery Network, a service which hosts website files on alternative servers to speed up their delivery to users."
-msgid "Enable JS and CSS from CDN"
-msgstr "Разреши JS и CSS от CDN"
-
-#: qlikview-highlight.php:79
-msgctxt "Enable the ability to copy a block of software code to the user's computer clipboard"
-msgid "Enable copy to Clipboard"
-msgstr "Разреши копиране"
-
 #: qlikview-highlight.php:97
 msgid "Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ block comments, REM comments and keyword combinations that aren't on the same line)."
 msgstr "Внимание: Показването на номерата на редовете може да доведе до некоректно оцветяване на синтаксиса, който е на повече от един ред (например /* */ блок коментар, REM коментар и комбинация от служебни думи, които не са на един и същ ред)"
@@ -51,83 +19,103 @@ msgstr "Вместо локално, зарежда JavaScript и CSS файло
 msgid "Enables copy to clipboard button on all code blocks."
 msgstr "Показвай бутон за копиране на всички блокове с код"
 
-#: qlikview-highlight.php:129
-msgctxt "Save the configuration settings"
-msgid "Save Settings"
-msgstr "Запис на настройки"
-
-#: qlikview-highlight.php:132
-msgctxt "Symbols or graphics representation on a screen of a program, option, or window"
-msgid "Icons"
-msgstr "Икони"
-
 #: qlikview-highlight.php:133
-#, fuzzy
 msgid "The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:"
 msgstr "Таблиците по-долу съдържат необходимия код за добавяне на QlikView и Qlik Sense иконки към страници и постове:"
-
-#: qlikview-highlight.php:140
-msgctxt "The author/producer/developer of the plugin. For example \"Produced by Matt Fryer\""
-msgid "Produced by"
-msgstr "Pазработен от"
-
-#: qlikview-highlight.php:140
-msgctxt "Further information regarding the plugin can be found at...."
-msgid "Further details available at"
-msgstr "Повече детайли са налични на"
 
 #: qlikview-highlight.php:140
 msgid "Qlik is a registered trademark of QlikTech International AB"
 msgstr "Qlik е запазена марка на QlikTech International AB"
 
+#: qlikview-highlight.php:375
+msgid "Insert Syntax Highlighted Qlik Code Block"
+msgstr "Вмъкни Qlik код с оцветен синтаксис"
+
+#: qlik-highlight-admin-icons.php:8
+msgid "General Qlik Icons"
+msgstr "Общи Qlik иконки"
+
+#: qlikview-highlight.php:124
+msgid "The Qlik for WordPress plugin provides syntax highlighting of QlikView and Qlik Sense script in pages and post."
+msgstr "Приставката Qlik за WordPress добавя възможност за оцветяване на синтаксиса на QlikView и Qlik Sense скрипт в страници и постове"
+
+#: qlikview-highlight.php:58
+msgid "Settings"
+msgstr "Настройки"
+
+#: qlikview-highlight.php:69 qlikview-highlight.php:123
+msgid "Qlik for WordPress Settings"
+msgstr "Qlik за WordPress настройки"
+
+#: qlikview-highlight.php:76
+msgid "General Settings"
+msgstr "Общи настройки"
+
+#: qlikview-highlight.php:77
+msgid "Enable line numbers"
+msgstr "Показвай номерата на редовете"
+
+#: qlikview-highlight.php:78
+msgid "Enable JS and CSS from CDN"
+msgstr "Разреши JS и CSS от CDN"
+
+#: qlikview-highlight.php:79
+msgid "Enable copy to Clipboard"
+msgstr "Разреши копиране"
+
+#: qlikview-highlight.php:86
+msgid "General settings that affect all code blocks across all pages and posts."
+msgstr "Общи настройки, които оказват влияние на всички блокове с код на всички страници и постове"
+
+#: qlikview-highlight.php:129
+msgid "Save Settings"
+msgstr "Запис на настройки"
+
+#: qlikview-highlight.php:132
+msgid "Icons"
+msgstr "Икони"
+
+#: qlikview-highlight.php:140
+msgid "Produced by"
+msgstr "Pазработен от"
+
+#: qlikview-highlight.php:140
+msgid "Further details available at"
+msgstr "Повече детайли са налични на"
+
 #: qlikview-highlight.php:225
-#, fuzzy
-msgctxt "Copy a block of software code to the user's computer clipboard"
 msgid "Copy to Clipboard"
 msgstr "Копирай"
 
 #: qlikview-highlight.php:297
-#, fuzzy
-msgctxt "Software code relating to the Qlik software platform"
 msgid "Qlik Code"
 msgstr "Qlik код"
 
 #: qlikview-highlight.php:306
-msgctxt "A placeholder to indicate that the user should replace it with their own software code"
 msgid "Your code here..."
 msgstr "Твоя код тук..."
 
 #: qlikview-highlight.php:308 qlikview-highlight.php:377
-msgctxt "The type/language of the software code. Examples would include SQL, JavaScript, Qlik Script, etc"
 msgid "Code type"
 msgstr "Тип код"
 
 #: qlikview-highlight.php:320
-msgctxt "Symbols or graphic representations taken specifically from the Qlik user interfaces"
 msgid "Qlik Icon"
 msgstr "Qlik иконка"
 
 #: qlikview-highlight.php:327 qlikview-highlight.php:380
-msgctxt "Unique code(s) used ti refer to a specific icon"
 msgid "Icon code"
 msgstr "Код на иконка"
-
-#: qlikview-highlight.php:375
-#, fuzzy
-msgid "Insert Syntax Highlighted Qlik Code Block"
-msgstr "Вмъкни Qlik код с оцветен синтаксис"
 
 #: qlikview-highlight.php:376 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:10 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:20
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:234
 #: qlik-highlight-admin-icons.php:234 qlik-highlight-admin-icons.php:234
-msgctxt "Software code"
 msgid "Code"
 msgstr "Код"
 
 #: qlikview-highlight.php:378
-msgctxt "Insert a symbol or graphic representation relevant to the Qlik software."
 msgid "Insert Qlik Icon"
 msgstr "Вмъкни Qlik иконка"
 
@@ -136,64 +124,39 @@ msgstr "Вмъкни Qlik иконка"
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:20
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:234
 #: qlik-highlight-admin-icons.php:234 qlik-highlight-admin-icons.php:234
-msgctxt "a symbol or graphic representation on a screen of a program, option, or window."
 msgid "Icon"
 msgstr "Иконка"
 
-#: qlik-highlight-admin-icons.php:8
-msgid "General Qlik Icons"
-msgstr "Общи Qlik иконки"
-
 #: qlik-highlight-admin-icons.php:18
-#, fuzzy
-msgctxt "Qlik Sense is a software product produced by Qlik."
 msgid "Qlik Sense User Interface Icons"
 msgstr "Qlik Sense икони на потребителския интерфейс"
 
 #: qlik-highlight-admin-icons.php:232
-msgctxt "QlikView is a software product produced by Qlik."
 msgid "QlikView User Interface Icons"
 msgstr "QlikView икони на потребителския интерфейс"
 
 #. Name of the plugin
 #: 
-msgctxt "Name of the plugin"
 msgid "Qlik for WordPress"
 msgstr "Qlik за WordPress"
 
 #. Description of the plugin
 #: 
-#, fuzzy
-msgctxt "Description of the plugin
-\"page or post\" refers to WordPress blog pages or posts."
 msgid "Tools for Qlik bloggers including inserting Qlik UI icons and automatic syntax highlighting of QlikView and Qlik Sense script/expressions on any WordPress page or post."
 msgstr "Инструменти за Qlik блогъри включващи вмъкване на Qlik UI иконки и автоматично оцветяване на синтаксиса на QlikView и Qlik Sense скрипт/калкулации на всеки WordPress страница или пост"
 
 #. URI of the plugin
 #: 
-msgctxt "URI of the plugin"
 msgid "http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html"
 msgstr "http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html"
 
-#. Author URI of the plugin
-#: 
-msgctxt "Author URI of the plugin"
-msgid "http://www.qlikviewaddict.com/"
-msgstr "http://www.qlikviewaddict.com/"
-
-#: qlikview-highlight.php:124
-msgid "The Qlik for WordPress plugin provides syntax highlighting of QlikView and Qlik Sense script in pages and post."
-msgstr "Приставката Qlik за WordPress добавя възможност за оцветяване на синтаксиса на QlikView и Qlik Sense скрипт в страници и постове"
-
 #. Author of the plugin
 #: 
-msgctxt "Author of the plugin"
 msgid "Matt Fryer"
 msgstr "Matt Fryer"
 
-#: qlikview-highlight.php:86
-msgctxt "\"code blocks\" refers to blocks of software code. 
-\"pages and posts\" refers to WordPress blog pages or posts."
-msgid "General settings that affect all code blocks across all pages and posts."
-msgstr "Общи настройки, които оказват влияние на всички блокове с код на всички страници и постове"
+#. Author URI of the plugin
+#: 
+msgid "http://www.qlikviewaddict.com/"
+msgstr "http://www.qlikviewaddict.com/"
 

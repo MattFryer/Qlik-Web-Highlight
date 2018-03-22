@@ -20,7 +20,6 @@ msgid "Enables copy to clipboard button on all code blocks."
 msgstr "Active le bouton Copier dans le Presse-papiers sur tous les blocs de code"
 
 #: qlikview-highlight.php:133
-#, fuzzy
 msgid "The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:"
 msgstr "Les tableaux ci-dessous fournissent les codes nécessaires pour insérer les icônes QlikView et Qlik Sense dans les pages et les messages:"
 

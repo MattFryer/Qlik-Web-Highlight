@@ -20,7 +20,6 @@ msgid "Enables copy to clipboard button on all code blocks."
 msgstr "Habilitar botón \"copiar al portapapeles\" en todos los bloques de código"
 
 #: qlikview-highlight.php:133
-#, fuzzy
 msgid "The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:"
 msgstr "Las tablas de abajo proveen el código necesario para insertar iconos de QlikView y Qlik Sense en páginas y posts:"
 
@@ -29,7 +28,6 @@ msgid "Qlik is a registered trademark of QlikTech International AB"
 msgstr "Qlik es una marca registrada de QlikTech International AB"
 
 #: qlikview-highlight.php:375
-#, fuzzy
 msgid "Insert Syntax Highlighted Qlik Code Block"
 msgstr "Insertar bloque de resaltado de sintaxis Qlik"
 
