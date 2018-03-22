@@ -7,6 +7,39 @@ msgstr ""
 "Project-Id-Version: Qlik for WordPress\n"
 "Language: sv\n"
 
+#: qlikview-highlight.php:97
+msgid "Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ block comments, REM comments and keyword combinations that aren't on the same line)."
+msgstr "OBS: När du aktiverar radnummer kan du förhindra korrekt markering av block som täcker mer än en rad. (t.ex. /* */  blockkommentarer, REM kommentarer och nyckelordskombinationer som inte är på samma rad)."
+
+#: qlikview-highlight.php:107
+msgid "Load the JavaScript and CSS files from the RawGit Content Delivery Network instead of locally. Helps with page load times and ensures latest highlighting is always available."
+msgstr "Ladda JavaScriptet och CSS filerna från RawGit Content Delivery Network istället för lokalt. Förbättrar sidladdningstid och säkerställer att senaste belysningen alltid är tillgänglig."
+
+#: qlikview-highlight.php:116
+msgid "Enables copy to clipboard button on all code blocks."
+msgstr "Aktivera kopiera till Clipboard knapp på alla kodblock."
+
+#: qlikview-highlight.php:133
+#, fuzzy
+msgid "The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:"
+msgstr "Tabellerna nedanför erbjuder den kod du behöver för att infoga QlikView och Qlik Sense ikoner på sidor och inlägg."
+
+#: qlikview-highlight.php:140
+msgid "Qlik is a registered trademark of QlikTech International AB"
+msgstr "Qlik är ett registrerat varumärke tillhörande QlikTech International AB"
+
+#: qlikview-highlight.php:375
+msgid "Insert Syntax Highlighted Qlik Code Block"
+msgstr "Infoga Syntax Highlighted Qlik Code Block"
+
+#: qlik-highlight-admin-icons.php:8
+msgid "General Qlik Icons"
+msgstr "Allmänna Qlik Ikoner"
+
+#: qlikview-highlight.php:124
+msgid "The Qlik for WordPress plugin provides syntax highlighting of QlikView and Qlik Sense script in pages and post."
+msgstr "Qlik för WordPress pluginet erbjuder syntaxbelysning av QlikView och Qlik Sense-skript på både sidor och inlägg."
+
 #: qlikview-highlight.php:58
 msgid "Settings"
 msgstr "Inställningar"
@@ -35,22 +68,6 @@ msgstr "Aktivera kopiera till Clipboard"
 msgid "General settings that affect all code blocks across all pages and posts."
 msgstr "Allmänna inställningar som påverkar alla kodblock på alla sidor och inlägg."
 
-#: qlikview-highlight.php:97
-msgid "Warning: Enabling line numbers may prevent the correct highlighting of blocks which span more than one line (eg. /* */ block comments, REM comments and keyword combinations that aren't on the same line)."
-msgstr "OBS: När du aktiverar radnummer kan du förhindra korrekt markering av block som täcker mer än en rad. (t.ex. /* */  blockkommentarer, REM kommentarer och nyckelordskombinationer som inte är på samma rad)."
-
-#: qlikview-highlight.php:107
-msgid "Load the JavaScript and CSS files from the RawGit Content Delivery Network instead of locally. Helps with page load times and ensures latest highlighting is always available."
-msgstr "Ladda JavaScriptet och CSS filerna från RawGit Content Delivery Network istället för lokalt. Förbättrar sidladdningstid och säkerställer att senaste belysningen alltid är tillgänglig."
-
-#: qlikview-highlight.php:116
-msgid "Enables copy to clipboard button on all code blocks."
-msgstr "Aktivera kopiera till Clipboard knapp på alla kodblock."
-
-#: qlikview-highlight.php:124
-msgid "The Qlik for WordPress plugin provides syntax highlighting of QlikView and Qlik Sense script in pages and post."
-msgstr "Qlik för WordPress pluginet erbjuder syntaxbelysning av QlikView och Qlik Sense-skript på både sidor och inlägg."
-
 #: qlikview-highlight.php:129
 msgid "Save Settings"
 msgstr "Spara Inställningar"
@@ -59,10 +76,6 @@ msgstr "Spara Inställningar"
 msgid "Icons"
 msgstr "Ikoner"
 
-#: qlikview-highlight.php:133
-msgid "The tables below provide the necessary codes to insert QlikView and Qlik Sense icons into pages and posts:"
-msgstr "Tabellerna nedanför erbjuder den kod du behöver för att infoga QlikView och Qlik Sense ikoner på sidor och inlägg."
-
 #: qlikview-highlight.php:140
 msgid "Produced by"
 msgstr "Producerad av"
@@ -70,10 +83,6 @@ msgstr "Producerad av"
 #: qlikview-highlight.php:140
 msgid "Further details available at"
 msgstr "Ytterligare detaljer finns på"
-
-#: qlikview-highlight.php:140
-msgid "Qlik is a registered trademark of QlikTech International AB"
-msgstr "Qlik är ett registrerat varumärke tillhörande QlikTech International AB"
 
 #: qlikview-highlight.php:225
 msgid "Copy to Clipboard"
@@ -99,10 +108,6 @@ msgstr "Qlik Ikon"
 msgid "Icon code"
 msgstr "Ikonkod"
 
-#: qlikview-highlight.php:375
-msgid "Insert Syntax Highlighted Qlik Code Block"
-msgstr "Infoga Syntax Highlighted Qlik Code Block"
-
 #: qlikview-highlight.php:376 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:10 qlik-highlight-admin-icons.php:10
 #: qlik-highlight-admin-icons.php:20 qlik-highlight-admin-icons.php:20
@@ -122,10 +127,6 @@ msgstr "Infoga Qlik Ikon"
 #: qlik-highlight-admin-icons.php:234 qlik-highlight-admin-icons.php:234
 msgid "Icon"
 msgstr "Ikon"
-
-#: qlik-highlight-admin-icons.php:8
-msgid "General Qlik Icons"
-msgstr "Allmänna Qlik Ikoner"
 
 #: qlik-highlight-admin-icons.php:18
 msgid "Qlik Sense User Interface Icons"
