@@ -177,7 +177,6 @@
                     <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-select-fields');"><i class="qvicon-select-fields"></i></a>
                     <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-selections');"><i class="qvicon-selections"></i></a>
                     <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-new-sheet-object');"><i class="qvicon-new-sheet-object"></i></a>
-                    <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-new-sheet-object');"><i class="qvicon-new-sheet-object"></i></a>
                     <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-text-object');"><i class="qvicon-text-object"></i></a>
                     <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-current-selections');"><i class="qvicon-current-selections"></i></a>
                     <a class="button" href="#" onclick="Insert_Container_Qlik_Icon('qvicon-container');"><i class="qvicon-container"></i></a>
