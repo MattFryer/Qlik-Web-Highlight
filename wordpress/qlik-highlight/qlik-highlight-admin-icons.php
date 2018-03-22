@@ -232,5 +232,80 @@
 		<h3><?php esc_html_e('QlikView User Interface Icons', 'qlikview-syntax-highlighter'); ?></h3>
 		<table class="border">
 			<tr><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon', 'qlikview-syntax-highlighter'); ?></th><th><?php esc_html_e('Icon code', 'qlikview-syntax-highlighter'); ?></th></tr>
-			<tr><td>Coming soon!</td><td></td><td></td><td></td><td></td><td></td></tr>
-		</table>
+			<tr>
+                <td><i class="qvicon-clear"></i></td><td>qvicon-clear</td>
+                <td><i class="qvicon-back"></i></td><td>qvicon-back</td>
+                <td><i class="qvicon-forward"></i></td><td>qvicon-forward</td>
+            </tr>
+			<tr>
+                <td><i class="qvicon-undo"></i></td><td>qvicon-undo</td>
+                <td><i class="qvicon-redo"></i></td><td>qvicon-redo</td>
+                <td><i class="qvicon-lock"></i></td><td>qvicon-lock</td>
+            </tr>
+			<tr>
+                <td><i class="qvicon-unlock"></i></td><td>qvicon-unlock</td>
+                <td><i class="qvicon-notes"></i></td><td>qvicon-notes</td>
+                <td><i class="qvicon-bookmark-add"></i></td><td>qvicon-bookmark-add</td>
+            </tr>
+			<tr>
+                <td><i class="qvicon-bookmark-remove"></i></td><td>qvicon-bookmark-remove</td>
+                <td><i class="qvicon-help"></i></td><td>qvicon-help</td>
+                <td><i class="qvicon-small-device"></i></td><td>qvicon-small-device</td>
+            </tr>
+			<tr>
+                <td><i class="qvicon-repository"></i></td><td>qvicon-repository</td>
+                <td><i class="qvicon-select-fields"></i></td><td>qvicon-select-fields</td>
+                <td><i class="qvicon-selections"></i></td><td>qvicon-selections</td>
+            </tr>
+			<tr>
+                <td><i class="qvicon-new-sheet-object"></i></td><td>qvicon-new-sheet-object</td>
+                <td><i class="qvicon-text-object"></i></td><td>qvicon-text-object</td>
+                <td><i class="qvicon-current-selections"></i></td><td>qvicon-current-selections</td>
+            </tr>
+			<tr>
+                <td><i class="qvicon-container"></i></td><td>qvicon-container</td>
+                <td><i class="qvicon-bookmark-object"></i></td><td>qvicon-bookmark-object</td>
+                <td><i class="qvicon-button-object"></i></td><td>qvicon-button-object</td>
+            </tr>
+			<tr>
+                <td><i class="qvicon-list-box"></i></td><td>qvicon-list-box</td>
+                <td><i class="qvicon-line-arrow"></i></td><td>qvicon-line-arrow</td>
+                <td><i class="qvicon-statistics-box"></i></td><td>qvicon-statistics-box</td>
+            </tr>
+			<tr>    
+                <td><i class="qvicon-search-object"></i></td><td>qvicon-search-object</td>
+                <td><i class="qvicon-input-box"></i></td><td>qvicon-input-box</td>
+                <td><i class="qvicon-multi-box"></i></td><td>qvicon-multi-box</td>
+            </tr>
+			<tr>
+                <td><i class="qvicon-table-box"></i></td><td>qvicon-table-box</td>
+                <td><i class="qvicon-calendar"></i></td><td>qvicon-calendar</td>
+                <td><i class="qvicon-funel-chart"></i></td><td>qvicon-funel-chart</td>
+            </tr>
+			<tr>    
+                <td><i class="qvicon-block-chart"></i></td><td>qvicon-block-chart</td>
+                <td><i class="qvicon-mekko-chart"></i></td><td>qvicon-mekko-chart</td>
+                <td><i class="qvicon-scatter-chart"></i></td><td>qvicon-scatter-chart</td>
+            </tr>
+			<tr>    
+                <td><i class="qvicon-grid-chart"></i></td><td>qvicon-grid-chart</td>
+                <td><i class="qvicon-pivot-table"></i></td><td>qvicon-pivot-table</td>
+                <td><i class="qvicon-bar-chart"></i></td><td>qvicon-bar-chart</td>
+            </tr>
+			<tr>    
+                <td><i class="qvicon-line-chart"></i></td><td>qvicon-line-chart</td>
+                <td><i class="qvicon-combo-chart"></i></td><td>qvicon-combo-chart</td>
+                <td><i class="qvicon-radar-chart"></i></td><td>qvicon-radar-chart</td>
+            </tr>
+			<tr>    
+                <td><i class="qvicon-gauge-chart"></i></td><td>qvicon-gauge-chart</td>
+                <td><i class="qvicon-straight-table"></i></td><td>qvicon-straight-table</td>
+                <td><i class="qvicon-pie-chart"></i></td><td>qvicon-pie-chart</td>
+            </tr>
+			<tr>    
+                <td><i class="qvicon-slider"></i></td><td>qvicon-slider</td>
+                <td></td><td></td>
+                <td></td><td></td>
+            </tr>    
+        </table>
+        <p>More icons coming soon!</p>
