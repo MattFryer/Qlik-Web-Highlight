@@ -194,8 +194,7 @@ add_action( 'wp_enqueue_scripts', 'qlik_highlight_register' );
 //////////////////////////////////////////////////////////////////////////////////////////
 // SHORTCODE - HIGHLIGHTING
 //////////////////////////////////////////////////////////////////////////////////////////
-/*
-	Add Qlik specific shortcode [qlik-code]...[/qlik-code]
+/*  NOTE: Add Qlik specific shortcode [qlik-code]...[/qlik-code]
 	Accepts type parameter [qlik-code type="qvs"].
 	Options are: 
 		"qvs" or "qlikview-script" or "qv-script" - Qlik Script (default)
@@ -234,8 +233,7 @@ function qlik_highlight_shortcode( $atts , $content = null ) {
 	return '<pre class="qlik-highlight-pre"><code class="qlik-highlight-code' . $shortCodeAtts['type'] . '">' . $content . '</code></pre>';
 }
 
-/* 
-	We need to perform the highlighting before any other shortcodes are run or before WordPress starts adding BR tags etc. 
+/*  NOTE: We need to perform the highlighting before any other shortcodes are run or before WordPress starts adding BR tags etc. 
 	To do this we must pre-process it, running just this shortcode tag then adding back the others.
 */
 function qlik_highlight_pre_process_shortcode($content) {
@@ -300,8 +298,7 @@ add_action( 'vc_before_init', 'qlik_highlight_shortcode_vc');
 //////////////////////////////////////////////////////////////////////////////////////////
 // SHORTCODE - ICONS
 //////////////////////////////////////////////////////////////////////////////////////////
-/*
-	Add Qlik icons shortcode [qlik-icon]
+/*  NOTE: Add Qlik icons shortcode [qlik-icon]
 	Accepts icon parameter [qlik-icon icon="qicon-XXX"] which defines the icon to be displayed.
 */
 function qlik_icon_shortcode( $atts , $content = null ) { 
@@ -348,7 +345,7 @@ function qlik_highlight_button_script() {
 						// Show the ThinkBox popup
 						tb_show("<?php esc_html_e('Insert Syntax Highlighted Qlik Code Block', 'qlikview-syntax-highlighter'); ?>","#TB_inline?inlineId=qlik_highlight_shortcode_popup",null);
 						
-						//Hack: Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
+						// HACK: Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
 						document.getElementById("TB_window").setAttribute("style", "width: 480px; margin-left: -240px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
 						document.getElementById("TB_ajaxContent").setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
 					}
@@ -376,7 +373,7 @@ function qlik_highlight_button_script() {
 						// Show the ThinkBox popup
 						tb_show("<?php esc_html_e('Insert Qlik Icon', 'qlikview-syntax-highlighter'); ?>","#TB_inline?inlineId=qlik_icon_shortcode_popup",null);
 						
-						//Hack: Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
+						// HACK: Because there is a bug in WP's implementation of ThinkBox we need to do the following to fix the size of the popup box and style it nicely
 						document.getElementById("TB_window").setAttribute("style", "width: 800px; margin-left: -375px; top: 52px; margin-top: 0px; background: #f1f1f1; visibility: visible;"); // Set the attribute to an empty string or your desired width/height.
 						document.getElementById("TB_ajaxContent").setAttribute("style", ""); // Remove the hard coded style which sets a size that can be bigger than the containing object
 					}
