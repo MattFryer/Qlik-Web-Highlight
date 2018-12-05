@@ -1,11 +1,11 @@
-[![GitHub version](https://img.shields.io/github/release/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest "Current release version")
-[![GitHub Release Date](https://img.shields.io/github/release-date/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest "Date of the current release")
-[![GitHub download](https://img.shields.io/github/downloads/MattFryer/Qlik-Web-Highlight/total.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest "Total number of downloads")
-[![GitHub stars](https://img.shields.io/github/stars/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/stargazers "Number of people who have stared this repository")
-[![GitHub issues](https://img.shields.io/github/issues-raw/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/issues "Number of open issues")
+[![GitHub version](https://img.shields.io/github/release/MattFryer/Qlik-Web-Highlight.svg?logo=github&logoColor=ffffff)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest "Current release version")
+[![GitHub Release Date](https://img.shields.io/github/release-date/MattFryer/Qlik-Web-Highlight.svg?logo=github&logoColor=ffffff)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest "Date of the current release")
+[![GitHub download](https://img.shields.io/github/downloads/MattFryer/Qlik-Web-Highlight/total.svg?logo=github&logoColor=ffffff)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest "Total number of downloads")
+[![GitHub stars](https://img.shields.io/github/stars/MattFryer/Qlik-Web-Highlight.svg?logo=github&logoColor=ffffff)](https://github.com/MattFryer/Qlik-Web-Highlight/stargazers "Number of people who have stared this repository")
+[![GitHub issues](https://img.shields.io/github/issues-raw/MattFryer/Qlik-Web-Highlight.svg?logo=github&logoColor=ffffff)](https://github.com/MattFryer/Qlik-Web-Highlight/issues "Number of open issues")
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/MattFryer/Qlik-Web-Highlight.svg)](http://isitmaintained.com/project/MattFryer/Qlik-Web-Highlight "Average time to resolve an issue")
-[![Codacy grade](https://img.shields.io/codacy/grade/6109233a81c2417a9f1a213b312e0244.svg)](https://www.codacy.com/app/MattFryer/Qlik-Web-Highlight "Codacy code quality grade")
-[![GitHub license](https://img.shields.io/github/license/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/blob/master/LICENSE)
+[![Codacy grade](https://img.shields.io/codacy/grade/6109233a81c2417a9f1a213b312e0244.svg?logo=codacy&logoColor=ffffff)](https://www.codacy.com/app/MattFryer/Qlik-Web-Highlight "Codacy code quality grade")
+[![GitHub license](https://img.shields.io/github/license/MattFryer/Qlik-Web-Highlight.svg?logo=gnu&logoColor=ffffff)](https://github.com/MattFryer/Qlik-Web-Highlight/blob/master/LICENSE)
 
 # Qlik Web Syntax Highlighter
 
