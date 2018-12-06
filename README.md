@@ -1,11 +1,11 @@
-[![GitHub version](https://img.shields.io/github/release/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest "Current release version")
-[![GitHub Release Date](https://img.shields.io/github/release-date/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest "Date of the current release")
-[![GitHub download](https://img.shields.io/github/downloads/MattFryer/Qlik-Web-Highlight/total.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest "Total number of downloads")
-[![GitHub stars](https://img.shields.io/github/stars/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/stargazers "Number of people who have stared this repository")
-[![GitHub issues](https://img.shields.io/github/issues-raw/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/issues "Number of open issues")
+[![GitHub version](https://img.shields.io/github/release/MattFryer/Qlik-Web-Highlight.svg?logo=github&logoColor=ffffff)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest "Current release version")
+[![GitHub Release Date](https://img.shields.io/github/release-date/MattFryer/Qlik-Web-Highlight.svg?logo=github&logoColor=ffffff)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest "Date of the current release")
+[![GitHub download](https://img.shields.io/github/downloads/MattFryer/Qlik-Web-Highlight/total.svg?logo=github&logoColor=ffffff)](https://github.com/MattFryer/Qlik-Web-Highlight/releases/latest "Total number of downloads")
+[![GitHub stars](https://img.shields.io/github/stars/MattFryer/Qlik-Web-Highlight.svg?logo=github&logoColor=ffffff)](https://github.com/MattFryer/Qlik-Web-Highlight/stargazers "Number of people who have stared this repository")
+[![GitHub issues](https://img.shields.io/github/issues-raw/MattFryer/Qlik-Web-Highlight.svg?logo=github&logoColor=ffffff)](https://github.com/MattFryer/Qlik-Web-Highlight/issues "Number of open issues")
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/MattFryer/Qlik-Web-Highlight.svg)](http://isitmaintained.com/project/MattFryer/Qlik-Web-Highlight "Average time to resolve an issue")
-[![Codacy grade](https://img.shields.io/codacy/grade/6109233a81c2417a9f1a213b312e0244.svg)](https://www.codacy.com/app/MattFryer/Qlik-Web-Highlight "Codacy code quality grade")
-[![GitHub license](https://img.shields.io/github/license/MattFryer/Qlik-Web-Highlight.svg)](https://github.com/MattFryer/Qlik-Web-Highlight/blob/master/LICENSE)
+[![Codacy grade](https://img.shields.io/codacy/grade/6109233a81c2417a9f1a213b312e0244.svg?logo=codacy&logoColor=ffffff)](https://www.codacy.com/app/MattFryer/Qlik-Web-Highlight "Codacy code quality grade")
+[![GitHub license](https://img.shields.io/github/license/MattFryer/Qlik-Web-Highlight.svg?logo=gnu&logoColor=ffffff)](https://github.com/MattFryer/Qlik-Web-Highlight/blob/master/LICENSE)
 
 # Qlik Web Syntax Highlighter
 
@@ -91,7 +91,7 @@ Simply add the appropriate icon code to the class of any suitable HTML tag. For 
 
 A full list of available icon codes will be made available soon.
 
-## Qlik for WordPress Plugin [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/) [![WordPress plugin](https://img.shields.io/wordpress/plugin/dt/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/) [![WordPress plugin rating](https://img.shields.io/wordpress/plugin/r/qlikview-syntax-highlighter.svg)](https://wordpress.org/plugins/qlikview-syntax-highlighter/)
+## Qlik for WordPress Plugin [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/qlikview-syntax-highlighter.svg?logo=wordpress&logoColor=ffffff)](https://wordpress.org/plugins/qlikview-syntax-highlighter/) [![WordPress plugin](https://img.shields.io/wordpress/plugin/dt/qlikview-syntax-highlighter.svg?logo=wordpress&logoColor=ffffff)](https://wordpress.org/plugins/qlikview-syntax-highlighter/) [![WordPress plugin rating](https://img.shields.io/wordpress/plugin/r/qlikview-syntax-highlighter.svg?logo=wordpress&logoColor=ffffff)](https://wordpress.org/plugins/qlikview-syntax-highlighter/)
 
 To make it simple to add the Qlik Web Syntax Highlighter to your WordPress powered blog or website, a WordPress plugin is provided. Full details of how to download, install and use can be found on the [plugin's page on the WordPress.org website](https://wordpress.org/plugins/qlikview-syntax-highlighter/) and on [QlikViewAddict.com](http://www.qlikviewaddict.com/p/qlikview-wordpress-plugin.html).
 
