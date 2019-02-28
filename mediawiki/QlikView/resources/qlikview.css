@@ -20,6 +20,27 @@
   font-style: normal;
 }
 
+.hljs-string,
+.hljs-operator,
+.hljs-title,
+.hljs-parent,
+.hljs-tag .hljs-value,
+.hljs-rules .hljs-value,
+.ruby .hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.hljs-template_tag,
+.django .hljs-variable,
+.hljs-addition,
+.hljs-flow,
+.hljs-stream,
+.apache .hljs-tag,
+.hljs-date,
+.tex .hljs-formula,
+.coffeescript .hljs-attribute {
+  color: #000;
+  font-style: normal;
+}
+
 .hljs-keyword,
 .hljs-function_keyword,
 .hljs-format_specification_items,
@@ -40,27 +61,6 @@
 
 .hljs-keyword {
   font-weight: bold;
-}
-
-.hljs-string,
-.hljs-operator,
-.hljs-title,
-.hljs-parent,
-.hljs-tag .hljs-value,
-.hljs-rules .hljs-value,
-.ruby .hljs-symbol,
-.ruby .hljs-symbol .hljs-string,
-.hljs-template_tag,
-.django .hljs-variable,
-.hljs-addition,
-.hljs-flow,
-.hljs-stream,
-.apache .hljs-tag,
-.hljs-date,
-.tex .hljs-formula,
-.coffeescript .hljs-attribute {
-  color: #000;
-  font-style: normal;
 }
 
 .hljs-field, 
