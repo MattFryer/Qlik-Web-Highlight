@@ -55,7 +55,7 @@
   font-size: 5em; }
 	
 /* Qlik Sense Icons */	
-.qicon-bars-vert:before { 
+.qicon-bars-vert:before {
 	font-family: 'LUIicons';
 	content: "\0021"; 
 }
