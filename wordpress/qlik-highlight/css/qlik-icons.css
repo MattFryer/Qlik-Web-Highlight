@@ -4,208 +4,734 @@
 
 /* Fonts */
 @font-face {
-  font-family: 'LUIicons';
-  src: url('fonts/LUIicons.eot');
-  src: url('fonts/LUIicons.woff2') format('woff2'),
-    url('fonts/LUIicons.woff') format('woff'),
-    url('fonts/LUIicons.ttf') format('truetype'),
-    url('fonts/LUIicons.svg#LUIicons') format('svg'),
-    url('fonts/LUIicons.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'LUIicons';
+    src: url('fonts/LUIicons.eot');
+    src: url('fonts/LUIicons.woff2') format('woff2'),
+        url('fonts/LUIicons.woff') format('woff'),
+        url('fonts/LUIicons.ttf') format('truetype'),
+        url('fonts/LUIicons.svg#LUIicons') format('svg'),
+        url('fonts/LUIicons.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Qlik-Icons';
-  src: url('fonts/qlik-icons.eot');
-  src: url('fonts/qlik-icons.woff') format('woff'),
-    url('fonts/qlik-icons.ttf') format('truetype'),
-    url('fonts/qlik-icons.svg#qlik-icons') format('svg'),
-    url('fonts/qlik-icons.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Qlik-Icons';
+    src: url('fonts/qlik-icons.eot');
+    src: url('fonts/qlik-icons.woff') format('woff'),
+        url('fonts/qlik-icons.ttf') format('truetype'),
+        url('fonts/qlik-icons.svg#qlik-icons') format('svg'),
+        url('fonts/qlik-icons.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* General */
 [class^="qicon-"]:before,
 [class*=" qicon-"]:before {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  line-height: 1;
-  speak: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    speak-as: none;
 }
 
 /* Sizes */
-.qicon-lg { font-size: 1.33333em; }
+.qicon-lg {
+    font-size: 1.33333em;
+}
 
-.qicon-xs { font-size: .75em; }
+.qicon-xs {
+    font-size: .75em;
+}
 
-.qicon-sm { font-size: .875em; }
+.qicon-sm {
+    font-size: .875em;
+}
 
-.qicon-1x { font-size: 1em; }
+.qicon-1x {
+    font-size: 1em;
+}
 
-.qicon-2x { font-size: 2em; }
+.qicon-2x {
+    font-size: 2em;
+}
 
-.qicon-3x { font-size: 3em; }
+.qicon-3x {
+    font-size: 3em;
+}
 
-.qicon-4x { font-size: 4em; }
+.qicon-4x {
+    font-size: 4em;
+}
 
-.qicon-5x { font-size: 5em; }
-	
+.qicon-5x {
+    font-size: 5em;
+}
+
 /* General Icons */
-.qicon-qlik:before { font-family: 'Qlik-Icons'; content: "\e000"; }
-.qicon-sense:before { font-family: 'Qlik-Icons'; content: "\e014"; }
-.qicon-qlikview:before { font-family: 'Qlik-Icons'; content: "\e015"; }
-	
-/* Qlik Sense Icons */	
-.qicon-bars-vert:before { font-family: 'LUIicons'; content: "\0021"; }
-.qicon-bars-horiz:before { font-family: 'LUIicons';	content: "\0022"; }
-.qicon-line-chart:before { font-family: 'LUIicons'; content: "\0025"; }
-.qicon-pie-chart:before { font-family: 'LUIicons'; content: "\0026"; }
-.qicon-table-str:before { font-family: 'LUIicons'; content: "\0027"; }
-.qicon-table-piv:before { font-family: 'LUIicons'; content: "\0028"; }
-.qicon-gauge:before { font-family: 'LUIicons'; content: "\0029"; }
-.qicon-grid:before { font-family: 'LUIicons'; content: "\002A"; }
-.qicon-scatter-plot:before { font-family: 'LUIicons'; content: "\002B"; }
-.qicon-map:before { font-family: 'LUIicons'; content: "\002C"; }
+.qicon-qlik:before {
+    font-family: 'Qlik-Icons';
+    content: "\e000";
+}
+
+.qicon-sense:before {
+    font-family: 'Qlik-Icons';
+    content: "\e014";
+}
+
+.qicon-qlikview:before {
+    font-family: 'Qlik-Icons';
+    content: "\e015";
+}
+
+/* Qlik Sense Icons */
+.qicon-bars-vert:before {
+    font-family: 'LUIicons';
+    content: "\0021";
+}
+
+.qicon-bars-horiz:before {
+    font-family: 'LUIicons';
+    content: "\0022";
+}
+
+.qicon-line-chart:before {
+    font-family: 'LUIicons';
+    content: "\0025";
+}
+
+.qicon-pie-chart:before {
+    font-family: 'LUIicons';
+    content: "\0026";
+}
+
+.qicon-table-str:before {
+    font-family: 'LUIicons';
+    content: "\0027";
+}
+
+.qicon-table-piv:before {
+    font-family: 'LUIicons';
+    content: "\0028";
+}
+
+.qicon-gauge:before {
+    font-family: 'LUIicons';
+    content: "\0029";
+}
+
+.qicon-grid:before {
+    font-family: 'LUIicons';
+    content: "\002A";
+}
+
+.qicon-scatter-plot:before {
+    font-family: 'LUIicons';
+    content: "\002B";
+}
+
+.qicon-map:before {
+    font-family: 'LUIicons';
+    content: "\002C";
+}
+
 .qicon-filter:before,
-.qicon-filter-pane:before { font-family: 'LUIicons'; content: "\002E"; }
-.qicon-text:before { font-family: 'LUIicons'; content: "\002F"; }
-.qicon-image:before { font-family: 'LUIicons'; content: "\0030"; }
-.qicon-kpi:before { font-family: 'LUIicons'; content: "\0031"; }
-.qicon-exp-edit:before { font-family: 'LUIicons'; content: "\0033"; }
-.qicon-sheets:before { font-family: 'LUIicons'; content: "\0034"; }
-.qicon-charts:before { font-family: 'LUIicons'; content: "\0035"; }
-.qicon-data-model:before { font-family: 'LUIicons'; content: "\0037"; }
-.qicon-data-connections:before { font-family: 'LUIicons'; content: "\0038"; }
+.qicon-filter-pane:before {
+    font-family: 'LUIicons';
+    content: "\002E";
+}
+
+.qicon-text:before {
+    font-family: 'LUIicons';
+    content: "\002F";
+}
+
+.qicon-image:before {
+    font-family: 'LUIicons';
+    content: "\0030";
+}
+
+.qicon-kpi:before {
+    font-family: 'LUIicons';
+    content: "\0031";
+}
+
+.qicon-exp-edit:before {
+    font-family: 'LUIicons';
+    content: "\0033";
+}
+
+.qicon-sheets:before {
+    font-family: 'LUIicons';
+    content: "\0034";
+}
+
+.qicon-charts:before {
+    font-family: 'LUIicons';
+    content: "\0035";
+}
+
+.qicon-data-model:before {
+    font-family: 'LUIicons';
+    content: "\0037";
+}
+
+.qicon-data-connections:before {
+    font-family: 'LUIicons';
+    content: "\0038";
+}
+
 .qicon-select-possible:before,
-.qicon-select-tools:before { font-family: 'LUIicons'; content: "\0039"; }
-.qicon-select-clear:before { font-family: 'LUIicons'; content: "\003A"; }
-.qicon-select-undo:before { font-family: 'LUIicons'; content: "\003C"; }
-.qicon-select-redo:before { font-family: 'LUIicons'; content: "\003D"; }
-.qicon-bookmarks:before { font-family: 'LUIicons'; content: "\003E"; }
+.qicon-select-tools:before {
+    font-family: 'LUIicons';
+    content: "\0039";
+}
+
+.qicon-select-clear:before {
+    font-family: 'LUIicons';
+    content: "\003A";
+}
+
+.qicon-select-undo:before {
+    font-family: 'LUIicons';
+    content: "\003C";
+}
+
+.qicon-select-redo:before {
+    font-family: 'LUIicons';
+    content: "\003D";
+}
+
+.qicon-bookmarks:before {
+    font-family: 'LUIicons';
+    content: "\003E";
+}
+
 .qicon-edit:before,
-.qicon-update:before { font-family: 'LUIicons'; content: "\0040"; }
-.qicon-undo:before { font-family: 'LUIicons'; content: "\0042"; }
-.qicon-redo:before { font-family: 'LUIicons'; content: "\0043"; }
-.qicon-help:before { font-family: 'LUIicons'; content: "\0044"; }
-.qicon-delete2:before { font-family: 'LUIicons'; content: "\0045"; }
-.qicon-smart-search:before { font-family: 'LUIicons'; content: "\0046"; }
-.qicon-date:before { font-family: 'LUIicons'; content: "\0047"; }
+.qicon-update:before {
+    font-family: 'LUIicons';
+    content: "\0040";
+}
+
+.qicon-undo:before {
+    font-family: 'LUIicons';
+    content: "\0042";
+}
+
+.qicon-redo:before {
+    font-family: 'LUIicons';
+    content: "\0043";
+}
+
+.qicon-help:before {
+    font-family: 'LUIicons';
+    content: "\0044";
+}
+
+.qicon-delete2:before {
+    font-family: 'LUIicons';
+    content: "\0045";
+}
+
+.qicon-smart-search:before {
+    font-family: 'LUIicons';
+    content: "\0046";
+}
+
+.qicon-date:before {
+    font-family: 'LUIicons';
+    content: "\0047";
+}
+
 .qicon-db:before,
-.qicon-repositories:before { font-family: 'LUIicons'; content: "\0048"; }
-.qicon-export-data:before { font-family: 'LUIicons'; content: "\0049"; }
-.qicon-bold:before { font-family: 'LUIicons'; content: "\004A"; }
-.qicon-italic:before { font-family: 'LUIicons'; content: "\004B"; }
-.qicon-underline:before { font-family: 'LUIicons'; content: "\004C"; }
-.qicon-justify-left:before { font-family: 'LUIicons'; content: "\004D"; }
-.qicon-justify-right:before { font-family: 'LUIicons'; content: "\004E"; }
-.qicon-justify-center:before { font-family: 'LUIicons'; content: "\004F"; }
-.qicon-create-new:before { font-family: 'LUIicons'; content: "\0050"; }
+.qicon-repositories:before {
+    font-family: 'LUIicons';
+    content: "\0048";
+}
+
+.qicon-export-data:before {
+    font-family: 'LUIicons';
+    content: "\0049";
+}
+
+.qicon-bold:before {
+    font-family: 'LUIicons';
+    content: "\004A";
+}
+
+.qicon-italic:before {
+    font-family: 'LUIicons';
+    content: "\004B";
+}
+
+.qicon-underline:before {
+    font-family: 'LUIicons';
+    content: "\004C";
+}
+
+.qicon-justify-left:before {
+    font-family: 'LUIicons';
+    content: "\004D";
+}
+
+.qicon-justify-right:before {
+    font-family: 'LUIicons';
+    content: "\004E";
+}
+
+.qicon-justify-center:before {
+    font-family: 'LUIicons';
+    content: "\004F";
+}
+
+.qicon-create-new:before {
+    font-family: 'LUIicons';
+    content: "\0050";
+}
+
 .qicon-cog:before,
-.qicon-settings:before { font-family: 'LUIicons'; content: "\0056"; }
-.qicon-info:before { font-family: 'LUIicons'; content: "\005D"; }
+.qicon-settings:before {
+    font-family: 'LUIicons';
+    content: "\0056";
+}
+
+.qicon-info:before {
+    font-family: 'LUIicons';
+    content: "\005D";
+}
+
 .qicon-audit:before,
-.qicon-custom-props:before { font-family: 'LUIicons'; content: "\0066"; }
-.qicon-printing:before { font-family: 'LUIicons'; content: "\0070"; }
-.qicon-nodes:before { font-family: 'LUIicons'; content: "\0076"; }
+.qicon-custom-props:before {
+    font-family: 'LUIicons';
+    content: "\0066";
+}
+
+.qicon-printing:before {
+    font-family: 'LUIicons';
+    content: "\0070";
+}
+
+.qicon-nodes:before {
+    font-family: 'LUIicons';
+    content: "\0076";
+}
+
 .qicon-tag:before,
-.qicon-tags:before { font-family: 'LUIicons'; content: "\007A"; }
+.qicon-tags:before {
+    font-family: 'LUIicons';
+    content: "\007A";
+}
+
 .qicon-engines:before,
-.qicon-cogs:before { font-family: 'LUIicons'; content: "\007B"; }
-.qicon-unlock:before { font-family: 'LUIicons'; content: "\005C"; }
-.qicon-about:before { font-family: 'LUIicons'; content: "\005D"; }
+.qicon-cogs:before {
+    font-family: 'LUIicons';
+    content: "\007B";
+}
+
+.qicon-unlock:before {
+    font-family: 'LUIicons';
+    content: "\005C";
+}
+
+.qicon-about:before {
+    font-family: 'LUIicons';
+    content: "\005D";
+}
+
 .qicon-extensions:before,
-.qicon-custom-obj:before { font-family: 'LUIicons'; content: "\0067"; }
-.qicon-task-success:before { font-family: 'LUIicons'; content: "\006D"; }
-.qicon-list-view:before { font-family: 'LUIicons'; content: "\006F"; }
-.qicon-export:before { font-family: 'LUIicons'; content: "\0072"; }
-.qicon-expand:before { font-family: 'LUIicons'; content: "\0073"; }
-.qicon-collapse:before { font-family: 'LUIicons'; content: "\0074"; }
-.qicon-debug:before { font-family: 'LUIicons'; content: "\0075"; }
+.qicon-custom-obj:before {
+    font-family: 'LUIicons';
+    content: "\0067";
+}
+
+.qicon-task-success:before {
+    font-family: 'LUIicons';
+    content: "\006D";
+}
+
+.qicon-list-view:before {
+    font-family: 'LUIicons';
+    content: "\006F";
+}
+
+.qicon-export:before {
+    font-family: 'LUIicons';
+    content: "\0072";
+}
+
+.qicon-expand:before {
+    font-family: 'LUIicons';
+    content: "\0073";
+}
+
+.qicon-collapse:before {
+    font-family: 'LUIicons';
+    content: "\0074";
+}
+
+.qicon-debug:before {
+    font-family: 'LUIicons';
+    content: "\0075";
+}
+
 .qicon-select-excluded:before,
-.qicon-tasks:before { font-family: 'LUIicons'; content: "\0078"; }
-.qicon-users:before { font-family: 'LUIicons'; content: "\0079"; }
-.qicon-select-all:before { font-family: 'LUIicons'; content: "\007C"; }
+.qicon-tasks:before {
+    font-family: 'LUIicons';
+    content: "\0078";
+}
+
+.qicon-users:before {
+    font-family: 'LUIicons';
+    content: "\0079";
+}
+
+.qicon-select-all:before {
+    font-family: 'LUIicons';
+    content: "\007C";
+}
+
 .qicon-timer:before,
-.qicon-task-queued:before { font-family: 'LUIicons'; content: "\00A3"; }
-.qicon-task-never:before { font-family: 'LUIicons'; content: "\00A5"; }
-.qicon-task-aborted:before { font-family: 'LUIicons'; content: "\00A7"; }
-.qicon-menu:before { font-family: 'LUIicons'; content: "\00A8"; }
-.qicon-add-data:before { font-family: 'LUIicons'; content: "\00AB"; }
-.qicon-certificates:before { font-family: 'LUIicons'; content: "\00AE"; }
-.qicon-load-data:before { font-family: 'LUIicons'; content: "\00B0"; }
-.qicon-select-data:before { font-family: 'LUIicons'; content: "\00B1"; }
-.qicon-cut:before { font-family: 'LUIicons'; content: "\00B5"; }
+.qicon-task-queued:before {
+    font-family: 'LUIicons';
+    content: "\00A3";
+}
+
+.qicon-task-never:before {
+    font-family: 'LUIicons';
+    content: "\00A5";
+}
+
+.qicon-task-aborted:before {
+    font-family: 'LUIicons';
+    content: "\00A7";
+}
+
+.qicon-menu:before {
+    font-family: 'LUIicons';
+    content: "\00A8";
+}
+
+.qicon-add-data:before {
+    font-family: 'LUIicons';
+    content: "\00AB";
+}
+
+.qicon-certificates:before {
+    font-family: 'LUIicons';
+    content: "\00AE";
+}
+
+.qicon-load-data:before {
+    font-family: 'LUIicons';
+    content: "\00B0";
+}
+
+.qicon-select-data:before {
+    font-family: 'LUIicons';
+    content: "\00B1";
+}
+
+.qicon-cut:before {
+    font-family: 'LUIicons';
+    content: "\00B5";
+}
+
 .qicon-copy:before,
-.qicon-duplicate-sheet:before { font-family: 'LUIicons'; content: "\00B6"; }
-.qicon-data-manager:before { font-family: 'LUIicons'; content: "\00B8"; }
-.qicon-tree-map:before { font-family: 'LUIicons'; content: "\00BB"; }
-.qicon-indent:before { font-family: 'LUIicons'; content: "\00C0"; }
-.qicon-dedent:before { font-family: 'LUIicons'; content: "\00C3"; }
-.qicon-security-rules:before { font-family: 'LUIicons'; content: "\00C4"; }
-.qicon-snapshot:before { font-family: 'LUIicons'; content: "\00C5"; }
-.qicon-qlik-folder:before { font-family: 'LUIicons'; content: "\00C6"; }
-.qicon-stories:before { font-family: 'LUIicons'; content: "\00C7"; }
-.qicon-data-load:before { font-family: 'LUIicons'; content: "\00CF"; }
-.qicon-wizard:before { font-family: 'LUIicons'; content: "\00D1"; }
-.qicon-variables:before { font-family: 'LUIicons'; content: "\00D2"; }
-.qicon-connection:before { font-family: 'LUIicons'; content: "\00D5"; }
-.qicon-delete:before { font-family: 'LUIicons'; content: "\00D6"; }
-.qicon-palette:before { font-family: 'LUIicons'; content: "\00DC"; }
-.qicon-paper-clip:before { font-family: 'LUIicons'; content: "\00E0"; }
+.qicon-duplicate-sheet:before {
+    font-family: 'LUIicons';
+    content: "\00B6";
+}
+
+.qicon-data-manager:before {
+    font-family: 'LUIicons';
+    content: "\00B8";
+}
+
+.qicon-tree-map:before {
+    font-family: 'LUIicons';
+    content: "\00BB";
+}
+
+.qicon-indent:before {
+    font-family: 'LUIicons';
+    content: "\00C0";
+}
+
+.qicon-dedent:before {
+    font-family: 'LUIicons';
+    content: "\00C3";
+}
+
+.qicon-security-rules:before {
+    font-family: 'LUIicons';
+    content: "\00C4";
+}
+
+.qicon-snapshot:before {
+    font-family: 'LUIicons';
+    content: "\00C5";
+}
+
+.qicon-qlik-folder:before {
+    font-family: 'LUIicons';
+    content: "\00C6";
+}
+
+.qicon-stories:before {
+    font-family: 'LUIicons';
+    content: "\00C7";
+}
+
+.qicon-data-load:before {
+    font-family: 'LUIicons';
+    content: "\00CF";
+}
+
+.qicon-wizard:before {
+    font-family: 'LUIicons';
+    content: "\00D1";
+}
+
+.qicon-variables:before {
+    font-family: 'LUIicons';
+    content: "\00D2";
+}
+
+.qicon-connection:before {
+    font-family: 'LUIicons';
+    content: "\00D5";
+}
+
+.qicon-delete:before {
+    font-family: 'LUIicons';
+    content: "\00D6";
+}
+
+.qicon-palette:before {
+    font-family: 'LUIicons';
+    content: "\00DC";
+}
+
+.qicon-paper-clip:before {
+    font-family: 'LUIicons';
+    content: "\00E0";
+}
+
 .qicon-calendar:before,
-.qicon-schedulers:before { font-family: 'LUIicons'; content: "\00E1"; }
-.qicon-user-directory:before { font-family: 'LUIicons'; content: "\00E2"; }
-.qicon-streams:before { font-family: 'LUIicons'; content: "\00E3"; }
-.qicon-license-tokens:before { font-family: 'LUIicons'; content: "\00E4"; }
+.qicon-schedulers:before {
+    font-family: 'LUIicons';
+    content: "\00E1";
+}
+
+.qicon-user-directory:before {
+    font-family: 'LUIicons';
+    content: "\00E2";
+}
+
+.qicon-streams:before {
+    font-family: 'LUIicons';
+    content: "\00E3";
+}
+
+.qicon-license-tokens:before {
+    font-family: 'LUIicons';
+    content: "\00E4";
+}
+
 .qicon-proxies:before,
-.qicon-virtual-proxies:before { font-family: 'LUIicons'; content: "\00E5"; }
-.qicon-line-chart-thin:before { font-family: 'LUIicons'; content: "\00E6"; }
-.qicon-task-chain2:before { font-family: 'LUIicons'; content: "\00E7"; }
-.qicon-alert:before { font-family: 'LUIicons'; content: "\00E8"; }
+.qicon-virtual-proxies:before {
+    font-family: 'LUIicons';
+    content: "\00E5";
+}
+
+.qicon-line-chart-thin:before {
+    font-family: 'LUIicons';
+    content: "\00E6";
+}
+
+.qicon-task-chain2:before {
+    font-family: 'LUIicons';
+    content: "\00E7";
+}
+
+.qicon-alert:before {
+    font-family: 'LUIicons';
+    content: "\00E8";
+}
+
 .qicon-link:before,
 .qicon-master-items:before,
-.qicon-task-chain:before { font-family: 'LUIicons'; content: "\00E9"; }
-.qicon-previous:before { font-family: 'LUIicons'; content: "\00EA"; }
-.qicon-next:before { font-family: 'LUIicons'; content: "\00EB"; }
-.qicon-star:before { font-family: 'LUIicons'; content: "\00EF"; }
-.qicon-folder:before { font-family: 'LUIicons'; content: "\00F1"; }
-.qicon-cube:before { font-family: 'LUIicons'; content: "\00F2"; }
+.qicon-task-chain:before {
+    font-family: 'LUIicons';
+    content: "\00E9";
+}
+
+.qicon-previous:before {
+    font-family: 'LUIicons';
+    content: "\00EA";
+}
+
+.qicon-next:before {
+    font-family: 'LUIicons';
+    content: "\00EB";
+}
+
+.qicon-star:before {
+    font-family: 'LUIicons';
+    content: "\00EF";
+}
+
+.qicon-folder:before {
+    font-family: 'LUIicons';
+    content: "\00F1";
+}
+
+.qicon-cube:before {
+    font-family: 'LUIicons';
+    content: "\00F2";
+}
+
 .qicon-refresh:before,
 .qicon-load-balance:before,
-.qicon-task-triggered:before { font-family: 'LUIicons'; content: "\00F4"; }
-.qicon-select-alternate:before { font-family: 'LUIicons'; content: "\00F6"; }
-.qicon-area-chart:before { font-family: 'LUIicons'; content: "\00F8"; }
-.qicon-info2:before { font-family: 'LUIicons'; content: "\00F9"; }
-.qicon-home:before { font-family: 'LUIicons'; content: "\00FC"; }
-.qicon-step:before { font-family: 'LUIicons'; content: "\0152"; }
-.qicon-run:before { font-family: 'LUIicons'; content: "\0153"; }
-.qicon-hub:before { font-family: 'LUIicons'; content: "\02C6"; }
-.qicon-combo-chart2:before { font-family: 'LUIicons'; content: "\02DB"; }
-.qicon-doughnut-chart:before { font-family: 'LUIicons'; content: "\03C0"; }
-.qicon-lasso:before { font-family: 'LUIicons'; content: "\2014"; }
-.qicon-plug:before { font-family: 'LUIicons'; content: "\2018"; }
-.qicon-combo-chart:before { font-family: 'LUIicons'; content: "\201A"; }
-.qicon-compass:before { font-family: 'LUIicons'; content: "\201D"; }
-.qicon-read:before { font-family: 'LUIicons'; content: "\2020"; }
-.qicon-cloud:before { font-family: 'LUIicons'; content: "\2021"; }
-.qicon-comment:before { font-family: 'LUIicons'; content: "\2026"; }
-.qicon-task-failed:before { font-family: 'LUIicons'; content: "\2030"; }
-.qicon-pause:before { font-family: 'LUIicons'; content: "\20AC"; }
-.qicon-snapshot-library:before { font-family: 'LUIicons'; content: "\2193"; }
-.qicon-associations:before, 
-.qicon-bubbles:before { font-family: 'LUIicons'; content: "\25B6"; }
-.qicon-content-libraries:before { font-family: 'LUIicons'; content: "\25CA"; }
-.qicon-other-access:before { font-family: 'LUIicons'; content: "\2265"; }
-.qicon-box-plot:before { font-family: 'LUIicons'; content: "\2605"; }
-.qicon-distrib-plot:before { font-family: 'LUIicons'; content: "\2661"; }
-.qicon-histogram:before { font-family: 'LUIicons'; content: "\2691"; }
-.qicon-filter-remove:before { font-family: 'LUIicons'; content: "\2699"; }
+.qicon-task-triggered:before {
+    font-family: 'LUIicons';
+    content: "\00F4";
+}
+
+.qicon-select-alternate:before {
+    font-family: 'LUIicons';
+    content: "\00F6";
+}
+
+.qicon-area-chart:before {
+    font-family: 'LUIicons';
+    content: "\00F8";
+}
+
+.qicon-info2:before {
+    font-family: 'LUIicons';
+    content: "\00F9";
+}
+
+.qicon-home:before {
+    font-family: 'LUIicons';
+    content: "\00FC";
+}
+
+.qicon-step:before {
+    font-family: 'LUIicons';
+    content: "\0152";
+}
+
+.qicon-run:before {
+    font-family: 'LUIicons';
+    content: "\0153";
+}
+
+.qicon-hub:before {
+    font-family: 'LUIicons';
+    content: "\02C6";
+}
+
+.qicon-combo-chart2:before {
+    font-family: 'LUIicons';
+    content: "\02DB";
+}
+
+.qicon-doughnut-chart:before {
+    font-family: 'LUIicons';
+    content: "\03C0";
+}
+
+.qicon-lasso:before {
+    font-family: 'LUIicons';
+    content: "\2014";
+}
+
+.qicon-plug:before {
+    font-family: 'LUIicons';
+    content: "\2018";
+}
+
+.qicon-combo-chart:before {
+    font-family: 'LUIicons';
+    content: "\201A";
+}
+
+.qicon-compass:before {
+    font-family: 'LUIicons';
+    content: "\201D";
+}
+
+.qicon-read:before {
+    font-family: 'LUIicons';
+    content: "\2020";
+}
+
+.qicon-cloud:before {
+    font-family: 'LUIicons';
+    content: "\2021";
+}
+
+.qicon-comment:before {
+    font-family: 'LUIicons';
+    content: "\2026";
+}
+
+.qicon-task-failed:before {
+    font-family: 'LUIicons';
+    content: "\2030";
+}
+
+.qicon-pause:before {
+    font-family: 'LUIicons';
+    content: "\20AC";
+}
+
+.qicon-snapshot-library:before {
+    font-family: 'LUIicons';
+    content: "\2193";
+}
+
+.qicon-associations:before,
+.qicon-bubbles:before {
+    font-family: 'LUIicons';
+    content: "\25B6";
+}
+
+.qicon-content-libraries:before {
+    font-family: 'LUIicons';
+    content: "\25CA";
+}
+
+.qicon-other-access:before {
+    font-family: 'LUIicons';
+    content: "\2265";
+}
+
+.qicon-box-plot:before {
+    font-family: 'LUIicons';
+    content: "\2605";
+}
+
+.qicon-distrib-plot:before {
+    font-family: 'LUIicons';
+    content: "\2661";
+}
+
+.qicon-histogram:before {
+    font-family: 'LUIicons';
+    content: "\2691";
+}
+
+.qicon-filter-remove:before {
+    font-family: 'LUIicons';
+    content: "\2699";
+}
 
 /* QlikView Icons */
 /* These are recreations and not 100% accurate so currently not used
@@ -231,64 +757,186 @@
 */
 [class^="qvicon-"],
 [class*=" qvicon-"] {
-	background-color:transparent;
-	background-image: url(property_sprite.png);
-	background-repeat: no-repeat;
+    background-color: transparent;
+    background-image: url(property_sprite.png);
+    background-repeat: no-repeat;
     width: 20px;
     height: 20px;
-	display:inline-block;
-	padding: 0px;
-	margin: 0px;
-	line-height: 1;
-	speak: none;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1;
+    speak-as: none;
 }
 
-.qvicon-clear { background-position: -50px 0 }
-.qvicon-back { background-position: -70px 0 }
-.qvicon-forward { background-position: -90px 0 }
-.qvicon-undo { background-position: -110px 0 }
-.qvicon-redo { background-position: -130px 0 }
-.qvicon-lock { background-position: -150px 0 }
-.qvicon-unlock { background-position: -170px 0 }
-.qvicon-notes { background-position: -190px 0 }
-.qvicon-bookmark-add { background-position: -210px 0 }
-.qvicon-bookmark-remove { background-position: -230px 0 }
+.qvicon-clear {
+    background-position: -50px 0
+}
 
-.qvicon-help { background-position: -290px 0 }
+.qvicon-back {
+    background-position: -70px 0
+}
 
-.qvicon-small-device { background-position: -330px 0 }
-.qvicon-repository { background-position: -350px 0 }
-.qvicon-select-fields { background-position: -370px 0 }
+.qvicon-forward {
+    background-position: -90px 0
+}
 
-.qvicon-selections { background-position: -410px 0 }
-.qvicon-new-sheet-object { background-position: -430px 0 }
+.qvicon-undo {
+    background-position: -110px 0
+}
 
-.qvicon-text-object { background-position: -52px -502px }
-.qvicon-current-selections { background-position: -102px -502px }
-.qvicon-container { background-position: -152px -502px }
-.qvicon-bookmark-object { background-position: -202px -502px }
-.qvicon-button-object { background-position: -252px -502px }
-.qvicon-list-box { background-position: -302px -502px }
-.qvicon-line-arrow { background-position: -352px -502px }
-.qvicon-statistics-box { background-position: -402px -502px }
-.qvicon-search-object { background-position: -452px -502px }
+.qvicon-redo {
+    background-position: -130px 0
+}
 
-.qvicon-input-box { background-position: -552px -502px }
-.qvicon-multi-box { background-position: -602px -502px }
-.qvicon-table-box { background-position: -652px -502px }
-.qvicon-calendar { background-position: -702px -502px }
-.qvicon-funel-chart { background-position: -752px -502px }
+.qvicon-lock {
+    background-position: -150px 0
+}
 
-.qvicon-block-chart { background-position: -52px -551px }
-.qvicon-mekko-chart { background-position: -102px -551px }
-.qvicon-scatter-chart { background-position: -152px -551px }
-.qvicon-grid-chart { background-position: -202px -551px }
-.qvicon-pivot-table { background-position: -252px -551px }
-.qvicon-bar-chart { background-position: -302px -551px }
-.qvicon-line-chart { background-position: -352px -551px }
-.qvicon-combo-chart { background-position: -402px -551px }
-.qvicon-radar-chart { background-position: -452px -551px }
-.qvicon-gauge-chart { background-position: -502px -551px }
-.qvicon-straight-table { background-position: -552px -551px }
-.qvicon-pie-chart { background-position: -602px -551px }
-.qvicon-slider { background-position: -652px -551px }
+.qvicon-unlock {
+    background-position: -170px 0
+}
+
+.qvicon-notes {
+    background-position: -190px 0
+}
+
+.qvicon-bookmark-add {
+    background-position: -210px 0
+}
+
+.qvicon-bookmark-remove {
+    background-position: -230px 0
+}
+
+.qvicon-help {
+    background-position: -290px 0
+}
+
+.qvicon-small-device {
+    background-position: -330px 0
+}
+
+.qvicon-repository {
+    background-position: -350px 0
+}
+
+.qvicon-select-fields {
+    background-position: -370px 0
+}
+
+.qvicon-selections {
+    background-position: -410px 0
+}
+
+.qvicon-new-sheet-object {
+    background-position: -430px 0
+}
+
+.qvicon-text-object {
+    background-position: -52px -502px
+}
+
+.qvicon-current-selections {
+    background-position: -102px -502px
+}
+
+.qvicon-container {
+    background-position: -152px -502px
+}
+
+.qvicon-bookmark-object {
+    background-position: -202px -502px
+}
+
+.qvicon-button-object {
+    background-position: -252px -502px
+}
+
+.qvicon-list-box {
+    background-position: -302px -502px
+}
+
+.qvicon-line-arrow {
+    background-position: -352px -502px
+}
+
+.qvicon-statistics-box {
+    background-position: -402px -502px
+}
+
+.qvicon-search-object {
+    background-position: -452px -502px
+}
+
+.qvicon-input-box {
+    background-position: -552px -502px
+}
+
+.qvicon-multi-box {
+    background-position: -602px -502px
+}
+
+.qvicon-table-box {
+    background-position: -652px -502px
+}
+
+.qvicon-calendar {
+    background-position: -702px -502px
+}
+
+.qvicon-funel-chart {
+    background-position: -752px -502px
+}
+
+.qvicon-block-chart {
+    background-position: -52px -551px
+}
+
+.qvicon-mekko-chart {
+    background-position: -102px -551px
+}
+
+.qvicon-scatter-chart {
+    background-position: -152px -551px
+}
+
+.qvicon-grid-chart {
+    background-position: -202px -551px
+}
+
+.qvicon-pivot-table {
+    background-position: -252px -551px
+}
+
+.qvicon-bar-chart {
+    background-position: -302px -551px
+}
+
+.qvicon-line-chart {
+    background-position: -352px -551px
+}
+
+.qvicon-combo-chart {
+    background-position: -402px -551px
+}
+
+.qvicon-radar-chart {
+    background-position: -452px -551px
+}
+
+.qvicon-gauge-chart {
+    background-position: -502px -551px
+}
+
+.qvicon-straight-table {
+    background-position: -552px -551px
+}
+
+.qvicon-pie-chart {
+    background-position: -602px -551px
+}
+
+.qvicon-slider {
+    background-position: -652px -551px
+}

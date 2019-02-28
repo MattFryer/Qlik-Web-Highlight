@@ -1,13 +1,14 @@
 /* Qlik script editor styling for Highlight.js */
 
+/* Highlight.js syntax highlighting styles */
 .hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: white;
-  color: black;
-  -webkit-text-size-adjust: none;
-  font-style: normal;
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: white;
+    color: black;
+    -webkit-text-size-adjust: none;
+    font-style: normal;
 }
 
 .hljs-comment,
@@ -16,8 +17,30 @@
 .diff .hljs-header,
 .hljs-chunk,
 .apache .hljs-cbracket {
-  color: #008000;
-  font-style: normal;
+    color: #008000;
+    font-style: normal;
+}
+
+.hljs-keyword,
+.hljs-function_keyword,
+.hljs-format_specification_items,
+.hljs-id,
+.hljs-built_in,
+.css .smalltalk .hljs-class,
+.hljs-winutils,
+.bash .hljs-variable,
+.tex .hljs-command,
+.hljs-request,
+.hljs-status,
+.nginx .hljs-title,
+.xml .hljs-tag,
+.xml .hljs-tag .hljs-value {
+    color: #00f;
+    font-style: normal;
+}
+
+.hljs-keyword {
+    font-weight: bold;
 }
 
 .hljs-string,
@@ -37,36 +60,14 @@
 .hljs-date,
 .tex .hljs-formula,
 .coffeescript .hljs-attribute {
-  color: #000;
-  font-style: normal;
+    color: #000;
+    font-style: normal;
 }
 
-.hljs-keyword,
-.hljs-function_keyword,
-.hljs-format_specification_items,
-.hljs-id,
-.hljs-built_in,.css
-.smalltalk .hljs-class,
-.hljs-winutils,
-.bash .hljs-variable,
-.tex .hljs-command,
-.hljs-request,
-.hljs-status,
-.nginx .hljs-title,
-.xml .hljs-tag,
-.xml .hljs-tag .hljs-value {
-  color: #00f;
-  font-style: normal;
-}
-
-.hljs-keyword {
-  font-weight: bold;
-}
-
-.hljs-field, 
+.hljs-field,
 .hljs-set-analysis-quotes {
-  color: #800000;
-  font-style: normal;
+    color: #800000;
+    font-style: normal;
 }
 
 .ruby .hljs-string,
@@ -88,8 +89,8 @@
 .nginx .hljs-built_in,
 .tex .hljs-special,
 .hljs-prompt {
-  color: #2b91af;
-  font-style: normal;
+    color: #2b91af;
+    font-style: normal;
 }
 
 .hljs-phpdoc,
@@ -97,38 +98,78 @@
 .hljs-javadoc,
 .hljs-xmlDocTag,
 .hljs-variable {
-  color: #808080;
-  font-style: italic;
+    color: #808080;
+    font-style: italic;
 }
 
 .hljs-type,
-.hljs-typename { font-weight: bold; }
+.hljs-typename {
+    font-weight: bold;
+}
 
-.vhdl .hljs-string { color: #666; }
-.vhdl .hljs-literal { color: #800000; }
-.vhdl .hljs-attribute { color: #00b0e8; }
+.vhdl .hljs-string {
+    color: #666666;
+}
 
-.xml .hljs-attribute { color: #f00; }
+.vhdl .hljs-literal {
+    color: #800000;
+}
 
-/* Line Numbers for Highlight.js */
+.vhdl .hljs-attribute {
+    color: #00b0e8;
+}
+
+.xml .hljs-attribute {
+    color: #f00;
+}
+
+
+/* Line Numbers for Highlight.js styles */
 
 /* for block of numbers */
 td.hljs-ln-numbers {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
-  text-align: center;
-  color: #ccc;
-  border-right: 1px solid #CCC;
-  vertical-align: top;
-  padding-right: 5px;
-  padding-left: 5px;
+    text-align: center;
+    color: #ccc;
+    border-right: 1px solid #CCC;
+    vertical-align: top;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 td.hljs-ln-code {
-  padding-left: 10px;
+    padding-left: 10px;
+}
+
+/* Code copy style */
+pre.qlik-highlight-pre {
+    position: relative;
+    overflow: visible;
+}
+
+pre.qlik-highlight-pre .btn {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    visibility: hidden;
+    padding: 2px 6px;
+    position: absolute;
+    top: 28px;
+    right: 28px;
+}
+
+pre.qlik-highlight-pre:hover .btn,
+pre.qlik-highlight-pre .btn:focus {
+    visibility: visible;
+}
+
+pre.qlik-highlight-pre .btn .clippy {
+    margin-top: -3px;
+    position: relative;
+    top: 3px;
 }
