@@ -104,32 +104,31 @@
 .hljs-type,
 .hljs-typename { font-weight: bold; }
 
-.vhdl .hljs-string { color: #666666; }
+.vhdl .hljs-string { color: #666; }
 .vhdl .hljs-literal { color: #800000; }
 .vhdl .hljs-attribute { color: #00b0e8; }
 
 .xml .hljs-attribute { color: #f00; }
 
-
 /* Line Numbers for Highlight.js */
 
 /* for block of numbers */
 td.hljs-ln-numbers {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
-	text-align: center;
-	color: #ccc;
-	border-right: 1px solid #CCC;
-	vertical-align: top;
-	padding-right: 5px;
-	padding-left: 5px;
+  text-align: center;
+  color: #ccc;
+  border-right: 1px solid #CCC;
+  vertical-align: top;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 td.hljs-ln-code {
-	padding-left: 10px;
+  padding-left: 10px;
 }
