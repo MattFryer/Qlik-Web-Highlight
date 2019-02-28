@@ -7,10 +7,10 @@
   font-family: 'LUIicons';
   src: url('fonts/LUIicons.eot');
   src: url('fonts/LUIicons.woff2') format('woff2'),
-       url('fonts/LUIicons.woff') format('woff'),
-       url('fonts/LUIicons.ttf') format('truetype'),
-       url('fonts/LUIicons.svg#LUIicons') format('svg'),
-       url('fonts/LUIicons.eot?#iefix') format('embedded-opentype');
+    url('fonts/LUIicons.woff') format('woff'),
+    url('fonts/LUIicons.ttf') format('truetype'),
+    url('fonts/LUIicons.svg#LUIicons') format('svg'),
+    url('fonts/LUIicons.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -33,26 +33,19 @@
   vertical-align: -.0667em; 
 }
 
-.qicon-xs {
-  font-size: .75em; }
+.qicon-xs { font-size: .75em; }
 
-.qicon-sm {
-  font-size: .875em; }
+.qicon-sm { font-size: .875em; }
 
-.qicon-1x {
-  font-size: 1em; }
+.qicon-1x { font-size: 1em; }
 
-.qicon-2x {
-  font-size: 2em; }
+.qicon-2x { font-size: 2em; }
 
-.qicon-3x {
-  font-size: 3em; }
+.qicon-3x { font-size: 3em; }
 
-.qicon-4x {
-  font-size: 4em; }
+.qicon-4x { font-size: 4em; }
 
-.qicon-5x {
-  font-size: 5em; }
+.qicon-5x { font-size: 5em; }
 	
 /* Qlik Sense Icons */	
 .qicon-bars-vert:before {
