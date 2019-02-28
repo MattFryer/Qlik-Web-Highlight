@@ -15,7 +15,7 @@ div.qlik-highlight-admin table {
 
 div.qlik-highlight-admin table.border th,
 div.qlik-highlight-admin table.border td {
-	border: 1px solid #999999;
+	border: 1px solid #999;
 	padding: 5px 10px;
 }
 
@@ -47,8 +47,8 @@ div.qlik-highlight-admin hr {
 }
 
 .qlik_highlight_shortcode_popup .content h4:first-child {
-	margin-top: 0px;
-	padding-top: 0px;
+	margin-top: 0;
+	padding-top: 0;
 }
 
 .qlik_highlight_shortcode_popup .content .justify {
@@ -72,5 +72,5 @@ div.qlik-highlight-admin hr {
 
 .qlik_highlight_shortcode_popup .buttons input, 
 .qlik_highlight_shortcode_popup .buttons a {
-	margin: 0px 5px;
+	margin: 0 5px;
 }
