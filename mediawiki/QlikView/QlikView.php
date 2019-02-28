@@ -1,11 +1,7 @@
  <?php
 # This is not a valid entry point to MediaWiki.
 if( !defined( 'MEDIAWIKI' ) ) {
-	echo <<<EOT
-To install QlikView for WordPress, put the following line in LocalSettings.php:
-require_once( "\$IP/extensions/QlikView/QlikView.php" );
-EOT;
-	exit( 1 );
+	die( 'To install QlikView Syntax Highlight, put the following line in LocalSettings.php: require_once( "\$IP/extensions/QlikView/QlikView.php" );' );
 }
 
 # Take credit for this extension.
