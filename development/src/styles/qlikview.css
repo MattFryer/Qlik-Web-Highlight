@@ -18,26 +18,27 @@
   font-style: normal;
 }
 
-.hljs-keyword,
-.hljs-function_keyword,
-.hljs-format_specification_items,
-.hljs-id,
-.hljs-built_in,.css
-.smalltalk .hljs-class,
-.hljs-winutils,
-.bash .hljs-variable,
-.tex .hljs-command,
-.hljs-request,
-.hljs-status,
-.nginx .hljs-title,
-.xml .hljs-tag,
-.xml .hljs-tag .hljs-value {
-  color: #00f;
+.ruby .hljs-string,
+.hljs-decorator,
+.hljs-filter .hljs-argument,
+.hljs-localvars,
+.hljs-array,
+.hljs-attr_selector,
+.hljs-pseudo,
+.hljs-pi,
+.hljs-doctype,
+.hljs-deletion,
+.hljs-envvar,
+.hljs-shebang,
+.hljs-preprocessor,
+.hljs-pragma,
+.userType,
+.apache .hljs-sqbracket,
+.nginx .hljs-built_in,
+.tex .hljs-special,
+.hljs-prompt {
+  color: #2b91af;
   font-style: normal;
-}
-
-.hljs-keyword {
-  font-weight: bold;
 }
 
 .hljs-string,
@@ -61,32 +62,31 @@
   font-style: normal;
 }
 
-.hljs-field, 
-.hljs-set-analysis-quotes {
-  color: #800000;
+.hljs-keyword,
+.hljs-function_keyword,
+.hljs-format_specification_items,
+.hljs-id,
+.hljs-built_in,.css
+.smalltalk .hljs-class,
+.hljs-winutils,
+.bash .hljs-variable,
+.tex .hljs-command,
+.hljs-request,
+.hljs-status,
+.nginx .hljs-title,
+.xml .hljs-tag,
+.xml .hljs-tag .hljs-value {
+  color: #00f;
   font-style: normal;
 }
 
-.ruby .hljs-string,
-.hljs-decorator,
-.hljs-filter .hljs-argument,
-.hljs-localvars,
-.hljs-array,
-.hljs-attr_selector,
-.hljs-pseudo,
-.hljs-pi,
-.hljs-doctype,
-.hljs-deletion,
-.hljs-envvar,
-.hljs-shebang,
-.hljs-preprocessor,
-.hljs-pragma,
-.userType,
-.apache .hljs-sqbracket,
-.nginx .hljs-built_in,
-.tex .hljs-special,
-.hljs-prompt {
-  color: #2b91af;
+.hljs-keyword {
+  font-weight: bold;
+}
+
+.hljs-field, 
+.hljs-set-analysis-quotes {
+  color: #800000;
   font-style: normal;
 }
 
