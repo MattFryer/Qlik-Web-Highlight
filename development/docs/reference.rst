@@ -133,6 +133,75 @@ This is when ``endsWithParent`` comes into play:
     ]
   }
 
+.. _endsParent:
+
+endsParent
+^^^^^^^^^^^^^^
+
+**type**: boolean
+
+Forces closing of the parent mode right after the current mode is closed.
+
+This is used for modes that don't have an easily expressible ending lexeme but
+instead could be closed after the last interesting sub-mode is found.
+
+Here's an example with two ways of defining functions in Elixir, one using a
+keyword ``do`` and another using a comma:
+
+::
+
+  def foo :clear, list do
+    :ok
+  end
+
+  def foo, do: IO.puts "hello world"
+
+Note that in the first case the parameter list after the function title may also
+include a comma. And if we're only interested in highlighting a title we can
+tell it to end the function definition after itself:
+
+::
+
+  {
+    className: 'function',
+    beginKeywords: 'def', end: /\B\b/,
+    contains: [
+      {
+        className: 'title',
+        begin: hljs.IDENT_RE, endsParent: true
+      }
+    ]
+  }
+
+(The ``end: /\B\b/`` regex tells function to never end by itself.)
+
+.. _endSameAsBegin:
+
+endSameAsBegin
+^^^^^^^^^^^^^^
+
+**type**: boolean
+
+Acts as ``end`` matching exactly the same string that was found by the
+corresponding ``begin`` regexp.
+
+For example, in PostgreSQL string constants can uee "dollar quotes",
+consisting of a dollar sign, an optional tag of zero or more characters,
+and another dollar sign. String constant must be ended with the same
+construct using the same tag. It is possible to nest dollar-quoted string
+constants by choosing different tags at each nesting level:
+
+::
+
+  $foo$
+    ...
+    $bar$ nested $bar$
+    ...
+  $foo$
+
+In this case you can't simply specify the same regexp for ``begin`` and
+``end`` (say, ``"\\$[a-z]\\$"``), but you can use ``begin: "\\$[a-z]\\$"``
+and ``endSameAsBegin: true``.
 
 .. _lexemes:
 
@@ -244,32 +313,48 @@ each having all the attributes from the main definition augmented or overridden 
 subLanguage
 ^^^^^^^^^^^
 
-**type**: identifier
+**type**: string or array
 
-The name of another language used to parse the contents of the mode.
-When using this attribute there's no point to define internal parsing rules like :ref:`lexemes` or :ref:`keywords`.
-Also it is recommended to skip ``className`` attribute since the sublanguage will wrap the text in its own ``<span class="language-name">``
+Highlights the entire contents of the mode with another language.
 
-If the attribute is set to an empty string highlight.js will highlight the mode contents with language detection.
+When using this attribute there's no point to define internal parsing rules like :ref:`lexemes` or :ref:`keywords`. Also it is recommended to skip ``className`` attribute since the sublanguage will wrap the text in its own ``<span class="language-name">``.
 
-Note that for this to work the language should be included in the package (obviously).
+The value of the attribute controls which language or languages will be used for highlighting:
 
-subLanguageMode
-^^^^^^^^^^^^^^^
+* language name: explicit highlighting with the specified language
+* empty array: auto detection with all the languages available
+* array of language names: auto detection constrained to the specified set
 
-**type**: identifier
+skip
+^^^^
 
-The only available value for this is ``'continuous'``. By default ``subLanguage`` highlights the contents of the mode as an isolated code snippet. In continuous mode every occurrence of the mode is treated as a continuation of the previous one and highlighted from the point where it was interrupted before.
+**type**: boolean
 
-This is best illustrated by an example. The following snippet consists of HTML markup intermixed with some templating language::
+Skips any markup processing for the mode ensuring that it remains a part of its
+parent buffer along with the starting and the ending lexemes. This works in
+conjunction with the parent's :ref:`subLanguage` when it requires complex
+parsing.
 
-    <link href="<% url 'style.css' absolute %>" rel="stylesheet">
+Consider parsing PHP inside HTML::
 
-To highlight HTML markup outside templating tags the language can be defined like this::
+  <p><? echo 'PHP'; /* ?> */ ?></p>
 
-    {
-      subLanguage: 'xml', subLanguageMode: 'continuous',
-      contains: [ ... templating tags ... ]
-    }
+The ``?>`` inside the comment should **not** end the PHP part, so we have to
+handle pairs of ``/* .. */`` to correctly find the ending ``?>``::
 
-The outside contents will be highlighted as 'xml' up to the first double quote. Then the templating tag will be highlighted according to the rules of the templating language. And after that 'xml' will restart from the previous parsing state — inside the value of a tag — and will correctly process the closing double quote and highlight the next HTML attribute.
+  {
+    begin: /<\?/, end: /\?>/,
+    subLanguage: 'php',
+    contains: [{begin: '/\\*', end: '\\*/', skip: true}]
+  }
+
+Without ``skip: true`` every comment would cause the parser to drop out back
+into the HTML mode.
+
+disableAutodetect
+^^^^^^^^^^^^^^^^^
+
+**type**: boolean
+
+Disables autodetection for this language.
+

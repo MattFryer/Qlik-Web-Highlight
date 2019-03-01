@@ -88,6 +88,124 @@
 
 <div id="languages">
   
+  <div class="common css">
+    <h2>CSS</h2>
+    <pre><code class="css">@font-face {
+  font-family: Chunkfive; src: url(&#39;Chunkfive.otf&#39;);
+}
+
+body, .usertext {
+  color: #F0F0F0; background: #600;
+  font-family: Chunkfive, sans;
+}
+
+@import url(print.css);
+@media print {
+  a[href^=http]::after {
+    content: attr(href)
+  }
+}
+</code></pre>
+  </div>
+  
+  <div class="common scripting">
+    <h2>JavaScript</h2>
+    <pre><code class="javascript">function $initHighlight(block, cls) {
+  try {
+    if (cls.search(/\bno\-highlight\b/) != -1)
+      return process(block, true, 0x0F) +
+             ` class=&quot;${cls}&quot;`;
+  } catch (e) {
+    /* handle exception */
+  }
+  for (var i = 0 / 2; i &lt; classes.length; i++) {
+    if (checkCondition(classes[i]) === undefined)
+      console.log(&#39;undefined&#39;);
+  }
+}
+
+export  $initHighlight;
+</code></pre>
+  </div>
+  
+  <div class="">
+    <h2>Qlik Expressions/Measures</h2>
+    <pre><code class="qlikview-expression"></code></pre>
+  </div>
+  
+  <div class="">
+    <h2>QlikView Script</h2>
+    <pre><code class="qlikview-script"></code></pre>
+  </div>
+  
+  <div class="common">
+    <h2>SQL</h2>
+    <pre><code class="sql">CREATE TABLE &quot;topic&quot; (
+    &quot;id&quot; serial NOT NULL PRIMARY KEY,
+    &quot;forum_id&quot; integer NOT NULL,
+    &quot;subject&quot; varchar(255) NOT NULL
+);
+ALTER TABLE &quot;topic&quot;
+ADD CONSTRAINT forum_id FOREIGN KEY (&quot;forum_id&quot;)
+REFERENCES &quot;forum&quot; (&quot;id&quot;);
+
+-- Initials
+insert into &quot;topic&quot; (&quot;forum_id&quot;, &quot;subject&quot;)
+values (2, &#39;D&#39;&#39;artagnian&#39;);
+</code></pre>
+  </div>
+  
+  <div class="scripting">
+    <h2>VBScript</h2>
+    <pre><code class="vbscript">&#39; creating configuration storage and initializing with default values
+Set cfg = CreateObject(&quot;Scripting.Dictionary&quot;)
+
+&#39; reading ini file
+for i = 0 to ubound(ini_strings)
+    s = trim(ini_strings(i))
+
+    &#39; skipping empty strings and comments
+    if mid(s, 1, 1) &lt;&gt; &quot;#&quot; and len(s) &gt; 0 then
+      &#39; obtaining key and value
+      parts = split(s, &quot;=&quot;, -1, 1)
+
+      if ubound(parts)+1 = 2 then
+        parts(0) = trim(parts(0))
+        parts(1) = trim(parts(1))
+
+        &#39; reading configuration and filenames
+        select case lcase(parts(0))
+          case &quot;uncompressed&quot;&quot;_postfix&quot; cfg.item(&quot;uncompressed&quot;&quot;_postfix&quot;) = parts(1)
+          case &quot;f&quot;
+                    options = split(parts(1), &quot;|&quot;, -1, 1)
+                    if ubound(options)+1 = 2 then
+                      &#39; 0: filename,  1: options
+                      ff.add trim(options(0)), trim(options(1))
+                    end if
+        end select
+      end if
+    end if
+next</code></pre>
+  </div>
+  
+  <div class="common">
+    <h2>HTML, XML</h2>
+    <pre><code class="xml">&lt;!DOCTYPE html&gt;
+&lt;title&gt;Title&lt;/title&gt;
+
+&lt;style&gt;body {width: 500px;}&lt;/style&gt;
+
+&lt;script type=&quot;application/javascript&quot;&gt;
+  function $init() {return true;}
+&lt;/script&gt;
+
+&lt;body&gt;
+  &lt;p checked class=&quot;title&quot; id=&#39;title&#39;&gt;Title&lt;/p&gt;
+  &lt;!-- here goes the rest of the page --&gt;
+&lt;/body&gt;
+</code></pre>
+  </div>
+  
 </div>
 
 </div>

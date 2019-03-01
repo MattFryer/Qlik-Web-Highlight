@@ -1,13 +1,16 @@
 'use strict';
 
-var _    = require('lodash');
-var path = require('path');
+let _        = require('lodash');
+let bluebird = require('bluebird');
+let glob     = bluebird.promisify(require('glob'));
+let path     = require('path');
 
-var REPLACES,
-    regex       = {},
+let Queue = require('gear').Queue;
+
+let regex       = {},
     headerRegex = /^\s*\/\*((.|\r?\n)*?)\*/;
 
-REPLACES = {
+const REPLACES = {
   'case_insensitive': 'cI',
   'lexemes': 'l',
   'contains': 'c',
@@ -46,97 +49,132 @@ REPLACES = {
   'REGEXP_MODE': 'RM',
   'TITLE_MODE': 'TM',
   'UNDERSCORE_TITLE_MODE': 'UTM',
+  'COMMENT': 'C',
 
   'beginRe': 'bR',
   'endRe': 'eR',
   'illegalRe': 'iR',
   'lexemesRe': 'lR',
   'terminators': 't',
-  'terminator_end': 'tE',
+  'terminator_end': 'tE'
 };
 
 regex.replaces = new RegExp(
-  '\\b(' + Object.keys(REPLACES).join('|') + ')\\b', 'g');
+  `(?:([\\w\\d]+)\\.(${Object.keys(REPLACES).filter(r => r.toUpperCase() === r).join('|')})\\s*=(?!=)|\\b(${Object.keys(REPLACES).join('|')})\\b)`, 'g');
 
 regex.classname = /(block|parentNode)\.cN/g;
 
 regex.header = /^\s*(\/\*((.|\r?\n)*?)\*\/)?\s*/;
 
+regex.apiReplacesFrom = /\bvar\s*API_REPLACES\b/;
+regex.apiReplacesTo = `var API_REPLACES = ${JSON.stringify(REPLACES)}`;
+
 function replace(from, to) {
   return { regex: from, replace: to };
 }
 
-function replaceClassNames(match) {
-  return REPLACES[match];
+function replaceClassNames(match, gDeclObj, gDeclKey) {
+  if(gDeclObj)
+    return replaceAndSaveClassNames(gDeclObj, gDeclKey);
+  else
+    return REPLACES[match];
 }
 
+function replaceAndSaveClassNames(obj, key) {
+  return `${obj}.${REPLACES[key]} = ${obj}.${key} =`;
+}
+
+// All meta data, for each language definition, it store within the headers
+// of each file in `src/languages`. `parseHeader` extracts that data and
+// turns it into a useful object -- mainly for categories and what language
+// this definition requires.
 function parseHeader(content) {
-  var object  = {},
-      headers,
+  let headers,
       match = content.match(headerRegex);
 
   if (!match) {
     return null;
   }
 
-  headers = match[1].split('\n');
-  _(headers)
-    .compact()
-    .each(function(h) {
-      var keyVal = h.trim().split(': '),
-          key    = keyVal[0],
-          value  = keyVal[1] || "";
+  headers = _.compact(match[1].split('\n'));
 
-      if(key !== 'Description' && key !== 'Language') {
-        value = value.split(/\s*,\s*/);
-      }
+  return _.reduce(headers, function(result, header) {
+    let keyVal = header.trim().split(': '),
+        key    = keyVal[0],
+        value  = keyVal[1] || '';
 
-      object[key] = value;
-    });
+    if(key !== 'Description' && key !== 'Language') {
+      value = value.split(/\s*,\s*/);
+    }
 
-  return object;
+    result[key] = value;
+
+    return result;
+  }, {});
 }
 
 function filterByQualifiers(blob, languages, categories) {
   if(_.isEmpty(languages) && _.isEmpty(categories)) return true;
 
-  var language       = path.basename(blob.name, '.js'),
-      fileInfo       = parseHeader(blob.result),
-      fileCategories = (fileInfo && fileInfo.Category) ? fileInfo.Category : [];
+  let language         = path.basename(blob.name, '.js'),
+      fileInfo         = parseHeader(blob.result),
+      containsCategory = _.partial(_.includes, categories);
 
   if(!fileInfo) return false;
 
-  return _.contains(languages, language) ||
-         _.any(fileCategories, function(fc) {return _.contains(categories, fc)});
+  let fileCategories = fileInfo.Category || [];
+
+  return _.includes(languages, language) ||
+         _.some(fileCategories, containsCategory);
 }
 
+// For the filter task in `tools/tasks.js`, this function will look for
+// categories and languages specificed from the CLI.
 function buildFilterCallback(qualifiers) {
+  const result     = _.partition(qualifiers, { 0: ':' }),
+        languages  = result[1],
+        categories = _.map(result[0], category => category.slice(1));
 
-  function isCategory(qualifier) {return qualifier[0] === ':'}
-
-  var languages  = _.reject(qualifiers, isCategory),
-      categories = _(qualifiers).filter(isCategory)
-                                .map(function(c) {return c.slice(1);})
-                                .value();
-
-  return function(blob) {
-    var basename = path.basename(blob.name);
-    return filterByQualifiers(blob, languages, categories) ||
-           basename === 'highlight.js';
-  };
+  return blob => filterByQualifiers(blob, languages, categories);
 }
 
-function glob(pattern, encoding) {
+function globDefaults(pattern, encoding) {
   encoding = encoding || 'utf8';
 
+  // The limit option is a fix for issue #636 when the build script would
+  // EMFILE error for those systems who had a limit of open files per
+  // process.
+  //
+  // <https://github.com/highlightjs/highlight.js/issues/636>
   return { pattern: pattern, limit: 50, encoding: encoding };
+}
+
+function getStyleNames() {
+  let stylesDir = 'src/styles/',
+      options   = { ignore: `${stylesDir}default.css` };
+
+  return glob(`${stylesDir}*.css`, options)
+    .map(function(style) {
+      let basename = path.basename(style, '.css'),
+          name     = _.startCase(basename),
+          pathName = path.relative('src', style);
+
+      return { path: pathName, name: name };
+    });
+}
+
+function toQueue(tasks, registry) {
+  return _.map(tasks, task => new Queue({ registry }).tasks(task));
 }
 
 module.exports = {
   buildFilterCallback: buildFilterCallback,
-  glob: glob,
+  getStyleNames: getStyleNames,
+  glob: globDefaults,
   parseHeader: parseHeader,
   regex: regex,
   replace: replace,
-  replaceClassNames: replaceClassNames
+  replaceClassNames: replaceClassNames,
+  toQueue: toQueue,
+  REPLACES: REPLACES
 };

@@ -123,7 +123,6 @@
     color: #f00;
 }
 
-
 /* Line Numbers for Highlight.js styles */
 
 /* for block of numbers */
@@ -134,10 +133,9 @@ td.hljs-ln-numbers {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
     text-align: center;
     color: #ccc;
-    border-right: 1px solid #CCC;
+    border-right: 1px solid #ccc;
     vertical-align: top;
     padding-right: 5px;
     padding-left: 5px;

@@ -1,7 +1,7 @@
 Library API
 ===========
 
-Highilght.js exports a few functions as methods of the ``hljs`` object.
+Highlight.js exports a few functions as methods of the ``hljs`` object.
 
 
 ``highlight(name, value, ignore_illegals, continuation)``
@@ -51,6 +51,10 @@ Applies highlighting to a DOM node containing code.
 
 This function is the one to use to apply highlighting dynamically after page load
 or within initialization code of third-party Javascript frameworks.
+
+The function uses language detection by default but you can specify the language
+in the ``class`` attribute of the DOM node. See the :doc:`class reference
+</css-classes-reference>` for all available language names and aliases.
 
 
 ``configure(options)``

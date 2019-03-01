@@ -1,110 +1,88 @@
 'use strict';
 
-var _ = require('lodash');
-var path = require('path');
+let path = require('path');
 
-var utility = require('./utility');
-var browserBuild = require('./browser');
+let browserBuild = require('./browser');
+let registry     = require('./tasks');
+let utility      = require('./utility');
+
+let directory;
 
 function moveLanguages() {
-    var input = path.join(dir.root, 'src', 'languages', '*.js'),
-        output = path.join(dir.build, 'languages'),
-        regex = utility.regex,
-        replace = utility.replace,
+  let input   = path.join(directory.root, 'src', 'languages', '*.js'),
+      output  = path.join(directory.build, 'languages'),
+      regex   = utility.regex,
+      replace = utility.replace,
 
-        replaceArgs = replace(regex.header, ''),
-        template = 'hljs.registerLanguage(\'<%= name %>\',' +
-        ' <%= content %>);\n';
+      replaceArgs = replace(regex.header, ''),
+      template    = 'hljs.registerLanguage(\'<%= name %>\','+
+                    ' <%= content %>);\n';
 
-    return {
-        startlogjs: {
-            task: ['log', 'Building language files.']
-        },
-        readjs: {
-            requires: 'startlogjs',
-            task: ['glob', utility.glob(input)]
-        },
-        replacejs: {
-            requires: 'readjs',
-            task: ['replace', replaceArgs]
-        },
-        templatejs: {
-            requires: 'replacejs',
-            task: ['template', template]
-        },
-        replacejs2: {
-            requires: 'templatejs',
-            task: ['replaceSkippingStrings', replace(regex.replaces, utility.replaceClassNames)]
-        },
-        replacejs3: {
-            requires: 'replacejs2',
-            task: ['replace', replace(regex.classname, '$1.className')]
-        },
-        compresslogjs: {
-            requires: 'replacejs3',
-            task: ['log', 'Compressing languages files.']
-        },
-        minifyjs: {
-            requires: 'compresslogjs',
-            task: 'jsminify'
-        },
-        renamejs: {
-            requires: 'minifyjs',
-            task: ['rename', {
-                extname: '.min.js'
-            }]
-        },
-        writelogjs: {
-            requires: 'renamejs',
-            task: ['log', 'Writing language files.']
-        },
-        writejs: {
-            requires: 'writelogjs',
-            task: ['dest', output]
-        }
-    };
+  return {
+    startLog: { task: ['log', 'Building language files.'] },
+    read: {
+      requires: 'startLog',
+      task: ['glob', utility.glob(input)]
+    },
+    replace: { requires: 'read', task: ['replace', replaceArgs] },
+    template: { requires: 'replace', task: ['template', template] },
+    replace2: {
+      requires: 'template',
+      task: [ 'replaceSkippingStrings'
+            , replace(regex.replaces, utility.replaceClassNames)
+            ]
+    },
+    replace3: {
+      requires: 'replace2',
+      task: ['replace', replace(regex.classname, '$1.className')]
+    },
+    compressLog: {
+      requires: 'replace3',
+      task: ['log', 'Compressing languages files.']
+    },
+    minify: { requires: 'compressLog', task: 'jsminify' },
+    rename: { requires: 'minify', task: ['rename', { extname: '.min.js' }] },
+    writeLog: {
+      requires: 'rename',
+      task: ['log', 'Writing language files.']
+    },
+    write: { requires: 'writeLog', task: ['dest', output] }
+  };
 }
 
 function moveStyles() {
-    var input = path.join(dir.root, 'src', 'styles', '*.css'),
-        output = path.join(dir.build, 'styles');
+  const css     = path.join(directory.root, 'src', 'styles', '*.css'),
+        images  = path.join(directory.root, 'src', 'styles', '*.{jpg,png}'),
+        output  = path.join(directory.build, 'styles'),
+        options = { dir: output, encoding: 'binary' };
 
-    return {
-        startlogcss: {
-            task: ['log', 'Building style files.']
-        },
-        readcss: {
-            requires: 'startlogcss',
-            task: ['glob', utility.glob(input)]
-        },
-        compresslogcss: {
-            requires: 'readcss',
-            task: ['log', 'Compressing style files.']
-        },
-        minifycss: {
-            requires: 'readcss',
-            task: 'cssminify'
-        },
-        renamecss: {
-            requires: 'minifycss',
-            task: ['rename', {
-                extname: '.min.css'
-            }]
-        },
-        writelogcss: {
-            requires: 'renamecss',
-            task: ['log', 'Writing style files.']
-        },
-        writecss: {
-            requires: 'writelogcss',
-            task: ['dest', output]
-        }
-    };
+  return {
+    startLog: { task: ['log', 'Building style files.'] },
+    readCSS: { requires: 'startLog', task: ['glob', utility.glob(css)] },
+    readImages: {
+      requires: 'startLog',
+      task: ['glob', utility.glob(images, 'binary')]
+    },
+    compressLog: {
+      requires: 'readCSS',
+      task: ['log', 'Compressing style files.']
+    },
+    minify: { requires: 'compressLog', task: 'cssminify' },
+    rename: {
+      requires: 'minify',
+      task: ['rename', { extname: '.min.css' }]
+    },
+    writeLog: {
+      requires: ['rename', 'readImages'],
+      task: ['log', 'Writing style files.']
+    },
+    write: { requires: 'writeLog', task: ['dest', options] }
+  };
 }
 
-module.exports = function (commander) {
-    return _.merge(
-        browserBuild(commander),
-        moveLanguages(),
-        moveStyles());
+module.exports = function(commander, dir) {
+  directory = dir;
+
+  return utility.toQueue([moveLanguages(), moveStyles()], registry)
+    .concat(browserBuild(commander, dir));
 };
