@@ -21,6 +21,36 @@
     font-style: normal;
 }
 
+.hljs-string,
+.hljs-operator,
+.hljs-title,
+.hljs-parent,
+.hljs-tag .hljs-value,
+.hljs-rules .hljs-value,
+.ruby .hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.hljs-template_tag,
+.django .hljs-variable,
+.hljs-addition,
+.hljs-flow,
+.hljs-stream,
+.apache .hljs-tag,
+.hljs-date,
+.tex .hljs-formula,
+.coffeescript .hljs-attribute {
+    color: #000;
+    font-style: normal;
+}
+
+.hljs-phpdoc,
+.hljs-dartdoc,
+.hljs-javadoc,
+.hljs-xmlDocTag,
+.hljs-variable {
+    color: #808080;
+    font-style: italic;
+}
+
 .hljs-keyword,
 .hljs-function_keyword,
 .hljs-format_specification_items,
@@ -41,27 +71,6 @@
 
 .hljs-keyword {
     font-weight: bold;
-}
-
-.hljs-string,
-.hljs-operator,
-.hljs-title,
-.hljs-parent,
-.hljs-tag .hljs-value,
-.hljs-rules .hljs-value,
-.ruby .hljs-symbol,
-.ruby .hljs-symbol .hljs-string,
-.hljs-template_tag,
-.django .hljs-variable,
-.hljs-addition,
-.hljs-flow,
-.hljs-stream,
-.apache .hljs-tag,
-.hljs-date,
-.tex .hljs-formula,
-.coffeescript .hljs-attribute {
-    color: #000;
-    font-style: normal;
 }
 
 .hljs-field,
@@ -93,22 +102,13 @@
     font-style: normal;
 }
 
-.hljs-phpdoc,
-.hljs-dartdoc,
-.hljs-javadoc,
-.hljs-xmlDocTag,
-.hljs-variable {
-    color: #808080;
-    font-style: italic;
-}
-
 .hljs-type,
 .hljs-typename {
     font-weight: bold;
 }
 
 .vhdl .hljs-string {
-    color: #666666;
+    color: #666;
 }
 
 .vhdl .hljs-literal {

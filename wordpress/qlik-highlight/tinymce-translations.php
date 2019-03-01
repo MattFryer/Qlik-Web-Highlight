@@ -3,7 +3,7 @@
  * @package Qlik_Highlight
  */
  
- defined('ABSPATH') or die("No humans here please!"); //Block direct access to this php file
+ defined('ABSPATH') or wp_die("No humans here please!"); //Block direct access to this php file
  
 if ( ! class_exists( '_WP_Editors' ) )
     require( ABSPATH . WPINC . '/class-wp-editor.php' );
