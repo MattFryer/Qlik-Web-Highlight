@@ -13,12 +13,12 @@ The Qlik Web Highlighting gives basic syntax highlighting of QlikView and Qlik S
 
 The syntax highlighting that is provided is an approximation of what you would get in Qlik's Edit Script and Edit Expression dialogs. It currently supports the following features:
 
-  * Highlighting of all current (v11.20) functions
-  * Highlighting of all current (v11.20) keywords and statements
-  * Highlighting of line comments (//) and block comments (/* */ and REM ; )
-  * Highlighting of variable definitions (SET and LET)
-  * Highlighting the usage of variable within dollar-sign expansion $( )
-  * Highlighting of field names in most situations
+*  Highlighting of all current (v11.20) functions
+*  Highlighting of all current (v11.20) keywords and statements
+*  Highlighting of line comments (//) and block comments (/* */ and REM ; )
+*  Highlighting of variable definitions (SET and LET)
+*  Highlighting the usage of variable within dollar-sign expansion $( )
+*  Highlighting of field names in most situations
 
 ![Syntax Highlighting](http://2.bp.blogspot.com/-h37l_MFTXsg/VEF85AJUa-I/AAAAAAAAAfE/EqTn5TPHBuU/s1600/screenshot-1.png)
 
@@ -34,10 +34,13 @@ Here are the steps to get it installed and working yourself.
 
 ### Syntax Highlighting
 
-1. Go to the latest QlikView Web Highlighting release at https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest/. Click on the file named qvhighlight_vX.X.zip to download.
-1. Unpack the folder and its contained files from the archive to a folder on you hard drive. 
-1. Upload the folder and its contents to your website (eg. using FTP)
-1. Edit the web page(s) in which you wish to display QlikView script and add the following lines within the <head> section:
+1.  Go to the latest QlikView Web Highlighting release at [https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest/](https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest/). Click on the file named qvhighlight_vX.X.zip to download.
+
+2.  Unpack the folder and its contained files from the archive to a folder on you hard drive.
+
+3.  Upload the folder and its contents to your website (eg. using FTP)
+
+4.  Edit the web page(s) in which you wish to display QlikView script and add the following lines within the <head> section:
     ```html
     <link href="/qvhighlight/qlikview.css" rel="stylesheet" title="QlikView"></link>
     <script src="/qvhighlight/highlight.pack.js"></script>
@@ -51,10 +54,13 @@ Here are the steps to get it installed and working yourself.
 
 Note: If you have already installed the Syntax Highlighting, you can skip to step 4 below.
 
-1. Go to the latest QlikView Web Highlighting release at https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest/. Click on the file named qvhighlight_vX.X.zip to download.
-1. Unpack the folder and its contained files from the archive to a folder on you hard drive. 
-1. Upload the folder and its contents to your website (eg. using FTP)
-1. Edit the web page(s) in which you wish to display QlikView script and add the following lines within the <head> section:
+1.  Go to the latest QlikView Web Highlighting release at [https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest/](https://github.com/MattFryer/QlikView-Web-Highlight/releases/latest/). Click on the file named qvhighlight_vX.X.zip to download.
+
+2.  Unpack the folder and its contained files from the archive to a folder on you hard drive.
+
+3.  Upload the folder and its contents to your website (eg. using FTP)
+
+4.  Edit the web page(s) in which you wish to display QlikView script and add the following lines within the <head> section:
     ```html
     <link href="/qvhighlight/qlik-icons.css" rel="stylesheet" title="Qlik Icons"></link>
     ```
@@ -73,11 +79,11 @@ Wrap any Qlik script blocks included within the web page in &lt;pre&gt; and &lt;
 
 The class allocated within the code tag will define the type of code which syntax highlighting should be applied for. If no code type is given, the highlighting engine will attempt to work out what code type is contained within the tags. It can't always guess correctly and so it is recommended to always define the code type. The following following code types are currently supported:
 
-* "qvs" - QlikView Script
-* "exp" or "qve" - QlikView Expression
-* "sql" - SQL
-* "vbscript" - Visual Basic Script
-* "javascript" - Java Script
+*  "qvs" - QlikView Script
+*  "exp" or "qve" - QlikView Expression
+*  "sql" - SQL
+*  "vbscript" - Visual Basic Script
+*  "javascript" - Java Script
 
 Syntax highlighting will then automatically be applied to the block when the page is viewed by the user.
 
