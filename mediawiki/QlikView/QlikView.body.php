@@ -1,9 +1,5 @@
 <?php
- // This is not a valid entry point to MediaWiki.
-if (!defined('MEDIAWIKI')) {
-    die('To install QlikView Syntax Highlight, put the following line in LocalSettings.php: require_once( "\$IP/extensions/QlikView/QlikView.php" );');
-}
-
+ 
 class QlikView
 {
 
