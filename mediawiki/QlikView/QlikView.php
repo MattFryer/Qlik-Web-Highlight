@@ -14,7 +14,7 @@ $wgExtensionCredits['other'][] = array(
     'version' => '0.1',
 );
 
-$dir = dirname(__FILE__) . '/';
+$dir = __DIR__ . '/';
 
 // Register the extension's main code/class.
 $wgAutoloadClasses['QlikView'] = $dir . 'QlikView.body.php';
@@ -30,7 +30,7 @@ $wgHooks['BeforePageDisplay'][] = 'QlikView::onBeforePageDisplay';
 
 // ResourceLoader modules
 $wgResourceModules['ext.QlikView'] = array(
-    'localBasePath' => dirname(__FILE__),
+    'localBasePath' => __DIR__,
     'remoteExtPath' => 'QlikView',
     'styles' => array('resources/qlikview.css'),
     'scripts' => array('resources/highlight.pack.js', 'resources/highight.init.js')
