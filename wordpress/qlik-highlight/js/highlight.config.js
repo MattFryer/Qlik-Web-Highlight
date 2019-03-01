@@ -1,3 +1,6 @@
+/*global
+hljs
+*/
 (function ($) {
     $(document).ready(function () {
         hljs.configure({

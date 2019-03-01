@@ -1,3 +1,6 @@
+/*global
+Clipboard
+*/
 var snippets = document.querySelectorAll(".qlik-highlight-pre");
 
 [].forEach.call(snippets, function (snippet) {

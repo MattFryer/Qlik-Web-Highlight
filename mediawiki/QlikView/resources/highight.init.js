@@ -1,3 +1,6 @@
+/*global
+hljs
+*/
 $(function () {
     hljs.configure({
         tabReplace: "    "
