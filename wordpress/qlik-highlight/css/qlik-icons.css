@@ -8,8 +8,8 @@
 @font-face {
     font-family: 'LUIicons';
     src: url('fonts/LUIicons.eot');
-    src: 
-	url('fonts/LUIicons.woff2') format('woff2'),
+    src:
+        url('fonts/LUIicons.woff2') format('woff2'),
         url('fonts/LUIicons.woff') format('woff'),
         url('fonts/LUIicons.ttf') format('truetype'),
         url('fonts/LUIicons.svg#LUIicons') format('svg'),
@@ -21,8 +21,8 @@
 @font-face {
     font-family: 'Qlik-Icons';
     src: url('fonts/qlik-icons.eot');
-    src: 
-	url('fonts/qlik-icons.woff') format('woff'),
+    src:
+        url('fonts/qlik-icons.woff') format('woff'),
         url('fonts/qlik-icons.ttf') format('truetype'),
         url('fonts/qlik-icons.svg#qlik-icons') format('svg'),
         url('fonts/qlik-icons.eot?#iefix') format('embedded-opentype');
@@ -547,7 +547,7 @@
 }
 
 .qicon-proxies::before,
-.qicon-virtual-proxies:before {
+.qicon-virtual-proxies::before {
     font-family: 'LUIicons';
     content: "\00E5";
 }
@@ -738,6 +738,7 @@
 }
 
 /* QlikView Icons */
+
 /* These are recreations and not 100% accurate so currently not used
 .qlik-icon-edit-script::before { content: "\e001"; }
 .qlik-icon-clear::before { content: "\e002"; }
@@ -767,180 +768,180 @@
     width: 20px;
     height: 20px;
     display: inline-block;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     line-height: 1;
     speak-as: none;
 }
 
 .qvicon-clear {
-    background-position: -50px 0
+    background-position: -50px 0;
 }
 
 .qvicon-back {
-    background-position: -70px 0
+    background-position: -70px 0;
 }
 
 .qvicon-forward {
-    background-position: -90px 0
+    background-position: -90px 0;
 }
 
 .qvicon-undo {
-    background-position: -110px 0
+    background-position: -110px 0;
 }
 
 .qvicon-redo {
-    background-position: -130px 0
+    background-position: -130px 0;
 }
 
 .qvicon-lock {
-    background-position: -150px 0
+    background-position: -150px 0;
 }
 
 .qvicon-unlock {
-    background-position: -170px 0
+    background-position: -170px 0;
 }
 
 .qvicon-notes {
-    background-position: -190px 0
+    background-position: -190px 0;
 }
 
 .qvicon-bookmark-add {
-    background-position: -210px 0
+    background-position: -210px 0;
 }
 
 .qvicon-bookmark-remove {
-    background-position: -230px 0
+    background-position: -230px 0;
 }
 
 .qvicon-help {
-    background-position: -290px 0
+    background-position: -290px 0;
 }
 
 .qvicon-small-device {
-    background-position: -330px 0
+    background-position: -330px 0;
 }
 
 .qvicon-repository {
-    background-position: -350px 0
+    background-position: -350px 0;
 }
 
 .qvicon-select-fields {
-    background-position: -370px 0
+    background-position: -370px 0;
 }
 
 .qvicon-selections {
-    background-position: -410px 0
+    background-position: -410px 0;
 }
 
 .qvicon-new-sheet-object {
-    background-position: -430px 0
+    background-position: -430px 0;
 }
 
 .qvicon-text-object {
-    background-position: -52px -502px
+    background-position: -52px -502px;
 }
 
 .qvicon-current-selections {
-    background-position: -102px -502px
+    background-position: -102px -502px;
 }
 
 .qvicon-container {
-    background-position: -152px -502px
+    background-position: -152px -502px;
 }
 
 .qvicon-bookmark-object {
-    background-position: -202px -502px
+    background-position: -202px -502px;
 }
 
 .qvicon-button-object {
-    background-position: -252px -502px
+    background-position: -252px -502px;
 }
 
 .qvicon-list-box {
-    background-position: -302px -502px
+    background-position: -302px -502px;
 }
 
 .qvicon-line-arrow {
-    background-position: -352px -502px
+    background-position: -352px -502px;
 }
 
 .qvicon-statistics-box {
-    background-position: -402px -502px
+    background-position: -402px -502px;
 }
 
 .qvicon-search-object {
-    background-position: -452px -502px
+    background-position: -452px -502px;
 }
 
 .qvicon-input-box {
-    background-position: -552px -502px
+    background-position: -552px -502px;
 }
 
 .qvicon-multi-box {
-    background-position: -602px -502px
+    background-position: -602px -502px;
 }
 
 .qvicon-table-box {
-    background-position: -652px -502px
+    background-position: -652px -502px;
 }
 
 .qvicon-calendar {
-    background-position: -702px -502px
+    background-position: -702px -502px;
 }
 
 .qvicon-funel-chart {
-    background-position: -752px -502px
+    background-position: -752px -502px;
 }
 
 .qvicon-block-chart {
-    background-position: -52px -551px
+    background-position: -52px -551px;
 }
 
 .qvicon-mekko-chart {
-    background-position: -102px -551px
+    background-position: -102px -551px;
 }
 
 .qvicon-scatter-chart {
-    background-position: -152px -551px
+    background-position: -152px -551px;
 }
 
 .qvicon-grid-chart {
-    background-position: -202px -551px
+    background-position: -202px -551px;
 }
 
 .qvicon-pivot-table {
-    background-position: -252px -551px
+    background-position: -252px -551px;
 }
 
 .qvicon-bar-chart {
-    background-position: -302px -551px
+    background-position: -302px -551px;
 }
 
 .qvicon-line-chart {
-    background-position: -352px -551px
+    background-position: -352px -551px;
 }
 
 .qvicon-combo-chart {
-    background-position: -402px -551px
+    background-position: -402px -551px;
 }
 
 .qvicon-radar-chart {
-    background-position: -452px -551px
+    background-position: -452px -551px;
 }
 
 .qvicon-gauge-chart {
-    background-position: -502px -551px
+    background-position: -502px -551px;
 }
 
 .qvicon-straight-table {
-    background-position: -552px -551px
+    background-position: -552px -551px;
 }
 
 .qvicon-pie-chart {
-    background-position: -602px -551px
+    background-position: -602px -551px;
 }
 
 .qvicon-slider {
-    background-position: -652px -551px
+    background-position: -652px -551px;
 }
