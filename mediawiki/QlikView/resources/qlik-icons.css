@@ -8,7 +8,8 @@
 @font-face {
     font-family: 'LUIicons';
     src: url('fonts/LUIicons.eot');
-    src: url('fonts/LUIicons.woff2') format('woff2'),
+    src: 
+	url('fonts/LUIicons.woff2') format('woff2'),
         url('fonts/LUIicons.woff') format('woff'),
         url('fonts/LUIicons.ttf') format('truetype'),
         url('fonts/LUIicons.svg#LUIicons') format('svg'),
@@ -20,7 +21,8 @@
 @font-face {
     font-family: 'Qlik-Icons';
     src: url('fonts/qlik-icons.eot');
-    src: url('fonts/qlik-icons.woff') format('woff'),
+    src: 
+	url('fonts/qlik-icons.woff') format('woff'),
         url('fonts/qlik-icons.ttf') format('truetype'),
         url('fonts/qlik-icons.svg#qlik-icons') format('svg'),
         url('fonts/qlik-icons.eot?#iefix') format('embedded-opentype');
