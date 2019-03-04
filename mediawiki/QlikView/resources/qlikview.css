@@ -14,9 +14,7 @@
 .hljs-comment,
 .hljs-annotation,
 .hljs-template_comment,
-.diff .hljs-header,
-.hljs-chunk,
-.apache .hljs-cbracket {
+.hljs-chunk {
     color: #008000;
     font-style: normal;
 }
@@ -27,17 +25,11 @@
 .hljs-parent,
 .hljs-tag .hljs-value,
 .hljs-rules .hljs-value,
-.ruby .hljs-symbol,
-.ruby .hljs-symbol .hljs-string,
 .hljs-template_tag,
-.django .hljs-variable,
 .hljs-addition,
 .hljs-flow,
 .hljs-stream,
-.apache .hljs-tag,
-.hljs-date,
-.tex .hljs-formula,
-.coffeescript .hljs-attribute {
+.hljs-date {
     color: #000;
     font-style: normal;
 }
@@ -58,11 +50,8 @@
 .hljs-built_in,
 .css .smalltalk .hljs-class,
 .hljs-winutils,
-.bash .hljs-variable,
-.tex .hljs-command,
 .hljs-request,
 .hljs-status,
-.nginx .hljs-title,
 .xml .hljs-tag,
 .xml .hljs-tag .hljs-value {
     color: #00f;
@@ -79,7 +68,6 @@
     font-style: normal;
 }
 
-.ruby .hljs-string,
 .hljs-decorator,
 .hljs-filter .hljs-argument,
 .hljs-localvars,
@@ -94,9 +82,6 @@
 .hljs-preprocessor,
 .hljs-pragma,
 .userType,
-.apache .hljs-sqbracket,
-.nginx .hljs-built_in,
-.tex .hljs-special,
 .hljs-prompt {
     color: #2b91af;
     font-style: normal;
@@ -105,18 +90,6 @@
 .hljs-type,
 .hljs-typename {
     font-weight: bold;
-}
-
-.vhdl .hljs-string {
-    color: #666;
-}
-
-.vhdl .hljs-literal {
-    color: #800000;
-}
-
-.vhdl .hljs-attribute {
-    color: #00b0e8;
 }
 
 .xml .hljs-attribute {
